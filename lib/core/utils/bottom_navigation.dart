@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gem_store/feature/home/presentation/pages/home_screen.dart';
 import 'package:gem_store/feature/orders/presentation/pages/order_screen.dart';
 import 'package:gem_store/feature/profile/presentation/pages/profile_screen.dart';
-import 'package:gem_store/feature/search/presentation/pages/search_screen.dart';
+import 'package:gem_store/feature/search/presentation/pages/discover_screen.dart';
 
 import '../resources/colors_manger.dart';
 
@@ -32,7 +32,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     bottomNavigationBar: CurvedNavigationBar(
       buttonBackgroundColor: ColorsManger.white,
       backgroundColor: ColorsManger.white,
-      color: ColorsManger.lightPrimary2,
+      color: ColorsManger.white,
       height: 50,
       items:const [
         Icon(Icons.home_outlined,size: 22,color: ColorsManger.darkGrey,),
@@ -48,7 +48,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         index: _curvedIndex,
         children: const[
           HomeScreen(),
-          SearchScreen(),
+          DiscoverScreen(),
           OrderScreen(),
           ProfileScreen()
 

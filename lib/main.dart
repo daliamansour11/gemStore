@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gem_store/core/utils/bottom_navigation.dart';
-import 'package:gem_store/feature/home/presentation/pages/home_screen.dart';
+import 'package:gem_store/main_development.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+
+
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.appconfiguration});
+  final Configuration appconfiguration;
 
   // This widget is the root of your application.
   @override
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const BottomNavigation()
+      home:  BottomNavigation()
     );
   }
 }
