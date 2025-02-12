@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
+import 'package:gem_store/feature/orders/presentation/pages/shareFeedBack.dart';
+import 'package:gem_store/feature/orders/presentation/pages/widgets/customAppBar.dart';
+import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_button.dart';
 class RateProduct extends StatefulWidget {
   const RateProduct({Key? key}) : super(key: key);
 
@@ -14,43 +16,14 @@ class _RateProductScreenState extends State<RateProduct> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          leading: InkWell(
-            onTap: () => Navigator.pop(context),
-            child: Container(
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 8,
-                    spreadRadius: 2,
-                    offset: Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: CircleAvatar(
-                radius: 20,
-                backgroundColor: Colors.white,
-                child: Icon(Icons.arrow_back_ios_new,
-                    color: Colors.black, size: 18),
-              ),
-            ),
-          ),
-          title: const Text(
-            "Rate Product",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          centerTitle: true,
-        ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: CustomAppBar(title: "Rate Product")),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -108,22 +81,18 @@ class _RateProductScreenState extends State<RateProduct> {
               ),
               const SizedBox(height: 100),
               SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff343434),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24),
-                    ),
-                  ),
-                  child: const Text(
-                    "Submit Review",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ),
-              ),
+                  width: double.infinity,
+                  child: CustomButton(
+                      text: "Submit Review",
+                      color: Color(0xff343434),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ShareFeedBackScreen(),
+                            ));
+                      },
+                      isfill: true)),
             ],
           ),
         ),

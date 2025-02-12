@@ -1,0 +1,42 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+
+class CustomAppBar extends StatelessWidget {
+  String title;
+  CustomAppBar({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: InkWell(
+        onTap: () => Navigator.pop(context),
+        child: Container(
+          margin: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 8,
+                spreadRadius: 2,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
+          child: CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.white,
+            child:
+                Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 18),
+          ),
+        ),
+      ),
+      title: Text(title),
+      centerTitle: true,
+    );
+  }
+}

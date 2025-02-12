@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gem_store/feature/orders/presentation/pages/widgets/customAppBar.dart';
+
 import 'package:timeline_tile/timeline_tile.dart';
 
-class TrackOrder extends StatelessWidget {
-  const TrackOrder({super.key});
+class OrderTrack extends StatelessWidget {
+  const OrderTrack({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,99 +41,72 @@ class TrackOrder extends StatelessWidget {
       },
     ];
 
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          leading: InkWell(
-            onTap: () => Navigator.pop(context),
-            child: Container(
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white, // Ensure background is visible
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1), // Soft shadow
-                    blurRadius: 8, // Smooth blur
-                    spreadRadius: 2, // Light spread
-                    offset: Offset(0, 2), // Subtle downward shadow
-                  ),
-                ],
-              ),
-              child: CircleAvatar(
-                radius: 20, // Adjust size as needed
-                backgroundColor: Colors.white, // Match background
-                child: Icon(Icons.arrow_back_ios_new,
-                    color: Colors.black, size: 18),
+    return Scaffold(
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: CustomAppBar(title: "Track Order")),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    const Row(
+                      children: [
+                        Text(
+                          'Delivered on ',
+                          style: TextStyle(
+                              color: Color(0xff4743404D),
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text('15.05.21'),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Tracking Number :",
+                          style: TextStyle(
+                              color: Color(0xff4743404D),
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          " IK287368838",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          title: Text("Timeline Widget"),
-          centerTitle: true,
-        ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      const Row(
-                        children: [
-                          Text(
-                            'Delivered on ',
-                            style: TextStyle(
-                                color: Color(0xff4743404D),
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text('15.05.21'),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "Tracking Number :",
-                            style: TextStyle(
-                                color: Color(0xff4743404D),
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            " IK287368838",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+            SizedBox(
+              height: 50,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: orderStatus.length,
+                itemBuilder: (context, index) {
+                  return CustomTimelineTile(
+                    isFirst: index == 0,
+                    isLast: index == orderStatus.length - 1,
+                    isCompleted: orderStatus[index]["isCompleted"] ?? false,
+                    status: orderStatus[index]["status"]!,
+                    date: orderStatus[index]["date"]!,
+                  );
+                },
               ),
-              SizedBox(
-                height: 50,
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: orderStatus.length,
-                  itemBuilder: (context, index) {
-                    return CustomTimelineTile(
-                      isFirst: index == 0,
-                      isLast: index == orderStatus.length - 1,
-                      isCompleted: orderStatus[index]["isCompleted"] ?? false,
-                      status: orderStatus[index]["status"]!,
-                      date: orderStatus[index]["date"]!,
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
