@@ -2,18 +2,19 @@
 
 class AppString{
   static const noRouteFound= "No Route Found";
-  static const category_appBar_Tittle= "Categories";
-  static const maincategory_Tittle= "Main Category";
-  static const cart_appBar= "Cart";
-  static const userNamelabel= "name";
+
   static const createNewAccount= "createNewAccount";
   static const Emaillabel= "email";
   static const skip= "skip";
   static const log_out_btn= "LogOut";
   static const gender= "gender";
+//app bar
+  static const discover_appBar= "Discover";
+  static const home_appBar= "GemStore";
+  static const wishList_appBar= "My WishList";
+  static const cart_appBar= "Your cart";
 
-  static const home_appBar= "iShop";
-  // static const appBar_appointmentt= "Book Appointment";
+
   static const service= "Service";
   static const category= "Category";
   static const specalist= "Specialist";
