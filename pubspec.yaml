@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   curved_navigation_bar: ^1.0.6
   flutter_bloc: ^9.0.0
+  cached_network_image:
+
 
 
 
@@ -69,6 +71,9 @@ flutter:
     - assets/icons/menu.png
     - assets/icons/Bell_pin.png
     - assets/icons/filter.png
+    - assets/images/welcome.png
+    - assets/icons/Trash.png
+    - assets/icons/Expand_down.png
     - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see

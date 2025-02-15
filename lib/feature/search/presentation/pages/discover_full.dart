@@ -5,6 +5,7 @@ import 'package:gem_store/core/resources/colors_manger.dart';
 import 'package:gem_store/core/resources/strings_manger.dart';
 import 'package:gem_store/core/resources/values_manger.dart';
 import 'package:gem_store/feature/profile/presentation/pages/profile_screen.dart';
+import 'package:gem_store/feature/search/presentation/pages/search_page.dart';
 
 import '../../../../core/resources/font_manger.dart';
 
@@ -24,7 +25,7 @@ class DiscoverScreen extends StatelessWidget {
   List<Color> circleColor = [
     const Color(0xffC2C7B5),
     const Color(0xff9C9492),
-    const Color(0xff5B717880),
+    const Color(0xff5B7178),
     const Color(0xffD1CACD)
   ];
   bool isClick = false;
@@ -82,8 +83,8 @@ class DiscoverScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const TextField(
-                    decoration: InputDecoration(
+                  child:  TextField(
+                    decoration:const  InputDecoration(
                         hintText: "Search",
                         hintStyle: TextStyle(
                           fontSize: 14,
@@ -103,6 +104,10 @@ class DiscoverScreen extends StatelessWidget {
                             color: ColorsManger.searchIconColor,
                           ),
                         )),
+                    readOnly: true,
+                    onTap: () {
+                      context.pushNamed(const SearchPage());
+                    },
                   ),
                 ),
                 Padding(

@@ -13,6 +13,8 @@ class AppString{
   static const home_appBar= "GemStore";
   static const wishList_appBar= "My WishList";
   static const cart_appBar= "Your cart";
+  static const recnt_searches= "Recent Searches";
+  static const found_sreach= "Found 152 Results";
 
 
   static const service= "Service";

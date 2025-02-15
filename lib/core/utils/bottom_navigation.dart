@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gem_store/feature/home/presentation/pages/home_screen.dart';
 import 'package:gem_store/feature/orders/presentation/pages/order_screen.dart';
 import 'package:gem_store/feature/profile/presentation/pages/profile_screen.dart';
-import 'package:gem_store/feature/search/presentation/pages/search_screen.dart';
+import 'package:gem_store/feature/search/presentation/pages/discover_full.dart';
 
 import '../../config/theme/themeData.dart';
 import '../resources/colors_manger.dart';

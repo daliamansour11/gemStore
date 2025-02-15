@@ -5,16 +5,18 @@ class ColorsManger{
   static const Color darkGrey =Color(0xff525252);
   static const Color grey =Color(0xffBEBFC4);
   //
-  // static const Color lightGrey =Color(0xff808194);
+  static const Color lightGrey =Color(0xffCCD2E3);
   // static const Color lightBlue =Color(0x677294E5);
-  // static const Color blue =Color(0xFF5876F3);
+  // static const Color blue =Color(0xFF5876F3);#33302E
   static const Color  category1Color=Color(0xffA3A798);
   static const Color lightGreen1 =Color(0xffC2C7B5);
   static const Color  category2Color =Color(0xff898280);
   static const Color  category3Color =Color(0xff44565C);
   static const Color  category4Color =Color(0xffB9AEB2);
-  static const Color  searchIconColor =Color(0xff777E90);
-  // static const Color green = Color(0xff0ebe7f);
+  static const Color  searchIconColor =Color(0x7d33302e);
+  static const Color rentSearchColors = Color(0xff33302E);
+  static const Color SearchHistoryColors = Color(0xff0e0e0e);
+  static const Color ratingColor = Color(0xff508A7B);
   // static const Color semiGreen =Color(0x260EBE7E);
 
   static const Color dropShadowColor = Color(0xFFf2f2f2);
