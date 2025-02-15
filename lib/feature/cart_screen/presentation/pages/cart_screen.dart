@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gem_store/feature/cart_screen/presentation/cubit/cart_screen_cubit.dart';
 
-import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
 import '../../data/datasources/cart_remote_data_source.dart';
 import '../../data/repositories/cart_repo_impl.dart';
 import '../../domain/usecases/get_cart_items.dart';
+import '../cubit/cart_screen_cubit.dart';
 import '../widgets/cart_item_widget.dart';
 import '../widgets/checkout_section.dart';
 
@@ -18,15 +16,11 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
-        title: AppString.yourCart,
-        leading: InkWell(
-          onTap: () => Navigator.pop(context),
-          child: SvgPicture.asset(ImageAssets.backIcon, width: 32, height: 32),
-        ),
-      ),
+      appBar: customAppBar(title: AppString.yourCart, context: context),
       body: BlocProvider(
-        create: (context) => CartScreenCubit(GetCartItems(CartRepositoryImpl(CartRemoteDataSourceImpl())))..fetchCart(),
+        create: (context) => CartScreenCubit(
+            GetCartItems(CartRepositoryImpl(CartRemoteDataSourceImpl())))
+          ..fetchCart(),
         child: BlocBuilder<CartScreenCubit, CartScreenState>(
           builder: (context, state) {
             if (state is CartLoading) {

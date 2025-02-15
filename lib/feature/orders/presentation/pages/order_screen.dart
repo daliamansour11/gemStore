@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
 
@@ -10,10 +10,8 @@ class OrderScreen extends StatefulWidget {
 class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
-    return       Scaffold(
-      body: Center(child: Text("orderScreen")),
-
+    return const Scaffold(
+      body: Center(child: Text('orderScreen')),
     );
-
   }
 }

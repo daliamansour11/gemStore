@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gem_store/core/utils/bottom_navigation.dart';
-import 'package:gem_store/main_development.dart';
+
+import 'core/utils/bottom_navigation.dart';
+import 'main_development.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.appconfiguration});

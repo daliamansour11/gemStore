@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,17 +14,17 @@ class LoginScreen extends StatelessWidget {
           children: [
             const Spacer(),
             const Text(
-              "Log into",
+              'Log into',
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             const Text(
-              "your account",
+              'your account',
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 32),
             const TextField(
               decoration: InputDecoration(
-                labelText: "Email address",
+                labelText: 'Email address',
                 border: UnderlineInputBorder(),
               ),
             ),
@@ -30,7 +32,7 @@ class LoginScreen extends StatelessWidget {
             const TextField(
               obscureText: true,
               decoration: InputDecoration(
-                labelText: "Password",
+                labelText: 'Password',
                 border: UnderlineInputBorder(),
               ),
             ),
@@ -41,14 +43,15 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    print("Forgot Password Clicked!");
+                    debugPrint('Forgot Password Clicked!');
                   },
                   borderRadius: BorderRadius.circular(5),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                     child: Text(
-                      "Forgot Password?",
-                      style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
+                      'Forgot Password?',
+                      style: TextStyle(
+                          color: Colors.grey, fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
@@ -60,38 +63,40 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF2D201C),
-                  padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 100),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 14, horizontal: 100),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
                 child: const Text(
-                  "LOG IN",
+                  'LOG IN',
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
             ),
             const SizedBox(height: 24),
-            Center(
+            const Center(
               child: Text(
-                "or log in with",
-                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
+                'or log in with',
+                style:
+                    TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
               ),
             ),
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildSocialIcon("assets/images/apple.png", () {
-                  print("Apple icon clicked!");
+                _buildSocialIcon('assets/images/apple.png', () {
+                  debugPrint('Apple icon clicked!');
                 }),
                 const SizedBox(width: 16),
-                _buildSocialIcon("assets/images/google.png", () {
-                  print("Google icon clicked!");
+                _buildSocialIcon('assets/images/google.png', () {
+                  debugPrint('Google icon clicked!');
                 }),
                 const SizedBox(width: 16),
-                _buildSocialIcon("assets/images/facebook.png", () {
-                  print("Facebook icon clicked!");
+                _buildSocialIcon('assets/images/facebook.png', () {
+                  debugPrint('Facebook icon clicked!');
                 }),
               ],
             ),

@@ -61,4 +61,16 @@ class AppString {
   static const String freeShipping = 'Freeship';
   static const String subtotal = 'Subtotal';
   static const String proceedToCheckout = 'Proceed to Checkout';
+  static const String checkOut = 'Check Out';
+  static const String firstName = 'First name';
+  static const String lastName = 'Last name';
+  static const String streetName = 'Street name';
+  static const String city = 'City';
+  static const String state = 'State / Province';
+  static const String zipCode = 'Zip-code';
+  static const String phoneNumber = 'Phone number';
+  static const String continueToPayment = 'Continue to payment';
+  static const String deliveryDuration = 'Delivery from 3 to 7 business days';
+  static const String thanks = 'Thank you for your purchase.\nYou can view your order in `My Orders` section.';
+  static const String continueShopping = 'Continue Shopping';
 }

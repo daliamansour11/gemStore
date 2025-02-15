@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gem_store/core/resources/colors_manger.dart';
-import 'package:gem_store/feature/cart_screen/domain/entities/cart_item.dart';
 
+import '../../../../core/resources/colors_manger.dart';
+import '../../domain/entities/cart_item.dart';
 import 'check_box_widget.dart';
 import 'product_info.dart';
 import 'quantity_selector.dart';

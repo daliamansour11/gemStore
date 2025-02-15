@@ -16,7 +16,7 @@ class CartScreenCubit extends Cubit<CartScreenState> {
       final cartItems = await getCartItems();
       emit(CartLoaded(cartItems));
     } catch (e) {
-      emit(const CartError("Failed to load cart"));
+      emit(const CartError('Failed to load cart'));
     }
   }
 }

@@ -31,12 +31,12 @@ class ProductInfo extends StatelessWidget {
               ),
               SizedBox(height: 13.h),
               Text(
-                "\$${item.price}",
+                '\$${item.price}',
                 style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w700),
               ),
               SizedBox(height: 13.h),
               Text(
-                "Size: ${item.size}  |  Color: ${item.color}",
+                'Size: ${item.size}  |  Color: ${item.color}',
                 style: TextStyle(
                   color: ColorsManger.grey,
                   fontSize: 10.sp,

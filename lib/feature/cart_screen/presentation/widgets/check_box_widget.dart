@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gem_store/core/resources/colors_manger.dart';
+
+import '../../../../core/resources/colors_manger.dart';
 
 class CheckBoxWidget extends StatefulWidget {
   const CheckBoxWidget({super.key});
