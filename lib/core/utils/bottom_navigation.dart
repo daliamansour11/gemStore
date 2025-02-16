@@ -1,7 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../../feature/cart_screen/presentation/pages/cart_screen.dart';
 import '../../feature/home/presentation/pages/home_screen.dart';
 import '../../feature/orders/presentation/pages/order_screen.dart';
 import '../../feature/profile/presentation/pages/profile_screen.dart';
@@ -63,7 +62,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         children: const [
           HomeScreen(),
           DiscoverScreen(),
-          OrderScreen(),
+          OrdersScreen(),
           ProfileScreen()
         ],
       ),

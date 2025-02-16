@@ -73,4 +73,9 @@ class AppString {
   static const String deliveryDuration = 'Delivery from 3 to 7 business days';
   static const String thanks = 'Thank you for your purchase.\nYou can view your order in `My Orders` section.';
   static const String continueShopping = 'Continue Shopping';
+  static const String myOrders = 'My Orders';
+  static const String trackingNumber = 'Tracking number: ';
+  static const String quantity = 'Quantity: ';
+  static const String subtotalSign = 'Subtotal: ';
+  static const String details = 'Details';
 }

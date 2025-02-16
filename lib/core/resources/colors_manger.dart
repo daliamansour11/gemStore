@@ -13,6 +13,7 @@ class ColorsManger {
   static const Color green = Color(0xff0ebe7f);
   static const Color ligthGreen = Color(0xff508A7B);
   static const Color semiGreen = Color(0x260EBE7E);
+  static const Color black = Color.fromARGB(255, 0, 0, 0);
 
   static const Color dropShadowColor = Color(0xFFf2f2f2);
   static const Color dark = Color(0xFF2A2B2E);
@@ -30,4 +31,8 @@ class ColorsManger {
   static const Color white = Color(0xffffffff);
   static const Color red = Color(0xfff1122a);
   static const Color error = Color(0xffe61f34);
+
+  static const Color pending = Color(0xffCF6212);
+  static const Color delivered = Color(0xff009254);
+  static const Color canceled = Color(0xffC50000);
 }
