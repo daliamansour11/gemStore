@@ -74,6 +74,7 @@ flutter:
     - assets/images/welcome.png
     - assets/icons/Trash.png
     - assets/icons/Expand_down.png
+    - assets/icons/vector.png
     - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -47,15 +47,15 @@ AppBarTheme appBarTheme(){
 
 TextTheme  textTheme(){
   return  TextTheme(
-    bodySmall: TextStyle(color: ColorsManger.dark,fontSize: 16,fontWeight: FontWeight.w400),
-    titleSmall: TextStyle(color: ColorsManger.dark,fontSize: 18,fontWeight: FontWeight.w500),
-    labelSmall: TextStyle(color: ColorsManger.dark,fontSize: 12,fontWeight: FontWeight.w300),
-    titleMedium: TextStyle(color: ColorsManger.dark,fontSize: 26,fontWeight: FontWeight.w600,),
-    bodyLarge: TextStyle(color: ColorsManger.cMainColor1,fontSize: 25,fontWeight: FontWeight.w700),
+    bodySmall:const TextStyle(color: ColorsManger.dark,fontSize: 16,fontWeight: FontWeight.w400),
+    titleSmall:const TextStyle(color: ColorsManger.dark,fontSize: 18,fontWeight: FontWeight.w500),
+    labelSmall:const TextStyle(color: ColorsManger.dark,fontSize: 12,fontWeight: FontWeight.w300),
+    titleMedium:const TextStyle(color: ColorsManger.rentSearchColors,fontSize: 14,fontWeight: FontWeight.w500,fontFamily: FontConstants.fontFamily),
+    bodyLarge:const TextStyle(color: ColorsManger.cMainColor1,fontSize: 25,fontWeight: FontWeight.w700),
     titleLarge: TextStyle(color: ColorsManger.SearchHistoryColors.withOpacity(0.49),fontSize: 16,fontWeight: FontWeight.w600,fontFamily: FontConstants.NunitoFamily),
     labelMedium   : TextStyle(color: ColorsManger.SearchHistoryColors.withOpacity(0.7),fontSize: 16,fontWeight: FontWeight.w600,fontFamily: FontConstants.NunitoFamily),
-    labelLarge: TextStyle(color: ColorsManger.rentSearchColors,fontSize: 20,fontWeight: FontWeightManger.medium,fontFamily: FontConstants.fontFamily),
-    bodyMedium: TextStyle(color: ColorsManger.cMainColor1,fontSize: 26,fontWeight: FontWeight.w700),
+    labelLarge:const  TextStyle(color: ColorsManger.rentSearchColors,fontSize: 20,fontWeight: FontWeightManger.medium,fontFamily: FontConstants.fontFamily),
+    bodyMedium:const TextStyle(color: ColorsManger.cMainColor1,fontSize: 26,fontWeight: FontWeight.w700),
 
   );
 }
