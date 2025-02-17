@@ -4,6 +4,7 @@ import '../widegts/category_section.dart';
 import '../widegts/feature_products.dart';
 import '../widegts/new_collection.dart';
 import '../widegts/recommended_product.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -92,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+
     );
   }
 }
