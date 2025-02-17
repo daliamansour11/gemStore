@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +10,6 @@ class ProfileScreen extends StatelessWidget {
       body: Column(
         children: [
           const SizedBox(height: 120),
-
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40),
             child: Row(
@@ -22,42 +23,38 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   child: ClipOval(
                     child: Image.asset(
-                      "assets/images/profile.png",
+                      'assets/images/profile.png',
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 const SizedBox(width: 12),
-
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
-                      "Sunie Pham",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      'Sunie Pham',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "suniuex@gmail.com",
+                      'suniuex@gmail.com',
                       style: TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                   ],
                 ),
                 const Spacer(),
-
                 IconButton(
                   icon: const Icon(Icons.settings, color: Colors.black),
                   iconSize: 30,
                   onPressed: () {
-                    print("Settings clicked!");
+                    debugPrint('Settings clicked!');
                   },
                 ),
-
               ],
             ),
           ),
-
           const SizedBox(height: 80),
-
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 30, right: 30, bottom: 250),
@@ -76,36 +73,40 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     InkWell(
-                      onTap: () => print("Wishlist clicked!"),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                      onTap: () => debugPrint('Wishlist clicked!'),
+                      child: const Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                         child: Row(
-                          children: const [
+                          children: [
                             Icon(Icons.favorite, color: Colors.grey),
                             SizedBox(width: 12),
                             Text(
-                              "My Wishlist",
+                              'My Wishlist',
                               style: TextStyle(fontSize: 16),
                             ),
                             Spacer(),
-                            Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
+                            Icon(Icons.arrow_forward_ios,
+                                size: 16, color: Colors.grey),
                           ],
                         ),
                       ),
                     ),
-
-                    const Divider(height: 0.5,color: Color(0xFFE6E3E3),),
-
+                    const Divider(
+                      height: 0.5,
+                      color: Color(0xFFE6E3E3),
+                    ),
                     InkWell(
-                      onTap: () => print("Logout clicked!"),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                      onTap: () => debugPrint('Logout clicked!'),
+                      child: const Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                         child: Row(
-                          children: const [
+                          children: [
                             Icon(Icons.logout, color: Colors.grey),
                             SizedBox(width: 12),
                             Text(
-                              "Log out",
+                              'Log out',
                               style: TextStyle(fontSize: 16),
                             ),
                             Spacer(),

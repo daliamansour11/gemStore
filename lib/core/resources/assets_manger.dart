@@ -1,13 +1,12 @@
-
-
-class ImageAssets{
-  String imagePath ="assets/images";
-  static const String   visa_img = "assets/images/visa.png";
-  static const String   frame_img = "assets/images/login_frame.png";
-  static const String   login_img = "assets/images/login_img.png";
-  static const String   img = "assets/images/img.png";
-  static const String   interorclean = "assets/images/interorclean.png";
-  static const String   splashLogo="assets/images/logo.png" ;
+class ImageAssets {
+  static const String imagePath = 'assets/images';
+  static const String svgPath = 'assets/images/svg';
+  static const String visaImg = 'assets/images/visa.png';
+  static const String frameImg = 'assets/images/login_frame.png';
+  static const String loginImg = 'assets/images/login_img.png';
+  static const String img = 'assets/images/img.png';
+  static const String interorclean = 'assets/images/interorclean.png';
+  static const String splashLogo = 'assets/images/logo.png';
   // static const String   onboardingLogo1= "assets/images/onboardingLogo1.png";
   // static const String   onboardingLogo2= "assets/images/onboardingLogo2.png";
   // static const String   onboardingLogo3= "assets/images/onboardingLogo3.png";
@@ -22,4 +21,10 @@ class ImageAssets{
   // static const String   Login_frame= "assets/images/login_frame.png";
   // // static const String   xIcon= "assets/images/X Icon.png";
   // static const String   xIcon= "assets/images/remove1.png";
+
+  static const String backIcon = '$svgPath/Frame 361.svg';
+  static const String cartImagePlaceHolder = '$imagePath/png/image 55.png';
+  static const String checkOutIcon = '$imagePath/png/Check out 2.png';
+  static const String process = '$imagePath/png/Process.png';
+  static const String cartIcon = '$imagePath/png/Group.png';
 }

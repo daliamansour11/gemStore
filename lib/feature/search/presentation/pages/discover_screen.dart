@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
-  class   DiscoverScreen extends StatefulWidget {
+
+class DiscoverScreen extends StatefulWidget {
   const DiscoverScreen({super.key});
 
   @override
@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
-    return       Scaffold(
-      body: Center(child: Text("DiscoverScreen")),
-
-    );  }
+    return const Scaffold(
+      body: Center(child: Text('DiscoverScreen')),
+    );
+  }
 }
