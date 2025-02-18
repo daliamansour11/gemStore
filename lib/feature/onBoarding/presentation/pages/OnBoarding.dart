@@ -1,13 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:gem_store/core/constants/constants.dart';
-import 'package:gem_store/core/widget/Custom_button.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/widget/Custom_button.dart';
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/utils/bottom_navigation.dart';
 import '../widgets/CustomIndicator.dart';
 
 class Onboarding extends StatefulWidget {
+  const Onboarding({super.key});
+
   @override
   State<Onboarding> createState() => _OnboardingState();
 }
@@ -17,19 +18,19 @@ class _OnboardingState extends State<Onboarding> {
 
   final List<Map<String, String>> onboardingPages = [
     {
-      "title": "Discover something new",
-      "subtitle": "Special new arrivals just for you",
-      "image": "assets/images/onboarding1.png"
+      'title': 'Discover something new',
+      'subtitle': 'Special new arrivals just for you',
+      'image': 'assets/images/onboarding1.png'
     },
     {
-      "title": "Update trendy outfit",
-      "subtitle": "Favorite brands and hottest trends",
-      "image": "assets/images/onboarding2.png"
+      'title': 'Update trendy outfit',
+      'subtitle': 'Favorite brands and hottest trends',
+      'image': 'assets/images/onboarding2.png'
     },
     {
-      "title": "Explore your true style",
-      "subtitle": "Relax and let us bring the style to you",
-      "image": "assets/images/onboarding3.png"
+      'title': 'Explore your true style',
+      'subtitle': 'Relax and let us bring the style to you',
+      'image': 'assets/images/onboarding3.png'
     }
   ];
 
@@ -46,7 +47,7 @@ class _OnboardingState extends State<Onboarding> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [Colors.white, Grey],
                 begin: Alignment.topCenter,
@@ -61,25 +62,23 @@ class _OnboardingState extends State<Onboarding> {
             right: 0,
             child: CarouselSlider(
               items: onboardingPages.map((page) {
-                return Container(
-                  child: Column(
-                    children: [
-                      Text(
-                        page["title"]!,
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: defaultSize*1),
-                      Text(
-                        page["subtitle"]!,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 14, color: Colors.black),
-                      ),
-                      SizedBox(height:defaultSize*3),
-                      Image.asset(page["image"]!),
+                return Column(
+                  children: [
+                    Text(
+                      page['title']!,
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: defaultSize*1),
+                    Text(
+                      page['subtitle']!,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 14, color: Colors.black),
+                    ),
+                    SizedBox(height:defaultSize*3),
+                    Image.asset(page['image']!),
 
 
-                    ],
-                  ),
+                  ],
                 );
               }).toList(),
               options: CarouselOptions(
@@ -105,12 +104,12 @@ class _OnboardingState extends State<Onboarding> {
             left: defaultSize * 8,
             right: defaultSize * 8,
             child: CustomButton(
-              text: currentIndex == onboardingPages.length - 1 ? "Get Started" : "Shopping Now",
+              text: currentIndex == onboardingPages.length - 1 ? 'Get Started' : 'Shopping Now',
               width: 210,
               height: 53,
               onPressed: () {
                 if (currentIndex == onboardingPages.length - 1) {
-                  context.pushNamed(BottomNavigation());
+                  context.pushNamed(const BottomNavigation());
                   // Navigate to home screen or login
                 }
               },

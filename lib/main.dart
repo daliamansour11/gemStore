@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'core/utils/bottom_navigation.dart';
 import 'feature/Splash/presentation/pages/welcome_screen.dart';
 import 'main_development.dart';
 

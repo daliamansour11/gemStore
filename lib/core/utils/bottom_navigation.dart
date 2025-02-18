@@ -7,9 +7,7 @@ import '../../feature/profile/presentation/pages/wishlist_screen_board.dart';
 import '../../feature/profile/presentation/widgets/sidebar_home.dart';
 import '../../feature/search/presentation/pages/discover_full.dart';
 
-import '../../config/theme/themeData.dart';
 import '../resources/colors_manger.dart';
-import '../resources/strings_manger.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});

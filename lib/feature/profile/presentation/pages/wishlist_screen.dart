@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 
 import '../widgets/sidebar_home.dart';

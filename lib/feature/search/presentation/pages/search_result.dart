@@ -1,12 +1,8 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gem_store/config/theme/themeData.dart';
-import 'package:gem_store/core/extentions/extentions.dart';
-import 'package:gem_store/core/resources/colors_manger.dart';
-import 'package:gem_store/core/resources/values_manger.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:gem_store/feature/search/presentation/widgets/product_details.dart';
+import '../../../../config/theme/themeData.dart';
+import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/values_manger.dart';
 
 import '../../../../core/resources/strings_manger.dart';
 import '../../data/model/product_model.dart';
@@ -59,9 +55,7 @@ backgroundColor: ColorsManger.white,
 
               Padding(
                 padding: const EdgeInsets.only(left: AppPadding.p40,top: AppPadding.p18,bottom: AppPadding.p18),
-                child: Container(
-                  child: Text(AppString.found_sreach,style: appTheme().textTheme.labelLarge,),
-                ),
+                child: Text(AppString.found_sreach,style: appTheme().textTheme.labelLarge,),
               ),
               Expanded(
                 child: Padding(

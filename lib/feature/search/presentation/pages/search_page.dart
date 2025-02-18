@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/theme/themeData.dart';
 import '../../../../core/resources/strings_manger.dart';
-import '../widgets/search_textFieldWidget.dart';
 import 'search_result.dart';
 
 import '../../../../core/resources/colors_manger.dart';
