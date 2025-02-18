@@ -22,7 +22,7 @@ class CheckoutSection extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.1),
+            color: Colors.grey.withOpacity(0.1),
             blurRadius: 8,
             spreadRadius: 2,
             offset: const Offset(0, -2),
@@ -34,12 +34,12 @@ class CheckoutSection extends StatelessWidget {
         children: [
           ChceckOutItem(title: AppString.productPrice, price: '\$110'),
           SizedBox(height: 8.h),
-          const Divider(color: ColorsManger.grey),
+           Divider(color: ColorsManger.grey),
           SizedBox(height: 8.h),
           ChceckOutItem(
               title: AppString.shipping, price: AppString.freeShipping),
           SizedBox(height: 12.h),
-          const Divider(color: ColorsManger.grey),
+           Divider(color: ColorsManger.grey),
           SizedBox(height: 12.h),
           ChceckOutItem(
               title: AppString.subtotal, price: '\$110', isTotal: true),

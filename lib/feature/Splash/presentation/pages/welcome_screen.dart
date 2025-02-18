@@ -4,6 +4,8 @@ import 'package:gem_store/core/widget/Custom_button.dart';
 import '../../../onBoarding/presentation/pages/OnBoarding.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;

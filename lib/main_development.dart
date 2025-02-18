@@ -7,6 +7,7 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   runApp(MyApp(
     appconfiguration: DevelopmentConfiguration(),
+
   ));
 }
 

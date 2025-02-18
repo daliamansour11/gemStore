@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:gem_store/config/theme/themeData.dart';
-import 'package:gem_store/core/extentions/extentions.dart';
-import 'package:gem_store/core/resources/strings_manger.dart';
-import 'package:gem_store/feature/search/presentation/pages/search_result.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../config/theme/themeData.dart';
+import '../../../../core/resources/strings_manger.dart';
+import '../widgets/search_textFieldWidget.dart';
+import 'search_result.dart';
 
-import '../../../../core/constants/constants.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/values_manger.dart';
@@ -17,7 +17,6 @@ class SearchPage extends StatefulWidget {
   @override
   State<SearchPage> createState() => _SearchPageState();
 }
-final GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
 
 class _SearchPageState extends State<SearchPage> {
 
@@ -47,19 +46,19 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-     endDrawer: Drawer(
+      backgroundColor: ColorsManger.white,
+     endDrawer: const Drawer(
+
        child: SingleChildScrollView(
+
          child:DrawerFilter()
        )),
 
 
-
-
         body: Column(
+
           children: [
 
             Stack(
@@ -68,7 +67,7 @@ class _SearchPageState extends State<SearchPage> {
                   alignment: Alignment.centerLeft,
 
                   child: Padding(
-                    padding: const EdgeInsets.only(left: AppPadding.p33,top: AppPadding.p24,bottom: AppPadding.p22),
+                    padding: const EdgeInsets.only(left: AppPadding.p33,top: AppPadding.p59,bottom: AppPadding.p22),
                     child: Container(
                       width: 32,
                       height: 32,
@@ -88,111 +87,14 @@ class _SearchPageState extends State<SearchPage> {
                       child: Center(
                         child: IconButton(onPressed: () {
                           Navigator.pop(context);
-                        }, icon: Icon(Icons.arrow_back_ios,size: 15,),),
+                        }, icon: const Icon(Icons.arrow_back_ios,size: 15,),),
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-            Padding(
-              padding:
-              const EdgeInsets.only(left: AppPadding.p32, right: AppPadding.p32),
-              child: Row(
-                children: [
-                  Container(
-                    width: screenWidth * .66,
-                    height: screenHeight * 0.0575,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(AppSize.s15),
-                      border: Border.all(
-                        color: ColorsManger.lightWhiteColor,
-                      ),
-                      color: ColorsManger.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.9),
-                          offset: Offset(0, 1),
-
-                          blurRadius: 1,
-
-                        ),
-                      ],
-                    ),
-                    child:  TextField(
-                        controller:searchController ,
-                        decoration:const InputDecoration(
-                            hintText: "Search",
-                            hintStyle: TextStyle(
-                              fontSize: 14,
-                              // Font size
-                              fontWeight: FontWeightManger.medium,
-                              // Medium weight
-                              color: ColorsManger.searchIconColor,
-                              fontFamily: FontConstants.fontFamily,
-                              //Italic hint text
-                            ),
-                            border: InputBorder.none,
-                            prefixIcon: Padding(
-                              padding: EdgeInsets.only(left: AppPadding.p18),
-                              child: Icon(
-                                Icons.search,
-                                size: AppSize.s18,
-                                color: ColorsManger.searchIconColor,
-                              ),
-                            )),
-
-                        onSubmitted: (value){
-                          value =searchController.text;
-                          _addSearchItem(searchController.text);
-                        }
-
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 11,
-                      bottom: 11,
-                      left: 12,
-                    ),
-                    child: Container(
-                        width: screenWidth * 0.128,
-                        height: screenHeight * 0.06,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(
-                            color: ColorsManger.lightWhiteColor,
-                          ),
-                          color: ColorsManger.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.9),
-                              // Equivalent to #00000026
-                              offset: Offset(0, 1),
-                              blurRadius: 1,
-                            ),
-                          ],
-                        ),
-                        child: Builder(
-                          builder: (context) {
-                            return InkWell(
-                              onTap: (){
-                                // _scaffoldKey.currentState!.openDrawer();
-
-                                Scaffold.of(context).openEndDrawer();
-                              },
-                              child: Image.asset(
-                                "assets/icons/filter.png",
-                              ),
-                            );
-                          }
-                        )),
-                  ),
-
-                  // Filter Icon
-                ],
-              ),
-            ),
+           const SearchTextField(),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -204,7 +106,7 @@ class _SearchPageState extends State<SearchPage> {
                 // if (recentSearches.isNotEmpty)
                 Padding(padding:const EdgeInsets.only(top: AppPadding.p28,bottom: AppPadding.p28,right: AppPadding.p28,),
 
-                  child: InkWell(child: Image.asset("assets/icons/Trash.png",),
+                  child: InkWell(child: Image.asset('assets/icons/Trash.png',),
                     onTap: (){
                       _clearAllSearches();
                     },)
@@ -213,7 +115,6 @@ class _SearchPageState extends State<SearchPage> {
               ],
 
             ),
-            // SizedBox(height: 10,),
             Wrap(
               spacing: 15,
               runSpacing: 18,
@@ -223,9 +124,9 @@ class _SearchPageState extends State<SearchPage> {
               }).toList(),
             ),
 
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
 
-            Expanded(child:           SearchResult()
+            const Expanded(child:  SearchResult()
             )    ],
         )
     );
@@ -242,7 +143,7 @@ class _SearchPageState extends State<SearchPage> {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.9),
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
               blurRadius: 1,
 
             ),
@@ -260,11 +161,113 @@ class _SearchPageState extends State<SearchPage> {
             IconButton(onPressed: (){
               _removeSearchItem(index);
 
-            }, icon: Icon(Icons.clear,color: ColorsManger.lightGrey,))
+            }, icon: const Icon(Icons.clear,color: ColorsManger.lightGrey,))
 
 
           ],
         )
     );
+  }}
+
+class SearchTextField extends StatelessWidget{
+  const SearchTextField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   return Column(children: [
+     Padding(
+       padding:
+       const EdgeInsets.only(left: AppPadding.p32, right: AppPadding.p32),
+       child: Row(
+         children: [
+           Container(
+             width: 246.w,
+             height: 46.h,
+             decoration: BoxDecoration(
+               borderRadius: BorderRadius.circular(AppSize.s15),
+               border: Border.all(
+                 color: ColorsManger.lightWhiteColor,
+               ),
+               color: ColorsManger.white,
+               boxShadow: [
+                 BoxShadow(
+                   color: Colors.grey.withOpacity(0.9),
+                   offset: const Offset(0, 1),
+                   blurRadius: 1,
+                 ),
+               ],
+             ),
+             child: TextField(
+               decoration: const InputDecoration(
+                   hintText: 'Search',
+                   hintStyle: TextStyle(
+                     fontSize: 14,
+                     // Font size
+                     fontWeight: FontWeightManger.medium,
+                     // Medium weight
+                     color: ColorsManger.searchIconColor,
+                     fontFamily: FontConstants.fontFamily,
+                     //Italic hint text
+                   ),
+                   border: InputBorder.none,
+                   prefixIcon: Padding(
+                     padding: EdgeInsets.only(left: AppPadding.p18),
+                     child: Icon(
+                       Icons.search,
+                       size: AppSize.s18,
+                       color: ColorsManger.searchIconColor,
+                     ),
+                   )),
+               onTap: () {
+               },
+             ),
+           ),
+           Padding(
+             padding: const EdgeInsets.only(
+               top: 11,
+               bottom: 11,
+               left: 12,
+             ),
+             child: GestureDetector(
+               child: Container(
+                   width: 51.w,
+                   height: 49.h,
+                   decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(15),
+                     border: Border.all(
+                       color: ColorsManger.lightWhiteColor,
+                     ),
+                     color: ColorsManger.white,
+                     boxShadow: [
+                       BoxShadow(
+                         color: Colors.grey.withOpacity(0.9),
+                         // Equivalent to #00000026
+                         offset: const Offset(0, 1),
+                         blurRadius: 1,
+                       ),
+                     ],
+                   ),
+                   child: GestureDetector(
+                     onTap: (){
+                       Scaffold.of(context).openEndDrawer();
+
+                     },
+                     child: Image.asset(
+                       'assets/icons/filter.png',
+                     ),
+                   )),
+             ),
+           ),
+
+           // Filter Icon
+         ],
+       ),
+     )
+   ]);
   }
+
+
+
+
+
 }

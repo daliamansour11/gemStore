@@ -3,6 +3,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:gem_store/core/constants/constants.dart';
 import 'package:gem_store/core/widget/Custom_button.dart';
+import '../../../../core/extentions/extentions.dart';
+import '../../../../core/utils/bottom_navigation.dart';
 import '../widgets/CustomIndicator.dart';
 
 class Onboarding extends StatefulWidget {
@@ -108,6 +110,7 @@ class _OnboardingState extends State<Onboarding> {
               height: 53,
               onPressed: () {
                 if (currentIndex == onboardingPages.length - 1) {
+                  context.pushNamed(BottomNavigation());
                   // Navigate to home screen or login
                 }
               },

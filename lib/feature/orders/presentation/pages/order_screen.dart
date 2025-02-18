@@ -19,7 +19,7 @@ class OrdersScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: ColorsManger.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(110.h),
+          preferredSize: Size.fromHeight(118.h),
           child: Column(
             children: [
               customAppBarWidget(

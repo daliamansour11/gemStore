@@ -10,7 +10,7 @@ class CustomOrdersTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBar(
       dividerColor: Colors.transparent,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 8.h),
       labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
       labelStyle: TextStyle(
         fontSize: 14.sp,
@@ -46,7 +46,7 @@ class CustomOrdersTabBar extends StatelessWidget {
               title,
               style: TextStyle(
                 color: isSelected ? ColorsManger.white : ColorsManger.black,
-                fontSize: 14.sp,
+                fontSize: 13.sp,
               ),
             ),
           );

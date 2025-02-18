@@ -51,7 +51,8 @@ TextTheme  textTheme(){
     titleSmall:const TextStyle(color: ColorsManger.dark,fontSize: 18,fontWeight: FontWeight.w500),
     labelSmall:const TextStyle(color: ColorsManger.dark,fontSize: 12,fontWeight: FontWeight.w300),
     titleMedium:const TextStyle(color: ColorsManger.rentSearchColors,fontSize: 14,fontWeight: FontWeight.w500,fontFamily: FontConstants.fontFamily),
-    bodyLarge:const TextStyle(color: ColorsManger.cMainColor1,fontSize: 25,fontWeight: FontWeight.w700),
+      bodyLarge:const TextStyle(color: ColorsManger.dark,fontSize: 20,fontWeight: FontWeight.bold),
+
     titleLarge: TextStyle(color: ColorsManger.SearchHistoryColors.withOpacity(0.49),fontSize: 16,fontWeight: FontWeight.w600,fontFamily: FontConstants.NunitoFamily),
     labelMedium   : TextStyle(color: ColorsManger.SearchHistoryColors.withOpacity(0.7),fontSize: 16,fontWeight: FontWeight.w600,fontFamily: FontConstants.NunitoFamily),
     labelLarge:const  TextStyle(color: ColorsManger.rentSearchColors,fontSize: 20,fontWeight: FontWeightManger.medium,fontFamily: FontConstants.fontFamily),

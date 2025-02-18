@@ -1,15 +1,3 @@
-class AppString {
-  static const noRouteFound = 'No Route Found';
-  static const categoryAppBarTittle = 'Categories';
-  static const mainCategoryTittle = 'Main Category';
-  static const cartAppBar = 'Cart';
-  static const userNamelabel = 'name';
-  static const createNewAccount = 'createNewAccount';
-  static const emailLabel = 'email';
-  static const skip = 'skip';
-  static const logOutBtn = 'LogOut';
-  static const gender = 'gender';
-
 
 class AppString{
   static const noRouteFound= "No Route Found";
@@ -26,13 +14,11 @@ class AppString{
   static const cart_appBar= "Your cart";
   static const recnt_searches= "Recent Searches";
   static const found_sreach= "Found 152 Results";
+  static const discover_str= "Discover";
+  static const description_str= "Description";
+  static const reviews_str= "Reviews";
 
 
-  static const service= "Service";
-  static const category= "Category";
-  static const specalist= "Specialist";
-  static const list_tittle= "ptizza";
-  static const list_subtittle= "price";
   static const draweritem1_select_service= "Select Services";
   static const draweritem2_product= "Product";
   static const draweritem3_offers= "Offers";
@@ -40,12 +26,8 @@ class AppString{
   static const draweritem5_cart= "Cart";
   static const onboardingtitle1= "change The Quilty Of Your Appearance With iShop Now";
   static const onboardingbutton1= "Get Started";
-=======
   static const homeAppBar = 'iShop';
-  // static const appBar_appointmentt= "Book Appointment";
-  static const service = 'Service';
-  static const category = 'Category';
-  static const specalist = 'Specialist';
+
   static const listTittle = 'ptizza';
   static const listSubTittle = 'price';
   static const drawerSelectService = 'Select Services';
@@ -53,9 +35,7 @@ class AppString{
   static const drawerOffers = 'Offers';
   static const drawerAppointment = 'Appointments';
   static const drawerCart = 'Cart';
-  static const onboardingtitle1 =
-      'change The Quilty Of Your Appearance With iShop Now';
-  static const onboardingbutton1 = 'Get Started';
+
   // static const skip= "Skip";
   static const loginText = 'Log in to your account';
   // static const userNamelabel= "UserName";
