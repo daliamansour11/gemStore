@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/customAppBar.dart';
+import 'widgets/customAppBar.dart';
 
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -10,59 +10,59 @@ class OrderTrack extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> orderStatus = [
       {
-        "status": "Parcel is successfully delivered",
-        "date": "15 May 10:20",
-        "isCompleted": true
+        'status': 'Parcel is successfully delivered',
+        'date': '15 May 10:20',
+        'isCompleted': true
       },
       {
-        "status": "Parcel is out for delivery",
-        "date": "14 May 08:00",
-        "isCompleted": false
+        'status': 'Parcel is out for delivery',
+        'date': '14 May 08:00',
+        'isCompleted': false
       },
       {
-        "status": "Parcel is received at delivery Branch",
-        "date": "13 May 17:25",
-        "isCompleted": false
+        'status': 'Parcel is received at delivery Branch',
+        'date': '13 May 17:25',
+        'isCompleted': false
       },
       {
-        "status": "Parcel is in transit",
-        "date": "13 May 07:00",
-        "isCompleted": false
+        'status': 'Parcel is in transit',
+        'date': '13 May 07:00',
+        'isCompleted': false
       },
       {
-        "status": "Sender has shipped your parcel",
-        "date": "12 May 14:25",
-        "isCompleted": false
+        'status': 'Sender has shipped your parcel',
+        'date': '12 May 14:25',
+        'isCompleted': false
       },
       {
-        "status": "Sender is preparing to ship your order",
-        "date": "12 May 10:01",
-        "isCompleted": false
+        'status': 'Sender is preparing to ship your order',
+        'date': '12 May 10:01',
+        'isCompleted': false
       },
     ];
 
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight),
-          child: CustomAppBar(title: "Track Order")),
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: CustomAppBar(title: 'Track Order')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     SizedBox(
                       height: 20,
                     ),
-                    const Row(
+                    Row(
                       children: [
                         Text(
                           'Delivered on ',
                           style: TextStyle(
-                              color: Color(0xff4743404D),
+                              color: Color(0x4743404d),
                               fontWeight: FontWeight.bold),
                         ),
                         Text('15.05.21'),
@@ -74,13 +74,13 @@ class OrderTrack extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          "Tracking Number :",
+                          'Tracking Number :',
                           style: TextStyle(
-                              color: Color(0xff4743404D),
+                              color: Color(0x4743404d),
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          " IK287368838",
+                          ' IK287368838',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -89,7 +89,7 @@ class OrderTrack extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Expanded(
@@ -99,9 +99,9 @@ class OrderTrack extends StatelessWidget {
                   return CustomTimelineTile(
                     isFirst: index == 0,
                     isLast: index == orderStatus.length - 1,
-                    isCompleted: orderStatus[index]["isCompleted"] ?? false,
-                    status: orderStatus[index]["status"]!,
-                    date: orderStatus[index]["date"]!,
+                    isCompleted: orderStatus[index]['isCompleted'] ?? false,
+                    status: orderStatus[index]['status']!,
+                    date: orderStatus[index]['date']!,
                   );
                 },
               ),
@@ -146,18 +146,18 @@ class CustomTimelineTile extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: Color(0xff474340),
+                      color: const Color(0xff474340),
                       width: 2,
                     ),
                   ),
                   child: isCompleted
                       ? Center(
                           child: Container(
-                            margin: EdgeInsets.all(2),
+                            margin: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
-                                color: Color(0xff474340),
+                                color: const Color(0xff474340),
                                 borderRadius: BorderRadius.circular(50)),
-                            child: Icon(
+                            child: const Icon(
                               Icons.check,
                               color: Colors.white,
                               size: 15,
@@ -166,9 +166,9 @@ class CustomTimelineTile extends StatelessWidget {
                         )
                       : Center(
                           child: Container(
-                            margin: EdgeInsets.all(2),
+                            margin: const EdgeInsets.all(2),
                             decoration: BoxDecoration(
-                                color: Color(0xff474340),
+                                color: const Color(0xff474340),
                                 borderRadius: BorderRadius.circular(50)),
                           ),
                         ))),
@@ -176,12 +176,12 @@ class CustomTimelineTile extends StatelessWidget {
           //   thickness: 1,
           //   color: Color(0xff474340),
           // ),
-          beforeLineStyle: LineStyle(
+          beforeLineStyle: const LineStyle(
             thickness: 1,
             color: Color(0xff474340),
           ),
           endChild: Container(
-            padding: EdgeInsets.all(25),
+            padding: const EdgeInsets.all(25),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -190,13 +190,13 @@ class CustomTimelineTile extends StatelessWidget {
                   style: const TextStyle(
                       fontSize: 14, fontWeight: FontWeight.w500),
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   date,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xff4743404D)),
+                      color: Color(0x4743404d)),
                 ),
                 const SizedBox(height: 12),
               ],

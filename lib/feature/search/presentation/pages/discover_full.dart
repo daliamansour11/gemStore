@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../../../config/theme/themeData.dart';
 import '../../../../core/constants/constants.dart';
+import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 import '../../../profile/presentation/widgets/sidebar_home.dart';
 import '../widgets/category_card.dart';
 import '../widgets/search_textFieldWidget.dart';
+import 'search_page.dart';
 
 
 class DiscoverScreen extends StatefulWidget {
@@ -16,7 +19,7 @@ class DiscoverScreen extends StatefulWidget {
   @override
   State<DiscoverScreen> createState() => _DiscoverScreenState();
 }
-
+ TextEditingController searchController =TextEditingController();
 class _DiscoverScreenState extends State<DiscoverScreen> {
 
 
@@ -52,7 +55,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           ],
         ),
         body: Column(children: [
-           SearchTextFieldWidget(),
+          SearchTextFieldWidget(label: 'search', controller: searchController,isReadOnly: true,keyboardType:TextInputType.text, onPressed: () {context.pushNamed(const SearchPage());  },
+           ),
           Expanded(
             child: Center(
               child: ListView.builder(
@@ -79,9 +83,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.9),
                                 offset: const Offset(0, 1),
-
                                 blurRadius: 1,
-
                               ),
                             ],
                           ),

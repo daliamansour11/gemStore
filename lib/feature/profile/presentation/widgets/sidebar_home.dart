@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/extentions/extentions.dart';
+import '../../../Setting/presentation/pages/setting.dart';
+import '../pages/profile.dart';
 import 'light_dark_toggle.dart';
 
 class SidebarHomeScreen extends StatefulWidget {
@@ -36,10 +39,15 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
                       shape: BoxShape.circle,
                       color: Color(0xFFFFE0E0),
                     ),
-                    child: ClipOval(
-                      child: Image.asset(
-                        "assets/images/تنزيل (2).jpg",
-                        fit: BoxFit.cover,
+                    child: InkWell(
+                      onTap: (){
+                        context.pushNamed(const ProfileScreen());
+                      },
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/تنزيل (2).jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
@@ -48,12 +56,12 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Sunie Pham",
+                        'Sunie Pham',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "sunieux@gmail.com",
+                        'sunieux@gmail.com',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 12,
@@ -65,9 +73,13 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
               ),
             ),
             const SizedBox(height: 100),
-            buildDrawerItem(Icons.settings, "Setting"),
-            buildDrawerItem(Icons.mail, "Support"),
-            buildDrawerItem(Icons.info, "About us"),
+            InkWell(
+                onTap: (){
+                  context.pushNamed(const SettingsPage());
+                },
+                child: buildDrawerItem(Icons.settings, 'Setting')),
+            buildDrawerItem(Icons.mail, 'Support'),
+            buildDrawerItem(Icons.info, 'About us'),
             const SizedBox(height: 70),
             LightDarkToggle(),
           ],

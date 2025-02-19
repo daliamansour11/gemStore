@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/theme/themeData.dart';
 import '../../../../core/resources/strings_manger.dart';
+import '../widgets/search_textFieldWidget.dart';
 import 'search_result.dart';
 
 import '../../../../core/resources/colors_manger.dart';
@@ -16,10 +17,10 @@ class SearchPage extends StatefulWidget {
   @override
   State<SearchPage> createState() => _SearchPageState();
 }
+TextEditingController searchController =TextEditingController();
 
 class _SearchPageState extends State<SearchPage> {
 
-  TextEditingController searchController =TextEditingController();
   List<String> recentSearches = [];
 
   void _addSearchItem(String text) {
@@ -93,7 +94,8 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ],
             ),
-           const SearchTextField(),
+      SearchTextFieldWidget(label: 'search', controller: searchController,isReadOnly: false,keyboardType:TextInputType.text, onPressed: () {  },)
+,
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -168,105 +170,3 @@ class _SearchPageState extends State<SearchPage> {
     );
   }}
 
-class SearchTextField extends StatelessWidget{
-  const SearchTextField({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-   return Column(children: [
-     Padding(
-       padding:
-       const EdgeInsets.only(left: AppPadding.p32, right: AppPadding.p32),
-       child: Row(
-         children: [
-           Container(
-             width: 246.w,
-             height: 46.h,
-             decoration: BoxDecoration(
-               borderRadius: BorderRadius.circular(AppSize.s15),
-               border: Border.all(
-                 color: ColorsManger.lightWhiteColor,
-               ),
-               color: ColorsManger.white,
-               boxShadow: [
-                 BoxShadow(
-                   color: Colors.grey.withOpacity(0.9),
-                   offset: const Offset(0, 1),
-                   blurRadius: 1,
-                 ),
-               ],
-             ),
-             child: TextField(
-               decoration: const InputDecoration(
-                   hintText: 'Search',
-                   hintStyle: TextStyle(
-                     fontSize: 14,
-                     // Font size
-                     fontWeight: FontWeightManger.medium,
-                     // Medium weight
-                     color: ColorsManger.searchIconColor,
-                     fontFamily: FontConstants.fontFamily,
-                     //Italic hint text
-                   ),
-                   border: InputBorder.none,
-                   prefixIcon: Padding(
-                     padding: EdgeInsets.only(left: AppPadding.p18),
-                     child: Icon(
-                       Icons.search,
-                       size: AppSize.s18,
-                       color: ColorsManger.searchIconColor,
-                     ),
-                   )),
-               onTap: () {
-               },
-             ),
-           ),
-           Padding(
-             padding: const EdgeInsets.only(
-               top: 11,
-               bottom: 11,
-               left: 12,
-             ),
-             child: GestureDetector(
-               child: Container(
-                   width: 51.w,
-                   height: 49.h,
-                   decoration: BoxDecoration(
-                     borderRadius: BorderRadius.circular(15),
-                     border: Border.all(
-                       color: ColorsManger.lightWhiteColor,
-                     ),
-                     color: ColorsManger.white,
-                     boxShadow: [
-                       BoxShadow(
-                         color: Colors.grey.withOpacity(0.9),
-                         // Equivalent to #00000026
-                         offset: const Offset(0, 1),
-                         blurRadius: 1,
-                       ),
-                     ],
-                   ),
-                   child: GestureDetector(
-                     onTap: (){
-                       Scaffold.of(context).openEndDrawer();
-
-                     },
-                     child: Image.asset(
-                       'assets/icons/filter.png',
-                     ),
-                   )),
-             ),
-           ),
-
-           // Filter Icon
-         ],
-       ),
-     )
-   ]);
-  }
-
-
-
-
-
-}

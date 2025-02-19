@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/customAppBar.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_button.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/feedback_popup.dart';
+import 'widgets/customAppBar.dart';
+import 'widgets/custom_button.dart';
+import 'widgets/feedback_popup.dart';
 
 class ShareFeedBackScreen extends StatefulWidget {
-  const ShareFeedBackScreen({Key? key}) : super(key: key);
+  const ShareFeedBackScreen({super.key});
 
   @override
   _ShareFeedBackScreenState createState() => _ShareFeedBackScreenState();
@@ -21,19 +21,19 @@ class _ShareFeedBackScreenState extends State<ShareFeedBackScreen> {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(kToolbarHeight),
-            child: CustomAppBar(title: "Share Your Feedback")),
+            preferredSize: const Size.fromHeight(kToolbarHeight),
+            child: CustomAppBar(title: 'Share Your Feedback')),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 30),
-              Text("What is your opinion of GemStore?"),
+              const Text('What is your opinion of GemStore?'),
               const SizedBox(height: 10),
               RatingBar.builder(
                 initialRating: ratingRev,
-                itemPadding: EdgeInsets.all(8),
+                itemPadding: const EdgeInsets.all(8),
                 itemSize: 45,
                 minRating: 1,
                 direction: Axis.horizontal,
@@ -49,12 +49,12 @@ class _ShareFeedBackScreenState extends State<ShareFeedBackScreen> {
                   });
                 },
               ),
-              Spacer(),
+              const Spacer(),
               SizedBox(
                   width: double.infinity,
                   child: CustomButton(
-                      text: "Send Feedback",
-                      color: Color(0xff343434),
+                      text: 'Send Feedback',
+                      color: const Color(0xff343434),
                       onPressed: () {
                         showDialog(
                           context: context,
@@ -69,7 +69,7 @@ class _ShareFeedBackScreenState extends State<ShareFeedBackScreen> {
                         );
                       },
                       isfill: true)),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               )
             ],

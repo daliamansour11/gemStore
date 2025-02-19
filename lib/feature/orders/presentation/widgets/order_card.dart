@@ -8,7 +8,7 @@ import '../../domain/entity/order_entity.dart';
 class OrderCard extends StatelessWidget {
   final Order order;
 
-  const OrderCard({Key? key, required this.order}) : super(key: key);
+  const OrderCard({super.key, required this.order});
 
   @override
   Widget build(BuildContext context) {

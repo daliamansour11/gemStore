@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'product_details.dart';
+import '../pages/product_details.dart';
 
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/colors_manger.dart';

@@ -7,13 +7,15 @@ import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order
 
 
 class OrderInfoTwo extends StatelessWidget {
+  const OrderInfoTwo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(kToolbarHeight),
-            child: CustomAppBar(title: "Order #1524")),
+            preferredSize: const Size.fromHeight(kToolbarHeight),
+            child: CustomAppBar(title: 'Order #1524')),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -21,21 +23,21 @@ class OrderInfoTwo extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CutomGreyOrderBox(
-                  title: "Your order is on the way",
-                  description: "Click here to track your order",
+                  title: 'Your order is on the way',
+                  description: 'Click here to track your order',
                   goto: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => OrderTrack()),
+                      MaterialPageRoute(builder: (context) => const OrderTrack()),
                     );
                   },
-                  image: AssetImage(
-                    "assets/deliver.png",
+                  image: const AssetImage(
+                    'assets/deliver.png',
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(10),
@@ -45,7 +47,7 @@ class OrderInfoTwo extends StatelessWidget {
                         color: Colors.black.withOpacity(0.1),
                         blurRadius: 3,
                         spreadRadius: 2,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
@@ -55,32 +57,32 @@ class OrderInfoTwo extends StatelessWidget {
                           isOrderDetials: true,
                           withquantity: false,
                           isBold: false,
-                          detailName: "Order number",
-                          price: "#1514"),
-                      SizedBox(
+                          detailName: 'Order number',
+                          price: '#1514'),
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomOrderItem(
                           isOrderDetials: true,
                           withquantity: false,
                           isBold: false,
-                          detailName: "Tracking Number",
-                          price: "IK987362341"),
-                      SizedBox(
+                          detailName: 'Tracking Number',
+                          price: 'IK987362341'),
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomOrderItem(
                           isOrderDetials: true,
                           withquantity: false,
                           isBold: false,
-                          detailName: "Delivery address",
-                          price: "SBI Building, Software Park"),
+                          detailName: 'Delivery address',
+                          price: 'SBI Building, Software Park'),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(10),
@@ -90,7 +92,7 @@ class OrderInfoTwo extends StatelessWidget {
                         color: Colors.black.withOpacity(0.1),
                         blurRadius: 3,
                         spreadRadius: 2,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
@@ -98,50 +100,50 @@ class OrderInfoTwo extends StatelessWidget {
                     children: [
                       CustomOrderItem(
                           isBold: false,
-                          detailName: "Sportwear Set",
-                          quantity: "x1",
-                          price: "\$80.00"),
+                          detailName: 'Sportwear Set',
+                          quantity: 'x1',
+                          price: '\$80.00'),
                       CustomOrderItem(
                           isBold: false,
-                          detailName: "Cotton T-shirt",
-                          quantity: "x1",
-                          price: "\$30.00"),
-                      SizedBox(
+                          detailName: 'Cotton T-shirt',
+                          quantity: 'x1',
+                          price: '\$30.00'),
+                      const SizedBox(
                         height: 20,
                       ),
                       CustomOrderItem(
                           withquantity: false,
                           isBold: true,
-                          detailName: "Sub Total",
-                          price: "110.00"),
+                          detailName: 'Sub Total',
+                          price: '110.00'),
                       CustomOrderItem(
                           withquantity: false,
                           isBold: true,
-                          detailName: "Shipping",
-                          price: "0.00"),
-                      Divider(),
+                          detailName: 'Shipping',
+                          price: '0.00'),
+                      const Divider(),
                       CustomOrderItem(
                           withquantity: false,
                           isBold: true,
-                          detailName: "Total",
-                          price: "\$110.00"),
-                      SizedBox(
+                          detailName: 'Total',
+                          price: '\$110.00'),
+                      const SizedBox(
                         height: 30,
                       )
                     ],
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 50, horizontal: 18),
+                  padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 18),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Expanded(
                         child: CustomButton(
-                          color: Color(0xff343434),
+                          color: const Color(0xff343434),
                           isfill: true,
                           onPressed: () {},
-                          text: "Continue shopping",
+                          text: 'Continue shopping',
                         ),
                       )
                     ],

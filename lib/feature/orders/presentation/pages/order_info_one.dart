@@ -7,13 +7,15 @@ import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order
 
 
 class OrderDetailsScreen extends StatelessWidget {
+  const OrderDetailsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(kToolbarHeight),
-            child: CustomAppBar(title: "Order #1524")),
+            preferredSize: const Size.fromHeight(kToolbarHeight),
+            child: CustomAppBar(title: 'Order #1524')),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
@@ -21,15 +23,15 @@ class OrderDetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CutomGreyOrderBox(
-                  title: "Your order is delivered",
-                  description: "Rate product to get 5 points for collect.",
-                  image: AssetImage(
-                    "assets/deliver.png",
+                  title: 'Your order is delivered',
+                  description: 'Rate product to get 5 points for collect.',
+                  image: const AssetImage(
+                    'assets/deliver.png',
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(10),
@@ -39,7 +41,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         color: Colors.black.withOpacity(0.1),
                         blurRadius: 3,
                         spreadRadius: 2,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
@@ -49,32 +51,32 @@ class OrderDetailsScreen extends StatelessWidget {
                           isOrderDetials: true,
                           withquantity: false,
                           isBold: false,
-                          detailName: "Order number",
-                          price: "#1514"),
-                      SizedBox(
+                          detailName: 'Order number',
+                          price: '#1514'),
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomOrderItem(
                           isOrderDetials: true,
                           withquantity: false,
                           isBold: false,
-                          detailName: "Tracking Number",
-                          price: "IK987362341"),
-                      SizedBox(
+                          detailName: 'Tracking Number',
+                          price: 'IK987362341'),
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomOrderItem(
                           isOrderDetials: true,
                           withquantity: false,
                           isBold: false,
-                          detailName: "Delivery address",
-                          price: "SBI Building, Software Park"),
+                          detailName: 'Delivery address',
+                          price: 'SBI Building, Software Park'),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(10),
@@ -84,7 +86,7 @@ class OrderDetailsScreen extends StatelessWidget {
                         color: Colors.black.withOpacity(0.1),
                         blurRadius: 3,
                         spreadRadius: 2,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
@@ -92,40 +94,40 @@ class OrderDetailsScreen extends StatelessWidget {
                     children: [
                       CustomOrderItem(
                           isBold: false,
-                          detailName: "Maxi Dress",
-                          quantity: "x1",
-                          price: "\$68.00"),
+                          detailName: 'Maxi Dress',
+                          quantity: 'x1',
+                          price: '\$68.00'),
                       CustomOrderItem(
                           isBold: false,
-                          detailName: "Linen Dress",
-                          quantity: "x1",
-                          price: "\$52.00"),
-                      SizedBox(
+                          detailName: 'Linen Dress',
+                          quantity: 'x1',
+                          price: '\$52.00'),
+                      const SizedBox(
                         height: 20,
                       ),
                       CustomOrderItem(
                           withquantity: false,
                           isBold: true,
-                          detailName: "Sub Total",
-                          price: "120.00"),
+                          detailName: 'Sub Total',
+                          price: '120.00'),
                       CustomOrderItem(
                           withquantity: false,
                           isBold: true,
-                          detailName: "Shipping",
-                          price: "0.00"),
-                      Divider(),
+                          detailName: 'Shipping',
+                          price: '0.00'),
+                      const Divider(),
                       CustomOrderItem(
                           withquantity: false,
                           isBold: true,
-                          detailName: "Total",
-                          price: "\$120.00"),
-                      SizedBox(
+                          detailName: 'Total',
+                          price: '\$120.00'),
+                      const SizedBox(
                         height: 30,
                       )
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Row(
@@ -133,18 +135,18 @@ class OrderDetailsScreen extends StatelessWidget {
                   children: [
                     CustomButton(
                         isfill: false,
-                        text: "Return home",
+                        text: 'Return home',
                         color: Colors.white,
                         onPressed: () {}),
                     CustomButton(
                         isfill: true,
-                        text: "Rate",
-                        color: Color(0xff343434),
+                        text: 'Rate',
+                        color: const Color(0xff343434),
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RateProduct()),
+                                builder: (context) => const RateProduct()),
                           );
                         }),
                   ],

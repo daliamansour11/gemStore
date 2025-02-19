@@ -14,7 +14,7 @@ RangeValues _priceRange = const RangeValues(10, 80);
 
 Color selectedColor = Colors.black;
 int selectedStar = 5;
-String selectedCategory = 'Crop Tops'; // Default selected category
+String selectedCategory = 'Crop Tops';
 List<String> categories = ['Crop Tops', 'Dresses', 'T-Shirts', 'Jeans', 'Shoes'];
 List<String> selectedDiscounts = ['50% off', '40% off', '30% off', '25% off'];
 class _DrawerFilterState extends State<DrawerFilter> {

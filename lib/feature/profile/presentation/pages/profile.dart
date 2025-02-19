@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'profile_setting_screen.dart';
+
+import '../../../../core/extentions/extentions.dart';
+import 'wishlist_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -48,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
                   icon: const Icon(Icons.settings, color: Colors.black),
                   iconSize: 30,
                   onPressed: () {
-                    debugPrint('Settings clicked!');
+                    context.pushNamed(const ProfileSettingScreen());
                   },
                 ),
               ],
@@ -73,7 +77,8 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     InkWell(
-                      onTap: () => debugPrint('Wishlist clicked!'),
+                      onTap: () => context.pushNamed(const WishlistScreen())
+                      ,
                       child: const Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 18),
