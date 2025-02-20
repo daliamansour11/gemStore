@@ -63,16 +63,16 @@ class WelcomeScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: CustomButton(
-                    text: 'Get Started',
-                    width: 193,
-                    height: 53,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Onboarding()),
-                      );
-                    }
-                  ),
+                      text: 'Get Started',
+                      width: 193,
+                      height: 53,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Onboarding()),
+                        );
+                      }),
                 ),
                 SizedBox(height: screenHeight * 0.08), // Adjust spacing
               ],

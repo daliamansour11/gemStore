@@ -5,6 +5,8 @@ import '../../../../core/extentions/extentions.dart';
 import 'wishlist_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
+  //TODO: Make sure the profile screen is responsive and visually appealing.
   const ProfileScreen({super.key});
 
   @override
@@ -77,8 +79,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     InkWell(
-                      onTap: () => context.pushNamed(const WishlistScreen())
-                      ,
+                      onTap: () => context.pushNamed(const WishlistScreen()),
                       child: const Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 18),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/extentions/sizes_utils_extensions.dart';
 import '../track_order.dart';
+// TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
 class CutomGreyOrderBox extends StatelessWidget {
   String title;
@@ -31,7 +33,7 @@ class CutomGreyOrderBox extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: 12.all,
         child: Row(
           children: [
             Expanded(
@@ -44,10 +46,11 @@ class CutomGreyOrderBox extends StatelessWidget {
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
-                  const SizedBox(height: 12),
+                  12.vs,
                   InkWell(
                     onTap: goto != null
                         ? () {
+                          // TODO:Use generateRoute with named routes. Create a separate file for screen imports and export them to the generateRoute file.
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -56,7 +59,8 @@ class CutomGreyOrderBox extends StatelessWidget {
                           }
                         : () {},
                     child: Text(description,
-                        style: const TextStyle(color: Colors.white, fontSize: 12)),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 12)),
                   ),
                 ],
               ),

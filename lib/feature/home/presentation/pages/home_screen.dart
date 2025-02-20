@@ -6,6 +6,7 @@ import '../widegts/new_collection.dart';
 import '../widegts/recommended_product.dart';
 
 class HomeScreen extends StatefulWidget {
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
   const HomeScreen({super.key});
 
   @override
@@ -88,7 +89,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
+                // TODO: Search about the diff between of and sizeOf
                 height: MediaQuery.of(context).size.height * 0.02,
+                //! height: MediaQuery.sizeOf(context).height * 0.02,
               ),
             ],
           ),

@@ -11,6 +11,8 @@ class CustomPageView extends StatefulWidget {
 
 class _CustomPageViewState extends State<CustomPageView> {
   int _currentIndex = 0;
+  // TODO: Create a model, generate a list of model data, and use it here.
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
   final List<Map<String, String>> onboardingData = [
     {
@@ -63,7 +65,8 @@ class _CustomPageViewState extends State<CustomPageView> {
             return Container(
               width: 8.0,
               height: 8.0,
-              margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 4.0),
+              margin:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 4.0),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: _currentIndex == index ? Colors.black : Colors.grey,

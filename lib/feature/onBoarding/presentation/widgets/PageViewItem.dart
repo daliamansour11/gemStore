@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+// TODO: Follow Dart naming conventions for variables and file names.
 class Pageviewitem extends StatelessWidget {
   String Title;
   String SubTitle;
   String ImagePath;
   Pageviewitem(
-      {super.key, required this.Title, required this.SubTitle, required this.ImagePath});
+      {super.key,
+      required this.Title,
+      required this.SubTitle,
+      required this.ImagePath});
 
   @override
   Widget build(BuildContext context) {

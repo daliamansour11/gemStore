@@ -11,16 +11,21 @@ class WishlistScreen extends StatefulWidget {
 }
 
 class _WishlistScreenState extends State<WishlistScreen> {
+  // TODO: Create a model, generate a list of model data, and use it here.
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
+  // TODO: It’s best to avoid passing more than two arguments or variables. Instead, create a model to group them and pass the model.
+  //  TODO: Avoid using List.generate. Research how it works to understand why.
   List<Map<String, dynamic>> wishlistItems = List.generate(
       10,
-          (index) => {
-        'image': 'https://s3-alpha-sig.figma.com/img/277a/304a/44849c4e605ccf87ec37092bf51698d0?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LTsWfxaVDKsuerLC9HOhiX-pJlHbXwe5FOQ7oMNnENGGXkaJOq1HsQSJ021W2ALhjB24cBGF0oHOpjeG1aWDKj--qEsFL~UCsLhcQzozlya8CsbnI~PEX~pSmPzIfutjeCBxq~8haMYLWDUftrlH8BAxgW09ZyXg4kHta63Ewm6lhvciNIbN5cOMFLm9vy10gMuZOVmcCNvhVMVwlD1QGon3IhLv1~KDnD499BGyPwoJ48yojC4JkurQatUpvq34omcO6XscZRucTbIZ0aO7LdMjXV83KOdLzQQS0-M5KDD0TnGSjJobzc7h01mYLeDyZnIkL-XBj9WkMyEGE3v3dw__',
-        'name': 'Product $index',
-        'price': '\$${(index + 1) * 20}.00',
-        'oldPrice': index % 2 == 0 ? '\$${(index + 1) * 30}.00' : null,
-        'rating': (4.0 + (index % 5) * 0.2),
-        'reviews': (30 + index * 5),
-      });
+      (index) => {
+            'image':
+                'https://s3-alpha-sig.figma.com/img/277a/304a/44849c4e605ccf87ec37092bf51698d0?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LTsWfxaVDKsuerLC9HOhiX-pJlHbXwe5FOQ7oMNnENGGXkaJOq1HsQSJ021W2ALhjB24cBGF0oHOpjeG1aWDKj--qEsFL~UCsLhcQzozlya8CsbnI~PEX~pSmPzIfutjeCBxq~8haMYLWDUftrlH8BAxgW09ZyXg4kHta63Ewm6lhvciNIbN5cOMFLm9vy10gMuZOVmcCNvhVMVwlD1QGon3IhLv1~KDnD499BGyPwoJ48yojC4JkurQatUpvq34omcO6XscZRucTbIZ0aO7LdMjXV83KOdLzQQS0-M5KDD0TnGSjJobzc7h01mYLeDyZnIkL-XBj9WkMyEGE3v3dw__',
+            'name': 'Product $index',
+            'price': '\$${(index + 1) * 20}.00',
+            'oldPrice': index % 2 == 0 ? '\$${(index + 1) * 30}.00' : null,
+            'rating': (4.0 + (index % 5) * 0.2),
+            'reviews': (30 + index * 5),
+          });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-
         actions: [
           IconButton(
             icon: const Padding(
@@ -98,7 +102,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

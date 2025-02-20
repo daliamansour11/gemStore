@@ -8,6 +8,8 @@ class OrderTrack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: Create a model, generate a list of model data, and use it here.
+    // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
     final List<Map<String, dynamic>> orderStatus = [
       {
         'status': 'Parcel is successfully delivered',
@@ -114,6 +116,8 @@ class OrderTrack extends StatelessWidget {
 }
 
 class CustomTimelineTile extends StatelessWidget {
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
+
   final bool isFirst;
   final bool isLast;
 

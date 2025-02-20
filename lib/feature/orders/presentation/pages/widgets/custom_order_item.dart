@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+import '../../../../../core/extentions/sizes_utils_extensions.dart';
+
 class CustomOrderItem extends StatelessWidget {
   bool isOrderDetials = false;
   String detailName;
@@ -21,7 +23,12 @@ class CustomOrderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      // TODO: Focus On Responsive Design, check the following links:
+      //! https://docs.flutter.dev/ui/layout
+      //! https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e
+      //! https://docs.flutter.dev/ui/layout/constraints
+      //! https://pub.dev/packages/flutter_screenutil
+      padding: 8.pv,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,7 +38,8 @@ class CustomOrderItem extends StatelessWidget {
           Row(
             children: [
               withquantity
-                  ? Text(quantity!, style: const TextStyle(color: Colors.black54))
+                  ? Text(quantity!,
+                      style: const TextStyle(color: Colors.black54))
                   : const Text(''),
               const SizedBox(width: 10),
               Text(price,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../shipping_screen/presentation/pages/shipping_screen.dart';
@@ -13,7 +14,7 @@ class CheckoutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: 16.all,
       decoration: BoxDecoration(
         color: ColorsManger.white,
         borderRadius: BorderRadius.only(
@@ -34,20 +35,21 @@ class CheckoutSection extends StatelessWidget {
         children: [
           ChceckOutItem(title: AppString.productPrice, price: '\$110'),
           SizedBox(height: 8.h),
-           Divider(color: ColorsManger.grey),
+          Divider(color: ColorsManger.grey),
           SizedBox(height: 8.h),
           ChceckOutItem(
               title: AppString.shipping, price: AppString.freeShipping),
           SizedBox(height: 12.h),
-           Divider(color: ColorsManger.grey),
+          Divider(color: ColorsManger.grey),
           SizedBox(height: 12.h),
           ChceckOutItem(
               title: AppString.subtotal, price: '\$110', isTotal: true),
           const SizedBox(height: 16),
           CustomButton(
             //! TODO: Remember to use onGenerateRoute in main.dart
+            // TODO:Did not found it !
             // onPressed: () => Navigator.pushNamed(context, Routes.shippingScreen),
-            onPressed: (){
+            onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const ShippingScreen()),

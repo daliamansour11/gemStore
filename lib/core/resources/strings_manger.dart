@@ -1,5 +1,7 @@
 
 class AppString{
+
+  // TODO: Follow Dart naming conventions.
   static const noRouteFound= 'No Route Found';
 
   static const createNewAccount= 'createNewAccount';

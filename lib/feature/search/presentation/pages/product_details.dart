@@ -7,6 +7,7 @@ import '../widgets/product_details_widgets.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final Product products;
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
   const ProductDetailsScreen({required this.products, super.key});
 
@@ -15,7 +16,6 @@ class ProductDetailsScreen extends StatefulWidget {
 }
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,10 +72,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ),
         ),
       ),
-
-
-      body: ProductDetailsWidgets(products: widget.products,),
-     
+      body: ProductDetailsWidgets(
+        products: widget.products,
+      ),
     );
   }
 }

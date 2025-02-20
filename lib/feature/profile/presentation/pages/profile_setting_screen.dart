@@ -1,8 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 
 class ProfileSettingScreen extends StatefulWidget {
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
+
   const ProfileSettingScreen({super.key});
 
   @override
@@ -111,7 +111,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   padding:
-                  const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
                 ),
                 child: const Text(
                   'Save change',
@@ -126,9 +126,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
   }
 }
 
-
 ///////TextField_profileSetting_widget/////////
-
 
 // first function
 Widget buildTextFieldRow(

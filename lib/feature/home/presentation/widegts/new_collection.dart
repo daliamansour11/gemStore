@@ -19,7 +19,8 @@ class NewCollectionBanner extends StatelessWidget {
         color: const Color(0xFFF8F8FA), // Background color
         borderRadius: BorderRadius.circular(10), // Rounded corners
       ),
-      padding: EdgeInsets.symmetric(horizontal: bannerWidth * 0.05, vertical: 16),
+      padding:
+          EdgeInsets.symmetric(horizontal: bannerWidth * 0.05, vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,7 +32,8 @@ class NewCollectionBanner extends StatelessWidget {
               children: [
                 Text(
                   '| NEW COLLECTION',
-                  style: TextStyle(fontSize: bannerHeight * 0.12, color: Colors.grey),
+                  style: TextStyle(
+                      fontSize: bannerHeight * 0.12, color: Colors.grey),
                 ),
                 const SizedBox(height: 8),
                 Text(

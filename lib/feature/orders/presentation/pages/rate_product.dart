@@ -3,8 +3,10 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'shareFeedBack.dart';
 import 'widgets/customAppBar.dart';
 import 'widgets/custom_button.dart';
+
 class RateProduct extends StatefulWidget {
   const RateProduct({super.key});
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
   @override
   _RateProductScreenState createState() => _RateProductScreenState();
@@ -53,10 +55,12 @@ class _RateProductScreenState extends State<RateProduct> {
                   shape: BoxShape.rectangle,
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30),
+                  // TODO: Try to use App Colors Manager insted of this approach.
                   border: BoxBorder.lerp(
                       Border.all(
                           color: const Color.fromARGB(26, 221, 219, 219)),
-                      Border.all(color: const Color.fromARGB(26, 221, 219, 219)),
+                      Border.all(
+                          color: const Color.fromARGB(26, 221, 219, 219)),
                       0.5),
                   boxShadow: [
                     BoxShadow(

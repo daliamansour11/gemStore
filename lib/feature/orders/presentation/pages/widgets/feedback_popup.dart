@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
 class FeedbackPopup extends StatelessWidget {
   final VoidCallback onDonePressed;

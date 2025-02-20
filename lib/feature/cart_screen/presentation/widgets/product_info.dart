@@ -25,6 +25,7 @@ class ProductInfo extends StatelessWidget {
               Text(
                 item.title,
                 style: TextStyle(
+                  // TODO: Try to make a Styels file.
                   fontWeight: FontWeight.w700,
                   fontSize: 13.sp,
                 ),

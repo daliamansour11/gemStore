@@ -7,6 +7,7 @@ class ImageAssets {
   static const String img = 'assets/images/img.png';
   static const String interorclean = 'assets/images/interorclean.png';
   static const String splashLogo = 'assets/images/logo.png';
+  // TODO: Don't comment out unused code, remove it to avoid confusing other developers.
   // static const String   onboardingLogo1= "assets/images/onboardingLogo1.png";
   // static const String   onboardingLogo2= "assets/images/onboardingLogo2.png";
   // static const String   onboardingLogo3= "assets/images/onboardingLogo3.png";

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategorySection extends StatefulWidget {
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
   const CategorySection({super.key});
 
   @override
@@ -9,7 +10,7 @@ class CategorySection extends StatefulWidget {
 
 class _CategorySectionState extends State<CategorySection> {
   int selectedIndex = 0;
-
+// TODO: Make a sepreted file alone and put this list in it and make a model for the data...
   final List<Map<String, String>> categories = [
     {'icon': 'assets/icons/icon4.png', 'label': 'Women'},
     {'icon': 'assets/icons/icon3.png', 'label': 'Men'},
@@ -64,7 +65,8 @@ class _CategorySectionState extends State<CategorySection> {
                     style: TextStyle(
                       fontSize: textSize,
                       color: isSelected ? Colors.brown : Colors.black54,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                      fontWeight:
+                          isSelected ? FontWeight.bold : FontWeight.normal,
                     ),
                   ),
                 ),

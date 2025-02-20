@@ -1,5 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/extentions/sizes_utils_extensions.dart';
 
 class CustomAppBar extends StatelessWidget {
   String title;
@@ -14,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
       leading: InkWell(
         onTap: () => Navigator.pop(context),
         child: Container(
-          margin: const EdgeInsets.all(10),
+          margin: 10.all,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,

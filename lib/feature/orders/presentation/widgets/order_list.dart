@@ -17,7 +17,8 @@ class OrdersList extends StatelessWidget {
         if (state is OrdersLoading) {
           return const Center(child: CircularProgressIndicator());
         } else if (state is OrdersLoaded) {
-          final orders = state.orders.where((order) => order.status == status).toList();
+          final orders =
+              state.orders.where((order) => order.status == status).toList();
           if (orders.isEmpty) {
             return const Center(child: Text('No orders available'));
           }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RecommendedProducts extends StatelessWidget {
+  // TODO: Create a model, generate a list of model data, and use it here.
   final List<Map<String, String>> products = [
     {
       'image': 'assets/images/product1.png',

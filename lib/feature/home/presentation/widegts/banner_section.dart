@@ -19,15 +19,17 @@ class BannerSection extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               image: const DecorationImage(
-                image: AssetImage('assets/images/banner.png'), // Ensure the image exists
+                image: AssetImage(
+                    // TODO: Use the App Assets file and the Screen Size Utils package as the main tool for handling responsiveness, following your team's approach....
+                    'assets/images/banner.png'), // Ensure the image exists
                 fit: BoxFit.cover,
               ),
             ),
           ),
           // Positioned Text
           Positioned(
-            top: screenHeight * 0.03,  // Adjust position
-            right: screenWidth * 0.01,  // Adjust position
+            top: screenHeight * 0.03, // Adjust position
+            right: screenWidth * 0.01, // Adjust position
             child: SizedBox(
               width: screenWidth * 0.4,
               height: screenHeight * 0.1,

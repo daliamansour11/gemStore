@@ -15,6 +15,8 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   int currentIndex = 0;
+  // TODO: Create a model, generate a list of model data, and use it here.
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
   final List<Map<String, String>> onboardingPages = [
     {
@@ -66,18 +68,17 @@ class _OnboardingState extends State<Onboarding> {
                   children: [
                     Text(
                       page['title']!,
-                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: defaultSize*1),
+                    SizedBox(height: defaultSize * 1),
                     Text(
                       page['subtitle']!,
                       textAlign: TextAlign.center,
                       style: const TextStyle(fontSize: 14, color: Colors.black),
                     ),
-                    SizedBox(height:defaultSize*3),
+                    SizedBox(height: defaultSize * 3),
                     Image.asset(page['image']!),
-
-
                   ],
                 );
               }).toList(),
@@ -104,7 +105,9 @@ class _OnboardingState extends State<Onboarding> {
             left: defaultSize * 8,
             right: defaultSize * 8,
             child: CustomButton(
-              text: currentIndex == onboardingPages.length - 1 ? 'Get Started' : 'Shopping Now',
+              text: currentIndex == onboardingPages.length - 1
+                  ? 'Get Started'
+                  : 'Shopping Now',
               width: 210,
               height: 53,
               onPressed: () {

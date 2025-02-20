@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/resources/colors_manger.dart';
+
 class LoginScreen extends StatelessWidget {
+  // TODO:Refactor this file into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorsManger.white,
       body: Padding(
+        // TODO: Padding needs to be responsive.
         padding: const EdgeInsets.symmetric(horizontal: 32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Spacer(),
             const Text(
+              // TODO: Store the string in the app's strings file. This improves maintainability and simplifies future localization.
               'Log into',
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),

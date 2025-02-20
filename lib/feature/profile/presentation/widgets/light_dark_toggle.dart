@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LightDarkToggle extends StatefulWidget {
+  // TODO: Use a state management solution to handle this across the app.
   const LightDarkToggle({super.key});
 
   @override

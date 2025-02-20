@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import 'widgets/customAppBar.dart';
 import 'widgets/custom_button.dart';
 import 'widgets/feedback_popup.dart';
@@ -69,9 +70,7 @@ class _ShareFeedBackScreenState extends State<ShareFeedBackScreen> {
                         );
                       },
                       isfill: true)),
-              const SizedBox(
-                height: 50,
-              )
+              50.vs,
             ],
           ),
         ),
