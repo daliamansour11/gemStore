@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gem_store/core/widget/Custom_button.dart';
+import '../../../../core/widget/Custom_button.dart';
 
 import '../../../onBoarding/presentation/pages/OnBoarding.dart';
 
@@ -40,7 +40,7 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 // Title
                 Text(
-                  "Welcome to GemStore!",
+                  'Welcome to GemStore!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: screenWidth * 0.06, // Responsive font size
@@ -51,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(height: screenHeight * 0.01), // Adjusted spacing
                 // Subtitle
                 Text(
-                  "The home for a fashionista",
+                  'The home for a fashionista',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: screenWidth * 0.04,
@@ -69,7 +69,7 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Onboarding()),
+                        MaterialPageRoute(builder: (context) => const Onboarding()),
                       );
                     }
                   ),

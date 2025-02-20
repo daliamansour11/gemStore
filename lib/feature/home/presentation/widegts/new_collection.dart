@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NewCollectionBanner extends StatelessWidget {
+  const NewCollectionBanner({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Get screen width
@@ -12,9 +14,9 @@ class NewCollectionBanner extends StatelessWidget {
     return Container(
       width: bannerWidth,
       height: bannerHeight,
-      margin: EdgeInsets.only(top: 1),
+      margin: const EdgeInsets.only(top: 1),
       decoration: BoxDecoration(
-        color: Color(0xFFF8F8FA), // Background color
+        color: const Color(0xFFF8F8FA), // Background color
         borderRadius: BorderRadius.circular(10), // Rounded corners
       ),
       padding: EdgeInsets.symmetric(horizontal: bannerWidth * 0.05, vertical: 16),
@@ -28,12 +30,12 @@ class NewCollectionBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "| NEW COLLECTION",
+                  '| NEW COLLECTION',
                   style: TextStyle(fontSize: bannerHeight * 0.12, color: Colors.grey),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  "HANG OUT\n& PARTY",
+                  'HANG OUT\n& PARTY',
                   style: TextStyle(
                     fontSize: bannerHeight * 0.18,
                     fontWeight: FontWeight.bold,
@@ -47,7 +49,7 @@ class NewCollectionBanner extends StatelessWidget {
           Container(
             width: imageSize,
             height: imageSize,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
             ),

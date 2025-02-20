@@ -1,31 +1,31 @@
 
 class AppString{
-  static const noRouteFound= "No Route Found";
+  static const noRouteFound= 'No Route Found';
 
-  static const createNewAccount= "createNewAccount";
-  static const Emaillabel= "email";
-  static const skip= "skip";
-  static const log_out_btn= "LogOut";
-  static const gender= "gender";
+  static const createNewAccount= 'createNewAccount';
+  static const Emaillabel= 'email';
+  static const skip= 'skip';
+  static const log_out_btn= 'LogOut';
+  static const gender= 'gender';
 //app bar
-  static const discover_appBar= "Discover";
-  static const home_appBar= "GemStore";
-  static const wishList_appBar= "My WishList";
-  static const cart_appBar= "Your cart";
-  static const recnt_searches= "Recent Searches";
-  static const found_sreach= "Found 152 Results";
-  static const discover_str= "Discover";
-  static const description_str= "Description";
-  static const reviews_str= "Reviews";
+  static const discover_appBar= 'Discover';
+  static const home_appBar= 'GemStore';
+  static const wishList_appBar= 'My WishList';
+  static const cart_appBar= 'Your cart';
+  static const recnt_searches= 'Recent Searches';
+  static const found_sreach= 'Found 152 Results';
+  static const discover_str= 'Discover';
+  static const description_str= 'Description';
+  static const reviews_str= 'Reviews';
 
 
-  static const draweritem1_select_service= "Select Services";
-  static const draweritem2_product= "Product";
-  static const draweritem3_offers= "Offers";
-  static const draweritem4_appointment= "Appointments";
-  static const draweritem5_cart= "Cart";
-  static const onboardingtitle1= "change The Quilty Of Your Appearance With iShop Now";
-  static const onboardingbutton1= "Get Started";
+  static const draweritem1_select_service= 'Select Services';
+  static const draweritem2_product= 'Product';
+  static const draweritem3_offers= 'Offers';
+  static const draweritem4_appointment= 'Appointments';
+  static const draweritem5_cart= 'Cart';
+  static const onboardingtitle1= 'change The Quilty Of Your Appearance With iShop Now';
+  static const onboardingbutton1= 'Get Started';
   static const homeAppBar = 'iShop';
 
   static const listTittle = 'ptizza';

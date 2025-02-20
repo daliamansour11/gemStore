@@ -14,7 +14,7 @@ class Customindicator extends StatelessWidget {
         activeColor: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
-            side: BorderSide(color: Colors.white)
+            side: const BorderSide(color: Colors.white)
         ),
       ),
 

@@ -8,7 +8,7 @@ import 'order_card.dart';
 class OrdersList extends StatelessWidget {
   final String status;
 
-  const OrdersList({Key? key, required this.status}) : super(key: key);
+  const OrdersList({super.key, required this.status});
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class FontConstants {
   static const String fontFamily = 'Product Sans';
-  static const String NunitoFamily= "Nunito";
+  static const String NunitoFamily= 'Nunito';
 
 }
 

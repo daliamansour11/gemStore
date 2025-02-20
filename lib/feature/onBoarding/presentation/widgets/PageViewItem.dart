@@ -5,7 +5,7 @@ class Pageviewitem extends StatelessWidget {
   String SubTitle;
   String ImagePath;
   Pageviewitem(
-      {required this.Title, required this.SubTitle, required this.ImagePath});
+      {super.key, required this.Title, required this.SubTitle, required this.ImagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class Pageviewitem extends StatelessWidget {
       ),
       Text(
         Title,
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
       ),
       SizedBox(
@@ -29,7 +29,7 @@ class Pageviewitem extends StatelessWidget {
       ),
       Text(
         SubTitle,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 14,
           color: Colors.black,
         ),

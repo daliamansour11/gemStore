@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BannerSection extends StatelessWidget {
+  const BannerSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -16,7 +18,7 @@ class BannerSection extends StatelessWidget {
             height: screenHeight * 0.25,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: AssetImage('assets/images/banner.png'), // Ensure the image exists
                 fit: BoxFit.cover,
               ),
@@ -26,7 +28,7 @@ class BannerSection extends StatelessWidget {
           Positioned(
             top: screenHeight * 0.03,  // Adjust position
             right: screenWidth * 0.01,  // Adjust position
-            child: Container(
+            child: SizedBox(
               width: screenWidth * 0.4,
               height: screenHeight * 0.1,
               child: Text(

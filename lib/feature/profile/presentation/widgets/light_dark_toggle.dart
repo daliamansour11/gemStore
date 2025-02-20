@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LightDarkToggle extends StatefulWidget {
+  const LightDarkToggle({super.key});
+
   @override
   _LightDarkToggleState createState() => _LightDarkToggleState();
 }
@@ -42,8 +44,8 @@ class _LightDarkToggleState extends State<LightDarkToggle> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildToggleOption(Icons.wb_sunny, "Light", true),
-              _buildToggleOption(Icons.nightlight_round, "Dark", false),
+              _buildToggleOption(Icons.wb_sunny, 'Light', true),
+              _buildToggleOption(Icons.nightlight_round, 'Dark', false),
             ],
           ),
         ],

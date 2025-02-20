@@ -3,6 +3,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'PageViewItem.dart';
 
 class CustomPageView extends StatefulWidget {
+  const CustomPageView({super.key});
+
   @override
   _CustomPageViewState createState() => _CustomPageViewState();
 }
@@ -12,19 +14,19 @@ class _CustomPageViewState extends State<CustomPageView> {
 
   final List<Map<String, String>> onboardingData = [
     {
-      "title": "Discover something new",
-      "subtitle": "Special new arrivals just for you",
-      "image": "assets/images/onboarding1.png"
+      'title': 'Discover something new',
+      'subtitle': 'Special new arrivals just for you',
+      'image': 'assets/images/onboarding1.png'
     },
     {
-      "title": "Update trendy outfit",
-      "subtitle": "Favorite brands and hottest trends",
-      "image": "assets/images/onboarding2.png"
+      'title': 'Update trendy outfit',
+      'subtitle': 'Favorite brands and hottest trends',
+      'image': 'assets/images/onboarding2.png'
     },
     {
-      "title": "Explore your true style",
-      "subtitle": "Relax and let us bring the style to you",
-      "image": "assets/images/onboarding3.png"
+      'title': 'Explore your true style',
+      'subtitle': 'Relax and let us bring the style to you',
+      'image': 'assets/images/onboarding3.png'
     }
   ];
 
@@ -36,9 +38,9 @@ class _CustomPageViewState extends State<CustomPageView> {
           child: CarouselSlider(
             items: onboardingData.map((data) {
               return Pageviewitem(
-                Title: data["title"]!,
-                SubTitle: data["subtitle"]!,
-                ImagePath: data["image"]!,
+                Title: data['title']!,
+                SubTitle: data['subtitle']!,
+                ImagePath: data['image']!,
               );
             }).toList(),
             options: CarouselOptions(
@@ -61,7 +63,7 @@ class _CustomPageViewState extends State<CustomPageView> {
             return Container(
               width: 8.0,
               height: 8.0,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 4.0),
+              margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 4.0),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: _currentIndex == index ? Colors.black : Colors.grey,
@@ -69,7 +71,7 @@ class _CustomPageViewState extends State<CustomPageView> {
             );
           }),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
       ],
     );
   }

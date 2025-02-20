@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/values_manger.dart';
-import '../pages/search_page.dart';
 class SearchTextFieldWidget extends StatefulWidget {
   final String label;
   final TextEditingController controller;

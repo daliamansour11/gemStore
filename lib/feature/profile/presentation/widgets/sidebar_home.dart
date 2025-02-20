@@ -81,7 +81,7 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
             buildDrawerItem(Icons.mail, 'Support'),
             buildDrawerItem(Icons.info, 'About us'),
             const SizedBox(height: 70),
-            LightDarkToggle(),
+            const LightDarkToggle(),
           ],
         ),
       ),

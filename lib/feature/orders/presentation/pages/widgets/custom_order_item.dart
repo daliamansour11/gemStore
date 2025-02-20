@@ -9,14 +9,14 @@ class CustomOrderItem extends StatelessWidget {
   bool isBold = false;
   bool withquantity = true;
   CustomOrderItem({
-    Key? key,
+    super.key,
     required this.detailName,
     this.quantity,
     required this.price,
     this.withquantity = true,
     this.isOrderDetials = false,
     this.isBold = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,9 @@ class CustomOrderItem extends StatelessWidget {
           Row(
             children: [
               withquantity
-                  ? Text(quantity!, style: TextStyle(color: Colors.black54))
-                  : Text(''),
-              SizedBox(width: 10),
+                  ? Text(quantity!, style: const TextStyle(color: Colors.black54))
+                  : const Text(''),
+              const SizedBox(width: 10),
               Text(price,
                   style: TextStyle(
                       color: Colors.black,

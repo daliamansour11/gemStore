@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gem_store/feature/orders/presentation/pages/track_order.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/customAppBar.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_button.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order_grey_box__shop.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order_item.dart';
+import 'track_order.dart';
+import 'widgets/customAppBar.dart';
+import 'widgets/custom_button.dart';
+import 'widgets/custom_order_grey_box__shop.dart';
+import 'widgets/custom_order_item.dart';
 
 
 class OrderInfoTwo extends StatelessWidget {

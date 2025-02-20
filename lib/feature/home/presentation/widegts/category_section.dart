@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CategorySection extends StatefulWidget {
+  const CategorySection({super.key});
+
   @override
   _CategorySectionState createState() => _CategorySectionState();
 }
@@ -27,7 +29,7 @@ class _CategorySectionState extends State<CategorySection> {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
-        padding: EdgeInsets.only(bottom: 5), // Prevents clipping
+        padding: const EdgeInsets.only(bottom: 5), // Prevents clipping
         itemBuilder: (context, index) {
           bool isSelected = index == selectedIndex;
           return GestureDetector(
@@ -41,7 +43,7 @@ class _CategorySectionState extends State<CategorySection> {
                 Container(
                   width: circleSize,
                   height: circleSize,
-                  margin: EdgeInsets.symmetric(horizontal: 12),
+                  margin: const EdgeInsets.symmetric(horizontal: 12),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: isSelected ? Colors.brown : Colors.grey[200],
@@ -55,7 +57,7 @@ class _CategorySectionState extends State<CategorySection> {
                     ),
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 FittedBox(
                   child: Text(
                     categories[index]['label']!,

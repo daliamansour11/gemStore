@@ -7,6 +7,8 @@ class FeatureProducts extends StatelessWidget {
     {'image': 'assets/images/girl1.png', 'title': 'Sportswear Set', 'price': '\$80.00'},
   ];
 
+   FeatureProducts({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,25 +16,25 @@ class FeatureProducts extends StatelessWidget {
       children: [
         // Title + Show All Button
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Feature Products",
+              const Text(
+                'Feature Products',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               TextButton(
                 onPressed: () {}, // Add navigation or function here
-                child: Text(
-                  "Show all",
+                child: const Text(
+                  'Show all',
                   style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Color(0xff9B9B9B)),
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         // Horizontal Product List
         SizedBox(
           height: 227,
@@ -50,7 +52,7 @@ class FeatureProducts extends StatelessWidget {
   }
 
   Widget _buildProductCard(Map<String, String> product) {
-    return Container(
+    return SizedBox(
       width: 160, // Adjust width for proper spacing
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,9 +66,9 @@ class FeatureProducts extends StatelessWidget {
               height: 172,
             ),
           ),
-          SizedBox(height: 8),
-          Text(product['title']!, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
-          Text(product['price']!, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 8),
+          Text(product['title']!, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+          Text(product['price']!, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
         ],
       ),
     );

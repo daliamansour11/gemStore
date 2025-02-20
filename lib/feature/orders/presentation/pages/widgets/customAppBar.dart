@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   String title;
   CustomAppBar({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget {
       leading: InkWell(
         onTap: () => Navigator.pop(context),
         child: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
@@ -23,11 +23,11 @@ class CustomAppBar extends StatelessWidget {
                 color: Colors.black.withOpacity(0.1),
                 blurRadius: 8,
                 spreadRadius: 2,
-                offset: Offset(0, 2),
+                offset: const Offset(0, 2),
               ),
             ],
           ),
-          child: CircleAvatar(
+          child: const CircleAvatar(
             radius: 20,
             backgroundColor: Colors.white,
             child:

@@ -2,10 +2,24 @@ import 'package:flutter/material.dart';
 
 class RecommendedProducts extends StatelessWidget {
   final List<Map<String, String>> products = [
-    {'image': 'assets/images/product1.png', 'title': 'White fashion hoodie', 'price': '\$29.00'},
-    {'image': 'assets/images/product1.png', 'title': 'Casual Sweatshirt', 'price': '\$34.50'},
-    {'image': 'assets/images/product1.png', 'title': 'Trendy Jacket', 'price': '\$45.00'},
+    {
+      'image': 'assets/images/product1.png',
+      'title': 'White fashion hoodie',
+      'price': '\$29.00'
+    },
+    {
+      'image': 'assets/images/product1.png',
+      'title': 'Casual Sweatshirt',
+      'price': '\$34.50'
+    },
+    {
+      'image': 'assets/images/product1.png',
+      'title': 'Trendy Jacket',
+      'price': '\$45.00'
+    },
   ];
+
+  RecommendedProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,32 +27,36 @@ class RecommendedProducts extends StatelessWidget {
       builder: (context, constraints) {
         double screenWidth = constraints.maxWidth;
         double productWidth = screenWidth * 0.8; // 80% of screen width
-        double productHeight = screenWidth * 0.2; // Adjust height based on width
+        double productHeight =
+            screenWidth * 0.2; // Adjust height based on width
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Title + Show All Button
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Feature Products",
+                  const Text(
+                    'Feature Products',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: Text(
-                      "Show all",
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Color(0xff9B9B9B)),
+                    child: const Text(
+                      'Show all',
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff9B9B9B)),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             // Horizontal Product List
             SizedBox(
               height: productHeight,
@@ -46,7 +64,8 @@ class RecommendedProducts extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: products.length,
                 itemBuilder: (context, index) {
-                  return _buildProductCard(products[index], productWidth, productHeight);
+                  return _buildProductCard(
+                      products[index], productWidth, productHeight);
                 },
               ),
             ),
@@ -56,16 +75,17 @@ class RecommendedProducts extends StatelessWidget {
     );
   }
 
-  Widget _buildProductCard(Map<String, String> product, double width, double height) {
+  Widget _buildProductCard(
+      Map<String, String> product, double width, double height) {
     return Container(
       width: width,
       height: height,
-      margin: EdgeInsets.only(left: 16),
-      padding: EdgeInsets.all(8),
+      margin: const EdgeInsets.only(left: 16),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2)),
         ],
       ),
@@ -81,7 +101,7 @@ class RecommendedProducts extends StatelessWidget {
               height: height * 0.9,
             ),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           // Product Details
           Expanded(
             child: Column(
@@ -90,14 +110,16 @@ class RecommendedProducts extends StatelessWidget {
               children: [
                 Text(
                   product['title']!,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                  style: const TextStyle(
+                      fontSize: 12, fontWeight: FontWeight.w500),
                   overflow: TextOverflow.ellipsis, // Prevents overflow
                   maxLines: 1, // Limits to one line
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   product['price']!,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ],
             ),

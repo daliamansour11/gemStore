@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0, // No shadow
         backgroundColor: Colors.white, // Same as background
         centerTitle: true, // Center title
-        title: Text(
+        title: const Text(
           'GemStore',
           style: TextStyle(
             color: Colors.black,
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.menu, color: Colors.black), // Menu icon
+          icon: const Icon(Icons.menu, color: Colors.black), // Menu icon
           onPressed: () {
             Scaffold.of(context).openDrawer();
           },
@@ -39,61 +39,61 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.08,
-            vertical: MediaQuery.of(context).size.height * 0.03
-          ),
+              horizontal: MediaQuery.of(context).size.width * 0.08,
+              vertical: MediaQuery.of(context).size.height * 0.03),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CategorySection(),
+              const CategorySection(),
               SizedBox(
-                height:MediaQuery.of(context).size.height * 0.02 ,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
-              BannerSection(),
+              const BannerSection(),
               SizedBox(
-                height:MediaQuery.of(context).size.height * 0.02 ,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
               FeatureProducts(),
               SizedBox(
-                height:MediaQuery.of(context).size.height * 0.02 ,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
-              NewCollectionBanner(),
+              const NewCollectionBanner(),
               SizedBox(
-                height:MediaQuery.of(context).size.height * 0.02 ,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
               RecommendedProducts(),
               SizedBox(
-                height:MediaQuery.of(context).size.height * 0.02 ,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Top Products",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    const Text(
+                      'Top Products',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     TextButton(
                       onPressed: () {}, // Add navigation or function here
-                      child: Text(
-                        "Show all",
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Color(0xff9B9B9B)),
+                      child: const Text(
+                        'Show all',
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xff9B9B9B)),
                       ),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height:MediaQuery.of(context).size.height * 0.02 ,
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
-
-
             ],
           ),
         ),
       ),
-
     );
   }
 }

@@ -7,12 +7,12 @@ class CustomButton extends StatelessWidget {
   VoidCallback onPressed;
   bool isfill;
   CustomButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.color,
     required this.onPressed,
     required this.isfill,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
         backgroundColor: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
-          side: BorderSide(color: Color(0xff343434)),
+          side: const BorderSide(color: Color(0xff343434)),
         ),
       ),
       onPressed: onPressed,
@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(text,
             style:
-                TextStyle(color: !isfill ? Color(0xff343434) : Colors.white)),
+                TextStyle(color: !isfill ? const Color(0xff343434) : Colors.white)),
       ),
     );
   }

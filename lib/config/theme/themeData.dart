@@ -15,7 +15,7 @@ ThemeData appTheme() {
 
 
 
-    fontFamily: "Product Sans",
+    fontFamily: 'Product Sans',
       // primaryColor: ColorsManger.lightPrimary,
       // splashColor: ColorsManger.white,
       textTheme: textTheme(),

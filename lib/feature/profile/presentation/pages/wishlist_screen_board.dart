@@ -19,7 +19,7 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text(
-            "My Wishlist",
+            'My Wishlist',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
@@ -170,11 +170,11 @@ class WishlistItemCard extends StatelessWidget {
             color: Colors.white,
             child: ListTile(
               title: Text(
-                "Going out outfits",
+                'Going out outfits',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               trailing: Icon(Icons.keyboard_arrow_right, color: Colors.grey),
-              subtitle: Text("36 items", style: TextStyle(color: Colors.grey)),
+              subtitle: Text('36 items', style: TextStyle(color: Colors.grey)),
             ),
           ),
         ),
