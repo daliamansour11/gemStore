@@ -54,7 +54,6 @@ class ShippingComplete extends StatelessWidget {
               CustomButton(
                 title: AppString.continueShopping,
                 onPressed: () {
-
                 },
               ),
             ],

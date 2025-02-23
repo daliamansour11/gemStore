@@ -91,4 +91,20 @@ class AppString{
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
+
+  //Login Page
+  static const String LogInto = 'Log into';
+  static const String YourAccount = 'your account';
+  static const String Email = 'Email address';
+  static const String Password = 'Password';
+  static const String ForgetPassword = 'Forgot Password?';
+  static const String LogIn = 'LOG IN';
+  static const String LogInWith = 'or log in with';
+//Profile Page
+  static const String Wishlist = 'My Wishlist';
+  static const String Logout = 'Log out';
+
+
+
+
 }

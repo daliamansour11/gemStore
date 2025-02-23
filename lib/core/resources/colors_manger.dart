@@ -47,4 +47,11 @@ class ColorsManger {
   static const Color pending = Color(0xffCF6212);
   static const Color delivered = Color(0xff009254);
   static const Color canceled = Color(0xffC50000);
+
+
+  static const Color Grey = Color(0xFF9E9E9E);
+  static const Color Divider_Profile = Color(0xFFE6E3E3);
+  static const Color Button_Login = Color(0xFF2D201C);
+
+
 }

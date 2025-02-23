@@ -86,7 +86,14 @@ flutter:
     - assets/images/
     - assets/images/svg/
     - assets/images/png/
-
+    - assets/images/apple.png
+    - assets/images/google.png
+    - assets/images/facebook.png
+    - assets/images/profile.jpeg
+    - assets/images/fav.png
+    - assets/images/setting.png
+    - assets/images/logout.png
+    - assets/images/arrow.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
