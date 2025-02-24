@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/constants.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../widgets/custom_page_view.dart';
 import '../widgets/onboarding_button.dart';
@@ -30,12 +29,12 @@ class _OnboardingState extends State<Onboarding> {
 
   Widget _buildBackgroundGradient() {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [ColorsManger.white, ColorsManger.onboardingColor],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          stops: [0.55, 0.45],
+          stops: const [0.55, 0.45],
         ),
       ),
     );

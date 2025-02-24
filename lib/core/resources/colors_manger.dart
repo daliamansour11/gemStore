@@ -47,4 +47,17 @@ class ColorsManger {
   static const Color pending = Color(0xffCF6212);
   static const Color delivered = Color(0xff009254);
   static const Color canceled = Color(0xffC50000);
+  //onboarding
+  static const Color onboardingColor = Color(0xff464447);
+  //home
+  static const Color iconColor = Color(0xff9D9D9D);
+  static const Color categoryColor = Color(0xffF3F3F3);
+  static const Color brown = Color(0xff3A2C27);
+  static const Color showAll = Color(0xff9B9B9B);
+  static const Color banner = Color(0xffF8F8FA);
+  static const Color bannerText1 = Color(0xff777E90);
+  static const Color bannerText2 = Color(0xff353945);
+
+
+
 }
