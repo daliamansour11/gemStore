@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/utils/custom_app_bar.dart';
 import '../widgets/sidebar_home.dart';
 
 class WishlistScreenBoards extends StatefulWidget {
@@ -17,26 +19,7 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
     return Scaffold(
         drawer: const SidebarHomeScreen(),
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text(
-            "My Wishlist",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          elevation: 0,
-
-          actions: [
-            IconButton(
-              icon: const Padding(
-                padding: EdgeInsets.only(right: 25),
-                child: Icon(Icons.notifications_none_outlined,
-                    color: Colors.black, size: 30),
-              ),
-              onPressed: () {},
-            ),
-          ],
-        ),
+        appBar: customAppBar(title: AppString.wishListAppBar, context: context, isBackable: false, haveActions: true),
         body: ListView(
           children: const [
             WishlistItemCard(),
@@ -170,11 +153,11 @@ class WishlistItemCard extends StatelessWidget {
             color: Colors.white,
             child: ListTile(
               title: Text(
-                "Going out outfits",
+                'Going out outfits',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               trailing: Icon(Icons.keyboard_arrow_right, color: Colors.grey),
-              subtitle: Text("36 items", style: TextStyle(color: Colors.grey)),
+              subtitle: Text('36 items', style: TextStyle(color: Colors.grey)),
             ),
           ),
         ),

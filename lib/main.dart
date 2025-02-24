@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'config/theme/themeData.dart';
 import 'feature/Splash/presentation/pages/welcome_screen.dart';
 import 'main_development.dart';
 
@@ -18,13 +19,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
 
             title: 'Gem Store',
-
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
+            theme:appTheme(),
             home: const WelcomeScreen());
       },
     );

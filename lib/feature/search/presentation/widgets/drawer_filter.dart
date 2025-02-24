@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../config/theme/themeData.dart';
 import '../../../../core/constants/constants.dart';
+import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 class DrawerFilter extends StatefulWidget {
   const DrawerFilter({super.key});
@@ -80,7 +82,7 @@ class _DrawerFilterState extends State<DrawerFilter> {
                       color: color,
                       border: isSelected
                           ? Border.all(color: Colors.black, width: 3)
-                          : null, // Add border if selected
+                          : null,
                     ),
                   ),
                 );
@@ -106,11 +108,11 @@ class _DrawerFilterState extends State<DrawerFilter> {
                     });
                   },
                   child: Container(
-                    width: 45, // Set width
-                    height: 45, // Set height
-                    margin: const EdgeInsets.only(right: 8), // Spacing between items
+                    width: 45,
+                    height: 45,
+                    margin: const EdgeInsets.only(right: 8),
                     decoration: BoxDecoration(
-                      color: isSelected ? ColorsManger.dark : Colors.white, // Background color
+                      color: isSelected ? ColorsManger.dark : Colors.white,
                       shape: BoxShape.circle,
 
                       border: Border.all(
@@ -145,9 +147,8 @@ class _DrawerFilterState extends State<DrawerFilter> {
           ),
           Padding(
             padding:  const EdgeInsets.only(left: AppPadding.p28,top: AppPadding.p31),
-            child:  Text('Category',style: appTheme().textTheme.titleMedium,),
+            child:  Text(AppString.categoryStr,style: appTheme().textTheme.titleMedium,),
           ),
-          // **Dropdown Button Styled**
           Padding(
 
             padding: const  EdgeInsets.symmetric(horizontal: AppPadding.p28,vertical: 15),
@@ -167,51 +168,38 @@ class _DrawerFilterState extends State<DrawerFilter> {
               }).toList(),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.white, // Background color
-                contentPadding: const EdgeInsets.symmetric(horizontal:10, vertical: 12), // Padding inside box
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15), // Rounded border
-                  borderSide: BorderSide(color: ColorsManger.grey.withOpacity(.78), width: 2), // Black border
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(color: ColorsManger.grey.withOpacity(.78), width: 2),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide(color: ColorsManger.grey.withOpacity(.78), width: 2), // Black border
-                ),
-                prefixIcon: Image.asset('assets/icons/vector.png')
+                fillColor: Colors.white,
+                contentPadding: const EdgeInsets.symmetric(horizontal:10, vertical: 12),
+                prefixIcon: Image.asset(ImageAssets.vectorIcon)
               ),
 
-              icon: const Icon(Icons.arrow_drop_down, color: Colors.black), // Dropdown arrow
-              dropdownColor: Colors.white, // Background of dropdown items
+              icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
+              dropdownColor: Colors.white,
             ),
           ),
           Padding(
               padding: const EdgeInsets.only(left: AppPadding.p28),
-              child:  Text('Discount', style: appTheme().textTheme.titleMedium,)),
+              child:  Text(AppString.discountStr, style: appTheme().textTheme.titleMedium,)),
 
           Padding(
             padding: const EdgeInsets.only(left: AppPadding.p28,top: AppPadding.p16),
             child: Wrap(
-              spacing: 8, // Space between chips
-              runSpacing: 17, // Space between lines
+              spacing: 8,
+              runSpacing: 17,
               children: selectedDiscounts.map((discount) {
                 return Container(
                   height: 38,
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    border: Border.all(color: ColorsManger.dark, width: 1), // Black border
-                    borderRadius: BorderRadius.circular(20), // Rounded edges
-                    color: Colors.white, // Background color
+                    border: Border.all(color: ColorsManger.dark, width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(discount, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
 
-                      // **Remove Button (X)**
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -222,7 +210,7 @@ class _DrawerFilterState extends State<DrawerFilter> {
                       ),
                     ],
                   ),
-                );
+                 );
               }).toList(),
             ),
           ),
@@ -235,16 +223,16 @@ class _DrawerFilterState extends State<DrawerFilter> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 28.0),
-                  child: TextButton(onPressed: () {}, child: const Text('Reset')),
+                  child: TextButton(onPressed: () {}, child: const Text(AppString.resetBtn)),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 51.0),
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black, // Change button color
+                      backgroundColor: Colors.black,
                     ),
-                    child: const Text('Apply',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: ColorsManger.white),),
+                    child: const Text(AppString.applyBtn,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: ColorsManger.white),),
                   ),
                 ),
               ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../core/resources/colors_manger.dart';
 
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/utils/custom_app_bar.dart';
 import '../widgets/sidebar_home.dart';
 
 class WishlistScreen extends StatefulWidget {
@@ -21,32 +23,12 @@ class _WishlistScreenState extends State<WishlistScreen> {
         'rating': (4.0 + (index % 5) * 0.2),
         'reviews': (30 + index * 5),
       });
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const SidebarHomeScreen(),
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text(
-          'My Wishlist',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-
-        actions: [
-          IconButton(
-            icon: const Padding(
-              padding: EdgeInsets.only(right: 25),
-              child: Icon(Icons.notifications_none_outlined,
-                  color: Colors.black, size: 30),
-            ),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: customAppBar(title: AppString.wishListAppBar, context: context,  isBackable: false, haveActions: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
         child: GridView.builder(

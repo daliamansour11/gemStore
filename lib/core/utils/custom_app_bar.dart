@@ -3,12 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../resources/assets_manger.dart';
 import '../resources/colors_manger.dart';
+import '../resources/values_manger.dart';
 
 PreferredSizeWidget? customAppBar({
   required String title,
+   required bool haveActions,
   bool centerTitle = true,
   bool automaticallyImplyLeading = true,
-  bool isBackable = true,
+ required bool isBackable,
   required BuildContext context,
 }) {
   return AppBar(
@@ -20,9 +22,28 @@ PreferredSizeWidget? customAppBar({
             child:
                 SvgPicture.asset(ImageAssets.backIcon, width: 32, height: 32),
           )
-        : IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+        : InkWell(
+        onTap: (){
+          Scaffold.of(context).openDrawer();
+        },
+        child: Image.asset(ImageAssets.menuIcon,width: AppSize.s18,height: AppSize.s17,)),
+
     centerTitle: centerTitle,
     automaticallyImplyLeading: automaticallyImplyLeading,
+    actions: [
+      haveActions? Padding(
+        padding:const EdgeInsets.only(right: AppPadding.p32),
+        child: InkWell(
+          onTap: (){
+
+          },
+          child:const ImageIcon(
+            AssetImage(ImageAssets.notificationIcon), // For PNG icons
+            size: AppSize.s24,
+          ),
+        ),
+      ):const SizedBox(),
+    ],
   );
 }
 Widget customAppBarWidget({
@@ -39,9 +60,13 @@ Widget customAppBarWidget({
         ? InkWell(
             onTap: () => Navigator.pop(context),
             child:
-                SvgPicture.asset(ImageAssets.backIcon, width: 32, height: 32),
+                SvgPicture.asset(ImageAssets.backIcon, width: AppSize.s32, height: AppSize.s32),
           )
-        : IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+        : InkWell(
+  onTap: (){
+  Scaffold.of(context).openDrawer();
+  },
+  child:Image.asset(ImageAssets.menuIcon,width:AppSize.s18,height: AppSize.s17,)),
     centerTitle: centerTitle,
     automaticallyImplyLeading: automaticallyImplyLeading,
   );

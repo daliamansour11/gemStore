@@ -16,7 +16,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(title: AppString.yourCart, context: context),
+      appBar: customAppBar(title: AppString.yourCart, context: context, isBackable: true, haveActions: false),
       body: BlocProvider(
         create: (context) => CartScreenCubit(
             GetCartItems(CartRepositoryImpl(CartRemoteDataSourceImpl())))

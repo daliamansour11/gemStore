@@ -17,7 +17,7 @@ class ShippingScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => ShippingScreenCubit(),
       child: Scaffold(
-        appBar: customAppBar(title: AppString.checkOut, context: context),
+        appBar: customAppBar(title: AppString.checkOut, context: context, isBackable: true, haveActions: false),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.h),
           child: Column(

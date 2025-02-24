@@ -37,7 +37,7 @@ class ColorsManger{
   // NEW COLORS
 
   static const Color darkPrimary = Color(0x00000000);
-  static const Color lightPrimary = Color(0x00bebfc4);
+  static const Color lightPrimary = Color(0xffffffff);
   static const Color lightPrimary2 = Color(0xFFE9ECE9);
   static const Color cBackground1 = Color(0xff525252);
   static const Color cMainColor1 = Color(0xff737477);

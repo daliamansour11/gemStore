@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../config/theme/themeData.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/values_manger.dart';
@@ -39,25 +40,22 @@ class CategoryCard extends StatelessWidget {
     return Card(
         child: Container(
           height: 126.h,
-          width: 340,
+          // width: 340,
           decoration: BoxDecoration(
             color: cardColor(title),
             borderRadius: BorderRadius.circular(AppSize.s15),
           ),
-          // padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(  // Allow text to take available space
+              Flexible(
+                fit: FlexFit.loose,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: AppPadding.p20, ),
+                  padding: const EdgeInsets.only(left: AppPadding.p18, ),
                   child: Text(
                     title,
-                    style: const TextStyle(
-                      fontSize: FontSize.s16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style:appTheme().textTheme.bodySmall,
+
 
                   ),
                 ),
@@ -65,10 +63,10 @@ class CategoryCard extends StatelessWidget {
               Stack(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: AppPadding.p55, right: AppPadding.p20, top: AppPadding.p10, bottom: AppPadding.p11),
+                    padding: const EdgeInsets.only(left: AppPadding.p51, right: AppPadding.p20, top: AppPadding.p10, bottom: AppPadding.p11),
                     child: Container(
-                      width: 105,
-                      height: 105,
+                      width: 105.w,
+                      height: 105.h,
                       decoration: BoxDecoration(
                         color: backgroundColor.withOpacity(0.5),
                         shape: BoxShape.circle,
@@ -78,8 +76,9 @@ class CategoryCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: AppPadding.p72, right: AppPadding.p34, top: AppPadding.p25, bottom: AppPadding.p26),
                     child: Container(
-                      width: 75,
-                      height: 75,
+                      width: 75.w,
+                      height: 75.h
+                      ,
                       decoration: BoxDecoration(
                         color: backgroundColor.withOpacity(0.5),
                         shape: BoxShape.circle,
@@ -90,11 +89,11 @@ class CategoryCard extends StatelessWidget {
                     left: 50,
                     // right: 10,
                     child: SizedBox(
-                      width: 194,
-                      height: 129,
+                      width: 194.w,
+                      height: 129.h,
                       child: Image.network(
                         imageUrl,
-                        fit: BoxFit.contain, // Makes sure image scales well
+                        fit: BoxFit.contain,
                       ),
                     ),
                   )
