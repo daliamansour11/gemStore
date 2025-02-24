@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'feature/Auth/presentation/pages/login.dart';
 import 'feature/Splash/presentation/pages/welcome_screen.dart';
+import 'feature/home/presentation/pages/home_screen.dart';
+import 'feature/profile/presentation/pages/profile.dart';
 import 'main_development.dart';
 
 class MyApp extends StatelessWidget {

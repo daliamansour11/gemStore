@@ -91,37 +91,4 @@ class AppString{
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
-  //splash strings
-  static const String welcome = 'Welcome to GemStore!';
-  static const String welcome2 = 'The home for a fashionista';
-  static const String getStarted = 'Get Started';
-
-  //onboarding strings
-  static const List<String> titles=[
-  'Discover something new',
-  'Update trendy outfit',
-  'Explore your true style',
-  ];
-  static const List<String> subtitles=[
-    'Special new arrivals just for you',
-    'Favorite brands and hottest trends',
-    'Relax and let us bring the style to you',
-  ];
-  static const String shoppingNow = 'Shopping now';
-
-//home strings
-  static const String women = 'Women';
-  static const String men = 'Men';
-  static const String accessories = 'Accessories';
-  static const String beauty = 'Beauty';
-  static const String bannerText = 'Autumn Collection\n2021';
-  static const String featureText ='Feature Products';
-  static const String showAll='Show All';
-  static const String newCollection= '| NEW COLLECTION';
-  static const String bannerText2= 'HANG OUT\n& PARTY';
-  static const String recommendedText = 'Recommended';
-  static const String topText = 'Top Products';
-
-
-
 }
