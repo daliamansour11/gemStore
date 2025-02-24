@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
 
 class NewCollectionBanner extends StatelessWidget {
   const NewCollectionBanner({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Get screen width
-    double screenWidth = MediaQuery.of(context).size.width;
-    double bannerWidth = screenWidth * 0.9; // 90% of screen width
-    double bannerHeight = bannerWidth * (157 / 424); // Maintain aspect ratio
-    double imageSize = bannerHeight * 0.85; // Scale image proportionally
-
     return Container(
-      width: bannerWidth,
-      height: bannerHeight,
+      width: 424.w,
       margin: const EdgeInsets.only(top: 1),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8F8FA), // Background color
+        color:  ColorsManger.banner, // Background color
         borderRadius: BorderRadius.circular(10), // Rounded corners
       ),
       padding:
-          EdgeInsets.symmetric(horizontal: bannerWidth * 0.05, vertical: 16),
+          EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,37 +29,26 @@ class NewCollectionBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '| NEW COLLECTION',
+                 AppString.newCollection,
                   style: TextStyle(
-                      fontSize: bannerHeight * 0.12, color: Colors.grey),
-                ),
-                const SizedBox(height: 8),
+                      fontSize: 12.sp, color: ColorsManger.bannerText1),
+                ), SizedBox(height:8.h),
                 Text(
-                  'HANG OUT\n& PARTY',
+                  AppString.bannerText2,
                   style: TextStyle(
-                    fontSize: bannerHeight * 0.18,
+                    fontSize: 20.sp,
+                    color: ColorsManger.bannerText2,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
           ),
-
-          // Right Side: Image with Circular Background
-          Container(
-            width: imageSize,
-            height: imageSize,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-            alignment: Alignment.center,
-            child: Image.asset(
-              'assets/images/newcollection.png', // Replace with actual image path
-              width: imageSize * 1.2,
-              height: imageSize * 1.2,
-              fit: BoxFit.cover,
-            ),
+          Image.asset(
+            'assets/images/newcollection.png', // Replace with actual image path
+            width: 119.w,
+            height: 158.h,
+            fit: BoxFit.cover,
           ),
         ],
       ),

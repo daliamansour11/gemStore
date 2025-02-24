@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../../core/widget/Custom_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/resources/assets_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/widget/custom_button.dart';
 
 import '../../../onBoarding/presentation/pages/OnBoarding.dart';
 
@@ -19,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/welcome.png'),
+                image: AssetImage(ImageAssets.splashLogo),
                 fit: BoxFit.cover,
               ),
             ),
@@ -27,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/Rectangle.png'),
+                image: AssetImage(ImageAssets.splashShadow),
                 fit: BoxFit.cover,
               ),
             ),
@@ -40,7 +44,7 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 // Title
                 Text(
-                  'Welcome to GemStore!',
+                  AppString.welcome,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: screenWidth * 0.06, // Responsive font size
@@ -51,7 +55,7 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(height: screenHeight * 0.01), // Adjusted spacing
                 // Subtitle
                 Text(
-                  'The home for a fashionista',
+                  AppString.welcome2,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: screenWidth * 0.04,
@@ -63,9 +67,9 @@ class WelcomeScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: CustomButton(
-                      text: 'Get Started',
-                      width: 193,
-                      height: 53,
+                      text: AppString.getStarted,
+                      width: 193.w,
+                      height: 53.h,
                       onPressed: () {
                         Navigator.push(
                           context,

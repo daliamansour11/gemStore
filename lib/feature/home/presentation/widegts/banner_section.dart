@@ -1,42 +1,39 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/resources/assets_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
 class BannerSection extends StatelessWidget {
   const BannerSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-
     return Padding(
-      padding: EdgeInsets.only(top: screenHeight * 0.02),
+      padding: EdgeInsets.only(top: 20.h),
       child: Stack(
         children: [
-          // Background Image
           Container(
-            width: screenWidth,
-            height: screenHeight * 0.25,
+            width: 312.w,
+            height: 168.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               image: const DecorationImage(
-                image: AssetImage(
-                    // TODO: Use the App Assets file and the Screen Size Utils package as the main tool for handling responsiveness, following your team's approach....
-                    'assets/images/banner.png'), // Ensure the image exists
+                image:
+                    AssetImage(ImageAssets.banner),
                 fit: BoxFit.cover,
               ),
             ),
           ),
           // Positioned Text
           Positioned(
-            top: screenHeight * 0.03, // Adjust position
-            right: screenWidth * 0.01, // Adjust position
+            top: 25.h, // Adjust position
+            left: 210.w, // Adjust position
             child: SizedBox(
-              width: screenWidth * 0.4,
-              height: screenHeight * 0.1,
-              child: Text(
-                'Autumn Collection\n2021',
+              width: 116.w,
+              height: 93.h,
+              child: const Text(
+                AppString.bannerText,
                 style: TextStyle(
-                  fontSize: screenWidth * 0.045, // Responsive font size
+                  fontSize: 22, // Responsive font size
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),

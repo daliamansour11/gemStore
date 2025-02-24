@@ -6,11 +6,12 @@ class ImageAssets {
   static const String loginImg = 'assets/images/login_img.png';
   static const String img = 'assets/images/img.png';
   static const String interorclean = 'assets/images/interorclean.png';
-  static const String splashLogo = 'assets/images/logo.png';
+  static const String splashLogo = 'assets/images/welcome.png';
+  static const String splashShadow = 'assets/images/shadow.png';
   // TODO: Don't comment out unused code, remove it to avoid confusing other developers.
-  // static const String   onboardingLogo1= "assets/images/onboardingLogo1.png";
-  // static const String   onboardingLogo2= "assets/images/onboardingLogo2.png";
-  // static const String   onboardingLogo3= "assets/images/onboardingLogo3.png";
+  static const String   onboardingLogo1= 'assets/images/onboarding1.png';
+  static const String   onboardingLogo2= 'assets/images/onboarding2.png';
+  static const String   onboardingLogo3= 'assets/images/onboarding3.png';
   // static const String   profile_img= "assets/images/profile_img.svg";
   // static const String   profile_img1= "assets/images/profile_search.png";
   // static const String   live_background_img= "assets/images/live_background_img.png";
@@ -28,4 +29,15 @@ class ImageAssets {
   static const String checkOutIcon = '$imagePath/png/Check out 2.png';
   static const String process = '$imagePath/png/Process.png';
   static const String cartIcon = '$imagePath/png/Group.png';
+
+  //home
+static const String womenIcon='assets/icons/icon4.png';
+static const String menIcon='assets/icons/icon3.png';
+static const String accessoriesIcon='assets/icons/icon2.png';
+static const String beautyIcon='assets/icons/icon1.png';
+static const String banner= 'assets/images/banner.png';
+static const String menu= 'assets/icons/menu.png';
+
+
+
 }
