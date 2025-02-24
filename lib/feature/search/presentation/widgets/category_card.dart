@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/themeData.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 
 
