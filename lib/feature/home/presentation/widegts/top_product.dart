@@ -22,7 +22,7 @@ class TopProduct extends StatelessWidget {
           TextButton(
             onPressed: () {}, // Add navigation or function here
             child:  Text(
-             AppString.topText,
+             AppString.showAll,
               style: TextStyle(
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w500,

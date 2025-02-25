@@ -1,55 +1,63 @@
 
 class AppString{
+
+  // TODO: Follow Dart naming conventions.
   static const noRouteFound= 'No Route Found';
 
   static const createNewAccount= 'createNewAccount';
-  static const emailLabel= 'email';
+  static const Emaillabel= 'email';
   static const skip= 'skip';
-  static const logOutBtn= 'LogOut';
+  static const log_out_btn= 'LogOut';
   static const gender= 'gender';
 //app bar $ discover and search
-  static const discoverAppBar= 'Discover';
-  static const homeAppBar= 'GemStore';
-  static const wishListAppBar= 'My WishList';
-  static const cartAppBar= 'Your cart';
-  static const recentSearches= 'Recent Searches';
-  static const foundSearch= 'Found 152 Results';
-  static const descriptionStr= 'Description';
-  static const reviewsStr= 'Reviews';
-  static const discountStr= 'Discount';
-  static const applyBtn= 'Apply';
-  static const resetBtn= 'Reset';
-  static const categoryStr= 'Category';
-  static const searchStr= 'Search';
+  static const discover_appBar= 'Discover';
+  static const home_appBar= 'GemStore';
+  static const wishList_appBar= 'My WishList';
+  static const cart_appBar= 'Your cart';
+  static const recnt_searches= 'Recent Searches';
+  static const found_sreach= 'Found 152 Results';
+  static const discover_str= 'Discover';
+  static const description_str= 'Description';
+  static const reviews_str= 'Reviews';
 
 
-  static const drawerItem1SelectService= 'Select Services';
-  static const drawerItem2Product= 'Product';
-  static const drawerItem3Offers= 'Offers';
-  static const drawerItem4Appointment= 'Appointments';
-  static const drawerItem5Cart= 'Cart';
-  static const onboardingTitle1= 'change The Quilty Of Your Appearance With iShop Now';
-  static const onboardingButton1= 'Get Started';
+  static const draweritem1_select_service= 'Select Services';
+  static const draweritem2_product= 'Product';
+  static const draweritem3_offers= 'Offers';
+  static const draweritem4_appointment= 'Appointments';
+  static const draweritem5_cart= 'Cart';
+  static const onboardingtitle1= 'change The Quilty Of Your Appearance With iShop Now';
+  static const onboardingbutton1= 'Get Started';
+  static const homeAppBar = 'iShop';
 
+  static const listTittle = 'ptizza';
+  static const listSubTittle = 'price';
+  static const drawerSelectService = 'Select Services';
+  static const drawerProduct = 'Product';
+  static const drawerOffers = 'Offers';
+  static const drawerAppointment = 'Appointments';
+  static const drawerCart = 'Cart';
 
   // static const skip= "Skip";
+  static const loginText = 'Log in to your account';
   // static const userNamelabel= "UserName";
-  static const userNameHint = ' Enter UserName';
-  static const invalidUserNameHint = 'please Enter UserName';
+  static const userNamehint = ' Enter UserName';
+  static const invaliduserNamehint = 'please Enter UserName';
   // static const Emaillabel= "Email";
-  static const emailHint = 'Enter Email';
+  static const emailhint = 'Enter Email';
   static const invalidEmail = 'please enter valide EmailAdderss ';
   static const passwordLabel = 'Password';
-  static const passwordHint = 'please enter password';
-  static const invalidPassword = 'please enter valide password ';
+  static const passwordhint = 'please enter password';
+  static const invalidpassword = 'please enter valide password ';
   static const remmberMe = 'Remember me';
   static const newUser = 'New user?';
   static const or = 'OR';
-
+  static const forgetPassword = 'ForgetPassword?';
+  static const loginButton = 'Log in';
   static const createAccount = 'Create Account';
   static const dontHaveAccount = 'Don’t have an account?  ';
   static const register = 'Sign Up';
-  static const acceptTerms = 'I accept the policy and terms';
+  static const acceptterms = 'I accept the policy and terms';
   // static const  createNewAccount= "Create new account";
   static const haveProblem = 'Have a problem?';
   static const haveAccount = 'Already have an account?';
@@ -83,11 +91,7 @@ class AppString{
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
-
-
-
-
-  //splash
+//splash
   static const String getStarted = 'Get Started';
   static const String welcome = 'Welcome to GemStore!';
   static const String welcome2 = 'The home for a fashionista';
@@ -104,16 +108,11 @@ class AppString{
     'Relax and let us bring the style to you'
   ];
   //login
-  //login
   static const String logInto = 'Log into';
   static const String yourAccount = 'your account';
   static const String email = 'Email address';
   static const String password = 'Password';
   static const String forgetPassword = 'ForgetPassword';
-  static const logIn = 'LOGIN';
-  static const logInWith = 'or log in with';
-
-
 
   //home
   static const String women = 'Women';
@@ -127,5 +126,7 @@ class AppString{
   static const String bannerText2 = 'HANG OUT & PARTY';
   static const String recommendedText = 'Recommended';
   static const String topText = 'Top Collection';
+
+
 
 }

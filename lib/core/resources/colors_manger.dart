@@ -36,7 +36,7 @@ class ColorsManger {
   // NEW COLORS
 
   static const Color darkPrimary = Color(0x00000000);
-  static const Color lightPrimary = Color(0xffffffff);
+  static const Color lightPrimary = Color(0x00bebfc4);
   static const Color lightPrimary2 = Color(0xFFE9ECE9);
   static const Color cBackground1 = Color(0xff525252);
   static const Color cMainColor1 = Color(0xff737477);
@@ -47,8 +47,7 @@ class ColorsManger {
   static const Color pending = Color(0xffCF6212);
   static const Color delivered = Color(0xff009254);
   static const Color canceled = Color(0xffC50000);
-
-  //onboarding
+//onboarding
   static const Color onboardingColor = Color(0xff464447);
   //home
   static const Color iconColor = Color(0xff9D9D9D);
@@ -58,4 +57,7 @@ class ColorsManger {
   static const Color banner = Color(0xffF8F8FA);
   static const Color bannerText1 = Color(0xff777E90);
   static const Color bannerText2 = Color(0xff353945);
+}
+
+
 }
