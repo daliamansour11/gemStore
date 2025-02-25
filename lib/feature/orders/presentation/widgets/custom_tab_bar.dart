@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 
 class CustomOrdersTabBar extends StatelessWidget {
@@ -37,7 +38,7 @@ class CustomOrdersTabBar extends StatelessWidget {
           final tabController = DefaultTabController.of(context);
           var isSelected = tabController.index == index;
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 20.w),
+            padding: 8.pv + 20.ph,
             decoration: BoxDecoration(
               color: isSelected ? ColorsManger.darkGrey : Colors.transparent,
               borderRadius: BorderRadius.circular(20.r),

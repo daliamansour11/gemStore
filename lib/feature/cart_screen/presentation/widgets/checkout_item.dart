@@ -22,7 +22,9 @@ class ChceckOutItem extends StatelessWidget {
         Text(title,
             style: TextStyle(color: ColorsManger.grey, fontSize: 14.sp)),
         Text(price,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: isTotal? 20.sp : 14.sp)),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: isTotal ? 20.sp : 14.sp)),
       ],
     );
   }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gem_store/feature/orders/presentation/pages/track_order.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/customAppBar.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_button.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order_grey_box__shop.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order_item.dart';
-
+import 'track_order.dart';
+import 'widgets/customAppBar.dart';
+import 'widgets/custom_button.dart';
+import 'widgets/custom_order_grey_box__shop.dart';
+import 'widgets/custom_order_item.dart';
 
 class OrderInfoTwo extends StatelessWidget {
   const OrderInfoTwo({super.key});
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,8 @@ class OrderInfoTwo extends StatelessWidget {
                   goto: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const OrderTrack()),
+                      MaterialPageRoute(
+                          builder: (context) => const OrderTrack()),
                     );
                   },
                   image: const AssetImage(
@@ -134,7 +135,8 @@ class OrderInfoTwo extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 18),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 50, horizontal: 18),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

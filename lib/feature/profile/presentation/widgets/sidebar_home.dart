@@ -6,6 +6,8 @@ import '../pages/profile.dart';
 import 'light_dark_toggle.dart';
 
 class SidebarHomeScreen extends StatefulWidget {
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
+
   const SidebarHomeScreen({super.key});
 
   @override
@@ -40,7 +42,7 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
                       color: Color(0xFFFFE0E0),
                     ),
                     child: InkWell(
-                      onTap: (){
+                      onTap: () {
                         context.pushNamed(const ProfileScreen());
                       },
                       child: ClipOval(
@@ -74,14 +76,14 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
             ),
             const SizedBox(height: 100),
             InkWell(
-                onTap: (){
+                onTap: () {
                   context.pushNamed(const SettingsPage());
                 },
                 child: buildDrawerItem(Icons.settings, 'Setting')),
             buildDrawerItem(Icons.mail, 'Support'),
             buildDrawerItem(Icons.info, 'About us'),
             const SizedBox(height: 70),
-            LightDarkToggle(),
+            const LightDarkToggle(),
           ],
         ),
       ),

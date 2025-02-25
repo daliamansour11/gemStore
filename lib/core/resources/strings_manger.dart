@@ -7,7 +7,7 @@ class AppString{
   static const skip= 'skip';
   static const logOutBtn= 'LogOut';
   static const gender= 'gender';
-//app bar
+//app bar $ discover and search
   static const discoverAppBar= 'Discover';
   static const homeAppBar= 'GemStore';
   static const wishListAppBar= 'My WishList';
@@ -33,7 +33,6 @@ class AppString{
 
 
   // static const skip= "Skip";
-  static const loginText = 'Log in to your account';
   // static const userNamelabel= "UserName";
   static const userNameHint = ' Enter UserName';
   static const invalidUserNameHint = 'please Enter UserName';
@@ -46,8 +45,7 @@ class AppString{
   static const remmberMe = 'Remember me';
   static const newUser = 'New user?';
   static const or = 'OR';
-  static const forgetPassword = 'ForgetPassword?';
-  static const loginButton = 'Log in';
+
   static const createAccount = 'Create Account';
   static const dontHaveAccount = 'Don’t have an account?  ';
   static const register = 'Sign Up';
@@ -85,4 +83,49 @@ class AppString{
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
+
+
+
+
+  //splash
+  static const String getStarted = 'Get Started';
+  static const String welcome = 'Welcome to GemStore!';
+  static const String welcome2 = 'The home for a fashionista';
+  //onboarding
+  static const String shoppingNow= 'Shopping now';
+  static const List<String>titles=[
+    'Discover something new',
+    'Update trendy outfit',
+    'Explore your true style'
+  ];
+  static const List<String>subtitles=[
+    'Special new arrivals just for you',
+    'Favorite brands and hottest trends',
+    'Relax and let us bring the style to you'
+  ];
+  //login
+  //login
+  static const String logInto = 'Log into';
+  static const String yourAccount = 'your account';
+  static const String email = 'Email address';
+  static const String password = 'Password';
+  static const String forgetPassword = 'ForgetPassword';
+  static const logIn = 'LOGIN';
+  static const logInWith = 'or log in with';
+
+
+
+  //home
+  static const String women = 'Women';
+  static const String men = 'Men';
+  static const String accessories = 'Accessories';
+  static const String beauty = 'Beauty';
+  static const String bannerText = 'AutumnCollection2021';
+  static const String showAll = 'Show all';
+  static const String featureText = 'Feature Products';
+  static const String newCollection = 'NEW COLLECTION';
+  static const String bannerText2 = 'HANG OUT & PARTY';
+  static const String recommendedText = 'Recommended';
+  static const String topText = 'Top Collection';
+
 }

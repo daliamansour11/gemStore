@@ -16,7 +16,9 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(title: AppString.yourCart, context: context, isBackable: true, haveActions: false),
+      // TODO: Move the if conditions and BlocBuilder to a separate file and import them here.
+      appBar: customAppBar(title: AppString.yourCart, context: context, haveActions: false, isBackable: true
+      ),
       body: BlocProvider(
         create: (context) => CartScreenCubit(
             GetCartItems(CartRepositoryImpl(CartRemoteDataSourceImpl())))
@@ -24,7 +26,9 @@ class CartScreen extends StatelessWidget {
         child: BlocBuilder<CartScreenCubit, CartScreenState>(
           builder: (context, state) {
             if (state is CartLoading) {
-              return const Center(child: CircularProgressIndicator());
+              return const Center(
+                  child:
+                  CircularProgressIndicator()); // TODO: Make it adative loading indicator.
             } else if (state is CartLoaded) {
               return Column(
                 children: [

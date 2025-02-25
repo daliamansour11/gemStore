@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gem_store/feature/orders/presentation/pages/track_order.dart';
+import '../../../../../core/extentions/sizes_utils_extensions.dart';
+import '../track_order.dart';
+// TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
 class CutomGreyOrderBox extends StatelessWidget {
   String title;
@@ -7,12 +9,12 @@ class CutomGreyOrderBox extends StatelessWidget {
   AssetImage image;
   final VoidCallback? goto;
   CutomGreyOrderBox({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.image,
     this.goto,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +22,18 @@ class CutomGreyOrderBox extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xff575757),
+        color: const Color(0xff575757),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 8,
             spreadRadius: 2,
-            offset: Offset(0, 10),
+            offset: const Offset(0, 10),
           ),
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: 12.all,
         child: Row(
           children: [
             Expanded(
@@ -41,28 +43,30 @@ class CutomGreyOrderBox extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
                   ),
-                  SizedBox(height: 12),
+                  12.vs,
                   InkWell(
                     onTap: goto != null
                         ? () {
+                          // TODO:Use generateRoute with named routes. Create a separate file for screen imports and export them to the generateRoute file.
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OrderTrack()),
+                                  builder: (context) => const OrderTrack()),
                             );
                           }
                         : () {},
                     child: Text(description,
-                        style: TextStyle(color: Colors.white, fontSize: 12)),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 12)),
                   ),
                 ],
               ),
             ),
             Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Image(
                     image: image, fit: BoxFit.contain, color: Colors.white)),
           ],

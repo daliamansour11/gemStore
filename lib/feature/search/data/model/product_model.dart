@@ -8,7 +8,9 @@ class Product {
   final int review;
   final String description;
 
-  Product({required this.review, required this.oldPrice,
+  Product({
+    required this.review,
+    required this.oldPrice,
     required this.name,
     required this.id,
     required this.price,

@@ -1,109 +1,160 @@
 import 'package:flutter/material.dart';
+import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
+
+// TODO:Refactor this file into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
+// TODO: Padding needs to be responsive.
+// **TODO: Store the string in the app's strings file. This improves maintainability and simplifies future localization.
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
+    return const Scaffold(
+      backgroundColor: ColorsManger.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        padding:  EdgeInsets.symmetric(horizontal: 32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Spacer(),
-            const Text(
-              'Log into',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
-            const Text(
-              'your account',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 32),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Email address',
-                border: UnderlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 16),
-            const TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password',
-                border: UnderlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () {
-                    debugPrint('Forgot Password Clicked!');
-                  },
-                  borderRadius: BorderRadius.circular(5),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF2D201C),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 14, horizontal: 100),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
-                child: const Text(
-                  'LOG IN',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
-            const Center(
-              child: Text(
-                'or log in with',
-                style:
-                    TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
-              ),
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _buildSocialIcon('assets/images/apple.png', () {
-                  debugPrint('Apple icon clicked!');
-                }),
-                const SizedBox(width: 16),
-                _buildSocialIcon('assets/images/google.png', () {
-                  debugPrint('Google icon clicked!');
-                }),
-                const SizedBox(width: 16),
-                _buildSocialIcon('assets/images/facebook.png', () {
-                  debugPrint('Facebook icon clicked!');
-                }),
-              ],
-            ),
-            const Spacer(),
+            Spacer(),
+            _LoginHeader(),
+            SizedBox(height: 32),
+            _LoginForm(),
+            SizedBox(height: 24),
+            _LoginButton(),
+            SizedBox(height: 24),
+            _SocialLogin(),
+            Spacer(),
           ],
         ),
       ),
+    );
+  }
+}
+
+// ويدجت لعرض عنوان تسجيل الدخول
+class _LoginHeader extends StatelessWidget {
+  const _LoginHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          AppString.logInto,
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          AppString.yourAccount,
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
+  }
+}
+
+// ويدجت لحقول الإدخال الخاصة بالبريد الإلكتروني وكلمة المرور
+class _LoginForm extends StatelessWidget {
+  const _LoginForm();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const TextField(
+          decoration: InputDecoration(
+            labelText: AppString.emailLabel,
+            border: UnderlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 16),
+        const TextField(
+          obscureText: true,
+          decoration: InputDecoration(
+            labelText: AppString.passwordLabel,
+            border: UnderlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: 8),
+        Align(
+          alignment: Alignment.centerRight,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                debugPrint('Forgot Password Clicked!');
+              },
+              borderRadius: BorderRadius.circular(5),
+              child:  Padding(
+                padding:const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                child: Text(
+                  AppString.forgetPassword,
+                  style: TextStyle(color: ColorsManger.grey, fontWeight: FontWeight.w500),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ويدجت لزر تسجيل الدخول
+class _LoginButton extends StatelessWidget {
+  const _LoginButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          backgroundColor: ColorsManger.white,
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+        child: const Text(
+          AppString.logIn,
+          style: TextStyle(color: Colors.white, fontSize: 16),
+        ),
+      ),
+    );
+  }
+}
+
+// ويدجت لتسجيل الدخول باستخدام وسائل التواصل الاجتماعي
+class _SocialLogin extends StatelessWidget {
+  const _SocialLogin();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+         Center(
+          child: Text(
+            AppString.logInWith,
+            style: TextStyle(color: ColorsManger.grey, fontWeight: FontWeight.w500),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildSocialIcon('assets/images/apple.png', () {}),
+            const SizedBox(width: 16),
+            _buildSocialIcon('assets/images/google.png', () {}),
+            const SizedBox(width: 16),
+            _buildSocialIcon('assets/images/facebook.png', () {}),
+          ],
+        ),
+      ],
     );
   }
 
@@ -116,7 +167,7 @@ class LoginScreen extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.grey),
+            border: Border.all(color: ColorsManger.grey),
           ),
           padding: const EdgeInsets.all(10),
           child: Image.asset(imagePath, width: 30, height: 30),

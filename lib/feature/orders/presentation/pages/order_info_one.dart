@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:gem_store/feature/orders/presentation/pages/rate_product.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/customAppBar.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_button.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order_grey_box__shop.dart';
-import 'package:gem_store/feature/orders/presentation/pages/widgets/custom_order_item.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/extentions/sizes_utils_extensions.dart';
+import 'rate_product.dart';
+import 'widgets/customAppBar.dart';
+import 'widgets/custom_button.dart';
+import 'widgets/custom_order_grey_box__shop.dart';
+import 'widgets/custom_order_item.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
+  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
   const OrderDetailsScreen({super.key});
 
   @override
@@ -29,12 +31,12 @@ class OrderDetailsScreen extends StatelessWidget {
                     'assets/deliver.png',
                   ),
                 ),
-                const SizedBox(height: 20),
+                20.vs,
                 Container(
-                  padding: const EdgeInsets.all(10),
+                  padding: 10.all,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(

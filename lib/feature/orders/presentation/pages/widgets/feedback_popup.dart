@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+// TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
 class FeedbackPopup extends StatelessWidget {
   final VoidCallback onDonePressed;
 
-  const FeedbackPopup({Key? key, required this.onDonePressed})
-      : super(key: key);
+  const FeedbackPopup({super.key, required this.onDonePressed});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class FeedbackPopup extends StatelessWidget {
             Container(
               height: 50,
               width: 50,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xff508A7B),
                 shape: BoxShape.circle,
               ),
@@ -41,7 +41,7 @@ class FeedbackPopup extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              "Thank you for your feedback!",
+              'Thank you for your feedback!',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class FeedbackPopup extends StatelessWidget {
             ElevatedButton(
               onPressed: onDonePressed,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff343434),
+                backgroundColor: const Color(0xff343434),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -70,7 +70,7 @@ class FeedbackPopup extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
               ),
               child: const Text(
-                "Done",
+                'Done',
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
             ),

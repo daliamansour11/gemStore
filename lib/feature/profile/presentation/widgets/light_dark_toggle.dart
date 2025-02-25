@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LightDarkToggle extends StatefulWidget {
+  // TODO: Use a state management solution to handle this across the app.
+  const LightDarkToggle({super.key});
+
   @override
   _LightDarkToggleState createState() => _LightDarkToggleState();
 }
@@ -11,8 +15,8 @@ class _LightDarkToggleState extends State<LightDarkToggle> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 227,
-      height: 37,
+      width: 227.w,
+      height: 37.h,
       decoration: BoxDecoration(
         color: Colors.grey[300],
         borderRadius: BorderRadius.circular(30),
@@ -42,8 +46,8 @@ class _LightDarkToggleState extends State<LightDarkToggle> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildToggleOption(Icons.wb_sunny, "Light", true),
-              _buildToggleOption(Icons.nightlight_round, "Dark", false),
+              _buildToggleOption(Icons.wb_sunny, 'Light', true),
+              _buildToggleOption(Icons.nightlight_round, 'Dark', false),
             ],
           ),
         ],
@@ -67,15 +71,17 @@ class _LightDarkToggleState extends State<LightDarkToggle> {
             children: [
               Icon(
                 icon,
-                size: 16,
+                size: 14,
+
                 color: isLightMode == isLight ? Colors.black : Colors.grey,
               ),
               const SizedBox(width: 7),
               Text(
                 text,
+
                 style: TextStyle(
                   color: isLightMode == isLight ? Colors.black : Colors.grey,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w500,fontSize: 14
                 ),
               ),
             ],

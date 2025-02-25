@@ -1,8 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 
 class ProfileSettingScreen extends StatefulWidget {
+
   const ProfileSettingScreen({super.key});
 
   @override
@@ -15,7 +14,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Profile Setting",
+          'Profile Setting',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
@@ -39,7 +38,9 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
             child: IconButton(
               icon: const Icon(Icons.arrow_back_ios,
                   color: Colors.black, size: 20),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
         ),
@@ -65,7 +66,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                         ),
                         child: ClipOval(
                           child: Image.asset(
-                            "assets/images/تنزيل (2).jpg",
+                            'assets/images/تنزيل (2).jpg',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -93,15 +94,15 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
               ),
               const SizedBox(height: 50),
               buildTextFieldRow(
-                "First Name",
-                "Sunie",
-                "Last Name",
-                "Pham",
+                'First Name',
+                'Sunie',
+                'Last Name',
+                'Pham',
               ),
               const SizedBox(height: 20),
-              buildTextField("Email", "sunieux@gmail.com"),
+              buildTextField('Email', 'sunieux@gmail.com'),
               const SizedBox(height: 20),
-              buildTextFieldRow("Gender", "Female", "Phone", "(+1) 23456789"),
+              buildTextFieldRow('Gender', 'Female', 'Phone', '(+1) 23456789'),
               const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {},
@@ -111,10 +112,10 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   padding:
-                  const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
                 ),
                 child: const Text(
-                  "Save change",
+                  'Save change',
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
@@ -126,9 +127,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
   }
 }
 
-
 ///////TextField_profileSetting_widget/////////
-
 
 // first function
 Widget buildTextFieldRow(

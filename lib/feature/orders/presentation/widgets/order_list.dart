@@ -8,7 +8,7 @@ import 'order_card.dart';
 class OrdersList extends StatelessWidget {
   final String status;
 
-  const OrdersList({Key? key, required this.status}) : super(key: key);
+  const OrdersList({super.key, required this.status});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,8 @@ class OrdersList extends StatelessWidget {
         if (state is OrdersLoading) {
           return const Center(child: CircularProgressIndicator());
         } else if (state is OrdersLoaded) {
-          final orders = state.orders.where((order) => order.status == status).toList();
+          final orders =
+              state.orders.where((order) => order.status == status).toList();
           if (orders.isEmpty) {
             return const Center(child: Text('No orders available'));
           }

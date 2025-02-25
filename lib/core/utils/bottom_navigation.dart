@@ -1,4 +1,3 @@
-
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import '../../feature/home/presentation/pages/home_screen.dart';
@@ -25,6 +24,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     });
   }
 
+// TODO: Don't comment out unused code, remove it to avoid confusing other developers.
   // String changePageTitle(int index) {
   //   switch (index) {
   //     case 0:
@@ -78,6 +78,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           Icon(Icons.home_outlined, size: 22, color: ColorsManger.darkGrey),
           Icon(Icons.search, size: 22, color: ColorsManger.darkGrey),
           Image(
+            // TODO: Place this path in the app's assets file.
             image: AssetImage('assets/icons/order.png'),
             width: 21,
             height: 20,
@@ -90,7 +91,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
       ),
       body: IndexedStack(
         index: _curvedIndex,
-        children:const  [
+        children: const [
           HomeScreen(),
           DiscoverScreen(),
           OrdersScreen(),
