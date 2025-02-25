@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/custom_button.dart';

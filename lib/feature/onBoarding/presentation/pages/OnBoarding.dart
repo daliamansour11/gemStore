@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants/constants.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../widgets/custom_page_view.dart';
 import '../widgets/onboarding_button.dart';

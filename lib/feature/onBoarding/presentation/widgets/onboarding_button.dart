@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/bottom_navigation.dart';
 import '../../../../core/widget/Custom_button.dart';
-import '../../data/model/onboarding_data.dart';
 
 class OnBoardingButton extends StatefulWidget {
   const OnBoardingButton({super.key});

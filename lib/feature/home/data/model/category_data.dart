@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
