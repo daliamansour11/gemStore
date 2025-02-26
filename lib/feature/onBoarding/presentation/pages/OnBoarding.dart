@@ -29,12 +29,12 @@ class _OnboardingState extends State<Onboarding> {
 
   Widget _buildBackgroundGradient() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [ColorsManger.white, ColorsManger.onboardingColor],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          stops: const [0.55, 0.45],
+          stops: [0.55, 0.45],
         ),
       ),
     );
