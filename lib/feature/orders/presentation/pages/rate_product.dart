@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'shareFeedBack.dart';
-import 'widgets/customAppBar.dart';
+import 'share_feed_back.dart';
+import 'widgets/custom_app_bar.dart';
 import 'widgets/custom_button.dart';
 
 class RateProduct extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/Custom_button.dart';
-import '../../../onBoarding/presentation/pages/OnBoarding.dart';
+import '../../../onBoarding/presentation/pages/on_boarding.dart';
 
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key});

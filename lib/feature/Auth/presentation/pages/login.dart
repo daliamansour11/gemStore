@@ -129,7 +129,6 @@ class _LoginButton extends StatelessWidget {
   }
 }
 
-// ويدجت لتسجيل الدخول باستخدام وسائل التواصل الاجتماعي
 class _SocialLogin extends StatelessWidget {
   const _SocialLogin();
 

@@ -44,11 +44,13 @@ class CustomOrdersTabBar extends StatelessWidget {
               color: isSelected ? ColorsManger.darkGrey : ColorsManger.transparent,
               borderRadius: BorderRadius.circular(20.r),
             ),
-            child: Text(
-              title,
+            child: FittedBox(
+              child: Text(
+                title,
               style: TextStyle(
                 color: isSelected ? ColorsManger.white : ColorsManger.black,
                 fontSize: 13.sp,
+              ),
               ),
             ),
           );

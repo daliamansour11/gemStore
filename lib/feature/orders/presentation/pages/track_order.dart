@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/customAppBar.dart';
+import 'widgets/custom_app_bar.dart';
 
 import 'package:timeline_tile/timeline_tile.dart';
 

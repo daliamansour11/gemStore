@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import 'rate_product.dart';
-import 'widgets/customAppBar.dart';
+import 'widgets/custom_app_bar.dart';
 import 'widgets/custom_button.dart';
 import 'widgets/custom_order_grey_box__shop.dart';
 import 'widgets/custom_order_item.dart';

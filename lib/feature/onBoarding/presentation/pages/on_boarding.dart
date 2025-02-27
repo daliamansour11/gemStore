@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/resources/colors_manger.dart';
 import '../widgets/custom_page_view.dart';
 import '../widgets/onboarding_button.dart';
@@ -15,13 +16,12 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         children: [
           _buildBackgroundGradient(),
           const CustomPageView(),
-         const OnBoardingButton(),
+          const OnBoardingButton(),
         ],
       ),
     );
@@ -39,5 +39,4 @@ class _OnboardingState extends State<Onboarding> {
       ),
     );
   }
-
 }

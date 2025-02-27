@@ -1,7 +1,7 @@
  import 'package:flutter/material.dart';
 
 
-const Grey=Color(0xff464447);
+const grey=Color(0xff464447);
 
 const List<Color> colors = [
   Color(0xFFFFA500), // Orange
