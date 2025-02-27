@@ -18,7 +18,8 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorsManger.white,
       // TODO: Move the if conditions and BlocBuilder to a separate file and import them here.
-      appBar: customAppBar(title: AppString.yourCart, context: context),
+      appBar: customAppBar(title: AppString.yourCart, context: context, haveActions: false, isBackable: true
+      ),
       body: BlocProvider(
         create: (context) => CartScreenCubit(
             GetCartItems(CartRepositoryImpl(CartRemoteDataSourceImpl())))

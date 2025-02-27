@@ -1,10 +1,12 @@
+
+
 import 'package:flutter/material.dart';
 
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/utils/custom_app_bar.dart';
 import '../widgets/sidebar_home.dart';
 
 class WishlistScreenBoards extends StatefulWidget {
-  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
-
   const WishlistScreenBoards({super.key});
 
   @override
@@ -17,25 +19,7 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
     return Scaffold(
         drawer: const SidebarHomeScreen(),
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text(
-            'My Wishlist',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          actions: [
-            IconButton(
-              icon: const Padding(
-                padding: EdgeInsets.only(right: 25),
-                child: Icon(Icons.notifications_none_outlined,
-                    color: Colors.black, size: 30),
-              ),
-              onPressed: () {},
-            ),
-          ],
-        ),
+        appBar: customAppBar(title: AppString.wishListAppBar, context: context, isBackable: false, haveActions: true),
         body: ListView(
           children: const [
             WishlistItemCard(),
@@ -45,6 +29,7 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
         ));
   }
 }
+
 
 class WishlistItemCard extends StatelessWidget {
   const WishlistItemCard({super.key});
@@ -70,8 +55,8 @@ class WishlistItemCard extends StatelessWidget {
                         topLeft: Radius.circular(8),
                         bottomLeft: Radius.circular(8)),
                     child: Image.network(
-                      // TODO: Cache the image.
                       'https://s3-alpha-sig.figma.com/img/3d3c/56ec/c5dd806b206d8595e4f1e074342375c1?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rOcA7He~N7lvRmcpTSwck~rQsFfvVoBivek70s0r5s88g388BT6ddjuahqSBNX-v9L5ifNi8qppUXrgM89vRRmzhYEV47UvCEvxdfP~U0dudWbBcxpDcCZhizYw57~JttbXf~iNVegf7uSCqDrpPcs4-PvdeymkfgabYA3c7QDrlSPWR3RG1YdyNZc66HmT7W~wMMB2IXbxLC3a6mdZgOpkXmTjU7PbGAKUnMvWMalkvsmeVZI0IaMxKCQ-du4mqBd5C6aTmXACz6v0xpvoHgrNQxNBWiwlX5sF6hyj4eT7RTOPRupnHFjAy-UZr~CaivxismZCutI1XHDewKZXi~Q__',
+
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -82,7 +67,9 @@ class WishlistItemCard extends StatelessWidget {
                   height: 149,
                   child: ClipRRect(
                     child: Image.network(
+
                       'https://s3-alpha-sig.figma.com/img/3d3c/56ec/c5dd806b206d8595e4f1e074342375c1?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rOcA7He~N7lvRmcpTSwck~rQsFfvVoBivek70s0r5s88g388BT6ddjuahqSBNX-v9L5ifNi8qppUXrgM89vRRmzhYEV47UvCEvxdfP~U0dudWbBcxpDcCZhizYw57~JttbXf~iNVegf7uSCqDrpPcs4-PvdeymkfgabYA3c7QDrlSPWR3RG1YdyNZc66HmT7W~wMMB2IXbxLC3a6mdZgOpkXmTjU7PbGAKUnMvWMalkvsmeVZI0IaMxKCQ-du4mqBd5C6aTmXACz6v0xpvoHgrNQxNBWiwlX5sF6hyj4eT7RTOPRupnHFjAy-UZr~CaivxismZCutI1XHDewKZXi~Q__',
+
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -99,6 +86,7 @@ class WishlistItemCard extends StatelessWidget {
                         child: ClipRRect(
                           child: Image.network(
                             'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
+
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -110,6 +98,7 @@ class WishlistItemCard extends StatelessWidget {
                         child: ClipRRect(
                           child: Image.network(
                             'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
+
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -132,6 +121,7 @@ class WishlistItemCard extends StatelessWidget {
                           ),
                           child: Image.network(
                             'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
+
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -145,6 +135,7 @@ class WishlistItemCard extends StatelessWidget {
                               bottomRight: Radius.circular(8)),
                           child: Image.network(
                             'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
+
                             fit: BoxFit.cover,
                           ),
                         ),

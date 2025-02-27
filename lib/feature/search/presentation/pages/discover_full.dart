@@ -1,124 +1,48 @@
 import 'package:flutter/material.dart';
-import '../../../../config/theme/theme_data.dart';
-import '../../../../core/constants/constants.dart';
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
-import '../../../../core/resources/values_manger.dart';
+import '../../../../core/utils/custom_app_bar.dart';
 import '../../../profile/presentation/widgets/sidebar_home.dart';
-import '../widgets/category_card.dart';
-import '../widgets/search_textFieldWidget.dart';
+import '../widgets/discover_listview_Item.dart';
+import '../widgets/search_textfield_widget.dart';
 import 'search_page.dart';
 
+
 class DiscoverScreen extends StatefulWidget {
-  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
   const DiscoverScreen({super.key});
 
   @override
   State<DiscoverScreen> createState() => _DiscoverScreenState();
 }
-
-TextEditingController searchController = TextEditingController();
-
+ TextEditingController searchController =TextEditingController();
 class _DiscoverScreenState extends State<DiscoverScreen> {
+
+
   bool isClick = false;
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
         backgroundColor: ColorsManger.white,
-        drawer: const SidebarHomeScreen(),
-        appBar: AppBar(
-          backgroundColor: ColorsManger.white,
-          leading: InkWell(
-              onTap: () {
-                Scaffold.of(context).openDrawer();
-              },
-              child: Image.asset(
-                'assets/icons/menu.png',
-              )),
-          // assets/icons/menu.png'
-          title: Text(
-            AppString.discover_str,
-            style: appTheme().textTheme.bodyLarge,
-          ),
-          centerTitle: true,
-          actions: const [
-            Padding(
-              padding: EdgeInsets.only(right: 32.0),
-              child: ImageIcon(
-                AssetImage('assets/icons/Bell_pin.png'), // For PNG icons
-                size: 24,
-              ),
-            ),
-          ],
-        ),
+        drawer:const SidebarHomeScreen(),
+        appBar: customAppBar(title: AppString.discoverAppBar, context: context, isBackable: false, haveActions: true),
         body: Column(children: [
-          SearchTextFieldWidget(
-            label: 'search',
-            controller: searchController,
+          SearchTextFieldWidget(label: AppString.searchStr, controller: searchController,
             isReadOnly: true,
-            keyboardType: TextInputType.text,
-            onPressed: () {
-              context.pushNamed(const SearchPage());
-            },
-          ),
-          Expanded(
+            onPressed: () {context.pushNamed(const SearchPage());  }, onSubmit: (String value) {  }
+            ,
+           ),
+          const Expanded(
             child: Center(
-              child: ListView.builder(
-                itemCount: categoryType.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(left: AppPadding.p3),
-                    child: ExpansionTile(
-                      title: CategoryCard(
-                        title: categoryType[index],
-                        backgroundColor: circleColor[index],
-                        imageUrl: categoryImage[index],
-                      ),
-                      trailing: const SizedBox.shrink(),
-                      children: items[index]
-                          .map((item) => Padding(
-                                padding: const EdgeInsets.only(
-                                    left: AppPadding.p18,
-                                    right: AppPadding.p18,
-                                    bottom: AppPadding.p10),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: ColorsManger.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.9),
-                                        offset: const Offset(0, 1),
-                                        blurRadius: 1,
-                                      ),
-                                    ],
-                                  ),
-                                  child: ListTile(
-                                    title: Text("${item['name']}"),
-                                    trailing: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Text("${item['count']} items",
-                                            style: const TextStyle(
-                                                color: Colors.grey)),
-                                        const Icon(Icons.arrow_forward_ios,
-                                            size: 10, color: ColorsManger.dark),
-                                      ],
-                                    ),
-                                    onTap: () {},
-                                  ),
-                                ),
-                              ))
-                          .toList(),
-                    ),
-                  );
-                },
-              ),
+              child: DiscoverListViewItem(),
             ),
           ),
         ]));
   }
 }
+
+

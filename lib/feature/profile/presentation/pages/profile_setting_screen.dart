@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ProfileSettingScreen extends StatefulWidget {
-  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
   const ProfileSettingScreen({super.key});
 
@@ -39,7 +38,9 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
             child: IconButton(
               icon: const Icon(Icons.arrow_back_ios,
                   color: Colors.black, size: 20),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
         ),

@@ -9,7 +9,7 @@ class AppString{
   static const skip= 'skip';
   static const log_out_btn= 'LogOut';
   static const gender= 'gender';
-//app bar
+//app bar $ discover and search
   static const discover_appBar= 'Discover';
   static const home_appBar= 'GemStore';
   static const wishList_appBar= 'My WishList';
@@ -91,6 +91,7 @@ class AppString{
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
+
   static const String selectCountry = 'Select Country';
   static const String free = 'Free  ';
   static const String deliveryToHome = 'Delivery to home';
@@ -99,5 +100,43 @@ class AppString{
   static const String pending = 'Pending';
   static const String delivered = 'Delivered';
   static const String cancelled = 'Cancelled';
+
+//splash
+  static const String getStarted = 'Get Started';
+  static const String welcome = 'Welcome to GemStore!';
+  static const String welcome2 = 'The home for a fashionista';
+  //onboarding
+  static const String shoppingNow= 'Shopping now';
+  static const List<String>titles=[
+    'Discover something new',
+    'Update trendy outfit',
+    'Explore your true style'
+  ];
+  static const List<String>subtitles=[
+    'Special new arrivals just for you',
+    'Favorite brands and hottest trends',
+    'Relax and let us bring the style to you'
+  ];
+  //login
+  static const String logInto = 'Log into';
+  static const String yourAccount = 'your account';
+  static const String email = 'Email address';
+  static const String password = 'Password';
+
+  //home
+  static const String women = 'Women';
+  static const String men = 'Men';
+  static const String accessories = 'Accessories';
+  static const String beauty = 'Beauty';
+  static const String bannerText = 'AutumnCollection2021';
+  static const String showAll = 'Show all';
+  static const String featureText = 'Feature Products';
+  static const String newCollection = 'NEW COLLECTION';
+  static const String bannerText2 = 'HANG OUT & PARTY';
+  static const String recommendedText = 'Recommended';
+  static const String topText = 'Top Collection';
+
+
+
 
 }

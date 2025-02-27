@@ -19,7 +19,8 @@ class ShippingComplete extends StatelessWidget {
       create: (context) => ShippingScreenCubit(),
       child: Scaffold(
         backgroundColor: ColorsManger.white,
-        appBar: customAppBar(title: AppString.checkOut, context: context),
+        appBar: customAppBar(title: AppString.checkOut, context: context, isBackable: true, haveActions: false),
+
         body: Padding(
           padding: 20.ph,
           child: Column(

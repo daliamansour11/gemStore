@@ -1,9 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../config/theme/themeData.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/values_manger.dart';
+
+
 
 class CategoryCard extends StatelessWidget {
   final String title;
@@ -11,10 +14,9 @@ class CategoryCard extends StatelessWidget {
   final Color backgroundColor;
 
   const CategoryCard(
-      {super.key,
-      required this.title,
-      required this.imageUrl,
-      required this.backgroundColor});
+      {super.key, required this.title,
+        required this.imageUrl,
+        required this.backgroundColor});
 
   cardColor(String categoryName) {
     switch (categoryName) {
@@ -36,81 +38,70 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: Container(
-      height: 126.h,
-      width: 340,
-      decoration: BoxDecoration(
-        color: cardColor(title),
-        borderRadius: BorderRadius.circular(AppSize.s15),
-      ),
-      // padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-            // Allow text to take available space
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: AppPadding.p20,
-              ),
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: FontSize.s16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+          height: 126.h,
+          // width: 340,
+          decoration: BoxDecoration(
+            color: cardColor(title),
+            borderRadius: BorderRadius.circular(AppSize.s15),
           ),
-          Stack(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: AppPadding.p55,
-                    right: AppPadding.p20,
-                    top: AppPadding.p10,
-                    bottom: AppPadding.p11),
-                child: Container(
-                  width: 105,
-                  height: 105,
-                  decoration: BoxDecoration(
-                    color: backgroundColor.withOpacity(0.5),
-                    shape: BoxShape.circle,
+              Flexible(
+                fit: FlexFit.loose,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: AppPadding.p18, ),
+                  child: Text(
+                    title,
+                    style:appTheme().textTheme.bodySmall,
+
+
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: AppPadding.p72,
-                    right: AppPadding.p34,
-                    top: AppPadding.p25,
-                    bottom: AppPadding.p26),
-                child: Container(
-                  width: 75,
-                  height: 75,
-                  decoration: BoxDecoration(
-                    color: backgroundColor.withOpacity(0.5),
-                    shape: BoxShape.circle,
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: AppPadding.p51, right: AppPadding.p20, top: AppPadding.p10, bottom: AppPadding.p11),
+                    child: Container(
+                      width: 105.w,
+                      height: 105.h,
+                      decoration: BoxDecoration(
+                        color: backgroundColor.withOpacity(0.5),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: AppPadding.p72, right: AppPadding.p34, top: AppPadding.p25, bottom: AppPadding.p26),
+                    child: Container(
+                      width: 75.w,
+                      height: 75.h
+                      ,
+                      decoration: BoxDecoration(
+                        color: backgroundColor.withOpacity(0.5),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 50,
+                    // right: 10,
+                    child: SizedBox(
+                      width: 194.w,
+                      height: 129.h,
+                      child: Image.network(
+                        imageUrl,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  )
+                ],
               ),
-              Positioned(
-                left: 50,
-                // right: 10,
-                child: SizedBox(
-                  width: 194,
-                  height: 129,
-                  child: Image.network(
-                    imageUrl,
-                    fit: BoxFit.contain, // Makes sure image scales well
-                  ),
-                ),
-              )
             ],
           ),
-        ],
-      ),
-    ));
+
+        ));
   }
 }
 
@@ -124,7 +115,7 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.only(left: AppPadding.p31, right: AppPadding.p31),
+      const EdgeInsets.only(left: AppPadding.p31, right: AppPadding.p31),
       child: Card(
         child: ListTile(
           title: Text(name, style: const TextStyle(fontSize: 16)),
@@ -134,8 +125,7 @@ class CategoryItem extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.arrow_back_ios))
+              IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back_ios))
             ],
           ),
           onTap: () {},
