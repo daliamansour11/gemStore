@@ -47,6 +47,9 @@ class ColorsManger {
   static const Color pending = Color(0xffCF6212);
   static const Color delivered = Color(0xff009254);
   static const Color canceled = Color(0xffC50000);
+  
+  static const Color transparent = Colors.transparent;
+
 //onboarding
   static const Color onboardingColor = Color(0xff464447);
   //home
@@ -57,6 +60,7 @@ class ColorsManger {
   static const Color banner = Color(0xffF8F8FA);
   static const Color bannerText1 = Color(0xff777E90);
   static const Color bannerText2 = Color(0xff353945);
+
 }
 
 

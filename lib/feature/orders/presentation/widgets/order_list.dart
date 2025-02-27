@@ -15,7 +15,7 @@ class OrdersList extends StatelessWidget {
     return BlocBuilder<OrdersCubit, OrdersState>(
       builder: (context, state) {
         if (state is OrdersLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator.adaptive());
         } else if (state is OrdersLoaded) {
           final orders =
               state.orders.where((order) => order.status == status).toList();

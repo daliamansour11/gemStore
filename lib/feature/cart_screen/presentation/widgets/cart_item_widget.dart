@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../domain/entities/cart_item.dart';
 import 'check_box_widget.dart';
@@ -17,13 +18,13 @@ class CartItemWidget extends StatelessWidget {
     return Container(
       height: 100.h,
       // TODO: Try to use ScreenUtilExtensions, I added it in extensions folder.
-      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      margin: 16.ph + 8.pv,
       decoration: BoxDecoration(
         color: ColorsManger.white,
         borderRadius: BorderRadius.circular(16.r),
         boxShadow: [
           BoxShadow(
-            color: ColorsManger.grey.withOpacity(0.1),
+            color: ColorsManger.grey.withOpacity(0.9),
             blurRadius: 8,
             spreadRadius: 2,
             offset: const Offset(0, 2),

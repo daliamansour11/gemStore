@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
@@ -17,20 +18,22 @@ class ShippingComplete extends StatelessWidget {
     return BlocProvider(
       create: (context) => ShippingScreenCubit(),
       child: Scaffold(
+        backgroundColor: ColorsManger.white,
         appBar: customAppBar(title: AppString.checkOut, context: context, isBackable: true, haveActions: false),
+
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.h),
+          padding: 20.ph,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.h),
+                padding: 50.ph + 30.pv,
                 child: Image.asset(ImageAssets.process),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 32.w),
+                padding: 32.pl,
                 child: Text(
-                  'Order Completed',
+                  AppString.orderCompleted,
                   style: TextStyle(
                     fontSize: 25.sp,
                     fontWeight: FontWeight.bold,
@@ -38,10 +41,10 @@ class ShippingComplete extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 80.h),
+              SizedBox(height: 60.h),
               Center(child: Image.asset(ImageAssets.cartIcon)),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 55.h),
+                padding: 55.pv + 32.ph,
                 child: Text(
                   AppString.thanks,
                   textAlign: TextAlign.center,
@@ -53,8 +56,7 @@ class ShippingComplete extends StatelessWidget {
               ),
               CustomButton(
                 title: AppString.continueShopping,
-                onPressed: () {
-                },
+                onPressed: () {},
               ),
             ],
           ),

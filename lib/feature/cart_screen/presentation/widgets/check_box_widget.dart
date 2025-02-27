@@ -15,7 +15,7 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 16.h,
+      top: 15.h,
       right: 20.w,
       child: GestureDetector(
         onTap: () => setState(() => isChecked = !isChecked),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../cart_screen/presentation/widgets/custom_button.dart';
 import '../pages/shipping_complete.dart';
@@ -48,15 +49,18 @@ class _ShippingFormState extends State<ShippingForm> {
           CustomTextField(
               label: AppString.streetName,
               controller: streetController,
-              isRequired: true),
+              isRequired: true,
+              keyboardType: TextInputType.text),
           CustomTextField(
               label: AppString.city,
               controller: cityController,
-              isRequired: true),
+              isRequired: true,
+              keyboardType: TextInputType.text),
           CustomTextField(
               label: AppString.state,
               controller: stateController,
-              isRequired: true),
+              isRequired: true,
+              keyboardType: TextInputType.text),
           CustomTextField(
               label: AppString.zipCode,
               controller: zipCodeController,
@@ -73,10 +77,7 @@ class _ShippingFormState extends State<ShippingForm> {
           CustomButton(
             onPressed: () {
               // if (_formKey.currentState?.validate() ?? false) {}
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ShippingComplete()));
+              context.pushNamed(const ShippingComplete());
             },
             title: AppString.continueToPayment,
           ),
