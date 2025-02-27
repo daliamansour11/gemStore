@@ -91,4 +91,13 @@ class AppString{
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
+  static const String selectCountry = 'Select Country';
+  static const String free = 'Free  ';
+  static const String deliveryToHome = 'Delivery to home';
+  static const String orderCompleted = 'Order Completed';
+  static const String firstStep = 'STEP 1\n';
+  static const String pending = 'Pending';
+  static const String delivered = 'Delivered';
+  static const String cancelled = 'Cancelled';
+
 }

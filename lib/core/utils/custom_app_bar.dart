@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../resources/assets_manger.dart';
 import '../resources/colors_manger.dart';
+import '../widget/svg_displayer.dart';
 
 PreferredSizeWidget? customAppBar({
   required String title,
@@ -19,7 +21,7 @@ PreferredSizeWidget? customAppBar({
             onTap: () => Navigator.pop(context),
             child:
                 // TODO: Try to use here SvgDisplayer, I added it in the core/widgets
-                SvgPicture.asset(ImageAssets.backIcon, width: 32, height: 32),
+                SvgDisplayer(assetName: ImageAssets.backIcon, width: 32.w, height: 32.h),
           )
         : IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
     centerTitle: centerTitle,

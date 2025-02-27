@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import 'circul_icon.dart';
@@ -18,7 +19,7 @@ class _ShippingMethodState extends State<ShippingMethod> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: 12.all,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(color: ColorsManger.lightGrey),
@@ -34,7 +35,7 @@ class _ShippingMethodState extends State<ShippingMethod> {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: 'Free  ',
+                      text: AppString.free,
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
@@ -42,7 +43,7 @@ class _ShippingMethodState extends State<ShippingMethod> {
                       ),
                     ),
                     TextSpan(
-                      text: 'Delivery to home',
+                      text: AppString.deliveryToHome,
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: ColorsManger.grey,

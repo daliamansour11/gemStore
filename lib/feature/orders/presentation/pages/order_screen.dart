@@ -19,14 +19,14 @@ class OrdersScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: ColorsManger.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(118.h),
+          preferredSize: Size.fromHeight(120.h),
           child: Column(
             children: [
               customAppBarWidget(
                   context: context,
                   title: AppString.myOrders,
                   isBackable: false),
-              const CustomOrdersTabBar(),
+              const Expanded(child: CustomOrdersTabBar()),
             ],
           ),
         ),
@@ -34,9 +34,9 @@ class OrdersScreen extends StatelessWidget {
           create: (context) => OrdersCubit()..fetchOrders(),
           child: const TabBarView(
             children: [
-              OrdersList(status: 'Pending'),
-              OrdersList(status: 'Delivered'),
-              OrdersList(status: 'Cancelled'),
+              OrdersList(status: AppString.pending),
+              OrdersList(status: AppString.delivered),
+              OrdersList(status: AppString.cancelled),
             ],
           ),
         ),

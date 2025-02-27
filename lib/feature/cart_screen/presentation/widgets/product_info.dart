@@ -11,17 +11,17 @@ class ProductInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      spacing: 13.w,
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(16.r),
           child: Image.asset(item.image, fit: BoxFit.cover),
         ),
-        SizedBox(width: 13.w),
         Expanded(
           child: Column(
+            spacing: 16.h,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 16.h),
               Text(
                 item.title,
                 style: TextStyle(
@@ -30,12 +30,10 @@ class ProductInfo extends StatelessWidget {
                   fontSize: 13.sp,
                 ),
               ),
-              SizedBox(height: 13.h),
               Text(
                 '\$${item.price}',
                 style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w700),
               ),
-              SizedBox(height: 13.h),
               Text(
                 'Size: ${item.size}  |  Color: ${item.color}',
                 style: TextStyle(

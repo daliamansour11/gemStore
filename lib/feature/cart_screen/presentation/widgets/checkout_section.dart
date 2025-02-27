@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/extentions.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
@@ -23,7 +24,7 @@ class CheckoutSection extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: ColorsManger.grey.withOpacity(0.1),
             blurRadius: 8,
             spreadRadius: 2,
             offset: const Offset(0, -2),
@@ -32,29 +33,17 @@ class CheckoutSection extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        spacing: 8.h,
         children: [
           ChceckOutItem(title: AppString.productPrice, price: '\$110'),
-          SizedBox(height: 8.h),
           Divider(color: ColorsManger.grey),
-          SizedBox(height: 8.h),
-          ChceckOutItem(
-              title: AppString.shipping, price: AppString.freeShipping),
-          SizedBox(height: 12.h),
+          ChceckOutItem(title: AppString.shipping, price: AppString.freeShipping),
           Divider(color: ColorsManger.grey),
-          SizedBox(height: 12.h),
-          ChceckOutItem(
-              title: AppString.subtotal, price: '\$110', isTotal: true),
-          const SizedBox(height: 16),
+          ChceckOutItem(title: AppString.subtotal, price: '\$110', isTotal: true),
           CustomButton(
             //! TODO: Remember to use onGenerateRoute in main.dart
             // TODO:Did not found it !
-            // onPressed: () => Navigator.pushNamed(context, Routes.shippingScreen),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ShippingScreen()),
-              );
-            },
+            onPressed: () => context.pushNamed(const ShippingScreen()),
             title: AppString.proceedToCheckout,
           ),
         ],

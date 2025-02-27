@@ -47,4 +47,6 @@ class ColorsManger {
   static const Color pending = Color(0xffCF6212);
   static const Color delivered = Color(0xff009254);
   static const Color canceled = Color(0xffC50000);
+  
+  static const Color transparent = Colors.transparent;
 }
