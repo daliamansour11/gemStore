@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/extentions/extentions.dart';
+import '../../../../core/resources/assets_manger.dart';
+import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/resources/values_manger.dart';
+import '../../../../core/utils/custom_app_bar.dart';
+import '../widgets/build_textfielf_row.dart';
+import 'profile.dart';
 
 class ProfileSettingScreen extends StatefulWidget {
-
   const ProfileSettingScreen({super.key});
 
   @override
@@ -12,79 +20,49 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Profile Setting',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        leading: Container(
-          margin: const EdgeInsets.all(10),
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 3,
-                spreadRadius: 1,
-                offset: Offset(2, 4),
-              ),
-            ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 4, bottom: 4),
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back_ios,
-                  color: Colors.black, size: 20),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
-        ),
-      ),
-      backgroundColor: Colors.white,
+      appBar: customAppBar(title: AppString.profileSettings, context: context,
+          isBackable: true, haveActions: false),
+
+      backgroundColor: ColorsManger.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: AppPadding.p20.h),
           child: Column(
             children: [
               Align(
                 alignment: Alignment.topCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.only(top: AppPadding.p20.h),
                   child: Stack(
                     children: [
                       Container(
-                        width: 100,
-                        height: 100,
+                        width: 100.w,
+                        height: 100.h,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xFFFFE0E0),
+                          color: ColorsManger.white,
                         ),
                         child: ClipOval(
                           child: Image.asset(
-                            'assets/images/تنزيل (2).jpg',
+                            ImageAssets.onboardingLogo1,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
                       Positioned(
                         bottom: 0,
-                        right: 5,
+                        right: 5.w,
                         child: Container(
-                          width: 32,
-                          height: 32,
+                          width: 32.w,
+                          height: 32.h,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.black,
+                            color: ColorsManger.black,
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.camera_alt_outlined,
-                            color: Colors.white,
-                            size: 16,
+                            color: ColorsManger.white,
+                            size: 16.sp,
                           ),
                         ),
                       ),
@@ -92,31 +70,36 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 50),
+              SizedBox(height: 50.h),
               buildTextFieldRow(
                 'First Name',
                 'Sunie',
                 'Last Name',
                 'Pham',
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               buildTextField('Email', 'sunieux@gmail.com'),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               buildTextFieldRow('Gender', 'Female', 'Phone', '(+1) 23456789'),
-              const SizedBox(height: 40),
+              SizedBox(height: 40.h),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: ColorsManger.black,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(30.r),
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                  padding: EdgeInsets.symmetric(
+                      vertical: AppPadding.p15.w, horizontal: AppPadding.p50.h),
                 ),
-                child: const Text(
-                  'Save change',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                child: InkWell(
+                  onTap: () {
+                    context.pushNamed(const ProfileScreen());
+                  },
+                  child: const Text(
+                    'Save change',
+                    style: TextStyle(color: ColorsManger.white, fontSize: 16),
+                  ),
                 ),
               ),
             ],
@@ -125,49 +108,4 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
       ),
     );
   }
-}
-
-///////TextField_profileSetting_widget/////////
-
-// first function
-Widget buildTextFieldRow(
-    String label1, String value1, String label2, String value2) {
-  return Row(
-    children: [
-      Expanded(child: buildTextField(label1, value1)),
-      const SizedBox(width: 15),
-      Expanded(child: buildTextField(label2, value2)),
-    ],
-  );
-}
-
-// second function
-Widget buildTextField(String label, String value) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        label,
-        style: const TextStyle(
-          color: Colors.grey,
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-      TextFormField(
-        initialValue: value,
-        decoration: const InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.grey,
-              width: 1,
-            ),
-          ),
-        ),
-      ),
-    ],
-  );
 }

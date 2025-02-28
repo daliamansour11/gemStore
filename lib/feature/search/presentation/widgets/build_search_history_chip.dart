@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gem_store/feature/search/presentation/widgets/search_textfield_widget.dart';
 
 import '../../../../config/theme/themeData.dart';
+import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
@@ -53,7 +54,7 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
               alignment: Alignment.centerLeft,
 
               child: Padding(
-                padding: const EdgeInsets.only(left: AppPadding.p33,top: AppPadding.p24,bottom: AppPadding.p22),
+                padding: const EdgeInsets.only(left: AppPadding.p33,top: AppPadding.p47,bottom: AppPadding.p22),
                 child: Container(
                   width: 32,
                   height: 32,
@@ -95,12 +96,12 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: AppPadding.p28,bottom: AppPadding.p28,left: AppPadding.p33),
-              child: Text(AppString.recentSearches,style: appTheme().textTheme.titleLarge,),
+              child: Text(AppString.recntSearches,style: appTheme().textTheme.titleLarge,),
             ),
             // if (recentSearches.isNotEmpty)
             Padding(padding:const EdgeInsets.only(top: AppPadding.p28,bottom: AppPadding.p28,right: AppPadding.p28,),
 
-              child: InkWell(child: Image.asset('assets/icons/Trash.png',),
+              child: InkWell(child: Image.asset(ImageAssets.trashIcon,),
                 onTap: (){
                   _clearAllSearches();
                 },)

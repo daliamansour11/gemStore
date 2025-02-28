@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gem_store/feature/profile/presentation/widgets/toggel_option.dart';
+import '../../../../core/resources/colors_manger.dart';
 
 class LightDarkToggle extends StatefulWidget {
-  // TODO: Use a state management solution to handle this across the app.
   const LightDarkToggle({super.key});
 
   @override
@@ -19,23 +20,23 @@ class _LightDarkToggleState extends State<LightDarkToggle> {
       height: 37.h,
       decoration: BoxDecoration(
         color: Colors.grey[300],
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(30.r),
       ),
       child: Stack(
         children: [
           AnimatedPositioned(
             duration: const Duration(milliseconds: 300),
             left: isLightMode ? 5 : 114,
-            top: 3,
+            top: 3.h,
             child: Container(
-              width: 107.5,
-              height: 30,
+              width: 107.5.w,
+              height: 30.h,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
+                color: ColorsManger.white,
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: const [
                   BoxShadow(
-                    color: Colors.black26,
+                    color: ColorsManger.black,
                     blurRadius: 4,
                     offset: Offset(2, 2),
                   ),
@@ -46,47 +47,29 @@ class _LightDarkToggleState extends State<LightDarkToggle> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildToggleOption(Icons.wb_sunny, 'Light', true),
-              _buildToggleOption(Icons.nightlight_round, 'Dark', false),
+              ToggleOptionWidget(
+                icon: Icons.wb_sunny,
+                text: 'Light',
+                isLight: true,
+                onToggle: (isLight) {
+                  setState(() {
+                    isLightMode = isLight;
+                  });
+                },
+              ),
+              ToggleOptionWidget(
+                icon: Icons.wb_sunny,
+                text: 'Dark',
+                isLight: false,
+                onToggle: (isLight) {
+                  setState(() {
+                    isLightMode = isLight;
+                  });
+                },
+              ),
             ],
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildToggleOption(IconData icon, String text, bool isLight) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: () {
-          setState(() {
-            isLightMode = isLight;
-          });
-        },
-        child: Container(
-          alignment: Alignment.center,
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                size: 14,
-
-                color: isLightMode == isLight ? Colors.black : Colors.grey,
-              ),
-              const SizedBox(width: 7),
-              Text(
-                text,
-
-                style: TextStyle(
-                  color: isLightMode == isLight ? Colors.black : Colors.grey,
-                  fontWeight: FontWeight.w500,fontSize: 14
-                ),
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }

@@ -15,7 +15,11 @@ PreferredSizeWidget? customAppBar({
 }) {
   return AppBar(
     backgroundColor: ColorsManger.white,
-    title: Text(title),
+    title: Text(title, style:const TextStyle(
+      color: Colors.black,
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+    ),),
     leading: isBackable
         ? InkWell(
             onTap: () => Navigator.pop(context),
@@ -39,7 +43,7 @@ PreferredSizeWidget? customAppBar({
 
           },
           child:const ImageIcon(
-            AssetImage(ImageAssets.notificationIcon), // For PNG icons
+            AssetImage(ImageAssets.notificationIcon),
             size: AppSize.s24,
           ),
         ),

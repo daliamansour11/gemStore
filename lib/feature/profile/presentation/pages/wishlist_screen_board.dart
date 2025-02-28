@@ -1,10 +1,15 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
+import '../../../orders/presentation/pages/widgets/customAppBar.dart';
+
 import '../widgets/sidebar_home.dart';
+import '../widgets/wishlist_item_card.dart';
 
 class WishlistScreenBoards extends StatefulWidget {
   const WishlistScreenBoards({super.key});
@@ -18,8 +23,9 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: const SidebarHomeScreen(),
-        backgroundColor: Colors.white,
-        appBar: customAppBar(title: AppString.wishListAppBar, context: context, isBackable: false, haveActions: true),
+        backgroundColor: ColorsManger.lightWhiteColor,
+        appBar: customAppBar(title: AppString.wishListAppBar, context: context,  isBackable: false, haveActions: true),
+
         body: ListView(
           children: const [
             WishlistItemCard(),
@@ -31,137 +37,3 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
 }
 
 
-class WishlistItemCard extends StatelessWidget {
-  const WishlistItemCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.white, width: 2),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 106,
-                  height: 149,
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(8),
-                        bottomLeft: Radius.circular(8)),
-                    child: Image.network(
-                      'https://s3-alpha-sig.figma.com/img/3d3c/56ec/c5dd806b206d8595e4f1e074342375c1?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rOcA7He~N7lvRmcpTSwck~rQsFfvVoBivek70s0r5s88g388BT6ddjuahqSBNX-v9L5ifNi8qppUXrgM89vRRmzhYEV47UvCEvxdfP~U0dudWbBcxpDcCZhizYw57~JttbXf~iNVegf7uSCqDrpPcs4-PvdeymkfgabYA3c7QDrlSPWR3RG1YdyNZc66HmT7W~wMMB2IXbxLC3a6mdZgOpkXmTjU7PbGAKUnMvWMalkvsmeVZI0IaMxKCQ-du4mqBd5C6aTmXACz6v0xpvoHgrNQxNBWiwlX5sF6hyj4eT7RTOPRupnHFjAy-UZr~CaivxismZCutI1XHDewKZXi~Q__',
-
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                SizedBox(
-                  width: 106,
-                  height: 149,
-                  child: ClipRRect(
-                    child: Image.network(
-
-                      'https://s3-alpha-sig.figma.com/img/3d3c/56ec/c5dd806b206d8595e4f1e074342375c1?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rOcA7He~N7lvRmcpTSwck~rQsFfvVoBivek70s0r5s88g388BT6ddjuahqSBNX-v9L5ifNi8qppUXrgM89vRRmzhYEV47UvCEvxdfP~U0dudWbBcxpDcCZhizYw57~JttbXf~iNVegf7uSCqDrpPcs4-PvdeymkfgabYA3c7QDrlSPWR3RG1YdyNZc66HmT7W~wMMB2IXbxLC3a6mdZgOpkXmTjU7PbGAKUnMvWMalkvsmeVZI0IaMxKCQ-du4mqBd5C6aTmXACz6v0xpvoHgrNQxNBWiwlX5sF6hyj4eT7RTOPRupnHFjAy-UZr~CaivxismZCutI1XHDewKZXi~Q__',
-
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                Container(
-                  height: 149,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 53,
-                        height: 85,
-                        child: ClipRRect(
-                          child: Image.network(
-                            'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
-
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 5),
-                      SizedBox(
-                        width: 53,
-                        height: 59,
-                        child: ClipRRect(
-                          child: Image.network(
-                            'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
-
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 5),
-                Container(
-                  height: 149,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 53,
-                        height: 59,
-                        child: ClipRRect(
-                          borderRadius: const BorderRadius.only(
-                            topRight: Radius.circular(8),
-                          ),
-                          child: Image.network(
-                            'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
-
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 5),
-                      SizedBox(
-                        width: 53,
-                        height: 85,
-                        child: ClipRRect(
-                          borderRadius: const BorderRadius.only(
-                              bottomRight: Radius.circular(8)),
-                          child: Image.network(
-                            'https://s3-alpha-sig.figma.com/img/b03a/5128/3ea25298d27460a3a2580d0e87ab3c5d?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=kscLBfbgy~CB6c094R-Pdfy-FVqRuLuoO4lca3NKb8D0ioIrDLy8k5yrlC~FPN-iLWEUu7fE6o3hsNH44tPc25T64yR-dLr-QpnFglkj-fivARHrMcI-vK~npvvk8dRJh56pAD1mFxaEmjAHhERJfQlXqauItTUmjs8qlSgJH9IFaaSSAHNRjOF8LOT6JWMKCFkCXhUwg1Jq9DU01zbFYPpdzk7ZNKNPX2fw5DVjjgGcuEZfEf9dtkxe0W1QaVSBxv0w5LgVRz0yXVxRkt86y8kmeTjaE8aHmPT5p0U-zVOEVab8BDv4y7-HZWZJAlVnj4wXrm2juqXY10GDW4sIKQ__',
-
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 8, right: 8),
-          child: Card(
-            color: Colors.white,
-            child: ListTile(
-              title: Text(
-                'Going out outfits',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              trailing: Icon(Icons.keyboard_arrow_right, color: Colors.grey),
-              subtitle: Text('36 items', style: TextStyle(color: Colors.grey)),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}

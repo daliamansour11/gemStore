@@ -7,13 +7,13 @@ class ImageAssets {
   static const String loginImg = 'assets/images/login_img.png';
   static const String img = 'assets/images/img.png';
   static const String interorclean = 'assets/images/interorclean.png';
-  static const String splashLogo = 'assets/images/logo.png';
+  static const String splashLogo = 'assets/images/welcome.png';
   static const String splashShadow = 'assets/images/shadow.png';
 
   static const String   onboardingLogo1= 'assets/images/onboarding1.png';
   static const String   onboardingLogo2= 'assets/images/onboarding2.png';
   static const String   onboardingLogo3= 'assets/images/onboarding3.png';
-
+  static const String girlImg = 'assets/images/تنزيل (2).jpg';
 
   // static const String   onboardingLogo1= "assets/images/onboardingLogo1.png";
   // static const String   onboardingLogo2= "assets/images/onboardingLogo2.png";
