@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../config/theme/theme_data.dart';
+
+import '../../../../config/theme/themeData.dart';
+
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
@@ -51,10 +53,12 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
+
                 padding: const EdgeInsets.only(
                     left: AppPadding.p33,
                     top: AppPadding.p24,
                     bottom: AppPadding.p22),
+
                 child: Container(
                   width: 32,
                   height: 32,
@@ -99,6 +103,15 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
+              padding: const EdgeInsets.only(top: AppPadding.p28,bottom: AppPadding.p28,left: AppPadding.p33),
+              child: Text(AppString.recntSearches,style: appTheme().textTheme.titleLarge,),
+            ),
+            // if (recentSearches.isNotEmpty)
+            Padding(padding:const EdgeInsets.only(top: AppPadding.p28,bottom: AppPadding.p28,right: AppPadding.p28,),
+
+              child: InkWell(child: Image.asset(ImageAssets.trashIcon,),
+                onTap: (){
+
               padding: const EdgeInsets.only(
                   top: AppPadding.p28,
                   bottom: AppPadding.p28,
@@ -120,6 +133,7 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
                   'assets/icons/Trash.png',
                 ),
                 onTap: () {
+
                   _clearAllSearches();
                 },
               ),

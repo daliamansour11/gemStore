@@ -12,15 +12,18 @@ class AppString{
   static const homeAppBar= 'GemStore';
   static const wishListAppBar= 'My WishList';
   static const cartAppBar= 'Your cart';
-  static const recentSearches= 'Recent Searches';
+  
+  static const recntSearches= 'Recent Searches';
   static const foundSearch= 'Found 152 Results';
+  static const discoverStr= 'Discover';
   static const descriptionStr= 'Description';
   static const reviewsStr= 'Reviews';
-  static const discountStr= 'Discount';
-  static const applyBtn= 'Apply';
-  static const resetBtn= 'Reset';
-  static const categoryStr= 'Category';
   static const searchStr= 'Search';
+  static const discountStr= 'Discount';
+  static const categoryStr= 'Category';
+  static const resetBtn= 'Reset';
+  static const applyBtn= 'Apply';
+
 
 
   static const drawerItem1SelectService= 'Select Services';
@@ -45,6 +48,7 @@ class AppString{
   static const remmberMe = 'Remember me';
   static const newUser = 'New user?';
   static const or = 'OR';
+  static const loginButton = 'Log in';
 
   static const createAccount = 'Create Account';
   static const dontHaveAccount = 'Don’t have an account?  ';
@@ -103,13 +107,20 @@ class AppString{
     'Favorite brands and hottest trends',
     'Relax and let us bring the style to you'
   ];
+
   //login
-  //login
+
   static const String logInto = 'Log into';
   static const String yourAccount = 'your account';
   static const String email = 'Email address';
   static const String password = 'Password';
   static const String forgetPassword = 'ForgetPassword';
+
+  static const logOut= 'LogOut';
+
+
+  static const String profileSettings = 'Profile Setting';
+
   static const logIn = 'LOGIN';
   static const logInWith = 'or log in with';
 

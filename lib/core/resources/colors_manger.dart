@@ -61,3 +61,4 @@ class ColorsManger {
   static const Color bannerText1 = Color(0xff777E90);
   static const Color bannerText2 = Color(0xff353945);
 }
+

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extentions/extentions.dart';
-import '../../../Setting/presentation/pages/setting.dart';
+import '../../../../core/resources/assets_manger.dart';
+import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/values_manger.dart';
 import '../pages/profile.dart';
+import '../pages/profile_setting_screen.dart';
+import 'build_drawer_item.dart';
 import 'light_dark_toggle.dart';
 
 class SidebarHomeScreen extends StatefulWidget {
-  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
-
   const SidebarHomeScreen({super.key});
 
   @override
@@ -18,55 +20,55 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: 293,
-      shape: const RoundedRectangleBorder(
+      width: 293.w,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(40),
-          bottomRight: Radius.circular(40),
+          topRight: Radius.circular(40.r),
+          bottomRight: Radius.circular(40.r),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 20),
+        padding: EdgeInsets.only(left: AppPadding.p20.w),
         child: Column(
           children: [
-            const SizedBox(height: 90),
+            SizedBox(height: 90.h),
             Padding(
-              padding: const EdgeInsets.only(left: 35),
+              padding: EdgeInsets.only(left: AppPadding.p34.w),
               child: Row(
                 children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xFFFFE0E0),
-                    ),
-                    child: InkWell(
-                      onTap: () {
-                        context.pushNamed(const ProfileScreen());
-                      },
+                  InkWell(
+                    onTap: (){
+                      context.pushNamed(const ProfileScreen());
+                    },
+                    child: Container(
+                      width: 60.w,
+                      height: 60.h,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: ColorsManger.white,
+                      ),
                       child: ClipOval(
                         child: Image.asset(
-                          'assets/images/تنزيل (2).jpg',
+                          ImageAssets.onboardingLogo1,
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 20),
-                  const Column(
+                  SizedBox(width: 20.w),
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Sunie Pham',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                            fontSize: 18.sp, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'sunieux@gmail.com',
                         style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
+                          color: ColorsManger.black,
+                          fontSize: 12.sp,
                         ),
                       ),
                     ],
@@ -74,31 +76,17 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 100),
-            InkWell(
-                onTap: () {
-                  context.pushNamed(const SettingsPage());
-                },
-                child: buildDrawerItem(Icons.settings, 'Setting')),
-            buildDrawerItem(Icons.mail, 'Support'),
-            buildDrawerItem(Icons.info, 'About us'),
-            const SizedBox(height: 70),
+            SizedBox(height: 100.h),
+            buildDrawerItem(Icons.settings, 'Settings', () {
+              context.pushNamed(const ProfileSettingScreen());
+            }),
+            buildDrawerItem(Icons.mail, 'Support', () {}),
+            buildDrawerItem(Icons.info, 'About us', () {}),
+            SizedBox(height: 70.h),
             const LightDarkToggle(),
           ],
         ),
       ),
     );
   }
-}
-///// Sidebar_item _Widget////////
-
-Widget buildDrawerItem(IconData icon, String title) {
-  return ListTile(
-    leading: Icon(icon, color: Colors.grey[600]),
-    title: Text(
-      title,
-      style: TextStyle(color: Colors.grey[600], fontWeight: FontWeight.w500),
-    ),
-    onTap: () {},
-  );
 }
