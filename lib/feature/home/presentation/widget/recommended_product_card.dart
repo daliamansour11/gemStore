@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../data/model/product_model.dart';
-
 class RecommendedProductCard extends StatelessWidget {
  final ProductModel product;
   const RecommendedProductCard({super.key,required this.product});

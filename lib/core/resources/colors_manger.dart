@@ -15,7 +15,7 @@ class ColorsManger {
   static const Color category4Color = Color(0xffB9AEB2);
   static const Color searchIconColor = Color(0x7d33302e);
   static const Color rentSearchColors = Color(0xff33302E);
-  static const Color SearchHistoryColors = Color(0xff0e0e0e);
+  static const Color searchHistoryColors = Color(0xff0e0e0e);
   static const Color ratingColor = Color(0xff508A7B);
   // static const Color semiGreen =Color(0x260EBE7E);
 
@@ -47,6 +47,9 @@ class ColorsManger {
   static const Color pending = Color(0xffCF6212);
   static const Color delivered = Color(0xff009254);
   static const Color canceled = Color(0xffC50000);
+
+  static const Color transparent = Colors.transparent;
+
 //onboarding
   static const Color onboardingColor = Color(0xff464447);
   //home
@@ -58,5 +61,4 @@ class ColorsManger {
   static const Color bannerText1 = Color(0xff777E90);
   static const Color bannerText2 = Color(0xff353945);
 }
-
 

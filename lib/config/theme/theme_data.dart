@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../core/resources/colors_manger.dart';
 import '../../core/resources/font_manger.dart';
 
@@ -51,15 +52,15 @@ TextTheme textTheme() {
     bodyLarge: const TextStyle(
         color: ColorsManger.dark, fontSize: 20, fontWeight: FontWeight.bold),
     titleLarge: TextStyle(
-        color: ColorsManger.SearchHistoryColors.withOpacity(0.49),
+        color: ColorsManger.searchHistoryColors.withOpacity(0.49),
         fontSize: 16,
         fontWeight: FontWeight.w600,
-        fontFamily: FontConstants.NunitoFamily),
+        fontFamily: FontConstants.nunitoFamily),
     labelMedium: TextStyle(
-        color: ColorsManger.SearchHistoryColors.withOpacity(0.7),
+        color: ColorsManger.searchHistoryColors.withOpacity(0.7),
         fontSize: 16,
         fontWeight: FontWeight.w600,
-        fontFamily: FontConstants.NunitoFamily),
+        fontFamily: FontConstants.nunitoFamily),
     labelLarge: const TextStyle(
         color: ColorsManger.rentSearchColors,
         fontSize: 20,

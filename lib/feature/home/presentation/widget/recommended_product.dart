@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../data/model/recommended_data.dart';
@@ -13,7 +12,6 @@ class RecommendedProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -22,9 +20,10 @@ class RecommendedProducts extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                   Text(
-                   AppString.recommendedText,
-                    style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+                  Text(
+                    AppString.recommendedText,
+                    style:
+                        TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
                   ),
                   TextButton(
                     onPressed: () {},
@@ -40,7 +39,6 @@ class RecommendedProducts extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            // Horizontal Product List
             SizedBox(
               height: 66.h,
               child: ListView.builder(
@@ -48,7 +46,8 @@ class RecommendedProducts extends StatelessWidget {
                 itemCount: recommendedProducts.length,
                 itemBuilder: (context, index) {
                   return RecommendedProductCard(
-                       product: recommendedProducts[index],);
+                    product: recommendedProducts[index],
+                  );
                 },
               ),
             ),

@@ -43,11 +43,7 @@ class _QuantitySelectorState extends State<QuantitySelector> {
             ),
             IconButton(
               icon: Icon(Icons.add, size: 12.sp),
-              onPressed: () {
-                setState(() {
-                  quantity++;
-                });
-              },
+              onPressed: () => setState(() => quantity++),
             ),
           ],
         ),

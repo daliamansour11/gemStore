@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import 'widgets/customAppBar.dart';
+import 'widgets/custom_app_bar.dart';
 import 'widgets/custom_button.dart';
 import 'widgets/feedback_popup.dart';
 

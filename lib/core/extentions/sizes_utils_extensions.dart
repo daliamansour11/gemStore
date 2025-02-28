@@ -1,29 +1,32 @@
-// ignore_for_file: unnecessary_this
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension ScreenUtilExtension on num {
   //! Custom extension for horizontal spacing using 'hs'
-  Widget get hs => SizedBox(width: this.w); // Example: 20.hs
+  Widget get hs => SizedBox(width: w); // Example: 20.hs
 
   //! Custom extension for vertical spacing using 'vs'
-  Widget get vs => SizedBox(height: this.h); // Example: 15.vs
+  Widget get vs => SizedBox(height: h); // Example: 15.vs
 
   //! Creates EdgeInsetsDirectional with all sides having the same padding
-  EdgeInsetsDirectional get all => EdgeInsetsDirectional.all(this.toDouble().r);
+  EdgeInsetsDirectional get all => EdgeInsetsDirectional.all(toDouble().r);
   // Example: Padding(padding: 10.all)
 
   //! Creates EdgeInsetsDirectional with horizontal padding using 'ph'
-  EdgeInsetsDirectional get ph =>
-      EdgeInsetsDirectional.symmetric(horizontal: this.toDouble().w);
+  EdgeInsetsDirectional get ph => EdgeInsetsDirectional.symmetric(horizontal: toDouble().w);
   // Example: Padding(padding: 16.ph)
 
   //! Creates EdgeInsetsDirectional with vertical padding using 'pv'
-  EdgeInsetsDirectional get pv =>
-      EdgeInsetsDirectional.symmetric(vertical: this.toDouble().h);
+  EdgeInsetsDirectional get pv => EdgeInsetsDirectional.symmetric(vertical: toDouble().h);
   // Example: Padding(padding: 12.pv)
-
+  
+  //! Creates EdgeInsets with left padding using 'pl'
+  EdgeInsets get pl => EdgeInsets.only(left: toDouble().w);
+  // Example: Padding(padding: 12.pl)
+  
+  //! Creates EdgeInsets with right padding using 'pr'
+  EdgeInsets get pr => EdgeInsets.only(right: toDouble().w);
+  // Example: Padding(padding: 12.pr)
 }
 
 extension BuildContextExtension on BuildContext {

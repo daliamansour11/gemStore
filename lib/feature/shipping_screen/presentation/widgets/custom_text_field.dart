@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -23,11 +24,12 @@ class CustomTextField extends StatefulWidget {
 
 class _CustomTextFieldState extends State<CustomTextField> {
   Color asteriskColor = ColorsManger.green;
+  String? errorMessage;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.h),
+      padding: 8.pv,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -55,11 +57,31 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
             validator: (value) {
               if (widget.isRequired && (value == null || value.isEmpty)) {
-                setState(() => asteriskColor = ColorsManger.red);
+                if (asteriskColor != ColorsManger.red) {
+                  Future.microtask(() {
+                    if (mounted) {
+                      setState(() => asteriskColor = ColorsManger.red);
+                    }
+                  });
+                }
                 return 'Field is required';
               }
-              setState(() => asteriskColor = ColorsManger.green);
+              if (asteriskColor != ColorsManger.green) {
+                Future.microtask(() {
+                  if (mounted) {
+                    setState(() => asteriskColor = ColorsManger.green);
+                  }
+                });
+              }
               return null;
+            },
+            onChanged: (value) {
+              final bool isValid = !(widget.isRequired && value.isEmpty);
+              final Color newColor = isValid ? ColorsManger.green : ColorsManger.red;
+              
+              if (asteriskColor != newColor) {
+                setState(() => asteriskColor = newColor);
+              }
             },
           ),
         ],
@@ -67,4 +89,3 @@ class _CustomTextFieldState extends State<CustomTextField> {
     );
   }
 }
-
