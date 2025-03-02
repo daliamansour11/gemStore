@@ -8,6 +8,7 @@ class Order {
   final double subtotal;
   final String status;
   final Color color;
+  final String address;
 
   Order({
     required this.id,
@@ -17,5 +18,6 @@ class Order {
     required this.subtotal,
     required this.status,
     required this.color,
+    required this.address,
   });
 }

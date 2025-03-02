@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../resources/colors_manger.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
   final double? width;
   final double? height;
-  final VoidCallback? onPressed; // Callback function
+  final VoidCallback? onPressed;
 
   const CustomButton({
     super.key,
     required this.text,
-    this.width = 200, // Default width
-    this.height = 50, // Default height
-    this.onPressed, // Accept function
+    this.width = 200,
+    this.height = 50,
+    this.onPressed,
   });
 
   @override
@@ -20,20 +23,20 @@ class CustomButton extends StatelessWidget {
       width: width,
       height: height,
       child: OutlinedButton(
-        onPressed: onPressed, // Calls the function passed
+        onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          backgroundColor: Colors.grey.withOpacity(0.5),
-          foregroundColor: Colors.white,
-          side: const BorderSide(color: Colors.white, width: 1.5),
+          backgroundColor: ColorsManger.grey.withOpacity(0.5),
+          foregroundColor: ColorsManger.white,
+          side: const BorderSide(color: ColorsManger.white, width: 1.5),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(30.r),
           ),
         ),
         child: Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 16,
+            fontSize: 16.sp,
             color: Colors.white,
           ),
         ),

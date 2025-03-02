@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../config/theme/theme_data.dart';
+import '../../../../../core/constants/constants.dart';
+import '../../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../../core/resources/colors_manger.dart';
 
 
 class CustomAppBar extends StatelessWidget {
@@ -15,28 +19,21 @@ class CustomAppBar extends StatelessWidget {
       leading: InkWell(
         onTap: () => Navigator.pop(context),
         child: Container(
-          margin:const EdgeInsets.all(10),
+          margin: 10.all,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 8,
-                spreadRadius: 2,
-                offset:const  Offset(0, 2),
-              ),
-            ],
+            color: ColorsManger.white,
+            boxShadow: [kCustomBoxShadow],
           ),
-          child:const CircleAvatar(
+          child:CircleAvatar(
             radius: 20,
-            backgroundColor: Colors.white,
+            backgroundColor: ColorsManger.white,
             child:
-                Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 18),
+                Icon(Icons.arrow_back_ios_new, color: ColorsManger.black, size: 18.sp),
           ),
         ),
       ),
-      title: Text(title,style: appTheme().textTheme.bodyLarge,),
+      title: Text(title,style: appTheme().textTheme.bodyLarge),
       centerTitle: true,
     );
   }

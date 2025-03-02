@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/constants/constants.dart';
+import '../../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../../core/resources/colors_manger.dart';
 // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
 class FeedbackPopup extends StatelessWidget {
@@ -10,18 +15,12 @@ class FeedbackPopup extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 300,
-        padding: const EdgeInsets.all(20),
+        width: 300.w,
+        padding: 20.all,
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
+          color: ColorsManger.white,
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: [kCustomBoxShadow],
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,

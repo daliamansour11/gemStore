@@ -69,6 +69,7 @@ class AppString{
   static const String shipping = 'Shipping';
   static const String freeShipping = 'Freeship';
   static const String subtotal = 'Subtotal';
+  static const String total = 'Total';
   static const String proceedToCheckout = 'Proceed to Checkout';
   static const String checkOut = 'Check Out';
   static const String firstName = 'First name';
@@ -87,6 +88,7 @@ class AppString{
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
+  static const String orderNumber = 'Order number';
 
 
 
@@ -142,10 +144,18 @@ class AppString{
   static const String selectCountry = 'Select Country';
   static const String free = 'Free  ';
   static const String deliveryToHome = 'Delivery to home';
+  static const String deliveryAddress = 'Delivery Address';
   static const String orderCompleted = 'Order Completed';
   static const String firstStep = 'STEP 1\n';
   static const String pending = 'Pending';
   static const String delivered = 'Delivered';
   static const String cancelled = 'Cancelled';
+  static const String rateOrder = 'Rate';
+  static const String returnHome = 'Return home';
+
+  static const String orderDeliveried = 'Your order is delivered';
+  static const String orderOnWay = 'Your order is on the way';
+  static const String rateProducts = 'Rate product to get 5 points for collect.';
+  static const String trackProducts = 'Click here to track your order';
 
 }

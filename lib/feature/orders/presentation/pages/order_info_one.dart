@@ -1,160 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import 'rate_product.dart';
+import '../../../../core/resources/strings_manger.dart';
+import '../../domain/entity/order_entity.dart';
 import 'widgets/custom_app_bar.dart';
-import 'widgets/custom_button.dart';
-import 'widgets/custom_order_grey_box__shop.dart';
-import 'widgets/custom_order_item.dart';
+import 'widgets/order_actions.dart';
+import 'widgets/order_info.dart';
+import 'widgets/order_status.dart';
+import 'widgets/shipping_info.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
   // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
-  const OrderDetailsScreen({super.key});
+  final Order order;
+  const OrderDetailsScreen({required this.order, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(kToolbarHeight),
-            child: CustomAppBar(title: 'Order #1524')),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CutomGreyOrderBox(
-                  title: 'Your order is delivered',
-                  description: 'Rate product to get 5 points for collect.',
-                  image: const AssetImage(
-                    'assets/deliver.png',
-                  ),
-                ),
-                20.vs,
-                Container(
-                  padding: 10.all,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(10.r),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 3,
-                        spreadRadius: 2,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      CustomOrderItem(
-                          isOrderDetials: true,
-                          withquantity: false,
-                          isBold: false,
-                          detailName: 'Order number',
-                          price: '#1514'),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      CustomOrderItem(
-                          isOrderDetials: true,
-                          withquantity: false,
-                          isBold: false,
-                          detailName: 'Tracking Number',
-                          price: 'IK987362341'),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      CustomOrderItem(
-                          isOrderDetials: true,
-                          withquantity: false,
-                          isBold: false,
-                          detailName: 'Delivery address',
-                          price: 'SBI Building, Software Park'),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 3,
-                        spreadRadius: 2,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      CustomOrderItem(
-                          isBold: false,
-                          detailName: 'Maxi Dress',
-                          quantity: 'x1',
-                          price: '\$68.00'),
-                      CustomOrderItem(
-                          isBold: false,
-                          detailName: 'Linen Dress',
-                          quantity: 'x1',
-                          price: '\$52.00'),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      CustomOrderItem(
-                          withquantity: false,
-                          isBold: true,
-                          detailName: 'Sub Total',
-                          price: '120.00'),
-                      CustomOrderItem(
-                          withquantity: false,
-                          isBold: true,
-                          detailName: 'Shipping',
-                          price: '0.00'),
-                      const Divider(),
-                      CustomOrderItem(
-                          withquantity: false,
-                          isBold: true,
-                          detailName: 'Total',
-                          price: '\$120.00'),
-                      const SizedBox(
-                        height: 30,
-                      )
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CustomButton(
-                        isfill: false,
-                        text: 'Return home',
-                        color: Colors.white,
-                        onPressed: () {}),
-                    CustomButton(
-                        isfill: true,
-                        text: 'Rate',
-                        color: const Color(0xff343434),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const RateProduct()),
-                          );
-                        }),
-                  ],
-                ),
-              ],
-            ),
+    return Scaffold(
+      appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: CustomAppBar(title: 'Order #${order.id}')),
+      body: Padding(
+        padding: 16.all,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              OrderStauts(orderStatus: order.status),
+              20.vs,
+              OrderInfo(order: order),
+              20.vs,
+              const ShippingInfo(),
+              50.vs,
+              order.status == AppString.delivered
+                  ? const FullOrderActions()
+                  : const OneOrderAction(),
+            ],
           ),
         ),
       ),

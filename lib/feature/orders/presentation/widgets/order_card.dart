@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gem_store/feature/orders/presentation/widgets/quantity_and_total.dart';
+
+import '../../../../core/extentions/extentions.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/custom_rich_text.dart';
 import '../../domain/entity/order_entity.dart';
+import '../pages/order_info_one.dart';
 import 'order_id_date.dart';
+import 'quantity_and_total.dart';
 
 class OrderCard extends StatelessWidget {
   final Order order;
@@ -25,13 +28,16 @@ class OrderCard extends StatelessWidget {
           // spacing: 10.h,
           children: [
             OrderIdDate(order: order),
+            10.vs,
             CustomRichText(
                 firstText: AppString.trackingNumber,
                 secondText: order.trackingNumber),
+            10.vs,
             QuantityAndTotal(
               quantity: order.quantity.toString(),
               subTotal: '\$${order.subtotal}',
             ),
+            10.vs,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -43,7 +49,7 @@ class OrderCard extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.pushNamed(OrderDetailsScreen(order: order)),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25.r)),

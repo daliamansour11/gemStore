@@ -21,6 +21,7 @@ class OrdersCubit extends Cubit<OrdersState> {
         subtotal: 110,
         status: 'Pending',
         color: ColorsManger.pending,
+        address: 'Cairo, Egypt',
       ),
       Order(
         id: 1524,
@@ -30,6 +31,7 @@ class OrdersCubit extends Cubit<OrdersState> {
         subtotal: 230,
         status: 'Pending',
         color: ColorsManger.pending,
+        address: 'Cairo, Egypt',
       ),
       Order(
         id: 1524,
@@ -39,6 +41,7 @@ class OrdersCubit extends Cubit<OrdersState> {
         subtotal: 490,
         status: 'Pending',
         color: ColorsManger.pending,
+        address: 'Cairo, Egypt',
       ),
       Order(
         id: 1524,
@@ -48,6 +51,7 @@ class OrdersCubit extends Cubit<OrdersState> {
         subtotal: 50,
         status: 'Delivered',
         color: ColorsManger.delivered,
+        address: 'Cairo, Egypt',
       ),
       Order(
         id: 1524,
@@ -57,6 +61,7 @@ class OrdersCubit extends Cubit<OrdersState> {
         subtotal: 320,
         status: 'Cancelled',
         color: ColorsManger.canceled,
+        address: 'Cairo, Egypt',
       ),
     ];
 

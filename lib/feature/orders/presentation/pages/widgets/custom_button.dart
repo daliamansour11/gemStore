@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../../core/resources/colors_manger.dart';
 
 class CustomButton extends StatelessWidget {
   String text;
@@ -25,7 +26,7 @@ class CustomButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.r),
           // TODO: Use Colors manager...
-          side: const BorderSide(color: Color(0xff343434)),
+          side: const BorderSide(color: ColorsManger.rateColor),
         ),
       ),
       onPressed: onPressed,
@@ -33,7 +34,7 @@ class CustomButton extends StatelessWidget {
         padding: 10.ph + 20.ph,
         child: Text(text,
             style: TextStyle(
-                color: !isfill ? const Color(0xff343434) : Colors.white)),
+                color: !isfill ? ColorsManger.rateColor : ColorsManger.white)),
       ),
     );
   }

@@ -51,6 +51,7 @@ class ImageAssets {
   static const String beautyIcon='assets/icons/icon1.png';
   static const String banner= 'assets/images/banner.png';
   static const String menu= 'assets/icons/menu.png';
+  static const String deliver= 'assets/deliver.png';
 
 
 }

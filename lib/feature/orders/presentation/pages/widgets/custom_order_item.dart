@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../../core/resources/colors_manger.dart';
 
 class CustomOrderItem extends StatelessWidget {
   bool isOrderDetials = false;
@@ -41,10 +42,10 @@ class CustomOrderItem extends StatelessWidget {
                   ? Text(quantity!,
                       style: const TextStyle(color: Colors.black54))
                   : const Text(''),
-              const SizedBox(width: 10),
+              10.hs,
               Text(price,
                   style: TextStyle(
-                      color: Colors.black,
+                      color: ColorsManger.black,
                       fontWeight:
                           isBold ? FontWeight.bold : FontWeight.normal)),
             ],
