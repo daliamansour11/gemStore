@@ -48,6 +48,7 @@ dependencies:
   flutter_svg: ^2.0.17
   flutter_screenutil: ^5.9.3
   country_picker: ^2.0.27
+  device_preview:
 
 dev_dependencies:
   flutter_test:

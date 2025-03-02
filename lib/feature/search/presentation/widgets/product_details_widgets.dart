@@ -62,7 +62,7 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios,
-                        size: 15,
+                        size: 20,
                         color: ColorsManger.dark,
                       ),
                     ),

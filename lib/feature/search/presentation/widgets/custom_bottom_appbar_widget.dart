@@ -25,41 +25,39 @@ class CustomBottomAppbarWidget extends StatelessWidget {
             topRight: Radius.circular(24),
           ),
         ),
-        child: SafeArea(
-          child: TextButton(
-            onPressed: () {
-              context.pushNamed(const CartScreen());
-            },
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      ImageAssets.orderIcon,
-                      width: 24.w,
-                      height: 24.h,
+        child: TextButton(
+          onPressed: () {
+            context.pushNamed(const CartScreen());
+          },
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    ImageAssets.orderIcon,
+                    width: 24.w,
+                    height: 24.h,
+                  ),
+                  const SizedBox(width: 8),
+                  const Text(
+                    AppString.addToCart,
+                    style: TextStyle(
+                      color: Color(0xffFFFFFF),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
                     ),
-                    const SizedBox(width: 8),
-                    const Text(
-                      AppString.addToCart,
-                      style: TextStyle(
-                        color: Color(0xffFFFFFF),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-                const Divider(
-                  thickness: 2,
-                  color: Color(0xffFFFFFF),
-                  indent: 100,
-                  endIndent: 100,
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+              const Divider(
+                thickness: 2,
+                color: Color(0xffFFFFFF),
+                indent: 100,
+                endIndent: 100,
+              ),
+            ],
           ),
         ),
       ),

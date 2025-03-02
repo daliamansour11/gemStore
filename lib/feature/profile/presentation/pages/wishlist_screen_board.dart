@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
-import '../../../orders/presentation/pages/widgets/customAppBar.dart';
 
 import '../widgets/sidebar_home.dart';
 import '../widgets/wishlist_item_card.dart';

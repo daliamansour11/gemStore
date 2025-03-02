@@ -20,7 +20,7 @@ List<Product> products = [
     name: 'Fitted Waist Dress',
     price: 47.99,
 
-    imageUrl:     'https://s3-alpha-sig.figma.com/img/c793/6776/96d160379456b9e0b7274fcb6b4facc6?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bfFI0IdIdmVgMgjP0DdS~Irk-YppivfhK~Bo~y3h2BhLpKFbfGvHEgbe8qWscfT51WWp2A5Y4u1uGSh379FATPOItoUlTP9Sd7fvE1qnWmy0lXqyMv8h9Fx8K~RjmExAixy~ez2lnX7jkGcvC4lzgfMok693v6GVwpAH0U3pyyPqhzsLYl5qGrANwRIl0n3eqzvXl2fQdSjT2CseR5uFJftvDEJIFQVyTAj-DuiV8jy5bQVJkq15cAbu0FWKFV43q5BIwg2~hQqUaMf7IYagoKC9Oh33wPF5sEAq5t1DqCRyBmp-PZf8QB4iJmGy9kzQczkQUz0CqJlcgsg2mH-d2Q__',
+    imageUrl:  'https://s3-alpha-sig.figma.com/img/c793/6776/96d160379456b9e0b7274fcb6b4facc6?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=n-CLbONt1NLeOeIfKrJ9GWmgCb1rlMUXvzEHMRrgJKia0c8xLFT62~U-SuqGHhNCqfkA8F4RC5Nv1TMufinQ8~TrGzc7szaDlxAUs5pBTSXgSFwDIKONWfpZPOcjZfbLcyAMbDOp9Z0nIM8R0TkaHOTDL-oIrbqdfNYw6BmAJTAsx5OLpCIty8RXODBAEpJXJFKrFRbllZx7nKzntu6Io9rNvb5fjz7oPO7RlZA~uTRNTPyj6yDertdE9tWKKbX7BpkIUpdK4pdolHkcMpa3tAwbKr9gESnr6ntdVso~ssFBQfyk-ERfpLJM9q3io5dawsGhnimKbxDB~fxR6QnhdQ__',
 
     rating: 4.5,
     description: 'A stylish fitted waist dress perfect for any occasion.', review: 65, id: 0,
@@ -28,8 +28,8 @@ List<Product> products = [
   Product(
     name: 'Sportwear Set',
     price: 80.00,
-    imageUrl:     'https://s3-alpha-sig.figma.com/img/c793/6776/96d160379456b9e0b7274fcb6b4facc6?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bfFI0IdIdmVgMgjP0DdS~Irk-YppivfhK~Bo~y3h2BhLpKFbfGvHEgbe8qWscfT51WWp2A5Y4u1uGSh379FATPOItoUlTP9Sd7fvE1qnWmy0lXqyMv8h9Fx8K~RjmExAixy~ez2lnX7jkGcvC4lzgfMok693v6GVwpAH0U3pyyPqhzsLYl5qGrANwRIl0n3eqzvXl2fQdSjT2CseR5uFJftvDEJIFQVyTAj-DuiV8jy5bQVJkq15cAbu0FWKFV43q5BIwg2~hQqUaMf7IYagoKC9Oh33wPF5sEAq5t1DqCRyBmp-PZf8QB4iJmGy9kzQczkQUz0CqJlcgsg2mH-d2Q__',
-
+    imageUrl:
+'https://s3-alpha-sig.figma.com/img/c793/6776/96d160379456b9e0b7274fcb6b4facc6?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=n-CLbONt1NLeOeIfKrJ9GWmgCb1rlMUXvzEHMRrgJKia0c8xLFT62~U-SuqGHhNCqfkA8F4RC5Nv1TMufinQ8~TrGzc7szaDlxAUs5pBTSXgSFwDIKONWfpZPOcjZfbLcyAMbDOp9Z0nIM8R0TkaHOTDL-oIrbqdfNYw6BmAJTAsx5OLpCIty8RXODBAEpJXJFKrFRbllZx7nKzntu6Io9rNvb5fjz7oPO7RlZA~uTRNTPyj6yDertdE9tWKKbX7BpkIUpdK4pdolHkcMpa3tAwbKr9gESnr6ntdVso~ssFBQfyk-ERfpLJM9q3io5dawsGhnimKbxDB~fxR6QnhdQ__',
     rating: 4.9,
     description: 'Comfortable and stylish sportswear set.', oldPrice: 99.99, review: 43, id: 1,
   ),

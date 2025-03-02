@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:gem_store/feature/orders/presentation/widgets/quantity_and_total.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/custom_rich_text.dart';
 import '../../domain/entity/order_entity.dart';
 import 'order_id_date.dart';
-import 'quantity_and_total.dart';
-// TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
 class OrderCard extends StatelessWidget {
   final Order order;
@@ -24,7 +22,7 @@ class OrderCard extends StatelessWidget {
         padding: 16.all,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 10.h,
+          // spacing: 10.h,
           children: [
             OrderIdDate(order: order),
             CustomRichText(

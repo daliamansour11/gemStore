@@ -11,7 +11,7 @@ class ProductInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 13.w,
+      // spacing: 13.w,
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(16.r),
@@ -19,7 +19,7 @@ class ProductInfo extends StatelessWidget {
         ),
         Expanded(
           child: Column(
-            spacing: 16.h,
+            // spacing: 16.h,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(

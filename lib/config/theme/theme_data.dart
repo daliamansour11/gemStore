@@ -39,7 +39,7 @@ AppBarTheme appBarTheme() {
 TextTheme textTheme() {
   return TextTheme(
     bodySmall: const TextStyle(
-        color: ColorsManger.dark, fontSize: 16, fontWeight: FontWeight.w400),
+        color: ColorsManger.white, fontSize: 16, fontWeight: FontWeight.w400),
     titleSmall: const TextStyle(
         color: ColorsManger.dark, fontSize: 18, fontWeight: FontWeight.w500),
     labelSmall: const TextStyle(

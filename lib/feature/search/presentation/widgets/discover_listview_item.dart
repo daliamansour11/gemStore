@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -169,10 +171,7 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
                     child: SizedBox(
                       width: 194.w,
                       height: 129.h,
-                      child: Image.network(
-                        imageUrl,
-                        fit: BoxFit.contain,
-                      ),
+                      child:_buildImage(context,imageUrl)
                     ),
                   )
                 ],
@@ -183,4 +182,53 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
       ),
     );
   }
+
+
+  Widget _buildImage(BuildContext context, String imageUrl,
+      ){
+
+    return Center(
+      child: CachedNetworkImage(
+        imageUrl:   imageUrl,
+        imageBuilder: (context,imageProvider)=>ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+
+                )
+            ),
+          ),
+        ),
+        progressIndicatorBuilder: (context,url,downloadProgress)=>
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10.0),
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+
+                child:  const CupertinoActivityIndicator(),
+              ),
+            ),
+        errorWidget: (context, url, error) =>  ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+
+            child:const Icon(Icons.error),
+          ),
+        ),
+      ),
+    );
+
+
+
+  }
+
 }

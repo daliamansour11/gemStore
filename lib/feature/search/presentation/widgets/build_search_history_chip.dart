@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-
-import '../../../../config/theme/themeData.dart';
-
+import 'search_textfield_widget.dart';
+import '../../../../config/theme/theme_data.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/resources/values_manger.dart';
-import 'search_textfield_widget.dart';
-
 class BuildSearchHistoryChip extends StatefulWidget {
-  const BuildSearchHistoryChip({
-    super.key,
-  });
+  const BuildSearchHistoryChip({super.key, });
 
   @override
   State<BuildSearchHistoryChip> createState() => _BuildSearchHistoryChipState();
 }
 
 class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
-  TextEditingController searchController = TextEditingController();
+
+
+  TextEditingController searchController =TextEditingController();
   List<String> recentSearches = [];
 
   void _addSearchItem(String text) {
@@ -29,8 +25,9 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
         recentSearches.add(text);
       });
     }
-    searchController.clear();
-  }
+    searchController.clear();   }
+
+
 
   void _clearAllSearches() {
     setState(() {
@@ -44,60 +41,68 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Stack(
           children: [
+
             Align(
               alignment: Alignment.centerLeft,
+
               child: Padding(
-
-                padding: const EdgeInsets.only(
-                    left: AppPadding.p33,
-                    top: AppPadding.p24,
-                    bottom: AppPadding.p22),
-
-                child: Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: ColorsManger.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.9),
-                        offset: const Offset(0, 1),
-                        blurRadius: 1,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios,
-                        size: 15,
-                      ),
+                padding: const EdgeInsets.only(left: AppPadding.p33,top: AppPadding.p40,bottom: AppPadding.p22),
+                child:CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 20,
+                      color: ColorsManger.dark,
                     ),
                   ),
                 ),
+
+                // Container(
+                //   width: 32,
+                //   height: 32,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: ColorsManger.white,
+                //     boxShadow: [
+                //       BoxShadow(
+                //         color: Colors.grey.withOpacity(0.9),
+                //         offset:const Offset(0, 1),
+                //
+                //         blurRadius: 1,
+                //
+                //       ),
+                //     ],
+                //   ),
+                //   child: Center(
+                //     child: IconButton(onPressed: () {
+                //       Navigator.pop(context);
+                //     }, icon: const Icon(Icons.arrow_back_ios,size: 15,),),
+                //   ),
+                // ),
               ),
             ),
           ],
         ),
-        SearchTextFieldWidget(
-            label: 'search',
-            controller: searchController,
+        SearchTextFieldWidget(label: 'search', controller: searchController,
             isReadOnly: false,
-            onPressed: () {},
-            onSubmit: (value) {
-              value = searchController.text;
+            onPressed: () {}, onSubmit: (value){
+              value =searchController.text;
               _addSearchItem(searchController.text);
-            }),
+
+
+            }
+        ),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -107,55 +112,37 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
               child: Text(AppString.recntSearches,style: appTheme().textTheme.titleLarge,),
             ),
             // if (recentSearches.isNotEmpty)
-            Padding(padding:const EdgeInsets.only(top: AppPadding.p28,bottom: AppPadding.p28,right: AppPadding.p28,),
-
-              child: InkWell(child: Image.asset(ImageAssets.trashIcon,),
+            Padding(padding:const EdgeInsets.only(top: AppPadding.p28,
+              bottom: AppPadding.p28,right: AppPadding.p28,),
+              child: InkWell(child: Image.asset('assets/icons/Trash.png',),
                 onTap: (){
-
-              padding: const EdgeInsets.only(
-                  top: AppPadding.p28,
-                  bottom: AppPadding.p28,
-                  left: AppPadding.p33),
-              child: Text(
-                AppString.recentSearches,
-                style: appTheme().textTheme.titleLarge,
-              ),
-            ),
-            // if (recentSearches.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.only(
-                top: AppPadding.p28,
-                bottom: AppPadding.p28,
-                right: AppPadding.p28,
-              ),
-              child: InkWell(
-                child: Image.asset(
-                  'assets/icons/Trash.png',
-                ),
-                onTap: () {
-
                   _clearAllSearches();
-                },
-              ),
-            )
+                },)
+
+              ,)
           ],
+
         ),
         // SizedBox(height: 10,),
         Wrap(
           spacing: 15,
           runSpacing: 20,
-          children: recentSearches.map((search) {
-            return _buildSearchHistoryChip(
-              search,
-            );
+          children:
+          recentSearches.map((  search) {
+            return   _buildSearchHistoryChip(search,);
           }).toList(),
         ),
       ],
     );
+
+
+
   }
 
+
+
   Widget _buildSearchHistoryChip(String text) {
-    int index = 0;
+    int index=0;
     return Container(
         width: 163.w,
         height: 38.h,
@@ -167,6 +154,7 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
               color: Colors.grey.withOpacity(0.9),
               offset: const Offset(0, 1),
               blurRadius: 1,
+
             ),
           ],
         ),
@@ -174,32 +162,22 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                  top: AppPadding.p8,
-                  bottom: AppPadding.p8,
-                  left: AppPadding.p22,
-                  right: AppPadding.p21),
+              padding: const EdgeInsets.only(top: AppPadding.p8,bottom: AppPadding.p8,left: AppPadding.p22,right: AppPadding.p21),
               child: Flexible(
                 fit: FlexFit.loose,
-                child: Text(
-                  text,
-                  style: TextStyle(
-                      color: ColorsManger.rentSearchColors.withOpacity(0.7),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: FontConstants.nunitoFamily),
+                child: Text(text,style: TextStyle(color: ColorsManger.rentSearchColors.withOpacity(0.7),fontSize: 16,fontWeight: FontWeight.w600,fontFamily: FontConstants.nunitoFamily),
                 ),
               ),
             ),
-            IconButton(
-                onPressed: () {
-                  _removeSearchItem(index);
-                },
-                icon: const Icon(
-                  Icons.clear,
-                  color: ColorsManger.lightGrey,
-                ))
+
+            IconButton(onPressed: (){
+              _removeSearchItem(index);
+
+            }, icon: const Icon(Icons.clear,color: ColorsManger.lightGrey,))
+
+
           ],
-        ));
+        )
+    );
   }
 }

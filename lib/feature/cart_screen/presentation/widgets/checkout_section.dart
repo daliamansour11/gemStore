@@ -33,7 +33,7 @@ class CheckoutSection extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        spacing: 8.h,
+        // spacing: 8.h,
         children: [
           ChceckOutItem(title: AppString.productPrice, price: '\$110'),
           Divider(color: ColorsManger.grey),
