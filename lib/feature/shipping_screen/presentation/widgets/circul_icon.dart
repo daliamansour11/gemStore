@@ -13,7 +13,7 @@ class CustomCircul extends StatelessWidget {
         child: Container(
           width: 23.w,
           height: 23.h,
-          color: ColorsManger.ligthGreen,
+          color: ColorsManger.ratingColor,
           child: Center(
             child: Container(
               width: 8.w,

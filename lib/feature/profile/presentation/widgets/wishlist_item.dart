@@ -93,7 +93,7 @@ class WishlistItem extends StatelessWidget {
                       index < item.rating.round()
                           ? Icons.star
                           : Icons.star_border_outlined,
-                      color: ColorsManger.ligthGreen,
+                      color: ColorsManger.ratingColor,
                       size: 15.sp,
                     );
                   }),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class ColorsManger {
   static const Color primary = Color(0xFF8EACCD);
   static const Color darkGrey = Color(0xff525252);
@@ -20,18 +19,20 @@ class ColorsManger {
   // static const Color semiGreen =Color(0x260EBE7E);
 
   static const Color lightBlue = Color(0x677294E5);
-  static const Color blue = Color(0xFF5876F3);
+  static const Color blue = Color(0x361ADDDB);
   static const Color lightGreen = Color(0x2661CEFF);
   static const Color green = Color(0xff0ebe7f);
-  static const Color ligthGreen = Color(0xff508A7B);
+  static const Color light1Green = Color(0xff508A7B);
   static const Color semiGreen = Color(0x260EBE7E);
   static const Color black = Color.fromARGB(255, 0, 0, 0);
+    static const Color lightBlack = Color.fromARGB(26, 221, 219, 219);
 
   static const Color dropShadowColor = Color(0xFFf2f2f2);
   static const Color dark = Color(0xFF2A2B2E);
   static const Color lightWhiteColor = Color(0xffFAFAFA);
   static const Color semiLightGreyColor = Color(0xFFC9C9C9);
   static const Color lightDrak = Color(0x00000026);
+  static const Color btnColor = Color(0xff343434);
 
   // NEW COLORS
 

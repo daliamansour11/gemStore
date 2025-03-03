@@ -5,8 +5,8 @@ import '../../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../../core/resources/colors_manger.dart';
 import '../../../../../core/resources/strings_manger.dart';
 import '../../../../../core/utils/bottom_navigation.dart';
+import '../../../../../core/widget/custom_button.dart';
 import '../rate_product.dart';
-import 'custom_button.dart';
 
 class FullOrderActions extends StatelessWidget {
   const FullOrderActions({super.key});
@@ -17,12 +17,12 @@ class FullOrderActions extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CustomButton(
-            isfill: false,
+            isFill: false,
             text: AppString.returnHome,
             color: ColorsManger.white,
             onPressed: () => context.pushNamed(const BottomNavigation())),
         CustomButton(
-          isfill: true,
+          isFill: true,
           text: AppString.rateOrder,
           color: ColorsManger.rateColor,
           onPressed: () => context.pushNamed(const RateProduct()),
@@ -40,7 +40,7 @@ class OneOrderAction extends StatelessWidget {
     return Padding(
       padding: 50.pv + 15.ph,
       child: CustomButton(
-        isfill: true,
+        isFill: true,
         text: AppString.continueShopping,
         color: ColorsManger.rateColor,
         onPressed: () => context.pushNamed(const BottomNavigation()),

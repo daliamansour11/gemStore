@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../extentions/sizes_utils_extensions.dart';
 import '../resources/colors_manger.dart';
 
 class CustomButton extends StatelessWidget {
@@ -8,13 +9,15 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final VoidCallback? onPressed;
-
+final  Color? color;
+final  bool? isFill;
   const CustomButton({
     super.key,
     required this.text,
     this.width = 200,
     this.height = 50,
     this.onPressed,
+    this.color, this.isFill,
   });
 
   @override
@@ -32,14 +35,17 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(30.r),
           ),
         ),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 16.sp,
-            color: Colors.white,
-          ),
+        child:  Padding(
+          padding: 10.ph + 20.ph,
+          child: Text(text,
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16.sp,
+                  color: !isFill! ? ColorsManger.rateColor : ColorsManger.white)),
         ),
+
+
+
       ),
     );
   }
