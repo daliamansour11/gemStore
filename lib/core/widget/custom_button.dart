@@ -9,15 +9,17 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final VoidCallback? onPressed;
-final  Color? color;
-final  bool? isFill;
+final  Color color;
+final  bool isFill;
   const CustomButton({
     super.key,
     required this.text,
     this.width = 200,
     this.height = 50,
     this.onPressed,
-    this.color, this.isFill,
+    required this.color,
+
+    required this.isFill,
   });
 
   @override
@@ -41,7 +43,7 @@ final  bool? isFill;
               style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16.sp,
-                  color: !isFill! ? ColorsManger.rateColor : ColorsManger.white)),
+                  color: isFill ? ColorsManger.rateColor : ColorsManger.btnColor)),
         ),
 
 
