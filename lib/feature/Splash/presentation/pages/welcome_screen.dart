@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/resources/assets_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/widget/custom_button.dart';
+
 
 import '../widget/back_ground_image.dart';
 import '../widget/get_started_button.dart';
@@ -15,6 +20,8 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
 
 
