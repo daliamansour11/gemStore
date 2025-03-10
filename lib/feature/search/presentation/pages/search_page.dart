@@ -32,6 +32,7 @@ class _SearchPageState extends State<SearchPage> {
 
             SizedBox(height: 10,),
     Expanded(child: SearchResult()
-    )],));
+    )
+          ],));
   }
 }

@@ -17,7 +17,7 @@ class CustomBottomAppbarWidget extends StatelessWidget {
         topRight: Radius.circular(24),
       ),
       child: Container(
-        height: 77.h,
+        height: 70.h,
         decoration: const BoxDecoration(
           color: Color(0xff343434),
           borderRadius: BorderRadius.only(

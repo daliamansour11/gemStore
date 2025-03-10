@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gem_store/feature/search/presentation/widgets/search_result_card.dart';
+import '../../../../core/resources/assets_manger.dart';
 import 'search_textfield_widget.dart';
 import '../../../../config/theme/theme_data.dart';
 import '../../../../core/resources/colors_manger.dart';
@@ -68,28 +70,7 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
                   ),
                 ),
 
-                // Container(
-                //   width: 32,
-                //   height: 32,
-                //   decoration: BoxDecoration(
-                //     shape: BoxShape.circle,
-                //     color: ColorsManger.white,
-                //     boxShadow: [
-                //       BoxShadow(
-                //         color: Colors.grey.withOpacity(0.9),
-                //         offset:const Offset(0, 1),
-                //
-                //         blurRadius: 1,
-                //
-                //       ),
-                //     ],
-                //   ),
-                //   child: Center(
-                //     child: IconButton(onPressed: () {
-                //       Navigator.pop(context);
-                //     }, icon: const Icon(Icons.arrow_back_ios,size: 15,),),
-                //   ),
-                // ),
+
               ),
             ),
           ],
@@ -99,6 +80,8 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
             onPressed: () {}, onSubmit: (value){
               value =searchController.text;
               _addSearchItem(searchController.text);
+
+              const SearchResultCard();
 
 
             }
@@ -114,7 +97,7 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
             // if (recentSearches.isNotEmpty)
             Padding(padding:const EdgeInsets.only(top: AppPadding.p28,
               bottom: AppPadding.p28,right: AppPadding.p28,),
-              child: InkWell(child: Image.asset('assets/icons/Trash.png',),
+              child: InkWell(child: Image.asset(ImageAssets.trashIcon,),
                 onTap: (){
                   _clearAllSearches();
                 },)

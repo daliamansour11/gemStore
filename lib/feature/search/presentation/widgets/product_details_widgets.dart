@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/theme_data.dart';
+import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 import '../../data/model/product_model.dart';
 
 class ProductDetailsWidgets extends StatefulWidget {
-
   const ProductDetailsWidgets({super.key, required this.products});
 
   final Product products;
@@ -35,8 +36,7 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                   child: Center(
                     child: CircleAvatar(
                       radius: 234,
-                      backgroundColor:
-                      const Color(0xffEACAB7).withOpacity(.9),
+                      backgroundColor: const Color(0xffEACAB7).withOpacity(.9),
                     ),
                   ),
                 ),
@@ -48,6 +48,10 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                   ),
                   child: Image.network(
                     widget.products.imageUrl,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Image.asset(
+                          ImageAssets.placeHolderImg); // Fallback image
+                    },
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -91,7 +95,6 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
             ),
           ],
         ),
-
         Positioned(
           top: 330,
           left: 0,
@@ -102,13 +105,12 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius:
-                const BorderRadius.vertical(top: Radius.circular(30)),
+                    const BorderRadius.vertical(top: Radius.circular(30)),
                 boxShadow: [
                   BoxShadow(color: Colors.grey.shade300, blurRadius: 10),
                 ],
               ),
-              child: _productDateWidget()
-          ),
+              child: _productDateWidget()),
         ),
       ],
     );
@@ -145,12 +147,11 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
               child: Row(
                 children: List.generate(
                     5,
-                        (index) =>
-                    const Icon(
-                      Icons.star,
-                      color: ColorsManger.ratingColor,
-                      size: 20,
-                    )),
+                    (index) => const Icon(
+                          Icons.star,
+                          color: ColorsManger.ratingColor,
+                          size: 20,
+                        )),
               ),
             ),
             Row(
@@ -158,10 +159,9 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
               children: [
                 const Text(
                   AppString.descriptionStr,
-                  style: TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                Image.asset('assets/icons/Expand_down.png')
+                Image.asset(ImageAssets.expandDownIcon)
               ],
             ),
             const SizedBox(height: 8),
@@ -180,17 +180,16 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
               children: [
                 const Text(
                   AppString.reviewsStr,
-                  style: TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                Image.asset('assets/icons/Expand_down.png')
+                Image.asset(ImageAssets.expandDownIcon)
               ],
             ),
             ListTile(
               leading: Text(
                 '${widget.products.rating} (${widget.products.review})',
-                style: const TextStyle(
-                    fontSize: 30, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               trailing: Column(
                 children: [
@@ -198,8 +197,7 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                     mainAxisSize: MainAxisSize.min,
                     children: List.generate(
                         5,
-                            (index) =>
-                        const Icon(Icons.star,
+                        (index) => const Icon(Icons.star,
                             color: ColorsManger.ratingColor, size: 16)),
                   ),
                   Text(
@@ -212,7 +210,7 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Image.asset('assets/icons/Expand_down.png')],
+              children: [Image.asset(ImageAssets.expandDownIcon)],
             ),
             const SizedBox(height: 8),
             ListTile(
@@ -222,12 +220,16 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                 mainAxisSize: MainAxisSize.min,
                 children: List.generate(
                     5,
-                        (index) =>
-                    const Icon(Icons.star,
+                    (index) => const Icon(Icons.star,
                         color: ColorsManger.ratingColor, size: 16)),
               ),
             ),
-            const Text('I loved it! Amazing comfort and stylish.'),
+             Padding(
+               padding: 15.all,
+               child: Text(AppString.userFeedBack,
+                style: appTheme().textTheme.titleSmall,
+                           ),
+             ),
             ListTile(
               leading: const CircleAvatar(),
               title: const Text('kelly Icon'),
@@ -235,34 +237,36 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                 mainAxisSize: MainAxisSize.min,
                 children: List.generate(
                     5,
-                        (index) =>
-                    const Icon(Icons.star,
+                    (index) => const Icon(Icons.star,
                         color: ColorsManger.ratingColor, size: 16)),
               ),
               trailing: const Text('5m ago',
-                  style: TextStyle(
-                      fontSize: 10, fontWeight: FontWeight.w300)),
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300)),
             ),
-            const Text('I loved it! Amazing comfort and stylish.'),
+             Padding(
+               padding: 15.all,
+               child: Text(AppString.userFeedBack,
+                  style: appTheme().textTheme.titleSmall,
+
+                     ),
+             ),
 
             const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Similar Products',
-                  style: TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                  AppString.similarProductStr,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                Image.asset('assets/icons/Expand_down.png')
+                Image.asset(ImageAssets.expandDownIcon)
               ],
             ),
             const SizedBox(height: 8),
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              gridDelegate:
-              const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
@@ -283,15 +287,18 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                         child: Center(
                             child: Image.network(
                               widget.products.imageUrl,
-                              fit: BoxFit.cover,
-                            )),
+                              errorBuilder: (context, error, stackTrace) {
+                                return Image.asset(
+                                    ImageAssets.placeHolderImg); // Fallback image
+                              },
+                          fit: BoxFit.cover,
+                        )),
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(widget.products.name,
                         style: const TextStyle(
                             fontSize: 12, fontWeight: FontWeight.w500)),
-
                     Text('\$ ${widget.products.price}',
                         style: const TextStyle(
                             fontSize: 14,

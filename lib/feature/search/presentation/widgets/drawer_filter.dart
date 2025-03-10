@@ -4,6 +4,7 @@ import '../../../../config/theme/theme_data.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 class DrawerFilter extends StatefulWidget {
@@ -32,15 +33,15 @@ class _DrawerFilterState extends State<DrawerFilter> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Filter',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                const Text(AppString.filterStr,style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
                 ),
-                Image.asset('assets/icons/filter.png')
+                Image.asset(ImageAssets.filterIcon)
               ],
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 27.0,right: 31,top: AppPadding.p55),
-            child: Text('Price',style: appTheme().textTheme.titleMedium,),
+            child: Text(AppString.priceStr,style: appTheme().textTheme.titleMedium,),
           ),
 
 
@@ -60,7 +61,7 @@ class _DrawerFilterState extends State<DrawerFilter> {
 
           Padding(
             padding: const EdgeInsets.only(left: AppPadding.p28,top: AppPadding.p40,bottom: AppPadding.p24),
-            child: Text('Color',style: appTheme().textTheme.titleMedium,),
+            child: Text(AppString.colorStr,style: appTheme().textTheme.titleMedium,),
           ),
           Padding(
             padding: const EdgeInsets.only(left: AppPadding.p28,),
@@ -92,7 +93,7 @@ class _DrawerFilterState extends State<DrawerFilter> {
           const SizedBox(height: 16),
           Padding(
             padding:  const EdgeInsets.only(left: AppPadding.p28,),
-            child:  Text('Star Rating',style: appTheme().textTheme.titleMedium,),
+            child:  Text(AppString.starRatingStr,style: appTheme().textTheme.titleMedium,),
           ),
           Padding(
             padding: const EdgeInsets.only(left: AppPadding.p28,top: AppPadding.p24),
@@ -206,7 +207,7 @@ class _DrawerFilterState extends State<DrawerFilter> {
                             selectedDiscounts.remove(discount);
                           });
                         },
-                        child: IconButton( onPressed: () {  }, icon: const Icon(Icons.close, color: ColorsManger.dark, size: 14),),
+                        child: IconButton( onPressed: () {  }, icon: const Icon(Icons.close, color: ColorsManger.dark, size: FontSize.s14),),
                       ),
                     ],
                   ),
@@ -222,11 +223,11 @@ class _DrawerFilterState extends State<DrawerFilter> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 28.0),
+                  padding: const EdgeInsets.only(left: AppPadding.p28),
                   child: TextButton(onPressed: () {}, child: const Text(AppString.resetBtn)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 51.0),
+                  padding: const EdgeInsets.only(right: AppPadding.p51),
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(

@@ -26,6 +26,11 @@ class AppString{
   static const categoryStr= 'Category';
   static const resetBtn= 'Reset';
   static const applyBtn= 'Apply';
+  static const filterStr= 'Filter';
+  static const colorStr= 'Color';
+  static const priceStr= 'Price';
+  static const starRatingStr= 'Star Rating';
+  static const similarProductStr= 'Similar Products';
 
 
 
@@ -52,6 +57,7 @@ class AppString{
   static const newUser = 'New user?';
   static const or = 'OR';
   static const loginButton = 'Log in';
+  static const userFeedBack = 'L loved it! Amazing comfort and stylish.';
 
   static const createAccount = 'Create Account';
   static const dontHaveAccount = 'Don’t have an account?  ';

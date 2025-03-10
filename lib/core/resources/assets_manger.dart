@@ -15,6 +15,7 @@ class ImageAssets {
   static const String   onboardingLogo3= 'assets/images/onboarding3.png';
   static const String girlImg = 'assets/images/تنزيل (2).jpg';
 
+
   // static const String   onboardingLogo1= "assets/images/onboardingLogo1.png";
   // static const String   onboardingLogo2= "assets/images/onboardingLogo2.png";
   // static const String   onboardingLogo3= "assets/images/onboardingLogo3.png";
@@ -35,7 +36,7 @@ class ImageAssets {
   static const String checkOutIcon = '$imagePath/png/Check out 2.png';
   static const String process = '$imagePath/png/Process.png';
   static const String cartIcon = '$imagePath/png/Group.png';
-
+//search
   static const String menuIcon = '$iconPath/menu.png';
   static const String notificationIcon = '$iconPath/Bell_pin.png';
   static const String orderIcon = '$iconPath/order.png';
@@ -43,6 +44,8 @@ class ImageAssets {
   static const String filterIcon = '$iconPath/filter.png';
   static const String vectorIcon = '$iconPath/vector.png';
   static const String searchIcon = '$iconPath/search.png';
+  static const String expandDownIcon = '$iconPath/Expand_down.png';
+  static const String placeHolderImg = '$imagePath/placeHolder.png';
 
   //home
   static const String womenIcon='assets/icons/icon4.png';

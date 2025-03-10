@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../config/theme/theme_data.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
@@ -56,6 +57,7 @@ class _SearchTextFieldWidgetState extends State<SearchTextFieldWidget> {
                 ],
               ),
               child: TextField(
+                style: appTheme().textTheme.titleSmall,
                 controller: widget.controller,
                 keyboardType: widget.keyboardType,
                 onSubmitted: widget.onSubmit,
