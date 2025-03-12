@@ -92,7 +92,7 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: AppPadding.p28,bottom: AppPadding.p28,left: AppPadding.p33),
-              child: Text(AppString.recntSearches,style: appTheme().textTheme.titleLarge,),
+              child: Text(AppString.recentSearches,style: appTheme().textTheme.titleLarge,),
             ),
             // if (recentSearches.isNotEmpty)
             Padding(padding:const EdgeInsets.only(top: AppPadding.p28,

@@ -15,8 +15,9 @@ class AppString{
   static const rateProductAppBar= 'Rate Product';
   static const traceOrderAppBar= 'Track Order';
   static const feedBackAppBar= 'Share Your Feedback';
+  static const settingAppBar= 'Setting';
 
-  static const recntSearches= 'Recent Searches';
+  static const recentSearches= 'Recent Searches';
   static const foundSearch= 'Found 152 Results';
   static const discoverStr= 'Discover';
   static const descriptionStr= 'Description';
@@ -93,7 +94,7 @@ class AppString{
   static const String thanks = 'Thank you for your purchase.\nYou can view your order in `My Orders` section.';
   static const String continueShopping = 'Continue Shopping';
   static const String myOrders = 'My Orders';
-  static const String trackingNumber = 'Tracking number: ';
+  static const String trackingNumber = 'Tracking Number: ';
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
@@ -162,6 +163,7 @@ class AppString{
   static const String firstStep = 'STEP 1\n';
   static const String pending = 'Pending';
   static const String delivered = 'Delivered';
+  static const String deliveredOnStr = 'Delivered on ';
   static const String cancelled = 'Cancelled';
   static const String rateOrder = 'Rate';
   static const String returnHome = 'Return home';

@@ -41,6 +41,8 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
       itemBuilder: (context, index) {
         return
         ExpansionTile(
+          shape: Border.all(color: Colors.transparent),
+          collapsedShape: Border.all(color: Colors.transparent),
         title: _categoryCard(
           categoryType[index],
           categoryImage[index],

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
-Widget buildDrawerItem(IconData icon, String title , void Function()? onPressed) {
+import '../../../../core/extentions/extentions.dart';
+import '../../../Setting/presentation/pages/setting.dart';
+
+Widget buildDrawerItem(BuildContext context,IconData icon, String title , void Function()? onPressed) {
   return ListTile(
     leading: IconButton(
-      onPressed: () {},
+      onPressed: () {
+        context.pushNamed(const SettingsPage());
+
+      },
       icon: Icon(icon, color: Colors.grey[600]),
     ),
     title: Text(
