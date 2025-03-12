@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extentions/extentions.dart';
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../../../core/resources/values_manger.dart';
+import '../../../Setting/presentation/pages/setting.dart';
 import '../pages/profile.dart';
-import '../pages/profile_setting_screen.dart';
 import 'build_drawer_item.dart';
 import 'light_dark_toggle.dart';
 
@@ -28,12 +28,12 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.only(left: AppPadding.p20.w),
+        padding: 20.pl,
         child: Column(
           children: [
-            SizedBox(height: 90.h),
+            90.vs,
             Padding(
-              padding: EdgeInsets.only(left: AppPadding.p34.w),
+              padding:34.pl,
               child: Row(
                 children: [
                   InkWell(
@@ -55,7 +55,7 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20.w),
+                  20.vs,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -76,13 +76,16 @@ class _SidebarHomeScreenState extends State<SidebarHomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 100.h),
-            buildDrawerItem(Icons.settings, 'Settings', () {
-              context.pushNamed(const ProfileSettingScreen());
+
+            100.vs,
+            buildDrawerItem(context,Icons.settings, 'Settings', () {
+             setState(() {
+               context.pushNamed(const SettingsPage());
+             });;
             }),
-            buildDrawerItem(Icons.mail, 'Support', () {}),
-            buildDrawerItem(Icons.info, 'About us', () {}),
-            SizedBox(height: 70.h),
+            buildDrawerItem(context,Icons.mail, 'Support', () {}),
+            buildDrawerItem(context,Icons.info, 'About us', () {}),
+            70.vs,
             const LightDarkToggle(),
           ],
         ),

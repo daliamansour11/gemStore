@@ -10,7 +10,6 @@ import 'widgets/order_status.dart';
 import 'widgets/shipping_info.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
-  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
   final Order order;
   const OrderDetailsScreen({required this.order, super.key});
 

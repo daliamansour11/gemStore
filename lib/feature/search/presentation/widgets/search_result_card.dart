@@ -4,7 +4,7 @@ import '../pages/product_details.dart';
 
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../data/model/product_model.dart';
+import '../../../../core/models/product_model.dart';
 import 'custom_image_widget.dart';
 
 class SearchResultCard extends StatefulWidget {
@@ -14,8 +14,8 @@ class SearchResultCard extends StatefulWidget {
   @override
   State<SearchResultCard> createState() => _SearchResultCardState();
 }
-List<Product> products = [
-  Product(
+List<ProductModel> products = [
+  ProductModel(
     oldPrice:59.99,
     name: 'Fitted Waist Dress',
     price: 47.99,
@@ -25,7 +25,7 @@ List<Product> products = [
     rating: 4.5,
     description: 'A stylish fitted waist dress perfect for any occasion.', review: 65, id: 0,
   ),
-  Product(
+  ProductModel(
     name: 'Sportwear Set',
     price: 80.00,
     imageUrl:
@@ -66,7 +66,7 @@ class _SearchResultCardState extends State<SearchResultCard> {
 
 
 class ProductCard extends StatefulWidget {
-  final Product product;
+  final ProductModel product;
   const  ProductCard({super.key, required this.product,});
 
   @override
@@ -163,25 +163,11 @@ class _ProductCardState extends State<ProductCard> {
 
                           ),
                           Row(
-                            children: [
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star_border_outlined,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5),
-                                child: Text(
-                                  '${widget.product.rating} (${widget.product.review})',
-                                  style: const TextStyle(fontSize: 12),
-                                ),
-                              ),
-                            ],
+                            mainAxisSize: MainAxisSize.min,
+                            children: List.generate(
+                                5,
+                                    (index) => const Icon(Icons.star,
+                                    color: ColorsManger.ratingColor, size: 16)),
                           ),
                         ]),
                   ),

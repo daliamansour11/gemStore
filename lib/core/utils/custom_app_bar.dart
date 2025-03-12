@@ -28,7 +28,6 @@ PreferredSizeWidget? customAppBar({
         ? InkWell(
             onTap: () => Navigator.pop(context),
             child:
-                // TODO: Try to use here SvgDisplayer, I added it in the core/widgets
                 SvgDisplayer(assetName: ImageAssets.backIcon, width: 32.w, height: 32.h),
           )
         : InkWell(

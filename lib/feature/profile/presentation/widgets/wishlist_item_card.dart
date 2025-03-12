@@ -11,7 +11,7 @@ class WishlistItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        cardImgWhishlist(),
+        cardImgWishList(),
         Padding(
           padding: EdgeInsets.only(left: AppPadding.p8.w, right: AppPadding.p8.w),
           child: Card(

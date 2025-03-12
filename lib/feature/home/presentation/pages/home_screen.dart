@@ -33,7 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       leading: InkWell(
           onTap: () {
-            Scaffold.of(context).openDrawer();
+            setState(() {
+              Scaffold.of(context).openDrawer();
+
+            });
           },
           child: Image.asset(
             ImageAssets.menu,

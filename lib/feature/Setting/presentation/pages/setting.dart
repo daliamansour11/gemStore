@@ -1,4 +1,8 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/utils/custom_app_bar.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -7,21 +11,8 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title:const Text(
-          'Setting',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.black),
-          onPressed: () {
-            // Add drawer or navigation action here
-          },
-        ),
-      ),
+      appBar: customAppBar(title: AppString.settingAppBar, context: context,
+          isBackable: false, haveActions: false),
       body: Column(
         children: [
           _buildSettingsItem(Icons.language, 'Language'),

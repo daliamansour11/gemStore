@@ -1,25 +1,31 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/theme_data.dart';
+import '../../../../core/constants/constants.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/font_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/resources/values_manger.dart';
-import '../../data/model/product_model.dart';
+import '../../../../core/models/product_model.dart';
 
 class ProductDetailsWidgets extends StatefulWidget {
   const ProductDetailsWidgets({super.key, required this.products});
 
-  final Product products;
+  final ProductModel products;
 
   @override
   State<ProductDetailsWidgets> createState() => _ProductDetailsWidgetsState();
 }
 
 bool isFavorite = false;
+  final List<String> userFeedBack=[
 
+  ];
 class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
   @override
   Widget build(BuildContext context) {
@@ -46,15 +52,46 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                   decoration: const BoxDecoration(
                     color: Color(0xffFFFCFA),
                   ),
-                  child: Image.network(
-                    widget.products.imageUrl,
-                    errorBuilder: (context, error, stackTrace) {
-                      return Image.asset(
-                          ImageAssets.placeHolderImg); // Fallback image
-                    },
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                  child:
+    ImageSlideshow(
+
+      initialPage: 0,
+      indicatorColor: ColorsManger.btnColor,
+      indicatorBackgroundColor: ColorsManger.grey,
+      children: [
+    Image.asset(
+      widget.products.imageUrl,
+      // errorBuilder: (context, error, stackTrace) {
+      //   return Image.asset(
+      //       ImageAssets.dressImg); // Fallback image
+      // },
+      fit: BoxFit.cover,
+    ),
+    Image.asset(
+      widget.products.imageUrl,
+      // errorBuilder: (context, error, stackTrace) {
+      //   return Image.asset(
+      //       ImageAssets.dressImg); // Fallback image
+      // },
+      fit: BoxFit.cover,
+    ),
+    Image.asset(
+      widget.products.imageUrl,
+      // errorBuilder: (context, error, stackTrace) {
+      //   return Image.asset(
+      //       ImageAssets.dressImg); // Fallback image
+      // },
+      fit: BoxFit.cover,
+    ),
+    ],
+      onPageChanged: (value) {
+    print('Page changed: $value');
+    },
+    autoPlayInterval: 3000,
+
+    isLoop: false,
+    ),),
+
                 Positioned(
                   top: AppPadding.p40,
                   left: AppPadding.p33,
@@ -128,9 +165,9 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
               children: [
                 Text(
                   widget.products.name,
-                  style: appTheme().textTheme.labelMedium,
+                   style:const  TextStyle(fontSize: FontSize.s20, fontWeight: FontWeight.bold,color: ColorsManger.dark),
                 ),
-                const SizedBox(height: 8),
+
                 Padding(
                   padding: const EdgeInsets.only(
                       right: AppPadding.p8, top: AppPadding.p3),
@@ -141,175 +178,196 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            8.vs,
             Padding(
-              padding: const EdgeInsets.only(left: AppPadding.p4),
+              padding:4.pl,
               child: Row(
                 children: List.generate(
                     5,
                     (index) => const Icon(
                           Icons.star,
                           color: ColorsManger.ratingColor,
-                          size: 20,
+                          size: FontSize.s20,
                         )),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  AppString.descriptionStr,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                Image.asset(ImageAssets.expandDownIcon)
-              ],
-            ),
-            const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.only(left: AppPadding.p4),
-              child: Text(
-                widget.products.description,
-                style: appTheme().textTheme.labelSmall,
-              ),
-            ),
-            const SizedBox(height: 16),
 
-            // 'Reviews',
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
+          ExpansionTile(
+              shape: Border.all(color: Colors.transparent),
+              collapsedShape: Border.all(color: Colors.transparent),
+              title:     const Text(
+                    AppString.descriptionStr,
+                    style: TextStyle(fontSize: FontSize.s18, fontWeight: FontWeight.bold),
+
+            ),
+
+            children: [
+              Padding(
+                padding:  4.pl,
+                child: Text(
+                  widget.products.description,
+                  style: appTheme().textTheme.labelMedium,
+                ),
+              ),]
+          ),
+            16.vs,
+            ExpansionTile(
+                shape: Border.all(color: Colors.transparent),
+                collapsedShape: Border.all(color: Colors.transparent),
+                title: const Text(
                   AppString.reviewsStr,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: FontSize.s18, fontWeight: FontWeight.bold),
                 ),
-                Image.asset(ImageAssets.expandDownIcon)
-              ],
-            ),
-            ListTile(
-              leading: Text(
-                '${widget.products.rating} (${widget.products.review})',
-                style:
-                    const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              trailing: Column(
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: List.generate(
-                        5,
-                        (index) => const Icon(Icons.star,
-                            color: ColorsManger.ratingColor, size: 16)),
-                  ),
-                  Text(
-                    '${widget.products.rating} ${widget.products.review}',
-                    style: const TextStyle(
-                        fontSize: 10, fontWeight: FontWeight.w300),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Image.asset(ImageAssets.expandDownIcon)],
-            ),
-            const SizedBox(height: 8),
-            ListTile(
-              leading: const CircleAvatar(),
-              title: const Text('Jennifer Icon'),
-              subtitle: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: List.generate(
-                    5,
-                    (index) => const Icon(Icons.star,
-                        color: ColorsManger.ratingColor, size: 16)),
-              ),
-            ),
-             Padding(
-               padding: 15.all,
-               child: Text(AppString.userFeedBack,
-                style: appTheme().textTheme.titleSmall,
-                           ),
-             ),
-            ListTile(
-              leading: const CircleAvatar(),
-              title: const Text('kelly Icon'),
-              subtitle: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: List.generate(
-                    5,
-                    (index) => const Icon(Icons.star,
-                        color: ColorsManger.ratingColor, size: 16)),
-              ),
-              trailing: const Text('5m ago',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300)),
-            ),
-             Padding(
-               padding: 15.all,
-               child: Text(AppString.userFeedBack,
-                  style: appTheme().textTheme.titleSmall,
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Text(
+                            '${widget.products.rating} (${widget.products.review})',
+                            style: const TextStyle(
+                                fontSize: FontSize.s30, fontWeight: FontWeight.bold),
+                          ),
+                          trailing: Column(
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: List.generate(
+                                    5,
+                                        (index) =>
+                                    const Icon(Icons.star,
+                                        color: ColorsManger.ratingColor, size: FontSize.s16)),
+                              ),
+                              Text(
+                                '${widget.products.rating} ${widget.products.review}',
+                                style: const TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w300),
+                              ),
 
-                     ),
-             ),
-
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  AppString.similarProductStr,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                Image.asset(ImageAssets.expandDownIcon)
-              ],
-            ),
-            const SizedBox(height: 8),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 0.75,
-              ),
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 172,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.grey[200],
+                            ],
+                          ),
                         ),
-                        child: Center(
-                            child: Image.network(
-                              widget.products.imageUrl,
-                              errorBuilder: (context, error, stackTrace) {
-                                return Image.asset(
-                                    ImageAssets.placeHolderImg); // Fallback image
-                              },
-                          fit: BoxFit.cover,
-                        )),
-                      ),
+                        ListTile(
+                          leading: const CircleAvatar(),
+                          title: const Text('Jennifer Rose'),
+                          subtitle: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: List.generate(
+                                5,
+                                    (index) =>
+                                const Icon(Icons.star,
+                                    color: ColorsManger.ratingColor, size: FontSize.s16)),
+                          ),
+                          trailing:  Padding(
+                            padding:  4.pr,
+                            child:const Text('3m ago',
+                                style: TextStyle(
+                                    fontSize: 10, fontWeight: FontWeight.w300)),
+                          ),
+                        ),
+                        Padding(
+                          padding: 15.all,
+                          child:  Text(AppString.userFeedBack,
+                            style: appTheme().textTheme.titleSmall,
+
+                          ),
+                        ),
+
+                        ListTile(
+                          leading: const CircleAvatar(),
+                          title: const Text('Kelly Rihana'),
+                          subtitle: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: List.generate(
+                                5,
+                                    (index) =>
+                                const Icon(Icons.star,
+                                    color: ColorsManger.ratingColor, size: FontSize.s16)),
+                          ),
+                          trailing:  Padding(
+                            padding:  8.pr,
+                            child:const Text('3 hour ago',
+                                style: TextStyle(
+                                    fontSize: FontSize.s10, fontWeight: FontWeight.w300)),
+                          ),
+                        ),
+                        Padding(
+                          padding: 15.all,
+                          child:  Text(AppString.userFeedBack,
+                            style: appTheme().textTheme.titleSmall,
+                          ),
+                        ),
+
+                        16.vs,                      ],
                     ),
-                    const SizedBox(height: 4),
-                    Text(widget.products.name,
-                        style: const TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w500)),
-                    Text('\$ ${widget.products.price}',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600)),
-                  ],
-                );
-              },
+                  )
+                ]
             ),
-          ],
-        ),
+
+            ExpansionTile(
+                shape: Border.all(color: Colors.transparent),
+                collapsedShape: Border.all(color: Colors.transparent),
+                title:     const Text(
+                  AppString.similarProductStr,
+                  style: TextStyle(fontSize: FontSize.s18, fontWeight: FontWeight.bold),
+
+                ),
+
+
+                    children: [
+                      GridView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          childAspectRatio: 0.75,
+                        ),
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  height: 172,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.grey[200],
+                                  ),
+                                  child: Center(
+                                      child: Image.network(categoryImage[index]
+                                        ,
+                                        errorBuilder: (context, error, stackTrace) {
+                                          return Image.asset(
+                                              ImageAssets.placeHolderImg); // Fallback image
+                                        },
+                                        fit: BoxFit.cover,
+                                      )),
+                                ),
+                              ),
+                                  4.vs,
+                               Text(widget.products.name,
+                                  style: const TextStyle(
+                                      fontSize: FontSize.s12, fontWeight: FontWeight.w500)),
+                              Text('\$ ${widget.products.price}',
+                                  style: const TextStyle(
+                                      fontSize: FontSize.s14,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w600)),
+                            ],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+
+                ]
+            ),
+            // const SizedBox(height: 8),
+
+
       ),
     );
   }

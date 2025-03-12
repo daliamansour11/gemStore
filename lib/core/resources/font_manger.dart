@@ -14,6 +14,7 @@ class FontWeightManger {
 }
 
 class FontSize {
+  static const double s10 = 10.0;
   static const double s11 = 11.0;
   static const double s12 = 12.0;
   static const double s13 = 13.0;
@@ -26,4 +27,5 @@ class FontSize {
   static const double s24 = 24.0;
   static const double s25 = 25.0;
   static const double s28 = 28.0;
+  static const double s30 = 30.0;
 }

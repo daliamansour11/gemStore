@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 
-Container cardImgWhishlist() {
+Container cardImgWishList() {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(16),
@@ -25,12 +26,12 @@ Container cardImgWhishlist() {
                   topLeft: Radius.circular(8.r),
                   bottomLeft: Radius.circular(8.r)),
               child: Image.asset(
-                ImageAssets.onboardingLogo1,
+                ImageAssets.girlImg,
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          SizedBox(width: 5.w),
+          5.hs,
           SizedBox(
             width: 106.w,
             height: 149.h,
@@ -41,7 +42,7 @@ Container cardImgWhishlist() {
               ),
             ),
           ),
-          SizedBox(width: 5.w),
+          5.hs,
           Container(
             height: 149.h,
             color: Colors.white,
@@ -52,18 +53,18 @@ Container cardImgWhishlist() {
                   height: 85.h,
                   child: ClipRRect(
                     child: Image.asset(
-                      ImageAssets.onboardingLogo1,
+                      ImageAssets.girlImg,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                SizedBox(height: 5.h),
+                5.vs,
                 SizedBox(
                   width: 53.w,
                   height: 59.h,
                   child: ClipRRect(
                     child: Image.asset(
-                      ImageAssets.onboardingLogo1,
+                      ImageAssets.girl1Img,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -71,7 +72,7 @@ Container cardImgWhishlist() {
               ],
             ),
           ),
-          SizedBox(width: 5.w),
+          5.hs,
           Container(
             height: 149.h,
             color: Colors.white,
@@ -90,7 +91,7 @@ Container cardImgWhishlist() {
                     ),
                   ),
                 ),
-                SizedBox(height: 5.h),
+                5.vs,
                 SizedBox(
                   width: 53.w,
                   height: 85.h,
@@ -98,7 +99,7 @@ Container cardImgWhishlist() {
                     borderRadius:
                         BorderRadius.only(bottomRight: Radius.circular(8.r)),
                     child: Image.asset(
-                      ImageAssets.onboardingLogo1,
+                      ImageAssets.girlImg,
                       fit: BoxFit.cover,
                     ),
                   ),
