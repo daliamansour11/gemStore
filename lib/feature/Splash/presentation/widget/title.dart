@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 
 class SplashTitle extends StatelessWidget {
@@ -14,7 +14,7 @@ class SplashTitle extends StatelessWidget {
       style: TextStyle(
         fontSize: 24.sp, // Using .sp for text scaling
         fontWeight: FontWeight.bold,
-        color: Colors.white,
+        color: ColorsManger.white,
       ),
     );
   }

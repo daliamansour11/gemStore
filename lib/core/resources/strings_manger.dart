@@ -99,6 +99,7 @@ class AppString{
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
   static const String orderNumber = 'Order number';
+  static const String deliveredOnStr = 'DeliveredOn';
   static const String submitReviewBtn = 'Submit Review';
   static const String sendFeedBackBtn = 'Send Feedback';
   static const String userFeedBackStr = 'What is your opinion of GemStore?';
