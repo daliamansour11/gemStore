@@ -24,7 +24,7 @@ class _RateProductWidgetState extends State<RateProductWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(height: 30),
+        30.vs,
         RatingBar.builder(
           initialRating: ratingRev,
           itemPadding: 8.all,
@@ -43,7 +43,7 @@ class _RateProductWidgetState extends State<RateProductWidget> {
             });
           },
         ),
-        const SizedBox(height: 30),
+        30.vs,
         Container(
           padding: 16.all,
           decoration: BoxDecoration(
@@ -77,7 +77,7 @@ class _RateProductWidgetState extends State<RateProductWidget> {
             ),
           ),
         ),
-       const  SizedBox(height: 100.0),
+        100.vs,
         SizedBox(
             width: double.infinity,
             child: CustomButton(

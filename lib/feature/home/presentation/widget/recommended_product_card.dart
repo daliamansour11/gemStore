@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../data/model/product_model.dart';
+import '../../../../core/models/product_model.dart';
 class RecommendedProductCard extends StatelessWidget {
  final ProductModel product;
   const RecommendedProductCard({super.key,required this.product});
@@ -26,7 +26,7 @@ class RecommendedProductCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              product.image,
+              product.imageUrl,
               fit: BoxFit.cover,
               width: 66.w,
               height: 66.h,
@@ -40,14 +40,14 @@ class RecommendedProductCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  product.title,
+                  product.name,
                   style: const TextStyle(
                       fontSize: 12, fontWeight: FontWeight.w500),
                   overflow: TextOverflow.ellipsis, // Prevents overflow
                   maxLines: 1, // Limits to one line
                 ),
                 Text(
-                  product.price,
+                  '${product.price}',
                   style: const TextStyle(
                       fontSize: 16, fontWeight: FontWeight.bold),
                 ),

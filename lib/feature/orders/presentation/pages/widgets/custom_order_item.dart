@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../../core/resources/colors_manger.dart';
+import '../../../../../core/resources/font_manger.dart';
 
 class CustomOrderItem extends StatelessWidget {
   bool isOrderDetials = false;
@@ -35,8 +37,11 @@ class CustomOrderItem extends StatelessWidget {
         children: [
           Text(detailName,
               style: TextStyle(
+                fontSize: 14.r,
+                  fontWeight: FontWeightManger.regular,
                   color: isOrderDetials ? Colors.black54 : Colors.black)),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               withquantity
                   ? Text(quantity!,

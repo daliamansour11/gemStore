@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import '../../../../core/models/product_model.dart';
 
-import '../../data/model/product_model.dart';
 import '../widgets/custom_bottom_appbar_widget.dart';
 import '../widgets/product_details_widgets.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
-  final Product products;
+  final ProductModel products;
 
   const ProductDetailsScreen({required this.products, super.key});
 

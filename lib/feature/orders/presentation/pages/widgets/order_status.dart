@@ -15,7 +15,7 @@ class OrderStauts extends StatelessWidget {
           ? AppString.orderDeliveried
           : AppString.orderOnWay,
       description: orderStatus == AppString.delivered ? AppString.rateProducts : AppString.trackProducts,
-      image: const AssetImage(ImageAssets.deliver),
+      image: const AssetImage(ImageAssets.deliverImg),
     );
   }
 }

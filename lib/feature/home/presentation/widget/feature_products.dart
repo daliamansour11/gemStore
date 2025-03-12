@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/models/product_model.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../data/model/product_data.dart';
@@ -40,9 +41,9 @@ class FeatureProducts extends StatelessWidget {
           height: 227.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: products.length,
+            itemCount:ProductModel. products.length,
             itemBuilder: (context, index) {
-              return FeatureProductsCard( product: products[index],); // Pass a single product
+              return FeatureProductsCard( product:ProductModel. products[index],); // Pass a single product
             },
           ),
         ),
