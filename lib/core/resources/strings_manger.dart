@@ -164,7 +164,6 @@ class AppString{
   static const String firstStep = 'STEP 1\n';
   static const String pending = 'Pending';
   static const String delivered = 'Delivered';
-  static const String deliveredOnStr = 'Delivered on ';
   static const String cancelled = 'Cancelled';
   static const String rateOrder = 'Rate';
   static const String returnHome = 'Return home';

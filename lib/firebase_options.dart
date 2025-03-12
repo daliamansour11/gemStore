@@ -28,10 +28,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         return windows;
       case TargetPlatform.linux:
@@ -44,6 +41,7 @@ class DefaultFirebaseOptions {
           'DefaultFirebaseOptions are not supported for this platform.',
         );
     }
+
   }
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -71,6 +69,16 @@ class DefaultFirebaseOptions {
     projectId: 'gemstore-5678',
     authDomain: 'gemstore-5678.firebaseapp.com',
     storageBucket: 'gemstore-5678.firebasestorage.app',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBJFmsVOj_n16PTJ4BkEk1ehCiBauvbCGI',
+    appId: '1:1002804230337:ios:9e206e99572f1922d93c40',
+    messagingSenderId: '1002804230337',
+    projectId: 'gemstore-5678',
+    storageBucket: 'gemstore-5678.firebasestorage.app',
+    iosClientId: '1002804230337-nhnfn0pd4gbmj6hlge1l8qtbke0dvqpn.apps.googleusercontent.com',
+    iosBundleId: 'com.example.gemStore',
   );
 
 }
