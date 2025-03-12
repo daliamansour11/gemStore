@@ -1,11 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 // TODO:Refactor this file into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 // TODO: Padding needs to be responsive.
 // **TODO: Store the string in the app's strings file. This improves maintainability and simplifies future localization.
-
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: ColorsManger.white,
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 32.0),
+        padding: EdgeInsets.symmetric(horizontal: 32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -89,11 +89,12 @@ class _LoginForm extends StatelessWidget {
                 debugPrint('Forgot Password Clicked!');
               },
               borderRadius: BorderRadius.circular(5),
-              child:  Padding(
-                padding:const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                 child: Text(
                   AppString.forgetPassword,
-                  style: TextStyle(color: ColorsManger.grey, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      color: ColorsManger.grey, fontWeight: FontWeight.w500),
                 ),
               ),
             ),
@@ -131,15 +132,35 @@ class _LoginButton extends StatelessWidget {
 
 class _SocialLogin extends StatelessWidget {
   const _SocialLogin();
+  Future signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+     await FirebaseAuth.instance.signInWithCredential(credential);
+    // Navigator.of(context)
+    //     .pushNamedAndRemoveUntil('HomeScreen', (route) => false);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Center(
+        Center(
           child: Text(
             AppString.logInWith,
-            style: TextStyle(color: ColorsManger.grey, fontWeight: FontWeight.w500),
+            style: TextStyle(
+                color: ColorsManger.grey, fontWeight: FontWeight.w500),
           ),
         ),
         const SizedBox(height: 16),
@@ -148,7 +169,9 @@ class _SocialLogin extends StatelessWidget {
           children: [
             _buildSocialIcon('assets/images/apple.png', () {}),
             const SizedBox(width: 16),
-            _buildSocialIcon('assets/images/google.png', () {}),
+            _buildSocialIcon('assets/images/google.png', () {
+              signInWithGoogle();
+            }),
             const SizedBox(width: 16),
             _buildSocialIcon('assets/images/facebook.png', () {}),
           ],
