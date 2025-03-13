@@ -5,7 +5,7 @@ import 'main_development.dart';
 
 void main() {
   runApp(MyApp(
-    appconfiguration: ProductionConfiguration(),
+    appConfiguration: ProductionConfiguration(),
   ));
 }
 

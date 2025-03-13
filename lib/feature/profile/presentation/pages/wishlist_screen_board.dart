@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
@@ -20,6 +20,10 @@ class WishlistScreenBoards extends StatefulWidget {
 class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
   @override
   Widget build(BuildContext context) {
+    Global.analytics.logScreenView(
+      screenName: 'WishlistScreenBoards',
+      screenClass: 'WishlistScreenBoards',
+    );
     return Scaffold(
         drawer: const SidebarHomeScreen(),
         backgroundColor: ColorsManger.lightWhiteColor,

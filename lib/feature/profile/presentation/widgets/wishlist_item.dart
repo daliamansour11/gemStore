@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/models/product_model.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
@@ -18,6 +19,12 @@ class WishlistItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
+        Global.analytics.logEvent(
+          name: 'WishlistItem clicked',
+          parameters: {
+            'button_name': 'WishlistItem',
+          },
+        );
         context.pushNamed(ProductDetailsScreen(products: item));
       },
       child: Container(

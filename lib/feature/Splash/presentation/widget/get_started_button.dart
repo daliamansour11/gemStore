@@ -1,5 +1,7 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/Custom_button.dart';
@@ -7,6 +9,10 @@ import '../../../onBoarding/presentation/pages/on_boarding.dart';
 
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key});
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +24,16 @@ class GetStartedButton extends StatelessWidget {
         height: 53.h,
         color: ColorsManger.btnColor, isFill: true,
         onPressed: () {
+          Global.analytics.logEvent(
+            name: 'button_clicked',
+            parameters: {
+              'button_name': 'Get Started',
+            },
+          );
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Onboarding(),
+              builder: (context) =>  Onboarding(),
             ),
           );
         },

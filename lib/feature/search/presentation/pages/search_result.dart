@@ -1,6 +1,8 @@
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../../../config/theme/theme_data.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 
@@ -9,8 +11,7 @@ import '../widgets/search_result_card.dart';
 
 class SearchResult extends StatefulWidget {
 
-  const SearchResult({super.key, });
-
+  const SearchResult({super.key,  });
   @override
   State<SearchResult> createState() => _SearchResultState();
 }
@@ -21,6 +22,10 @@ class _SearchResultState extends State<SearchResult> {
 
   @override
   Widget build(BuildContext context) {
+    Global.analytics.logScreenView(
+      screenName: 'SearchResult',
+      screenClass: 'SearchResult',
+    );
     return Scaffold(
 backgroundColor: ColorsManger.white,
       body: Padding(

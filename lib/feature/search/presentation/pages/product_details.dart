@@ -1,4 +1,6 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/models/product_model.dart';
 
 import '../widgets/custom_bottom_appbar_widget.dart';
@@ -6,8 +8,8 @@ import '../widgets/product_details_widgets.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final ProductModel products;
+   ProductDetailsScreen({required this.products, super.key} );
 
-  const ProductDetailsScreen({required this.products, super.key});
 
   @override
   State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
@@ -15,6 +17,12 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
+  @override
+  void initState() {
+    super.initState();
+  Global.analytics.setCurrentScreen(
+      screenName: 'ProductDetailsScreen',
+    );}
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,8 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
@@ -11,10 +13,15 @@ import '../cubit/cart_screen_cubit.dart';
 import 'cart_body.dart';
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+  const CartScreen(  {super.key});
+
 
   @override
   Widget build(BuildContext context) {
+    Global.analytics.logScreenView(
+      screenName: 'CartScreen',
+      screenClass: 'CartScreen',
+    );
     return Scaffold(
       backgroundColor: ColorsManger.white,
       // TODO: Move the if conditions and BlocBuilder to a separate file and import them here.

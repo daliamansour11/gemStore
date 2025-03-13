@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../global/global.dart';
 import '../resources/assets_manger.dart';
 import '../resources/colors_manger.dart';
 import '../widget/svg_displayer.dart';
@@ -26,12 +27,26 @@ PreferredSizeWidget? customAppBar({
     ),),
     leading: isBackable
         ? InkWell(
-            onTap: () => Navigator.pop(context),
+            onTap: () {
+
+              Global.analytics.logEvent(
+                name: 'back button_clicked',
+                parameters: {
+                  'button_name': 'backButton ',
+                },
+              );
+              Navigator.pop(context);},
             child:
                 SvgDisplayer(assetName: ImageAssets.backIcon, width: 32.w, height: 32.h),
           )
         : InkWell(
         onTap: (){
+          Global.analytics.logEvent(
+            name: 'Drawer button_clicked',
+            parameters: {
+              'button_name': 'open Drawer',
+            },
+          );
           Scaffold.of(context).openDrawer();
         },
         child: Image.asset(ImageAssets.menuIcon,width: AppSize.s18,height: AppSize.s17,)),
@@ -67,12 +82,27 @@ Widget customAppBarWidget({
     title: Text(title),
     leading: isBackable
         ? InkWell(
-            onTap: () => Navigator.pop(context),
+            onTap: () {
+              Global.analytics.logEvent(
+                name: 'back button_clicked',
+                parameters: {
+                  'button_name': 'backButton ',
+                },
+              );
+              Navigator.pop(context);
+
+            } ,
             child:
                 SvgPicture.asset(ImageAssets.backIcon, width: AppSize.s32, height: AppSize.s32),
           )
         : InkWell(
   onTap: (){
+    Global.analytics.logEvent(
+      name: 'Drawer button_clicked',
+      parameters: {
+        'button_name': 'open Drawer',
+      },
+    );
   Scaffold.of(context).openDrawer();
   },
   child:Image.asset(ImageAssets.menuIcon,width:AppSize.s18,height: AppSize.s17,)),
