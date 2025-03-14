@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extentions/extentions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
@@ -19,6 +20,9 @@ class ProfileSettingScreen extends StatefulWidget {
 class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
   @override
   Widget build(BuildContext context) {
+
+    Global.logScreenView('ProfileSettingScreen', 'ProfileSettingScreen');
+
     return Scaffold(
       appBar: customAppBar(title: AppString.profileSettings, context: context,
           isBackable: true, haveActions: false),
@@ -83,7 +87,12 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
               buildTextFieldRow('Gender', 'Female', 'Phone', '(+1) 23456789'),
               SizedBox(height: 40.h),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+
+
+                  Global.buttonClicked('saveChange button_clicked');
+
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ColorsManger.black,
                   shape: RoundedRectangleBorder(

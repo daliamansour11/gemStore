@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../feature/home/presentation/pages/home_screen.dart';
 import '../../feature/orders/presentation/pages/order_screen.dart';
@@ -15,8 +16,8 @@ class BottomNavigation extends StatefulWidget {
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
 }
-
 class _BottomNavigationState extends State<BottomNavigation> {
+  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
    int curvedIndex=0 ;
   void _changeItem(int value) {
@@ -52,11 +53,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
       ),
       body: IndexedStack(
         index: curvedIndex,
-        children: const [
-          HomeScreen(),
+        children:  [
+          HomeScreen(analytics: analytics,),
           DiscoverScreen(),
-          OrdersScreen(),
-          WishlistScreenBoards(),
+            OrdersScreen(),
+            WishlistScreenBoards(),
         ],
       ),
     );

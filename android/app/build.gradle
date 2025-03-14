@@ -65,7 +65,7 @@ android {
             dimension = "default"
             applicationId "com.example.gem_store"
             resValue "string", "app_name", "free flavor example"
-            applicationIdSuffix = ".development"
+//            applicationIdSuffix = ".development"
         }
 
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/assets_manger.dart';
 import 'wishlist_screen.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
@@ -13,6 +14,9 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Global.logScreenView('ProfileScreen', 'ProfileScreen');
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -56,6 +60,9 @@ class ProfileScreen extends StatelessWidget {
                   icon: const Icon(Icons.settings, color: Colors.black),
                   iconSize: 30,
                   onPressed: () {
+
+                    Global.buttonClicked('setting button_clicked');
+
                     context.pushNamed(const ProfileSettingScreen());
                   },
                 ),

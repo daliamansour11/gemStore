@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/custom_rich_text.dart';
@@ -49,7 +50,10 @@ class OrderCard extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () => context.pushNamed(OrderDetailsScreen(order: order)),
+                  onPressed: () {
+
+                      Global.buttonClicked('details button_clicked');
+                      context.pushNamed(OrderDetailsScreen(order: order));},
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25.r)),

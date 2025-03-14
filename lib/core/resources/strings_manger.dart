@@ -70,6 +70,9 @@ class AppString{
   static const signInWith = 'Sign in with another account';
   static const favourite = 'Favourite';
   static const addToCart = 'Add To Cart';
+  static const UpdateScreen = 'Update Screen ';
+  static const clickIcon = 'clickIcon ';
+  static const NewUpdate = 'New Update ';
   // static const  log_out_btn= "Log out";
   // static const  gender= "Gender";
 //
@@ -164,7 +167,6 @@ class AppString{
   static const String firstStep = 'STEP 1\n';
   static const String pending = 'Pending';
   static const String delivered = 'Delivered';
-  static const String deliveredOnStr = 'Delivered on ';
   static const String cancelled = 'Cancelled';
   static const String rateOrder = 'Rate';
   static const String returnHome = 'Return home';

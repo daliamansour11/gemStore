@@ -7,6 +7,9 @@ import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/custom_button.dart';
 
+
+import '../../../../core/global/global.dart';
+
 import '../widget/back_ground_image.dart';
 import '../widget/get_started_button.dart';
 import '../widget/shadow.dart';
@@ -14,13 +17,15 @@ import '../widget/sub_title.dart';
 import '../widget/title.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  const WelcomeScreen( {super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
 
+
+
+    Global.logScreenView('WelcomeScreen','WelcomeScreen');
     return Scaffold(
         body: Stack(
       fit: StackFit.expand,
@@ -36,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(height: 10.h),
               const SubTitle(),
               SizedBox(height: 50.h),
-              const GetStartedButton(),
+             const  GetStartedButton(),
               SizedBox(height: 80.h),
               //for test the FirebaseCrashlytics
               ElevatedButton(

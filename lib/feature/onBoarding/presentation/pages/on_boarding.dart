@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../widgets/custom_page_view.dart';
 import '../widgets/onboarding_button.dart';
 
 class Onboarding extends StatefulWidget {
-  const Onboarding({super.key});
+  const Onboarding( {super.key});
 
   @override
   State<Onboarding> createState() => _OnboardingState();
@@ -13,9 +14,13 @@ class Onboarding extends StatefulWidget {
 
 class _OnboardingState extends State<Onboarding> {
   int currentIndex = 0;
-
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
+    Global.logScreenView('Onboarding', 'Onboarding');
     return Scaffold(
       body: Stack(
         children: [

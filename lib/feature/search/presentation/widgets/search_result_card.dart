@@ -1,4 +1,6 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/values_manger.dart';
 import '../pages/product_details.dart';
 
@@ -10,7 +12,7 @@ import 'custom_image_widget.dart';
 class SearchResultCard extends StatefulWidget {
   const SearchResultCard({super.key,});
 
-
+  // final FirebaseAnalytics analytics;
   @override
   State<SearchResultCard> createState() => _SearchResultCardState();
 }
@@ -49,7 +51,7 @@ class _SearchResultCardState extends State<SearchResultCard> {
         ),
         itemCount: products.length,
         itemBuilder: (context, index) {
-          return ProductCard(product: products[index]);
+          return ProductCard( product: products[index],);
         },
       ),
     );
@@ -68,7 +70,7 @@ class _SearchResultCardState extends State<SearchResultCard> {
 class ProductCard extends StatefulWidget {
   final ProductModel product;
   const  ProductCard({super.key, required this.product,});
-
+  // final FirebaseAnalytics analytics;
   @override
   _ProductCardState createState() => _ProductCardState();
 }
@@ -81,7 +83,7 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushNamed(ProductDetailsScreen(products: widget.product));
+        context.pushNamed(ProductDetailsScreen(products: widget.product,  ));
       },
       child: Hero(
         // tag: [//]!.id!??0,
