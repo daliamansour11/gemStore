@@ -20,10 +20,9 @@ class WishlistScreenBoards extends StatefulWidget {
 class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'WishlistScreenBoards',
-      screenClass: 'WishlistScreenBoards',
-    );
+
+    Global.logScreenView('WishlistScreenBoards', 'WishlistScreenBoards');
+
     return Scaffold(
         drawer: const SidebarHomeScreen(),
         backgroundColor: ColorsManger.lightWhiteColor,

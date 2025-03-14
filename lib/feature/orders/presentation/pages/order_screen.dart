@@ -15,10 +15,8 @@ class OrdersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'OrdersScreen',
-      screenClass: 'OrdersScreen',
-    );
+
+    Global.logScreenView('OrdersScreen', 'OrdersScreen');
 
     return DefaultTabController(
       length: 3,

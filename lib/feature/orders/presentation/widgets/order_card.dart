@@ -51,12 +51,8 @@ class OrderCard extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                      Global.analytics.logEvent(
-                        name: 'details button_clicked',
-                        parameters: {
-                          'button_name': 'Details',
-                        },
-                      );
+
+                      Global.buttonClicked('details button_clicked');
                       context.pushNamed(OrderDetailsScreen(order: order));},
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

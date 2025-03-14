@@ -1,4 +1,3 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/global/global.dart';
@@ -18,12 +17,10 @@ class _OnboardingState extends State<Onboarding> {
   @override
   void initState() {
     super.initState();
-    Global.analytics.setCurrentScreen(
-      screenName: 'Onboarding',
-    );
   }
   @override
   Widget build(BuildContext context) {
+    Global.logScreenView('Onboarding', 'Onboarding');
     return Scaffold(
       body: Stack(
         children: [

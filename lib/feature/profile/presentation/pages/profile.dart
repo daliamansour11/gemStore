@@ -14,10 +14,9 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'ProfileScreen',
-      screenClass: 'ProfileScreen',
-    );
+
+    Global.logScreenView('ProfileScreen', 'ProfileScreen');
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -61,12 +60,9 @@ class ProfileScreen extends StatelessWidget {
                   icon: const Icon(Icons.settings, color: Colors.black),
                   iconSize: 30,
                   onPressed: () {
-                    Global.analytics.logEvent(
-                      name: 'setting button_clicked',
-                      parameters: {
-                        'button_name': 'Setting',
-                      },
-                    );
+
+                    Global.buttonClicked('setting button_clicked');
+
                     context.pushNamed(const ProfileSettingScreen());
                   },
                 ),

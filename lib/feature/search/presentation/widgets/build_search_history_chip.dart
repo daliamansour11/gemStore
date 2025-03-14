@@ -79,12 +79,9 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
         SearchTextFieldWidget(label: 'search', controller: searchController,
             isReadOnly: false,
             onPressed: () {
-              Global.analytics.logEvent(
-                name: 'searchTextField clicked',
-                parameters: {
-                  'button_name': 'searchTextField',
-                },
-              );
+
+              Global.buttonClicked('searchTextField clicked');
+
             }, onSubmit: (value){
               value =searchController.text;
               _addSearchItem(searchController.text);
@@ -106,12 +103,8 @@ class _BuildSearchHistoryChipState extends State<BuildSearchHistoryChip> {
             Padding(padding:const EdgeInsets.only(top: AppPadding.p28,
               bottom: AppPadding.p28,right: AppPadding.p28,),
               child: InkWell(child: Image.asset(ImageAssets.trashIcon,),
-                onTap: (){ Global.analytics.logEvent(
-                  name: 'clear_button clicked',
-                  parameters: {
-                    'button_name': 'clear_button',
-                  },
-                );
+                onTap: (){
+                Global.buttonClicked('clear_button clicked');
                   _clearAllSearches();
                 },)
 

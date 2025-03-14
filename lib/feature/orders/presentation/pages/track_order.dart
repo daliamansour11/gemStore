@@ -11,10 +11,9 @@ class OrderTrack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Global.analytics.logScreenView(
-      screenName: 'OrderTrack',
-      screenClass: 'OrderTrack',
-    );
+
+    Global.logScreenView('OrderTrack', 'OrderTrack');
+
     return Scaffold(
       appBar: customAppBar(title: AppString.traceOrderAppBar, context: context,  isBackable: true, haveActions: false),
       body: Padding(

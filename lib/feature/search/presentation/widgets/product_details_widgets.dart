@@ -122,12 +122,9 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                         color: isFavorite ? Colors.red : Colors.grey,
                       ),
                       onPressed: () {
-                        Global.analytics.logEvent(
-                          name: 'favourite_button clicked',
-                          parameters: {
-                            'button_name': 'favourite',
-                          },
-                        );
+
+                        Global.buttonClicked('favourite_button  clicked');
+
                         setState(() {
                           isFavorite = !isFavorite;
                         });

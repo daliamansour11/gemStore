@@ -59,12 +59,9 @@ class ShippingComplete extends StatelessWidget {
                 title: AppString.continueShopping,
                 onPressed: () {
 
-                  Global.analytics.logEvent(
-                    name: 'continueShopping button_clicked',
-                    parameters: {
-                      'button_name': 'Continue Shopping',
-                    },
-                  );
+
+                  Global.buttonClicked('continueShopping_button  clicked');
+
                 },
               ),
             ],

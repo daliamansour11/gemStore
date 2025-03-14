@@ -17,14 +17,11 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
-  @override
-  void initState() {
-    super.initState();
-  Global.analytics.setCurrentScreen(
-      screenName: 'ProductDetailsScreen',
-    );}
+
+
   @override
   Widget build(BuildContext context) {
+    Global.logScreenView('ProductDetailsScreen', 'ProductDetailsScreen');
     return Scaffold(
       bottomNavigationBar:const CustomBottomAppbarWidget(),
       body: ProductDetailsWidgets(products: widget.products,),

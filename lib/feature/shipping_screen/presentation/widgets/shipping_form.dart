@@ -77,12 +77,9 @@ class _ShippingFormState extends State<ShippingForm> {
           SizedBox(height: 20.h),
           CustomButton(
             onPressed: () {
-              Global.analytics.logEvent(
-                name: 'Payment_button_clicked',
-                parameters: {
-                  'button_name': 'Continue to payment',
-                },
-              );
+
+              Global.buttonClicked('Payment_button_clicked');
+
               // if (_formKey.currentState?.validate() ?? false) {}
               context.pushNamed(const ShippingComplete());
             },

@@ -111,12 +111,7 @@ class _LoginButton extends StatelessWidget {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          Global.analytics.logEvent(
-            name: 'login button_clicked',
-            parameters: {
-              'button_name': 'Login',
-            },
-          );
+          Global.buttonClicked('login');
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorsManger.white,

@@ -10,10 +10,8 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'WelcomeScreen',
-      screenClass: 'WelcomeScreen',
-    );
+
+    Global.logScreenView('SettingsPage', 'SettingsPage');
 
     return Scaffold(
       backgroundColor: Colors.white,

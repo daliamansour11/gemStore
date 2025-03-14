@@ -16,10 +16,8 @@ class OrderDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'OrderDetailsScreen',
-      screenClass: 'OrderDetailsScreen',
-    );
+
+    Global.logScreenView('OrderDetailsScreen', 'OrderDetailsScreen');
 
     return Scaffold(
       appBar: PreferredSize(

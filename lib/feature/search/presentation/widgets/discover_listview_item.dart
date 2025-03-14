@@ -85,13 +85,9 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
                         ],
                       ),
                       onTap: () {
+                        Global.buttonClicked('searchTextField clicked');
 
-                        Global.analytics.logEvent(
-                          name: 'searchTextField clicked',
-                          parameters: {
-                            'button_name': 'searchTextField',
-                          },
-                        );
+
                       },
                     ),
                   ),

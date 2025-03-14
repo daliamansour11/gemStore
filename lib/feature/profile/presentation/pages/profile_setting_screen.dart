@@ -20,10 +20,9 @@ class ProfileSettingScreen extends StatefulWidget {
 class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'ProfileSettingScreen',
-      screenClass: 'ProfileSettingScreen',
-    );
+
+    Global.logScreenView('ProfileSettingScreen', 'ProfileSettingScreen');
+
     return Scaffold(
       appBar: customAppBar(title: AppString.profileSettings, context: context,
           isBackable: true, haveActions: false),
@@ -90,12 +89,9 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
               ElevatedButton(
                 onPressed: () {
 
-                  Global.analytics.logEvent(
-                    name: 'saveChange button_clicked',
-                    parameters: {
-                      'button_name': 'Save change',
-                    },
-                  );
+
+                  Global.buttonClicked('saveChange button_clicked');
+
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ColorsManger.black,

@@ -17,10 +17,9 @@ class _RateProductScreenState extends State<RateProduct> {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'RateProduct',
-      screenClass: 'RateProduct',
-    );
+
+    Global.logScreenView('RateProduct', 'RateProduct');
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: customAppBar(title: AppString.rateProductAppBar, context: context,  isBackable: true, haveActions: false),

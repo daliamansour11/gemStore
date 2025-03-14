@@ -45,12 +45,8 @@ class CheckoutSection extends StatelessWidget {
             //! TODO: Remember to use onGenerateRoute in main.dart
             // TODO:Did not found it !
             onPressed: () {
-              Global.analytics.logEvent(
-                name: 'checkOut button_clicked',
-                parameters: {
-                  'button_name': 'Proceed to Checkout ',
-                },
-              );
+
+              Global.buttonClicked('checkOut button_clicked');
               context.pushNamed(const ShippingScreen());},
 
             title: AppString.proceedToCheckout,

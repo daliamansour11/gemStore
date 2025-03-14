@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 
@@ -10,6 +11,8 @@ class UpdateScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Global.logScreenView('UpdateScreen', 'UpdateScreen');
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,

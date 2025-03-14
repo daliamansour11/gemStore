@@ -27,13 +27,10 @@ class CustomBottomAppbarWidget extends StatelessWidget {
         ),
         child: TextButton(
           onPressed: () {
-           Global.analytics.logEvent(
-              name: 'bottomBar button_clicked',
-              parameters: {
-                'button_name': 'Shopping now',
-              },
-            );
-            context.pushNamed(const CartScreen());
+
+           Global.buttonClicked('bottomBar button clicked');
+
+           context.pushNamed(const CartScreen());
           },
           child: Column(
             mainAxisSize: MainAxisSize.min,

@@ -18,10 +18,9 @@ class WishlistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wishlistItems = ProductModel.products;
-    Global.analytics.logScreenView(
-      screenName: 'ProfileSettingScreen',
-      screenClass: 'ProfileSettingScreen',
-    );
+
+    Global.logScreenView('ProfileSettingScreen', 'ProfileSettingScreen');
+
     return Scaffold(
       drawer: const SidebarHomeScreen(),
       appBar: customAppBar(title: AppString.wishListAppBar, context: context,  isBackable: false, haveActions: true),

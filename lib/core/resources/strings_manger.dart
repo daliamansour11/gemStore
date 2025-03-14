@@ -70,6 +70,9 @@ class AppString{
   static const signInWith = 'Sign in with another account';
   static const favourite = 'Favourite';
   static const addToCart = 'Add To Cart';
+  static const UpdateScreen = 'Update Screen ';
+  static const clickIcon = 'clickIcon ';
+  static const NewUpdate = 'New Update ';
   // static const  log_out_btn= "Log out";
   // static const  gender= "Gender";
 //

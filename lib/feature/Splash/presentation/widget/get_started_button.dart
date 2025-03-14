@@ -24,12 +24,9 @@ class GetStartedButton extends StatelessWidget {
         height: 53.h,
         color: ColorsManger.btnColor, isFill: true,
         onPressed: () {
-          Global.analytics.logEvent(
-            name: 'button_clicked',
-            parameters: {
-              'button_name': 'Get Started',
-            },
-          );
+
+          Global.buttonClicked('getStarted_btn_clicked');
+
           Navigator.push(
             context,
             MaterialPageRoute(

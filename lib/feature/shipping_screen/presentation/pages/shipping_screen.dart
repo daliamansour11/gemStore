@@ -10,10 +10,8 @@ class ShippingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'ShippingScreen',
-      screenClass: 'ShippingScreen',
-    );
+    Global.logScreenView('ShippingScreen', 'ShippingScreen');
+
     return BlocProvider(
         create: (context) => ShippingScreenCubit(),
         child: const ShippingBody());

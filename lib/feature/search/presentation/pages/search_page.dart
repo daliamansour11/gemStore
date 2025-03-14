@@ -21,10 +21,9 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'SearchPage',
-      screenClass: 'SearchPage',
-    );
+
+    Global.logScreenView('SearchPage', 'SearchPage');
+
     return const Scaffold(
       backgroundColor: ColorsManger.white,
         endDrawer: Drawer(

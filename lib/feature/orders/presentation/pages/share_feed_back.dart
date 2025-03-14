@@ -17,10 +17,9 @@ class _ShareFeedBackScreenState extends State<ShareFeedBackScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'ShareFeedBackScreen',
-      screenClass: 'ShareFeedBackScreen',
-    );
+
+    Global.logScreenView('ShareFeedBackScreen', 'ShareFeedBackScreen');
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,

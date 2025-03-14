@@ -22,10 +22,9 @@ class _SearchResultState extends State<SearchResult> {
 
   @override
   Widget build(BuildContext context) {
-    Global.analytics.logScreenView(
-      screenName: 'SearchResult',
-      screenClass: 'SearchResult',
-    );
+
+    Global.logScreenView('SearchResult', 'SearchResult');
+
     return Scaffold(
 backgroundColor: ColorsManger.white,
       body: Padding(

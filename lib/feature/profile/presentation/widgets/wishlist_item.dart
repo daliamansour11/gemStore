@@ -19,13 +19,9 @@ class WishlistItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Global.analytics.logEvent(
-          name: 'WishlistItem clicked',
-          parameters: {
-            'button_name': 'WishlistItem',
-          },
-        );
-        context.pushNamed(ProductDetailsScreen(products: item));
+
+        Global.buttonClicked( 'WishlistItem clicked');
+;        context.pushNamed(ProductDetailsScreen(products: item));
       },
       child: Container(
         decoration: BoxDecoration(

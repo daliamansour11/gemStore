@@ -44,7 +44,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                   'button_name': 'searchTextField',
                 },
               );
-            context.pushNamed(const SearchPage());  }, onSubmit: (String value) {  }
+              Global.buttonClicked( 'searchTextField clicked');
+
+              context.pushNamed(const SearchPage());  }, onSubmit: (String value) {  }
             ,
            ),
 

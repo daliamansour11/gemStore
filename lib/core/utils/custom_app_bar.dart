@@ -29,24 +29,17 @@ PreferredSizeWidget? customAppBar({
         ? InkWell(
             onTap: () {
 
-              Global.analytics.logEvent(
-                name: 'back button_clicked',
-                parameters: {
-                  'button_name': 'backButton ',
-                },
-              );
+              Global.buttonClicked('back button_clicked');
+
               Navigator.pop(context);},
             child:
                 SvgDisplayer(assetName: ImageAssets.backIcon, width: 32.w, height: 32.h),
           )
         : InkWell(
         onTap: (){
-          Global.analytics.logEvent(
-            name: 'Drawer button_clicked',
-            parameters: {
-              'button_name': 'open Drawer',
-            },
-          );
+
+          Global.buttonClicked('Drawer button_clicked');
+
           Scaffold.of(context).openDrawer();
         },
         child: Image.asset(ImageAssets.menuIcon,width: AppSize.s18,height: AppSize.s17,)),
@@ -83,12 +76,9 @@ Widget customAppBarWidget({
     leading: isBackable
         ? InkWell(
             onTap: () {
-              Global.analytics.logEvent(
-                name: 'back button_clicked',
-                parameters: {
-                  'button_name': 'backButton ',
-                },
-              );
+              Global.buttonClicked('back button_clicked');
+
+
               Navigator.pop(context);
 
             } ,
@@ -97,12 +87,7 @@ Widget customAppBarWidget({
           )
         : InkWell(
   onTap: (){
-    Global.analytics.logEvent(
-      name: 'Drawer button_clicked',
-      parameters: {
-        'button_name': 'open Drawer',
-      },
-    );
+    Global.buttonClicked('Drawer button_clicked');
   Scaffold.of(context).openDrawer();
   },
   child:Image.asset(ImageAssets.menuIcon,width:AppSize.s18,height: AppSize.s17,)),
