@@ -1,12 +1,20 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/resources/assets_manger.dart';
+import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/widget/custom_button.dart';
+
+
 import '../../../../core/global/global.dart';
+
 import '../widget/back_ground_image.dart';
 import '../widget/get_started_button.dart';
 import '../widget/shadow.dart';
 import '../widget/sub_title.dart';
 import '../widget/title.dart';
-
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen( {super.key});
@@ -35,6 +43,13 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(height: 50.h),
              const  GetStartedButton(),
               SizedBox(height: 80.h),
+              //for test the FirebaseCrashlytics
+              ElevatedButton(
+                onPressed: () {
+                  FirebaseCrashlytics.instance.crash();
+                },
+                child: const Text("Make Me Crash"),
+              ),
             ],
           ),
         ),
