@@ -15,8 +15,6 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-
     Global.logScreenView('WelcomeScreen','WelcomeScreen');
     return Scaffold(
         body: Stack(
