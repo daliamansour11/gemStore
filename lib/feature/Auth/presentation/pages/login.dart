@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import '../../../../core/utils/bottom_navigation.dart';
 // TODO:Refactor this file into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 // TODO: Padding needs to be responsive.
 // **TODO: Store the string in the app's strings file. This improves maintainability and simplifies future localization.
@@ -132,21 +134,28 @@ class _LoginButton extends StatelessWidget {
 
 class _SocialLogin extends StatelessWidget {
   const _SocialLogin();
-  Future signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  Future<void> signInWithGoogle(BuildContext context) async {
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
+  await googleSignIn.signOut();
 
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
+  final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
-     await FirebaseAuth.instance.signInWithCredential(credential);
-    // Navigator.of(context)
-    //     .pushNamedAndRemoveUntil('HomeScreen', (route) => false);
+  if (googleUser == null) {    return;
   }
+
+  final GoogleSignInAuthentication? googleAuth = await googleUser.authentication;
+
+  final credential = GoogleAuthProvider.credential(
+    accessToken: googleAuth?.accessToken,
+    idToken: googleAuth?.idToken,
+  );
+
+  await FirebaseAuth.instance.signInWithCredential(credential);
+
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => const BottomNavigation()));
+}
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +175,7 @@ class _SocialLogin extends StatelessWidget {
             _buildSocialIcon('assets/images/apple.png', () {}),
             const SizedBox(width: 16),
             _buildSocialIcon('assets/images/google.png', () {
-              signInWithGoogle();
+              signInWithGoogle(context);
             }),
             const SizedBox(width: 16),
             _buildSocialIcon('assets/images/facebook.png', () {}),
