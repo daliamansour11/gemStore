@@ -31,6 +31,7 @@ class WelcomeScreen extends StatelessWidget {
         const BackGroundImage(),
         const ShadowImage(),
         Padding(
+
           padding: EdgeInsets.symmetric(horizontal: 40.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
