@@ -37,6 +37,9 @@ class ImageAssets {
   static const String dressImg = '$imagePath/dress.png';
   static const String profileImg = '$imagePath/profile.png';
   static const String deliverImg = '$imagePath/deliver.png';
+  static const String bagImg = '$imagePath/bag.png';
+  static const String shoesImg = '$imagePath/shoes2.png';
+  static const String dress1Img = '$imagePath/dress1.png';
 
   //home
   static const String womenIcon='assets/icons/icon4.png';

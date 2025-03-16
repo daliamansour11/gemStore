@@ -37,18 +37,18 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const SplashTitle(),
-              SizedBox(height: 10.h),
+              10.vs,
               const SubTitle(),
-              SizedBox(height: 50.h),
+             50.vs,
              const  GetStartedButton(),
-              SizedBox(height: 80.h),
+              80.vs
               //for test the FirebaseCrashlytics
-              ElevatedButton(
-                onPressed: () {
-                  FirebaseCrashlytics.instance.crash();
-                },
-                child: const Text("Make Me Crash"),
-              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     FirebaseCrashlytics.instance.crash();
+              //   },
+              //   child: const Text("Make Me Crash"),
+              // ),
             ],
           ),
         ),
