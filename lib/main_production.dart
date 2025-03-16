@@ -5,21 +5,20 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'configration.dart';
 import 'main.dart';
-import 'main_development.dart';
 
-void main()async {
-
+void main() async {
   await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   runApp(DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) =>MyApp(
-    appConfiguration: ProductionConfiguration(),
-  )));
+    enabled: !kReleaseMode,
+    builder: (context) => MyApp(
+      appConfiguration: ProductionConfiguration(),
+    ),
+  ));
 }
 
-class ProductionConfiguration extends Configuration {}
