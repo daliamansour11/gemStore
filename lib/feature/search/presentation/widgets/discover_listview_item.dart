@@ -176,7 +176,8 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
                   Positioned(
                     left: 50,
 // right: 10,
-                    child: SizedBox(
+                    child:
+                    SizedBox(
                       width: 194.w,
                       height: 129.h,
                       child:_buildImage(context,imageUrl)

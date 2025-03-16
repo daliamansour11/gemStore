@@ -34,7 +34,6 @@ class ImageAssets {
   static const String searchIcon = '$iconPath/search.png';
   static const String expandDownIcon = '$iconPath/Expand_down.png';
   static const String placeHolderImg = '$imagePath/placeHolder.png';
-  static const String dressImg = '$imagePath/dress.png';
   static const String profileImg = '$imagePath/profile.png';
   static const String deliverImg = '$imagePath/deliver.png';
   static const String bagImg = '$imagePath/bag.png';
