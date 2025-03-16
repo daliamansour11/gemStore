@@ -176,4 +176,6 @@ class AppString{
   static const String rateProducts = 'Rate product to get 5 points for collect.';
   static const String trackProducts = 'Click here to track your order';
 
+  static const String updateApp = 'A new version of the app is available. Please update to continue.';
+  static const String updateNow = 'Update Now';
 }
