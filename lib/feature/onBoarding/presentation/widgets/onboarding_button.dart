@@ -6,6 +6,7 @@ import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/bottom_navigation.dart';
 import '../../../../core/widget/Custom_button.dart';
+import '../../../Auth/presentation/pages/login.dart';
 
 class OnBoardingButton extends StatefulWidget {
   const OnBoardingButton({super.key});
@@ -34,7 +35,7 @@ class _OnBoardingButtonState extends State<OnBoardingButton> {
             },
           );
           Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                const BottomNavigation()
+                 const LoginScreen()
             ));
           }, color: ColorsManger.rateColor, isFill: true,
       ),
