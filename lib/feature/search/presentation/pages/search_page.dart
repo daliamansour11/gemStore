@@ -1,5 +1,7 @@
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/global/global.dart';
 import '../widgets/build_search_history_chip.dart';
 import 'search_result.dart';
 
@@ -14,10 +16,13 @@ class SearchPage extends StatefulWidget {
   State<SearchPage> createState() => _SearchPageState();
 }
 
+
 class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    Global.logScreenView('SearchPage', 'SearchPage');
 
     return const Scaffold(
       backgroundColor: ColorsManger.white,
@@ -31,8 +36,8 @@ class _SearchPageState extends State<SearchPage> {
             BuildSearchHistoryChip(),
 
             SizedBox(height: 10,),
-    Expanded(child: SearchResult()
-    )
+    // Expanded(child: SearchResult()
+    // )
           ],));
   }
 }

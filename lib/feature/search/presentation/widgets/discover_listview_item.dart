@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/theme_data.dart';
 import '../../../../core/constants/constants.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 
@@ -36,11 +37,14 @@ cardColor(String categoryName) {
 class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
   @override
   Widget build(BuildContext context) {
+
     return ListView.builder(
       itemCount: categoryType.length,
       itemBuilder: (context, index) {
         return
         ExpansionTile(
+          shape: Border.all(color: Colors.transparent),
+          collapsedShape: Border.all(color: Colors.transparent),
         title: _categoryCard(
           categoryType[index],
           categoryImage[index],
@@ -80,7 +84,11 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
                               size: 10, color: ColorsManger.dark),
                         ],
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Global.buttonClicked('searchTextField clicked');
+
+
+                      },
                     ),
                   ),
                 ))

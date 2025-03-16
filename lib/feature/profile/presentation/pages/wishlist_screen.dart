@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/global/global.dart';
+import '../../../../core/models/product_model.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
 import '../../data/model/wishlist_model.dart';
@@ -15,7 +17,9 @@ class WishlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final wishlistItems = WishlistModel.getWishlistItems();
+    final wishlistItems = ProductModel.products;
+
+    Global.logScreenView('ProfileSettingScreen', 'ProfileSettingScreen');
 
     return Scaffold(
       drawer: const SidebarHomeScreen(),

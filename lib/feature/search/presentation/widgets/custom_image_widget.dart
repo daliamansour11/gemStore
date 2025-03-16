@@ -5,12 +5,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/models/product_model.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../data/model/product_model.dart';
 
 class CustomImageWidget extends StatefulWidget {
   const CustomImageWidget({super.key, required this.product});
-  final Product product;
+  final ProductModel product;
 
   @override
   State<CustomImageWidget> createState() => _CustomImageWidgetState();

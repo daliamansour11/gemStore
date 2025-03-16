@@ -21,14 +21,8 @@
             "certificate_hash": "2c9ae35f793fe10b1988c2b691ba38cc4bd6fe2e"
           }
         },
-        {
-          "client_id": "1002804230337-edvflsv0886n9dg7nfgmhhusvmc5st1l.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.gem_store",
-            "certificate_hash": "a20e9ab62a9c9a949570c7d9d8c770b1f0577807"
-          }
-        },
+     
+
         {
           "client_id": "1002804230337-6cl97vajqj41cn1epc0vn6ijl4bfp896.apps.googleusercontent.com",
           "client_type": 3

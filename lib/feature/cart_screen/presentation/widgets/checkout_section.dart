@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../shipping_screen/presentation/pages/shipping_screen.dart';
@@ -43,7 +44,11 @@ class CheckoutSection extends StatelessWidget {
           CustomButton(
             //! TODO: Remember to use onGenerateRoute in main.dart
             // TODO:Did not found it !
-            onPressed: () => context.pushNamed(const ShippingScreen()),
+            onPressed: () {
+
+              Global.buttonClicked('checkOut button_clicked');
+              context.pushNamed(const ShippingScreen());},
+
             title: AppString.proceedToCheckout,
           ),
         ],

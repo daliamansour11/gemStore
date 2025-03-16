@@ -15,8 +15,9 @@ class AppString{
   static const rateProductAppBar= 'Rate Product';
   static const traceOrderAppBar= 'Track Order';
   static const feedBackAppBar= 'Share Your Feedback';
+  static const settingAppBar= 'Setting';
 
-  static const recntSearches= 'Recent Searches';
+  static const recentSearches= 'Recent Searches';
   static const foundSearch= 'Found 152 Results';
   static const discoverStr= 'Discover';
   static const descriptionStr= 'Description';
@@ -69,6 +70,9 @@ class AppString{
   static const signInWith = 'Sign in with another account';
   static const favourite = 'Favourite';
   static const addToCart = 'Add To Cart';
+  static const UpdateScreen = 'Update Screen ';
+  static const clickIcon = 'clickIcon ';
+  static const NewUpdate = 'New Update ';
   // static const  log_out_btn= "Log out";
   // static const  gender= "Gender";
 //
@@ -93,11 +97,12 @@ class AppString{
   static const String thanks = 'Thank you for your purchase.\nYou can view your order in `My Orders` section.';
   static const String continueShopping = 'Continue Shopping';
   static const String myOrders = 'My Orders';
-  static const String trackingNumber = 'Tracking number: ';
+  static const String trackingNumber = 'Tracking Number: ';
   static const String quantity = 'Quantity: ';
   static const String subtotalSign = 'Subtotal: ';
   static const String details = 'Details';
   static const String orderNumber = 'Order number';
+  static const String deliveredOnStr = 'DeliveredOn';
   static const String submitReviewBtn = 'Submit Review';
   static const String sendFeedBackBtn = 'Send Feedback';
   static const String userFeedBackStr = 'What is your opinion of GemStore?';

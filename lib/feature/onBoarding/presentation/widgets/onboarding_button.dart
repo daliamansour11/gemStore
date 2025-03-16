@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,6 +28,12 @@ class _OnBoardingButtonState extends State<OnBoardingButton> {
         width: 210.w,
         height: 53.h,
         onPressed: () {
+          FirebaseAnalytics.instance.logEvent(
+            name: 'Shopping now btn_clicked',
+            parameters: {
+              'button_name': 'Shopping now',
+            },
+          );
           Navigator.push(context, MaterialPageRoute(builder: (context)=>
                  const LoginScreen()
             ));

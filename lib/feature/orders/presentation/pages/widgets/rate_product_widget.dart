@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../../core/global/global.dart';
 import '../../../../../core/resources/colors_manger.dart';
 import '../../../../../core/resources/strings_manger.dart';
 import '../../../../../core/widget/custom_button.dart';
@@ -24,7 +25,7 @@ class _RateProductWidgetState extends State<RateProductWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(height: 30),
+        30.vs,
         RatingBar.builder(
           initialRating: ratingRev,
           itemPadding: 8.all,
@@ -43,7 +44,7 @@ class _RateProductWidgetState extends State<RateProductWidget> {
             });
           },
         ),
-        const SizedBox(height: 30),
+        30.vs,
         Container(
           padding: 16.all,
           decoration: BoxDecoration(
@@ -77,13 +78,19 @@ class _RateProductWidgetState extends State<RateProductWidget> {
             ),
           ),
         ),
-       const  SizedBox(height: 100.0),
+        100.vs,
         SizedBox(
             width: double.infinity,
             child: CustomButton(
                 text: AppString.submitReviewBtn,
                 color:  ColorsManger.btnColor,
                 onPressed: () {
+                  Global.analytics.logEvent(
+                    name: 'button_clicked',
+                    parameters: {
+                      'button_name': 'Submit Review',
+                    },
+                  );
                   Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
@@ -56,7 +57,12 @@ class ShippingComplete extends StatelessWidget {
               ),
               CustomButton(
                 title: AppString.continueShopping,
-                onPressed: () {},
+                onPressed: () {
+
+
+                  Global.buttonClicked('continueShopping_button  clicked');
+
+                },
               ),
             ],
           ),

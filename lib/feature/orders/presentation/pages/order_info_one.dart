@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../domain/entity/order_entity.dart';
 import 'widgets/custom_app_bar.dart';
@@ -10,12 +11,14 @@ import 'widgets/order_status.dart';
 import 'widgets/shipping_info.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
-  // TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
   final Order order;
   const OrderDetailsScreen({required this.order, super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    Global.logScreenView('OrderDetailsScreen', 'OrderDetailsScreen');
+
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),

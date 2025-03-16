@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -8,6 +11,7 @@ import '../../../../core/utils/bottom_navigation.dart';
 // TODO:Refactor this file into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 // TODO: Padding needs to be responsive.
 // **TODO: Store the string in the app's strings file. This improves maintainability and simplifies future localization.
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -59,7 +63,6 @@ class _LoginHeader extends StatelessWidget {
   }
 }
 
-// ويدجت لحقول الإدخال الخاصة بالبريد الإلكتروني وكلمة المرور
 class _LoginForm extends StatelessWidget {
   const _LoginForm();
 
@@ -115,7 +118,9 @@ class _LoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Global.buttonClicked('login');
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorsManger.white,
           padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 50),

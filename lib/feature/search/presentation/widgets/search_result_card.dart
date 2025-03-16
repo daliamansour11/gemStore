@@ -1,21 +1,23 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/values_manger.dart';
 import '../pages/product_details.dart';
 
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../data/model/product_model.dart';
+import '../../../../core/models/product_model.dart';
 import 'custom_image_widget.dart';
 
 class SearchResultCard extends StatefulWidget {
   const SearchResultCard({super.key,});
 
-
+  // final FirebaseAnalytics analytics;
   @override
   State<SearchResultCard> createState() => _SearchResultCardState();
 }
-List<Product> products = [
-  Product(
+List<ProductModel> products = [
+  ProductModel(
     oldPrice:59.99,
     name: 'Fitted Waist Dress',
     price: 47.99,
@@ -25,7 +27,7 @@ List<Product> products = [
     rating: 4.5,
     description: 'A stylish fitted waist dress perfect for any occasion.', review: 65, id: 0,
   ),
-  Product(
+  ProductModel(
     name: 'Sportwear Set',
     price: 80.00,
     imageUrl:
@@ -49,7 +51,7 @@ class _SearchResultCardState extends State<SearchResultCard> {
         ),
         itemCount: products.length,
         itemBuilder: (context, index) {
-          return ProductCard(product: products[index]);
+          return ProductCard( product: products[index],);
         },
       ),
     );
@@ -66,9 +68,9 @@ class _SearchResultCardState extends State<SearchResultCard> {
 
 
 class ProductCard extends StatefulWidget {
-  final Product product;
+  final ProductModel product;
   const  ProductCard({super.key, required this.product,});
-
+  // final FirebaseAnalytics analytics;
   @override
   _ProductCardState createState() => _ProductCardState();
 }
@@ -81,7 +83,7 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushNamed(ProductDetailsScreen(products: widget.product));
+        context.pushNamed(ProductDetailsScreen(products: widget.product,  ));
       },
       child: Hero(
         // tag: [//]!.id!??0,
@@ -163,25 +165,11 @@ class _ProductCardState extends State<ProductCard> {
 
                           ),
                           Row(
-                            children: [
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              const Icon(Icons.star_border_outlined,
-                                  color: ColorsManger.ratingColor, size: 15),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5),
-                                child: Text(
-                                  '${widget.product.rating} (${widget.product.review})',
-                                  style: const TextStyle(fontSize: 12),
-                                ),
-                              ),
-                            ],
+                            mainAxisSize: MainAxisSize.min,
+                            children: List.generate(
+                                5,
+                                    (index) => const Icon(Icons.star,
+                                    color: ColorsManger.ratingColor, size: 16)),
                           ),
                         ]),
                   ),

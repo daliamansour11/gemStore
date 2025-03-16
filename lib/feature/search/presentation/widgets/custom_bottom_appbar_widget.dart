@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/extentions/extentions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../cart_screen/presentation/pages/cart_screen.dart';
 
 class CustomBottomAppbarWidget extends StatelessWidget {
   const CustomBottomAppbarWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return  ClipRRect(
@@ -27,7 +27,10 @@ class CustomBottomAppbarWidget extends StatelessWidget {
         ),
         child: TextButton(
           onPressed: () {
-            context.pushNamed(const CartScreen());
+
+           Global.buttonClicked('bottomBar button clicked');
+
+           context.pushNamed(const CartScreen());
           },
           child: Column(
             mainAxisSize: MainAxisSize.min,

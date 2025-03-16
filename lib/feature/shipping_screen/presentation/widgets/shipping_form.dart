@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/extentions/extentions.dart';
+import '../../../../core/global/global.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../cart_screen/presentation/widgets/custom_button.dart';
 import '../pages/shipping_complete.dart';
@@ -76,6 +77,9 @@ class _ShippingFormState extends State<ShippingForm> {
           SizedBox(height: 20.h),
           CustomButton(
             onPressed: () {
+
+              Global.buttonClicked('Payment_button_clicked');
+
               // if (_formKey.currentState?.validate() ?? false) {}
               context.pushNamed(const ShippingComplete());
             },
