@@ -2,12 +2,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/models/product_model.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
-import '../../data/model/wishlist_model.dart';
 import '../widgets/sidebar_home.dart';
 import '../../../../core/resources/values_manger.dart';
 import '../widgets/wishlist_item.dart';
@@ -19,7 +17,7 @@ class WishlistScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final wishlistItems = ProductModel.products;
 
-    Global.logScreenView('ProfileSettingScreen', 'ProfileSettingScreen');
+    FirebaseAnalytic.logScreenView('ProfileSettingScreen', 'ProfileSettingScreen');
 
     return Scaffold(
       drawer: const SidebarHomeScreen(),

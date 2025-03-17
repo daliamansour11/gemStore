@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
@@ -21,7 +21,7 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
   @override
   Widget build(BuildContext context) {
 
-    Global.logScreenView('WishlistScreenBoards', 'WishlistScreenBoards');
+    FirebaseAnalytic.logScreenView('WishlistScreenBoards', 'WishlistScreenBoards');
 
     return Scaffold(
         drawer: const SidebarHomeScreen(),

@@ -1,7 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/widget/Custom_button.dart';
@@ -25,7 +25,7 @@ class GetStartedButton extends StatelessWidget {
         color: ColorsManger.btnColor, isFill: true,
         onPressed: () {
 
-          Global.buttonClicked('getStarted_btn_clicked');
+          FirebaseAnalytic.buttonClicked('getStarted_btn_clicked');
 
           Navigator.push(
             context,

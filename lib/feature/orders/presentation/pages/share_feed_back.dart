@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import 'widgets/feedback_widget.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/strings_manger.dart';
@@ -18,7 +18,7 @@ class _ShareFeedBackScreenState extends State<ShareFeedBackScreen> {
   @override
   Widget build(BuildContext context) {
 
-    Global.logScreenView('ShareFeedBackScreen', 'ShareFeedBackScreen');
+    FirebaseAnalytic.logScreenView('ShareFeedBackScreen', 'ShareFeedBackScreen');
 
     return MaterialApp(
       home: Scaffold(

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extentions/extentions.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
-import '../../../../core/resources/values_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
 import '../../../profile/presentation/widgets/sidebar_home.dart';
 import '../widgets/discover_listview_Item.dart';
@@ -38,13 +36,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           SearchTextFieldWidget(label: AppString.searchStr, controller: searchController,
             isReadOnly: true,
             onPressed: () {
-              Global.analytics.logEvent(
-                name: 'searchTextField clicked',
-                parameters: {
-                  'button_name': 'searchTextField',
-                },
-              );
-              Global.buttonClicked( 'searchTextField clicked');
+
+              FirebaseAnalytic.buttonClicked( 'searchTextField clicked');
 
               context.pushNamed(const SearchPage());  }, onSubmit: (String value) {  }
             ,

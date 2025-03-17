@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
 
@@ -18,7 +18,7 @@ class _RateProductScreenState extends State<RateProduct> {
   @override
   Widget build(BuildContext context) {
 
-    Global.logScreenView('RateProduct', 'RateProduct');
+    FirebaseAnalytic.logScreenView('RateProduct', 'RateProduct');
 
     return Scaffold(
       backgroundColor: Colors.white,

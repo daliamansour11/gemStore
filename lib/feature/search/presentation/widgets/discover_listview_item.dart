@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../config/theme/theme_data.dart';
 import '../../../../core/constants/constants.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 
@@ -85,7 +85,7 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
                         ],
                       ),
                       onTap: () {
-                        Global.buttonClicked('searchTextField clicked');
+                        FirebaseAnalytic.buttonClicked('searchTextField clicked');
 
 
                       },

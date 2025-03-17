@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../domain/entity/order_entity.dart';
 import 'widgets/custom_app_bar.dart';
@@ -17,7 +17,7 @@ class OrderDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Global.logScreenView('OrderDetailsScreen', 'OrderDetailsScreen');
+    FirebaseAnalytic.logScreenView('OrderDetailsScreen', 'OrderDetailsScreen');
 
     return Scaffold(
       appBar: PreferredSize(

@@ -1,6 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/global/global.dart';
 import '../../../../core/resources/values_manger.dart';
 import '../pages/product_details.dart';
 

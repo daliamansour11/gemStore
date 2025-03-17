@@ -2,7 +2,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../../../config/theme/theme_data.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 
@@ -23,7 +23,7 @@ class _SearchResultState extends State<SearchResult> {
   @override
   Widget build(BuildContext context) {
 
-    Global.logScreenView('SearchResult', 'SearchResult');
+    FirebaseAnalytic.logScreenView('SearchResult', 'SearchResult');
 
     return Scaffold(
 backgroundColor: ColorsManger.white,

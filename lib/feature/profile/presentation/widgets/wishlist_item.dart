@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/models/product_model.dart';
-import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +19,7 @@ class WishlistItem extends StatelessWidget {
     return InkWell(
       onTap: (){
 
-        Global.buttonClicked( 'WishlistItem clicked');
+        FirebaseAnalytic.buttonClicked( 'WishlistItem clicked');
 ;        context.pushNamed(ProductDetailsScreen(products: item));
       },
       child: Container(

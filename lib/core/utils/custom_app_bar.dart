@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../global/global.dart';
+import '../firebase_analytics/firebase_analytic.dart';
 import '../resources/assets_manger.dart';
 import '../resources/colors_manger.dart';
 import '../widget/svg_displayer.dart';
@@ -29,7 +29,7 @@ PreferredSizeWidget? customAppBar({
         ? InkWell(
             onTap: () {
 
-              Global.buttonClicked('back button_clicked');
+              FirebaseAnalytic.buttonClicked('back button_clicked');
 
               Navigator.pop(context);},
             child:
@@ -38,7 +38,7 @@ PreferredSizeWidget? customAppBar({
         : InkWell(
         onTap: (){
 
-          Global.buttonClicked('Drawer button_clicked');
+          FirebaseAnalytic.buttonClicked('Drawer button_clicked');
 
           Scaffold.of(context).openDrawer();
         },
@@ -76,7 +76,7 @@ Widget customAppBarWidget({
     leading: isBackable
         ? InkWell(
             onTap: () {
-              Global.buttonClicked('back button_clicked');
+              FirebaseAnalytic.buttonClicked('back button_clicked');
 
 
               Navigator.pop(context);
@@ -87,7 +87,7 @@ Widget customAppBarWidget({
           )
         : InkWell(
   onTap: (){
-    Global.buttonClicked('Drawer button_clicked');
+    FirebaseAnalytic.buttonClicked('Drawer button_clicked');
   Scaffold.of(context).openDrawer();
   },
   child:Image.asset(ImageAssets.menuIcon,width:AppSize.s18,height: AppSize.s17,)),

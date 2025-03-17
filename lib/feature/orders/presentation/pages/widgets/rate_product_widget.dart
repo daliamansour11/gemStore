@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../../core/global/global.dart';
+import '../../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../../core/resources/colors_manger.dart';
 import '../../../../../core/resources/strings_manger.dart';
 import '../../../../../core/widget/custom_button.dart';
@@ -85,12 +85,8 @@ class _RateProductWidgetState extends State<RateProductWidget> {
                 text: AppString.submitReviewBtn,
                 color:  ColorsManger.btnColor,
                 onPressed: () {
-                  Global.analytics.logEvent(
-                    name: 'button_clicked',
-                    parameters: {
-                      'button_name': 'Submit Review',
-                    },
-                  );
+
+                  FirebaseAnalytic.buttonClicked('Submit Review_button_clicked');
                   Navigator.push(
                       context,
                       MaterialPageRoute(

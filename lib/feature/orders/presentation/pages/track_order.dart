@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import 'widgets/trace_order_widget.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
@@ -12,7 +12,7 @@ class OrderTrack extends StatelessWidget {
   Widget build(BuildContext context) {
 
 
-    Global.logScreenView('OrderTrack', 'OrderTrack');
+    FirebaseAnalytic.logScreenView('OrderTrack', 'OrderTrack');
 
     return Scaffold(
       appBar: customAppBar(title: AppString.traceOrderAppBar, context: context,  isBackable: true, haveActions: false),

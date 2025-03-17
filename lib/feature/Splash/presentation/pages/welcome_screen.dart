@@ -1,14 +1,8 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../core/resources/assets_manger.dart';
-import '../../../../core/resources/strings_manger.dart';
-import '../../../../core/widget/custom_button.dart';
-
-
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 
 import '../widget/back_ground_image.dart';
 import '../widget/get_started_button.dart';
@@ -23,7 +17,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Global.logScreenView('WelcomeScreen','WelcomeScreen');
+    FirebaseAnalytic.logScreenView('WelcomeScreen','WelcomeScreen');
     return Scaffold(
         body: Stack(
       fit: StackFit.expand,

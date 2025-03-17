@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/global/global.dart';
+import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/assets_manger.dart';
 import 'wishlist_screen.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Global.logScreenView('ProfileScreen', 'ProfileScreen');
+    FirebaseAnalytic.logScreenView('ProfileScreen', 'ProfileScreen');
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -61,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                   iconSize: 30,
                   onPressed: () {
 
-                    Global.buttonClicked('setting button_clicked');
+                    FirebaseAnalytic.buttonClicked('setting button_clicked');
 
                     context.pushNamed(const ProfileSettingScreen());
                   },
