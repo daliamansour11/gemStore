@@ -5,8 +5,8 @@ import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 
-
 class UpdateScreen extends StatelessWidget {
+  //TODO: Needs more refactor and search on SRP and seperation of concerns to know what is the issue in this file
   const UpdateScreen({super.key});
 
   @override
@@ -19,21 +19,22 @@ class UpdateScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text(
             AppString.UpdateScreen,
-            style:
-            TextStyle(fontWeight: FontWeight.bold, color: ColorsManger.black),
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: ColorsManger.black),
           ),
           centerTitle: true,
           backgroundColor: Colors.white,
           elevation: 0,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new, color: ColorsManger.black),
+            icon:
+                const Icon(Icons.arrow_back_ios_new, color: ColorsManger.black),
             onPressed: () {
               // Add drawer or navigation action here
             },
           ),
         ),
         body: const Padding(
-          padding:  EdgeInsets.only(top: 100),
+          padding: EdgeInsets.only(top: 100),
           child: Center(
             child: Column(
               children: [
@@ -59,15 +60,14 @@ class UpdateScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
-                 Text(
-                   AppString.clickIcon,
+                Text(
+                  AppString.clickIcon,
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: ColorsManger.darkGrey),
                 ),
-                 Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 30),
                   child: IconStore(),
                 ),

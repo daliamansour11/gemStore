@@ -10,6 +10,7 @@ import 'core/services/remote_config_service.dart';
 import 'feature/Setting/presentation/pages/UpdateScreen.dart';
 import 'feature/Splash/presentation/pages/welcome_screen.dart';
 
+//TODO: Change class and file name
 class MyApp extends StatelessWidget {
   MyApp({super.key, required this.appConfiguration});
 

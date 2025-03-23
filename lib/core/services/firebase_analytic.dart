@@ -3,7 +3,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 class FirebaseAnalytic {
-  //TODO: Add this file in services folder
   static final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
   static buttonClicked(String name){

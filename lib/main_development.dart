@@ -12,6 +12,8 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
+  //TODO: Read the folowing doc and implemnt more usage https://firebase.flutter.dev/docs/crashlytics/usage
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   runApp(DevicePreview(
