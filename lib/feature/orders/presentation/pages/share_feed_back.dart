@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../../core/services/firebase_analytic.dart';
 import 'widgets/feedback_widget.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/strings_manger.dart';

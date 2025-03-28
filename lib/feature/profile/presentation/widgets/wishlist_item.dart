@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/extentions/extentions.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../core/resources/firebase_analytic.dart';
 import '../../../../core/models/product_model.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';

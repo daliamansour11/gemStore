@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../core/resources/firebase_analytic.dart';
 import '../cubit/shipping_screen_cubit.dart';
 import '../widgets/shipping_screen_widget.dart';
 

@@ -1,12 +1,10 @@
-
-
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 class FirebaseAnalytic {
-  //TODO: Add this file in services folder
+  //TODO: Add this file in services folder >>>>>>>>>>>>>>>>>>>Done(by reema)
   static final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
-  static buttonClicked(String name){
+  static buttonClicked(String name) {
     FirebaseAnalytic.analytics.logEvent(
       name: name,
       // parameters: {
@@ -15,15 +13,10 @@ class FirebaseAnalytic {
     );
   }
 
-  static  logScreenView(String screenName,String screenClass){
-
+  static logScreenView(String screenName, String screenClass) {
     FirebaseAnalytic.analytics.logScreenView(
       screenName: screenName,
       screenClass: screenClass,
     );
-
   }
-
 }
-
-

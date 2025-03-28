@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/theme/theme_data.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../core/resources/firebase_analytic.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/font_manger.dart';
