@@ -1,39 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/constants/constants.dart' as ColorsManger;
 import '../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../core/resources/strings_manger.dart';
-import '../../../../core/utils/bottom_navigation.dart';
+import '../cubit/google_login_cubit.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({super.key});
-// TODO: Do not add logic in UI code so make GoogleLoginCubit and use it here
-  Future<void> signInWithGoogle(BuildContext context) async {
-    final GoogleSignIn googleSignIn = GoogleSignIn();
-
-    await googleSignIn.signOut();
-
-    final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-
-    if (googleUser == null) {
-      return;
-    }
-
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
-
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
-
-    await FirebaseAuth.instance.signInWithCredential(credential);
-
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => const BottomNavigation()));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +26,23 @@ class SocialLogin extends StatelessWidget {
           children: [
             _buildSocialIcon('assets/images/apple.png', () {}),
             const SizedBox(width: 16),
-            _buildSocialIcon('assets/images/google.png', () {
-              signInWithGoogle(context);
-            }),
+            BlocConsumer<GoogleLoginCubit, GoogleLoginState>(
+              listener: (context, state) {
+                if (state is GoogleLoginFailure) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(state.error)),
+                  );
+                }
+              },
+              builder: (context, state) {
+                if (state is GoogleLoginLoading) {
+                  return const CircularProgressIndicator();
+                }
+                return _buildSocialIcon('assets/images/google.png', () {
+                  context.read<GoogleLoginCubit>().signInWithGoogle(context);
+                });
+              },
+            ),
             const SizedBox(width: 16),
             _buildSocialIcon('assets/images/facebook.png', () {}),
           ],
