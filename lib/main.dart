@@ -3,7 +3,6 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'config/theme/theme_data.dart';
 import 'configration.dart';
 import 'core/services/remote_config_service.dart';
@@ -29,7 +28,6 @@ class MyApp extends StatelessWidget {
             ),
           );
         }
-
         if (snapshot.data == true) {
           return const MaterialApp(
             home: UpdateScreen(),
