@@ -5,91 +5,96 @@ import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 
-
 class UpdateScreen extends StatelessWidget {
   const UpdateScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAnalytic.logScreenView('UpdateScreen', 'UpdateScreen');
+    _logScreenView();
 
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text(
-            AppString.UpdateScreen,
-            style:
-            TextStyle(fontWeight: FontWeight.bold, color: ColorsManger.black),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new, color: ColorsManger.black),
-            onPressed: () {
-              // Add drawer or navigation action here
-            },
-          ),
-        ),
-        body: const Padding(
-          padding:  EdgeInsets.only(top: 100),
-          child: Center(
-            child: Column(
-              children: [
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: AppString.NewUpdate,
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: ColorsManger.black,
-                        ),
-                      ),
-                      TextSpan(
-                        text: ' !',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: ColorsManger.red,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                 Text(
-                   AppString.clickIcon,
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: ColorsManger.darkGrey),
-                ),
-                 Padding(
-                  padding: EdgeInsets.only(top: 30),
-                  child: IconStore(),
-                ),
-              ],
-            ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: _buildAppBar(context),
+      body: const Padding(
+        padding: EdgeInsets.only(top: 100),
+        child: Center(
+          child: Column(
+            children: [
+              UpdateText(),
+              Padding(
+                padding: EdgeInsets.only(top: 30),
+                child: IconStore(),
+              ),
+            ],
           ),
         ),
       ),
+    );
+  }
+
+  void _logScreenView() {
+    FirebaseAnalytic.logScreenView('UpdateScreen', 'UpdateScreen');
+  }
+
+  AppBar _buildAppBar(BuildContext context) {
+    return AppBar(
+      title: const Text(
+        AppString.UpdateScreen,
+        style: TextStyle(
+            fontWeight: FontWeight.bold, color: ColorsManger.black),
+      ),
+      centerTitle: true,
+      backgroundColor: Colors.white,
+      elevation: 0,
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back_ios_new, color: ColorsManger.black),
+        onPressed: () => Navigator.pop(context),
+      ),
+    );
+  }
+}
+
+class UpdateText extends StatelessWidget {
+  const UpdateText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: AppString.NewUpdate,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: ColorsManger.black,
+                ),
+              ),
+              TextSpan(
+                text: ' !',
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: ColorsManger.red,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const Text(
+          AppString.clickIcon,
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: ColorsManger.darkGrey),
+        ),
+      ],
     );
   }
 }
 
 class IconStore extends StatelessWidget {
   const IconStore({super.key});
-
-  void _openStore() async {
-    String url = Platform.isIOS
-        ? 'https://apps.apple.com/app'
-        : 'https://play.google.com/store/apps';
-
-    await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +103,7 @@ class IconStore extends StatelessWidget {
         : 'assets/google_play_icon.jpg';
 
     return GestureDetector(
-      onTap: _openStore,
+      onTap: StoreLauncher.openStore,
       child: Container(
         width: 68,
         height: 68,
@@ -118,5 +123,15 @@ class IconStore extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class StoreLauncher {
+  static Future<void> openStore() async {
+    String url = Platform.isIOS
+        ? 'https://apps.apple.com/app'
+        : 'https://play.google.com/store/apps';
+
+    await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
   }
 }
