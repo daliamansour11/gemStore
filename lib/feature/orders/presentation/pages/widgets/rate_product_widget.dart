@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../../core/firebase_analytics/firebase_analytic.dart';
+
 import '../../../../../core/resources/colors_manger.dart';
 import '../../../../../core/resources/strings_manger.dart';
+import '../../../../../core/services/firebase_analytic.dart';
 import '../../../../../core/widget/custom_button.dart';
 import '../share_feed_back.dart';
 
@@ -15,9 +15,9 @@ class RateProductWidget extends StatefulWidget {
   @override
   State<RateProductWidget> createState() => _RateProductWidgetState();
 }
+
 double ratingRev = 4.0;
 final TextEditingController reviewController = TextEditingController();
-
 
 class _RateProductWidgetState extends State<RateProductWidget> {
   @override
@@ -51,12 +51,8 @@ class _RateProductWidgetState extends State<RateProductWidget> {
             shape: BoxShape.rectangle,
             color: Colors.white,
             borderRadius: BorderRadius.circular(30),
-            border: BoxBorder.lerp(
-                Border.all(
-                    color:  ColorsManger.lightBlack),
-                Border.all(
-                    color:  ColorsManger.lightBlack),
-                0.5),
+            border: BoxBorder.lerp(Border.all(color: ColorsManger.lightBlack),
+                Border.all(color: ColorsManger.lightBlack), 0.5),
             boxShadow: [
               BoxShadow(
                 color: ColorsManger.dark.withOpacity(0.1),
@@ -70,11 +66,10 @@ class _RateProductWidgetState extends State<RateProductWidget> {
             controller: reviewController,
             maxLength: 50,
             maxLines: 10,
-            decoration:  InputDecoration(
+            decoration: InputDecoration(
               border: InputBorder.none,
               hintStyle: TextStyle(color: ColorsManger.grey, fontSize: 15),
-              hintText:
-              AppString.rateProductHint,
+              hintText: AppString.rateProductHint,
             ),
           ),
         ),
@@ -83,10 +78,10 @@ class _RateProductWidgetState extends State<RateProductWidget> {
             width: double.infinity,
             child: CustomButton(
                 text: AppString.submitReviewBtn,
-                color:  ColorsManger.btnColor,
+                color: ColorsManger.btnColor,
                 onPressed: () {
-
-                  FirebaseAnalytic.buttonClicked('Submit Review_button_clicked');
+                  FirebaseAnalytic.buttonClicked(
+                      'Submit Review_button_clicked');
                   Navigator.push(
                       context,
                       MaterialPageRoute(

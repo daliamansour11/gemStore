@@ -1,14 +1,11 @@
-
 import 'package:flutter/material.dart';
+import '../../../../core/services/firebase_analytic.dart';
 
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 
-
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +53,6 @@ class LoginForm extends StatelessWidget {
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
-
 
   @override
   Widget build(BuildContext context) {

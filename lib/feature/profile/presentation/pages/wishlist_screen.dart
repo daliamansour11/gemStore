@@ -2,7 +2,7 @@
 
 
 import 'package:flutter/material.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../core/resources/firebase_analytic.dart';
 import '../../../../core/models/product_model.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';

@@ -1,8 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../../core/services/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
@@ -20,14 +18,17 @@ class WishlistScreenBoards extends StatefulWidget {
 class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
   @override
   Widget build(BuildContext context) {
-
-    FirebaseAnalytic.logScreenView('WishlistScreenBoards', 'WishlistScreenBoards');
+    FirebaseAnalytic.logScreenView(
+        'WishlistScreenBoards', 'WishlistScreenBoards');
 
     return Scaffold(
         drawer: const SidebarHomeScreen(),
         backgroundColor: ColorsManger.lightWhiteColor,
-        appBar: customAppBar(title: AppString.wishListAppBar, context: context,  isBackable: false, haveActions: true),
-
+        appBar: customAppBar(
+            title: AppString.wishListAppBar,
+            context: context,
+            isBackable: false,
+            haveActions: true),
         body: ListView(
           children: const [
             WishlistItemCard(),
@@ -37,5 +38,3 @@ class _WishlistScreenBoardsState extends State<WishlistScreenBoards> {
         ));
   }
 }
-
-

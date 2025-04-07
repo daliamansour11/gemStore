@@ -26,18 +26,15 @@ class CustomOrderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      // TODO: Focus On Responsive Design, check the following links:
-      //! https://docs.flutter.dev/ui/layout
-      //! https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e
-      //! https://docs.flutter.dev/ui/layout/constraints
-      //! https://pub.dev/packages/flutter_screenutil
+      // TODO: Focus On Responsive Design, check the following links:>>done
+
       padding: 8.pv,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(detailName,
               style: TextStyle(
-                fontSize: 14.r,
+                  fontSize: 14.r,
                   fontWeight: FontWeightManger.regular,
                   color: isOrderDetials ? Colors.black54 : Colors.black)),
           Row(

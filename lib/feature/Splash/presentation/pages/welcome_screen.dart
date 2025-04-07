@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/extentions/sizes_utils_extensions.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../../core/services/firebase_analytic.dart';
 
 import '../widget/back_ground_image.dart';
 import '../widget/get_started_button.dart';
@@ -11,13 +11,11 @@ import '../widget/sub_title.dart';
 import '../widget/title.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen( {super.key});
-
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    FirebaseAnalytic.logScreenView('WelcomeScreen','WelcomeScreen');
+    FirebaseAnalytic.logScreenView('WelcomeScreen', 'WelcomeScreen');
     return Scaffold(
         body: Stack(
       fit: StackFit.expand,
@@ -25,7 +23,6 @@ class WelcomeScreen extends StatelessWidget {
         const BackGroundImage(),
         const ShadowImage(),
         Padding(
-
           padding: EdgeInsets.symmetric(horizontal: 40.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -33,8 +30,8 @@ class WelcomeScreen extends StatelessWidget {
               const SplashTitle(),
               10.vs,
               const SubTitle(),
-             50.vs,
-             const  GetStartedButton(),
+              50.vs,
+              const GetStartedButton(),
               80.vs
               //for test the FirebaseCrashlytics
               // ElevatedButton(

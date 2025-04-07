@@ -1,7 +1,7 @@
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../../core/services/firebase_analytic.dart';
 import '../widgets/build_search_history_chip.dart';
 import 'search_result.dart';
 
