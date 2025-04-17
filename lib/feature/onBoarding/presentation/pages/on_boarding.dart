@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/services/firebase_analytic.dart';
 import '../widgets/custom_page_view.dart';
 import '../widgets/onboarding_button.dart';
 

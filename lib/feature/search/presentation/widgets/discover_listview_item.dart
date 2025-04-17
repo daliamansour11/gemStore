@@ -3,10 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 import '../../../../config/theme/theme_data.dart';
 import '../../../../core/constants/constants.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../../core/services/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 
@@ -33,71 +32,62 @@ cardColor(String categoryName) {
   }
 }
 
-
 class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
   @override
   Widget build(BuildContext context) {
-
     return ListView.builder(
       itemCount: categoryType.length,
       itemBuilder: (context, index) {
-        return
-        ExpansionTile(
+        return ExpansionTile(
           shape: Border.all(color: Colors.transparent),
           collapsedShape: Border.all(color: Colors.transparent),
-        title: _categoryCard(
-          categoryType[index],
-          categoryImage[index],
-          circleColor[index],
-        ),
-
-        trailing: const SizedBox.shrink(),
-        children: items[index]
-            .map((item) => Padding(
-                  padding: const EdgeInsets.only(
-                      left: AppPadding.p18,
-                      right: AppPadding.p18,
-                      bottom: AppPadding.p10),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: ColorsManger.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.9),
-                          offset: const Offset(0, 1),
-                          blurRadius: 1,
-                        ),
-                      ],
-                    ),
-                    child: ListTile(
-                      title: Text(
-                        "${item['name']}",
-                        style: appTheme().textTheme.titleMedium,
-                      ),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text("${item['count']} items",
-                              style: const TextStyle(color: Colors.grey)),
-                          const Icon(Icons.arrow_forward_ios,
-                              size: 10, color: ColorsManger.dark),
+          title: _categoryCard(
+            categoryType[index],
+            categoryImage[index],
+            circleColor[index],
+          ),
+          trailing: const SizedBox.shrink(),
+          children: items[index]
+              .map((item) => Padding(
+                    padding: const EdgeInsets.only(
+                        left: AppPadding.p18,
+                        right: AppPadding.p18,
+                        bottom: AppPadding.p10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: ColorsManger.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.9),
+                            offset: const Offset(0, 1),
+                            blurRadius: 1,
+                          ),
                         ],
                       ),
-                      onTap: () {
-                        FirebaseAnalytic.buttonClicked('searchTextField clicked');
-
-
-                      },
+                      child: ListTile(
+                        title: Text(
+                          "${item['name']}",
+                          style: appTheme().textTheme.titleMedium,
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text("${item['count']} items",
+                                style: const TextStyle(color: Colors.grey)),
+                            const Icon(Icons.arrow_forward_ios,
+                                size: 10, color: ColorsManger.dark),
+                          ],
+                        ),
+                        onTap: () {
+                          FirebaseAnalytic.buttonClicked(
+                              'searchTextField clicked');
+                        },
+                      ),
                     ),
-                  ),
-                ))
-            .toList(),
+                  ))
+              .toList(),
         );
-
-
-
-
       },
     );
   }
@@ -176,12 +166,10 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
                   Positioned(
                     left: 50,
 // right: 10,
-                    child:
-                    SizedBox(
-                      width: 194.w,
-                      height: 129.h,
-                      child:_buildImage(context,imageUrl)
-                    ),
+                    child: SizedBox(
+                        width: 194.w,
+                        height: 129.h,
+                        child: _buildImage(context, imageUrl)),
                   )
                 ],
               ),
@@ -192,52 +180,42 @@ class _DiscoverListViewItemState extends State<DiscoverListViewItem> {
     );
   }
 
-
-  Widget _buildImage(BuildContext context, String imageUrl,
-      ){
-
+  Widget _buildImage(
+    BuildContext context,
+    String imageUrl,
+  ) {
     return Center(
       child: CachedNetworkImage(
-        imageUrl:   imageUrl,
-        imageBuilder: (context,imageProvider)=>ClipRRect(
+        imageUrl: imageUrl,
+        imageBuilder: (context, imageProvider) => ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
-
           child: Container(
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: imageProvider,
-                  fit: BoxFit.cover,
-
-                )
-            ),
+              image: imageProvider,
+              fit: BoxFit.cover,
+            )),
           ),
         ),
-        progressIndicatorBuilder: (context,url,downloadProgress)=>
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-
-                child:  const CupertinoActivityIndicator(),
-              ),
-            ),
-        errorWidget: (context, url, error) =>  ClipRRect(
+        progressIndicatorBuilder: (context, url, downloadProgress) => ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
           child: Container(
             width: double.infinity,
             height: double.infinity,
-
-            child:const Icon(Icons.error),
+            child: const CupertinoActivityIndicator(),
+          ),
+        ),
+        errorWidget: (context, url, error) => ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: const Icon(Icons.error),
           ),
         ),
       ),
     );
-
-
-
   }
-
 }

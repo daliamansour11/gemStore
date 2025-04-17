@@ -1,0 +1,2 @@
+C:/Users/daliamansour/AndroidStudioProjects/gemStore/android/app/.cxx/RelWithDebInfo/w6f3k5b3/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/daliamansour/AndroidStudioProjects/gemStore/android/app/.cxx/RelWithDebInfo/w6f3k5b3/x86_64/CMakeFiles/rebuild_cache.dir

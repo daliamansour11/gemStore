@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../config/theme/theme_data.dart';
 import '../../../../../core/constants/constants.dart';
 import '../../../../../core/extentions/sizes_utils_extensions.dart';
 import '../../../../../core/resources/colors_manger.dart';
-// TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
 
+// TODO: Refactor this class into smaller sections to maintain readability and keep each file, class, or function under 50 lines as recommended.
+// i arraived to 75
 class FeedbackPopup extends StatelessWidget {
   final VoidCallback onDonePressed;
-
   const FeedbackPopup({super.key, required this.onDonePressed});
 
   @override
@@ -26,10 +27,10 @@ class FeedbackPopup extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              height: 50,
-              width: 50,
+              height: 50.h,
+              width: 50.w,
               decoration: const BoxDecoration(
-                color: Color(0xff508A7B),
+                color: ColorsManger.ratingColor,
                 shape: BoxShape.circle,
               ),
               child: const Icon(
@@ -38,36 +39,29 @@ class FeedbackPopup extends StatelessWidget {
                 size: 30,
               ),
             ),
-            const SizedBox(height: 16),
-            const Text(
+            16.vs,
+            Text(
               'Thank you for your feedback!',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+              style: appTheme().textTheme.titleSmall,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 8),
-            const Text(
+            8.vs,
+            Text(
               "We appreciated your feedback. We'll use your feedback to improve your experience.",
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.black54,
-              ),
+              style: appTheme().textTheme.titleMedium!.copyWith(
+                    color: Colors.black54,
+                  ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 24),
+            24.vs,
             ElevatedButton(
               onPressed: onDonePressed,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xff343434),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
-              ),
+                  backgroundColor: const Color(0xff343434),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: 40.ph + 12.pv),
               child: const Text(
                 'Done',
                 style: TextStyle(color: Colors.white, fontSize: 16),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/extentions/extentions.dart';
-import '../../../../core/firebase_analytics/firebase_analytic.dart';
+import '../../../../../core/services/firebase_analytic.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/custom_app_bar.dart';
