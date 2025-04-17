@@ -13,7 +13,7 @@ platform :android do
             firebase_cli_token: "1//03kQg2aox2Aq-CgYIARAAGAMSNwF-L9Irn78v9XQq7ajb79ayIEBKIfcYZvGDzI7E1-1qy-PIZ99xNvCCN1--0oQ0BLqf26WfsZ4",
             android_artifact_type: "APK",
             android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
-            testers: "daliamansour297@gmail.com",
+            testers: "daliamansour297@gmail.com,ahmed36085361@gmail.com",
             release_notes: "Lots of amazing new features to test out!"
        )
     end
