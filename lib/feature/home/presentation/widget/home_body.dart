@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/extentions/sizes_utils_extensions.dart';
+import '../../domain/home_entities/featured_products_entity.dart';
 import 'recommended_product.dart';
 import 'top_product.dart';
 import 'banner_section.dart';
@@ -8,10 +10,11 @@ import 'feature_products.dart';
 import 'new_collection.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
-
+  const HomeBody({super.key, this.product});
+ final List<FeaturedProductsEntity> ? product;
   @override
   Widget build(BuildContext context) {
+
     return  SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -21,25 +24,15 @@ class HomeBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CategorySection(),
-            SizedBox(
-              height:5.h,
-            ),
+            5.vs,
             const BannerSection(),
-            SizedBox(
-              height:5.h,
-            ),
-            const FeatureProducts(),
-            SizedBox(
-              height:5.h,
-            ),
+            5.vs,
+             FeatureProducts(),
+            5.vs,
             const NewCollectionBanner(),
-            SizedBox(
-              height:5.h,
-            ),
+            5.vs,
             const RecommendedProducts(),
-            SizedBox(
-              height:5.h,
-            ),
+            5.vs,
             const TopProduct()
           ],
         ),

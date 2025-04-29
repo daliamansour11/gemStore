@@ -6,12 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'configration.dart';
+import 'injection_container.dart';
 import 'main.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await initializeDependencies();
 
   //TODO: Read the folowing doc and implemnt more usage https://firebase.flutter.dev/docs/crashlytics/usage
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;

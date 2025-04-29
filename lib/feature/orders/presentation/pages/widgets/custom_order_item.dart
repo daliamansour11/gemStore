@@ -26,7 +26,6 @@ class CustomOrderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      // TODO: Focus On Responsive Design, check the following links:>>done
 
       padding: 8.pv,
       child: Row(

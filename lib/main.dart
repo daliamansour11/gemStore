@@ -2,14 +2,16 @@ import 'package:device_preview/device_preview.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get_it/get_it.dart';
 import 'config/theme/theme_data.dart';
 import 'configration.dart';
 import 'core/services/remote_config_service.dart';
 import 'feature/Setting/presentation/pages/UpdateScreen.dart';
 import 'feature/Splash/presentation/pages/welcome_screen.dart';
+import 'feature/home/presentation/Cubit/featured_products_cubit.dart';
 
-//TODO: Change class and file name
 class MyApp extends StatelessWidget {
   MyApp({super.key, required this.appConfiguration});
 
@@ -40,17 +42,20 @@ class MyApp extends StatelessWidget {
           minTextAdapt: true,
           splitScreenMode: true,
           builder: (_, child) {
-            return MaterialApp(
-              navigatorObservers: [
-                FirebaseAnalyticsObserver(analytics: analytics),
-              ],
-              useInheritedMediaQuery: true,
-              locale: DevicePreview.locale(context),
-              builder: DevicePreview.appBuilder,
-              title: 'Gem Store',
-              debugShowCheckedModeBanner: false,
-              theme: appTheme(),
-              home: const WelcomeScreen(),
+            return BlocProvider(
+              create: (context) =>  GetIt.I<FeaturedProductsCubit>(),  // Provide the AppCubit
+              child: MaterialApp(
+                navigatorObservers: [
+                  FirebaseAnalyticsObserver(analytics: analytics),
+                ],
+                useInheritedMediaQuery: true,
+                locale: DevicePreview.locale(context),
+                builder: DevicePreview.appBuilder,
+                title: 'Gem Store',
+                debugShowCheckedModeBanner: false,
+                theme: appTheme(),
+                home: const WelcomeScreen(),
+              ),
             );
           },
         );

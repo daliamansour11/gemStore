@@ -2,16 +2,17 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/resources/assets_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
+import '../../domain/home_entities/featured_products_entity.dart';
 import '../widget/home_body.dart';
 class HomeScreen extends StatefulWidget {
   final FirebaseAnalytics analytics;
-  const HomeScreen({super.key, required this.analytics});
+  const HomeScreen({super.key, required this.analytics,});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   void initState() {
     super.initState();
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return  Scaffold(
       appBar: _appBarBody(),
       backgroundColor: Colors.white,
-      body: const HomeBody()
+      body:  HomeBody()
     );
   }
 

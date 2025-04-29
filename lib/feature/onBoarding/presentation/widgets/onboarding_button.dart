@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/resources/colors_manger.dart';
+import '../../../../core/resources/firebase_analytic.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../../../../core/utils/bottom_navigation.dart';
 import '../../../../core/widget/Custom_button.dart';
 import '../../../Auth/presentation/pages/login.dart';
+import '../../../home/presentation/pages/home_screen.dart';
 
 class OnBoardingButton extends StatefulWidget {
   const OnBoardingButton({super.key});
@@ -35,8 +37,9 @@ class _OnBoardingButtonState extends State<OnBoardingButton> {
             },
           );
           Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                 const LoginScreen()
-            ));
+          const BottomNavigation()                 )
+              // LoginScreen
+            );
           }, color: ColorsManger.rateColor, isFill: true,
       ),
     );

@@ -14,7 +14,7 @@ final  bool isFill;
   const CustomButton({
     super.key,
     required this.text,
-    this.width = 250,
+    this.width = 310,
     this.height = 50,
     this.onPressed,
     required this.color,

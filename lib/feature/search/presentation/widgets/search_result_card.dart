@@ -1,6 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/resources/values_manger.dart';
+import '../../../home/domain/home_entities/featured_products_entity.dart';
 import '../pages/product_details.dart';
 
 import '../../../../core/extentions/extentions.dart';
@@ -11,30 +12,10 @@ import 'custom_image_widget.dart';
 class SearchResultCard extends StatefulWidget {
   const SearchResultCard({super.key,});
 
-  // final FirebaseAnalytics analytics;
   @override
   State<SearchResultCard> createState() => _SearchResultCardState();
 }
-List<ProductModel> products = [
-  ProductModel(
-    oldPrice:59.99,
-    name: 'Fitted Waist Dress',
-    price: 47.99,
-
-    imageUrl:  'https://s3-alpha-sig.figma.com/img/c793/6776/96d160379456b9e0b7274fcb6b4facc6?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=n-CLbONt1NLeOeIfKrJ9GWmgCb1rlMUXvzEHMRrgJKia0c8xLFT62~U-SuqGHhNCqfkA8F4RC5Nv1TMufinQ8~TrGzc7szaDlxAUs5pBTSXgSFwDIKONWfpZPOcjZfbLcyAMbDOp9Z0nIM8R0TkaHOTDL-oIrbqdfNYw6BmAJTAsx5OLpCIty8RXODBAEpJXJFKrFRbllZx7nKzntu6Io9rNvb5fjz7oPO7RlZA~uTRNTPyj6yDertdE9tWKKbX7BpkIUpdK4pdolHkcMpa3tAwbKr9gESnr6ntdVso~ssFBQfyk-ERfpLJM9q3io5dawsGhnimKbxDB~fxR6QnhdQ__',
-
-    rating: 4.5,
-    description: 'A stylish fitted waist dress perfect for any occasion.', review: 65, id: 0,
-  ),
-  ProductModel(
-    name: 'Sportwear Set',
-    price: 80.00,
-    imageUrl:
-'https://s3-alpha-sig.figma.com/img/c793/6776/96d160379456b9e0b7274fcb6b4facc6?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=n-CLbONt1NLeOeIfKrJ9GWmgCb1rlMUXvzEHMRrgJKia0c8xLFT62~U-SuqGHhNCqfkA8F4RC5Nv1TMufinQ8~TrGzc7szaDlxAUs5pBTSXgSFwDIKONWfpZPOcjZfbLcyAMbDOp9Z0nIM8R0TkaHOTDL-oIrbqdfNYw6BmAJTAsx5OLpCIty8RXODBAEpJXJFKrFRbllZx7nKzntu6Io9rNvb5fjz7oPO7RlZA~uTRNTPyj6yDertdE9tWKKbX7BpkIUpdK4pdolHkcMpa3tAwbKr9gESnr6ntdVso~ssFBQfyk-ERfpLJM9q3io5dawsGhnimKbxDB~fxR6QnhdQ__',
-    rating: 4.9,
-    description: 'Comfortable and stylish sportswear set.', oldPrice: 99.99, review: 43, id: 1,
-  ),
-];
+List<FeaturedProductsEntity>? products;
 
 class _SearchResultCardState extends State<SearchResultCard> {
   @override
@@ -48,9 +29,9 @@ class _SearchResultCardState extends State<SearchResultCard> {
           mainAxisSpacing: 8,
           childAspectRatio: 0.7,
         ),
-        itemCount: products.length,
+        itemCount: products!.length,
         itemBuilder: (context, index) {
-          return ProductCard( product: products[index],);
+          return ProductCard( product:products![index],);
         },
       ),
     );
@@ -67,7 +48,7 @@ class _SearchResultCardState extends State<SearchResultCard> {
 
 
 class ProductCard extends StatefulWidget {
-  final ProductModel product;
+  final FeaturedProductsEntity product;
   const  ProductCard({super.key, required this.product,});
   // final FirebaseAnalytics analytics;
   @override
@@ -86,7 +67,7 @@ class _ProductCardState extends State<ProductCard> {
       },
       child: Hero(
         // tag: [//]!.id!??0,
-          tag: widget.product.id,
+          tag: widget.product.id!,
           child:  Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -130,7 +111,7 @@ class _ProductCardState extends State<ProductCard> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            widget.product.name,
+                            widget.product.title!,
                             style: const TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.normal),
                             maxLines: 2,
@@ -149,7 +130,7 @@ class _ProductCardState extends State<ProductCard> {
                                 padding: const EdgeInsets.only(left: 5),
                                 child:
                                 Text(
-                                  '${widget.product.oldPrice.toDouble()}',
+                                  '${widget.product.price}',
                                   style: const TextStyle(
                                       fontSize: 12,
                                       color: Colors.grey,

@@ -39,11 +39,13 @@ class OneOrderAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: 50.pv + 15.ph,
-      child: CustomButton(
-        isFill: true,
-        text: AppString.continueShopping,
-        color: ColorsManger.rateColor,
-        onPressed: () => context.pushNamed(const BottomNavigation()),
+      child: Center(
+        child: CustomButton(
+          isFill: true,
+          text: AppString.continueShopping,
+          color: ColorsManger.rateColor,
+          onPressed: () => context.pushNamed(const BottomNavigation()),
+        ),
       ),
     );
   }

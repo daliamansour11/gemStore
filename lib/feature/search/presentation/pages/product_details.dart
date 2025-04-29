@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/services/firebase_analytic.dart';
-import '../../../../core/models/product_model.dart';
-
+import '../../../home/domain/home_entities/featured_products_entity.dart';
 import '../widgets/custom_bottom_appbar_widget.dart';
 import '../widgets/product_details_widgets.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
-  final ProductModel products;
+  final FeaturedProductsEntity products;
    const ProductDetailsScreen({required this.products, super.key} );
 
 

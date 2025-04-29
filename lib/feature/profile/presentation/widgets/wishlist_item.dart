@@ -7,10 +7,11 @@ import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/values_manger.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../home/domain/home_entities/featured_products_entity.dart';
 import '../../../search/presentation/pages/product_details.dart';
 
 class WishlistItem extends StatelessWidget {
-  final ProductModel item;
+  final FeaturedProductsEntity item;
 
   const WishlistItem({super.key, required this.item});
 
@@ -36,7 +37,7 @@ class WishlistItem extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10.r),
                     child: Image.asset(
-                    item.imageUrl,
+                   '${ item.images}',
                       width: double.infinity,
                       height: double.infinity,
                       fit: BoxFit.cover,
@@ -68,7 +69,7 @@ class WishlistItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    item.name,
+                    item.title!,
                     style:
                     TextStyle(fontSize: 15.sp, fontWeight: FontWeight.normal),
                     maxLines: 2,
@@ -82,7 +83,6 @@ class WishlistItem extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 15.sp, fontWeight: FontWeight.bold),
                       ),
-                      if (item.oldPrice != null)
                         Padding(
                           padding: EdgeInsets.only(left: AppPadding.p6.w),
                           child: Text(
@@ -97,17 +97,17 @@ class WishlistItem extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 4.h),
-                  Row(
-                    children: List.generate(5, (index) {
-                      return Icon(
-                        index < item.rating.round()
-                            ? Icons.star
-                            : Icons.star_border_outlined,
-                        color: ColorsManger.ratingColor,
-                        size: 15.sp,
-                      );
-                    }),
-                  ),
+                  // Row(
+                  //   children: List.generate(5, (index) {
+                  //     return Icon(
+                  //       index < item.rating.round()
+                  //           ? Icons.star
+                  //           : Icons.star_border_outlined,
+                  //       color: ColorsManger.ratingColor,
+                  //       size: 15.sp,
+                  //     );
+                  //   }),
+                  // ),
                 ],
               ),
             ),
