@@ -11,6 +11,7 @@ import 'core/services/remote_config_service.dart';
 import 'feature/Setting/presentation/pages/UpdateScreen.dart';
 import 'feature/Splash/presentation/pages/welcome_screen.dart';
 import 'feature/home/presentation/Cubit/featured_products_cubit.dart';
+import 'feature/home/presentation/cubit/main_Categories_cubit.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({super.key, required this.appConfiguration});
@@ -42,8 +43,16 @@ class MyApp extends StatelessWidget {
           minTextAdapt: true,
           splitScreenMode: true,
           builder: (_, child) {
-            return BlocProvider(
-              create: (context) =>  GetIt.I<FeaturedProductsCubit>(),  // Provide the AppCubit
+            return MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (context) =>
+                      GetIt.I<FeaturedProductsCubit>(), // Provide the AppCubit
+                ),
+                BlocProvider(
+                  create: (context) => GetIt.I<MainCategoriesCubit>(),
+                ),
+              ],
               child: MaterialApp(
                 navigatorObservers: [
                   FirebaseAnalyticsObserver(analytics: analytics),
