@@ -17,6 +17,9 @@ import '../../../../core/resources/values_manger.dart';
 import '../../../../core/models/product_model.dart';
 import '../../../../core/widget/custom_cachednetwork_image.dart';
 import '../../../home/domain/home_entities/featured_products_entity.dart';
+import 'build_circle_widget.dart';
+import 'search_result_card.dart';
+import 'similar_products_widget.dart';
 
 class ProductDetailsWidgets extends StatefulWidget {
   const ProductDetailsWidgets({super.key, required this.products});
@@ -29,7 +32,6 @@ class ProductDetailsWidgets extends StatefulWidget {
 
 bool isFavorite = false;
 final List<String> userFeedBack=[
-
 ];
 class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
   @override
@@ -59,25 +61,21 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                   ),
                   child:
                   ImageSlideshow(
-
                     initialPage: 0,
                     indicatorColor: ColorsManger.btnColor,
                     indicatorBackgroundColor: ColorsManger.grey,
-
                     onPageChanged: (value) {
                       print('Page changed: $value');
                     },
                     autoPlayInterval: 3000,
-
                     isLoop: false,
-                      children: [
-        buildCustomNetworkImage(context, widget.products.images!.first, double.infinity, 400.h),
-        buildCustomNetworkImage(context, widget.products.images!.first, double.infinity, 400.h),
-        buildCustomNetworkImage(context, widget.products.images!.first, double.infinity, 400.h),
-
-      ],
-                  ),),
-
+                      children:widget.products.images!
+        .where((url) => url.isNotEmpty)
+        .map((imageUrl) =>
+    buildCustomNetworkImage(context, imageUrl, double.infinity, 400.h))
+        .toList(),
+                  ),
+                ),
                 Positioned(
                   top: AppPadding.p40,
                   left: AppPadding.p33,
@@ -152,14 +150,17 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    widget.products.title!,
-                    style:const  TextStyle(fontSize: FontSize.s20, fontWeight: FontWeight.bold,
-                        color: ColorsManger.dark,
-                    ), maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  Expanded(
+                    child: Text(
+                      widget.products.title!,
+                      style:const  TextStyle(fontSize: FontSize.s20, fontWeight: FontWeight.bold,
+                          color: ColorsManger.dark,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-
+                  25.hs,
                   Padding(
                     padding: const EdgeInsets.only(
                         right: AppPadding.p8, top: AppPadding.p3),
@@ -293,60 +294,8 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
                     )
                   ]
               ),
-
-              ExpansionTile(
-                shape: Border.all(color: Colors.transparent),
-                collapsedShape: Border.all(color: Colors.transparent),
-                title:     const Text(
-                  AppString.similarProductStr,
-                  style: TextStyle(fontSize: FontSize.s18, fontWeight: FontWeight.bold),
-
-                ),
-
-
-                children: [
-                  GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 0.75,
-                    ),
-                    itemCount: 3,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Container(
-                              height: 172,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey[200],
-                              ),
-                              child: Center(
-                                  child:
-                                  buildCustomNetworkImage(context, widget.products.images!.first, double.infinity, 172.h),
-                              ),
-                            ),
-                          ),
-                          4.vs,
-                          Text(widget.products.title!,
-                              style: const TextStyle(
-                                  fontSize: FontSize.s12, fontWeight: FontWeight.w500)),
-                          Text('\$ ${widget.products.price}',
-                              style: const TextStyle(
-                                  fontSize: FontSize.s14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w600)),
-                        ],
-                      );
-                    },
-                  ),
-                ],
-              ),
+              similarProductsWidget(widget.products.title!,widget.products.price!,
+                  widget.products.images!.first),
 
             ]
         ),
@@ -356,4 +305,6 @@ class _ProductDetailsWidgetsState extends State<ProductDetailsWidgets> {
       ),
     );
   }
+
+
 }

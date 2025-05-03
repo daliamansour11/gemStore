@@ -37,8 +37,8 @@ class _OnBoardingButtonState extends State<OnBoardingButton> {
             },
           );
           Navigator.push(context, MaterialPageRoute(builder: (context)=>
-          const LoginScreen())
-              //
+          const BottomNavigation())
+              //LoginScreen
             );
           }, color: ColorsManger.rateColor, isFill: true,
       ),

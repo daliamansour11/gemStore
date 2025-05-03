@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return  Scaffold(
       appBar: _appBarBody(),
       backgroundColor: Colors.white,
-      body:  HomeBody()
+      body:const   HomeBody()
     );
   }
 

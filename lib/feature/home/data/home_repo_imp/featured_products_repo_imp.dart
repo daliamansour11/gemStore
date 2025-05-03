@@ -10,11 +10,14 @@ import '../api_service/remote_data_source/product_apiService.dart';
 class FeaturedProductsRepoImp extends FeaturedProductsRepositoryInterface{
   final ProductApiService productApiService;
 
-  FeaturedProductsRepoImp(this.productApiService);
+  FeaturedProductsRepoImp(this.productApiService,);
+
   @override
-  Future<DataState<List<FeaturedProductsEntity>>> getFeaturedProducts() async{
+  Future<DataState<List<FeaturedProductsEntity>>> getFeaturedProducts(  int limit,
+  int offset) async{
+
     try {
-      final httpResponse = await productApiService.getFeaturedProducts(
+      final httpResponse = await productApiService.getFeaturedProducts(limit: limit, offset:offset
       );
       if (httpResponse.response.statusCode == HttpStatus.ok) {
 
