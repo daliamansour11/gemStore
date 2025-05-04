@@ -17,4 +17,5 @@ abstract class ProductApiService {
     @Query('limit') required int limit,
     @Query('offset') required int offset,
   });
+
 }

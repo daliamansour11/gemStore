@@ -3,6 +3,7 @@ import '../../../../core/services/firebase_analytic.dart';
 
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
+import '../../../../core/utils/bottom_navigation.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -59,7 +60,12 @@ class LoginButton extends StatelessWidget {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          FirebaseAnalytic.buttonClicked('login');
+          Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const BottomNavigation()),
+      );
+          print('Login Button Clicked!');
+          // FirebaseAnalytic.buttonClicked('login');
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorsManger.white,
