@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/colors_manger.dart';
 
-Widget buildCustomNetworkImage(BuildContext context, String imageUrl,double width,double height) {
+Widget buildCustomNetworkImage(BuildContext context, String imageUrl, double width, double height) {
   return SizedBox(
     width: width.w,
     height: height.h,
@@ -15,6 +15,7 @@ Widget buildCustomNetworkImage(BuildContext context, String imageUrl,double widt
       imageUrl: imageUrl,
       imageBuilder: (context, imageProvider) => Container(
         decoration: BoxDecoration(
+
           image: DecorationImage(
             image: imageProvider,
             fit: BoxFit.cover,
@@ -22,15 +23,13 @@ Widget buildCustomNetworkImage(BuildContext context, String imageUrl,double widt
         ),
       ),
       placeholder: (context, url) => Container(
-        decoration: const BoxDecoration(
-          shape: BoxShape.rectangle,
-          color: ColorsManger.lightGrey,
-        ),
+        color: Colors.transparent,
         child: const Center(
           child: CupertinoActivityIndicator(radius: 12),
         ),
       ),
-      errorWidget: (context, url, error) => const Icon(Icons.error, color: Colors.red),
+      errorWidget: (context, url, error) =>
+      const Icon(Icons.error, color: Colors.red),
     ),
   );
 }

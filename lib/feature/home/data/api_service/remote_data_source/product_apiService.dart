@@ -13,5 +13,9 @@ abstract class ProductApiService {
   factory ProductApiService(Dio dio) = _ProductApiService;
 
   @GET('/products')
-  Future<HttpResponse<List<FeaturedProductsModel>>> getFeaturedProducts();
+  Future<HttpResponse<List<FeaturedProductsModel>>> getFeaturedProducts({
+    @Query('limit') required int limit,
+    @Query('offset') required int offset,
+  });
+
 }

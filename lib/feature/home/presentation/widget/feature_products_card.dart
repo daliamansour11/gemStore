@@ -1,8 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extentions/extentions.dart';
-import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/widget/custom_cachednetwork_image.dart';
 import '../../../search/presentation/pages/product_details.dart';
 import '../../domain/home_entities/featured_products_entity.dart';
@@ -29,9 +27,7 @@ class FeatureProductsCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
 
-                child:buildCustomNetworkImage(context, product.images!.first,
-                    126, 172),
-              ),
+                child:buildCustomNetworkImage(context,product.images!.first,126, 172)),
               Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -48,7 +44,6 @@ class FeatureProductsCard extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 14, fontWeight: FontWeight.bold),
                     ),
-
                   ]),
             ],
           ),
@@ -58,3 +53,17 @@ class FeatureProductsCard extends StatelessWidget {
   }
 
 }
+// String _getValidImageUrl(FeaturedProductsEntity product) {
+//   if (product.images != null &&
+//       product.images!.isNotEmpty &&
+//       product.images!.first.isNotEmpty) {
+//     return product.images!.first;
+//   }
+//
+//   if (product.category?.image != null &&
+//       product.category!.image!.isNotEmpty) {
+//     return product.category!.image!;
+//   }
+//
+//   return 'https://via.placeholder.com/126x172.png?text=No+Image';
+// }
