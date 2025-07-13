@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/colors_manger.dart';
-import '../../../../core/models/product_model.dart';
+import '../../../../core/widget/custom_cachednetwork_image.dart';
+import '../../domain/home_entities/recommended_products_entity.dart';
 class RecommendedProductCard extends StatelessWidget {
- final ProductModel product;
+ final RecommendedProductsEntity product;
   const RecommendedProductCard({super.key,required this.product});
 
   @override
@@ -23,15 +24,19 @@ class RecommendedProductCard extends StatelessWidget {
       child: Row(
         children: [
           // Product Image
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              product.imageUrl,
-              fit: BoxFit.cover,
-              width: 66.w,
-              height: 66.h,
-            ),
-          ),
+          // ClipRRect(
+          //   borderRadius: BorderRadius.circular(8),
+          //   child: Image.network(
+          //     product.images!.first,
+          //     fit: BoxFit.cover,
+          //     width: 66.w,
+          //     height: 66.h,
+          //   ),
+          // ),
+            ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+
+                child:buildCustomNetworkImage(context,product.images!.first,66.w, 66.h)),
           const SizedBox(width: 12),
           // Product Details
           Expanded(
@@ -40,7 +45,7 @@ class RecommendedProductCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  product.name,
+                  product.title!,
                   style: const TextStyle(
                       fontSize: 12, fontWeight: FontWeight.w500),
                   overflow: TextOverflow.ellipsis, // Prevents overflow
