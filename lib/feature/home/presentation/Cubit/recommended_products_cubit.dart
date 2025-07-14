@@ -19,25 +19,24 @@ class RecommendedProductsCubit extends Cubit<RecommendedProductsState> {
 
   Future<void> getRecommendedProductsByCategory(
       {required int categoryId}) async {
+    if (!isClosed) emit(RecommendedProductsLoading());
     try {
       if (_debounce?.isActive ?? false) _debounce!.cancel();
       _debounce = Timer(const Duration(milliseconds: 500), () async {
-        if (!isClosed) emit(RecommendedProductsLoading());
+      final dataState = await _getRecommendedProductsUsecase(
+        params: categoryId,
+      );
 
-        final dataState = await _getRecommendedProductsUsecase(
-          params: categoryId,
-        );
-
-        if (dataState is DataSuccess<List<RecommendedProductsEntity>>) {
-          products = dataState.data ?? [];
-
-          print("fetched ${products.length}");
-          if (!isClosed) emit(RecommendedProductsLoaded(products));
-        } else if (dataState is DataFailed) {
-          final errorMessage = getErrorMessage(dataState.error!);
-          if (!isClosed) emit(RecommendedProductsError(errorMessage));
-        }
-      });
+      if (dataState is DataSuccess<List<RecommendedProductsEntity>>) {
+        products = dataState.data ?? [];
+        print(products[0].category);
+        print("fetched ${products.length}");
+        if (!isClosed) emit(RecommendedProductsLoaded(products));
+      } else if (dataState is DataFailed) {
+        final errorMessage = getErrorMessage(dataState.error!);
+        if (!isClosed) emit(RecommendedProductsError(errorMessage));
+      }
+       });
     } catch (e) {
       if (!isClosed) emit(RecommendedProductsError('Unexpected Error'));
     }

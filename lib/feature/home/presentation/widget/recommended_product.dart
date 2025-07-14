@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
-import '../../domain/home_entities/recommended_products_entity.dart';
 import '../Cubit/recommended_products_cubit.dart';
 import '../Cubit/recommended_products_state.dart';
 import 'build_shimmer_loading.dart';
@@ -22,7 +21,7 @@ class _RecommendedProductsState extends State<RecommendedProducts> {
     super.initState();
     context
         .read<RecommendedProductsCubit>()
-        .getRecommendedProductsByCategory(categoryId: 1);
+        .getRecommendedProductsByCategory(categoryId: 30);
   }
 
   @override
@@ -70,19 +69,13 @@ class _RecommendedProductsState extends State<RecommendedProducts> {
                   }
 
                   if (state is RecommendedProductsLoaded) {
-                    List<RecommendedProductsEntity> product = state.products;
-
+                    final products = state.products;
                     return ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: context
-                          .read<RecommendedProductsCubit>()
-                          .products
-                          .length,
+                      itemCount: products.length,
                       itemBuilder: (context, index) {
                         return RecommendedProductCard(
-                          product: context
-                              .read<RecommendedProductsCubit>()
-                              .products[index],
+                          product: products[index],
                         );
                       },
                     );

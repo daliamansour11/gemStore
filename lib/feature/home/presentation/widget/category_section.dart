@@ -49,7 +49,7 @@ class _CategorySectionState extends State<CategorySection> {
                         selectedIndex = index;
                         context
         .read<RecommendedProductsCubit>()
-        .getRecommendedProductsByCategory(categoryId: selectedIndex+1);
+        .getRecommendedProductsByCategory(categoryId: categories[index].id!);
                       });
                     },
                     child: Column(
