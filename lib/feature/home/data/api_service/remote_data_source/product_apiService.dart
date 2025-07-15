@@ -5,6 +5,7 @@ import 'package:retrofit/http.dart';
 
 import '../../../../../core/constants/end_points.dart';
 import '../../model/featured_products.dart';
+import '../../model/recommended_products_model.dart';
 
 part 'product_apiService.g.dart';
 
@@ -18,4 +19,7 @@ abstract class ProductApiService {
     @Query('offset') required int offset,
   });
 
+  @GET('/categories/{categoryId}/products')
+  Future<HttpResponse<List<RecommendedProductsModel>>>
+      getRecommendedProductsByCategory(@Path('categoryId') int categoryId);
 }

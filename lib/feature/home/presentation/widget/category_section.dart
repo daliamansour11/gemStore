@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../core/resources/colors_manger.dart';
+import '../Cubit/recommended_products_cubit.dart';
 import '../cubit/main_Categories_cubit.dart';
 import '../cubit/main_Categories_state.dart';
 
@@ -46,6 +47,9 @@ class _CategorySectionState extends State<CategorySection> {
                     onTap: () {
                       setState(() {
                         selectedIndex = index;
+                        context
+        .read<RecommendedProductsCubit>()
+        .getRecommendedProductsByCategory(categoryId: categories[index].id!);
                       });
                     },
                     child: Column(
