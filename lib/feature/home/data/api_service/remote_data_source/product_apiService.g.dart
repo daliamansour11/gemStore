@@ -20,10 +20,15 @@ class _ProductApiService implements ProductApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<HttpResponse<List<FeaturedProductsModel>>>
-      getFeaturedProducts() async {
+  Future<HttpResponse<List<FeaturedProductsModel>>> getFeaturedProducts({
+    required int limit,
+    required int offset,
+  }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'limit': limit,
+      r'offset': offset,
+    };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<HttpResponse<List<FeaturedProductsModel>>>(

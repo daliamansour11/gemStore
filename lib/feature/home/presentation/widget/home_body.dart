@@ -32,7 +32,7 @@ class HomeBody extends StatelessWidget {
             FeatureProducts(),
             5.vs,
             const NewCollectionBanner(),
-            5.vs,
+            //5.vs,
             const RecommendedProducts(),
             5.vs,
             const TopProduct()

@@ -43,7 +43,7 @@ final  bool isFill;
               style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16.sp,
-                  color: isFill ? ColorsManger.rateColor : ColorsManger.btnColor)),
+                  color: ColorsManger.white)),
         ),
 
 
