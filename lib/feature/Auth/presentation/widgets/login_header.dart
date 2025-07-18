@@ -7,16 +7,17 @@ class LoginHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           AppString.logInto,
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          style: TextTheme.of(context).bodyMedium,
+          // TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
         ),
         Text(
           AppString.yourAccount,
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          style: TextTheme.of(context).bodyMedium,
         ),
       ],
     );

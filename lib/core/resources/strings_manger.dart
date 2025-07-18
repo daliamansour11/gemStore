@@ -134,7 +134,7 @@ class AppString{
   static const String yourAccount = 'your account';
   static const String email = 'Email address';
   static const String password = 'Password';
-  static const String forgetPassword = 'ForgetPassword';
+  static const String forgetPassword = 'ForgetPassword?';
 
   static const logOut= 'LogOut';
 

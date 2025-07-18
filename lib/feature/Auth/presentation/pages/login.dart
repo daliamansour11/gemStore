@@ -19,24 +19,34 @@ class LoginScreen extends StatelessWidget {
       create: (context) => GoogleLoginCubit(),
       child: Scaffold(
         backgroundColor: ColorsManger.white,
-        body: Padding(
-          padding: 32.ph,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Spacer(),
-              const LoginHeader(),
-              32.vs,
-              const LoginForm(),
-              24.vs,
-              const LoginButton(),
-              24.vs,
-              const SocialLogin(),
-              const Spacer(),
-            ],
+        resizeToAvoidBottomInset: true,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 34),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children:  [
+
+                const LoginHeader(),
+                32.vs,
+                const LoginForm(),
+                24.vs,
+                const LoginButton(),
+                24.vs,
+                const SocialLogin(),
+              ],
+            ),
           ),
         ),
-      ),
+      )
+
     );
   }
 }
+
+
+
+
+
+

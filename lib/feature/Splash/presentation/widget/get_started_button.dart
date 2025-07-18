@@ -27,7 +27,7 @@ class GetStartedButton extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) =>  const Onboarding(),
+              builder: (context) =>  const LoginScreen(),
                 // LoginScreen
             ),
           );

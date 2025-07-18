@@ -29,8 +29,8 @@ class RecommendedProductsCubit extends Cubit<RecommendedProductsState> {
 
       if (dataState is DataSuccess<List<RecommendedProductsEntity>>) {
         products = dataState.data ?? [];
-        print(products[0].category);
-        print("fetched ${products.length}");
+        // print(products[0].category);
+        print('fetched ${products.first..title}');
         if (!isClosed) emit(RecommendedProductsLoaded(products));
       } else if (dataState is DataFailed) {
         final errorMessage = getErrorMessage(dataState.error!);

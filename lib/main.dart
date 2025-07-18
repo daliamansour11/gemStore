@@ -23,25 +23,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<bool>(
-      future: _initializeAndCheckUpdate(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const MaterialApp(
-            home: Scaffold(
-              body: Center(child: CircularProgressIndicator()),
-            ),
-          );
-        }
-        if (snapshot.data == true) {
-          return const MaterialApp(
-            home: UpdateScreen(),
-          );
-        }
+    // return FutureBuilder<bool>(
+    //   future: _initializeAndCheckUpdate(),
+    //   builder: (context, snapshot) {
+    //     if (snapshot.connectionState == ConnectionState.waiting) {
+    //       return const MaterialApp(
+    //         home: Scaffold(
+    //           body: Center(child: CircularProgressIndicator()),
+    //         ),
+    //       );
+    //     }
+    //     if (snapshot.data == true) {
+    //       return const MaterialApp(
+    //         home: UpdateScreen(),
+    //         debugShowCheckedModeBanner: false,
+    //       );
+    //     }
 
         return ScreenUtilInit(
           designSize: const Size(375, 812),
           minTextAdapt: true,
+
           splitScreenMode: true,
           builder: (_, child) {
             return MultiBlocProvider(
@@ -72,8 +74,8 @@ class MyApp extends StatelessWidget {
             );
           },
         );
-      },
-    );
+      /*},
+    );*/
   }
 
   Future<bool> _initializeAndCheckUpdate() async {
