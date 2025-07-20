@@ -18,7 +18,7 @@ class AppRouter{
     // BlocProvider(
     // create: (context) =>initializeDependencies<UserLogInBloc>(),
     // child:
-    builder: (_)=> const LoginScreen(),
+    builder: (_)=>  LoginScreen(),
             // )
         );
         default:  return MaterialPageRoute(
