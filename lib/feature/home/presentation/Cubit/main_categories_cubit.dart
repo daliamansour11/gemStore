@@ -10,7 +10,8 @@ class MainCategoriesCubit extends Cubit<MainCategoriesState> {
 
   MainCategoriesCubit(this._getMainCategoriesUseCase)
       : super(MainCategoriesInitial());
-
+  List<MainCategoryEntity> mainCategories = [];
+  int selectedIndex = 0;
   Future<void> fetchMainCategories() async {
     try {
       safeEmit(MainCategoriesLoading());
@@ -18,6 +19,7 @@ class MainCategoriesCubit extends Cubit<MainCategoriesState> {
 
       if (dataState is DataSuccess<List<MainCategoryEntity>> &&
           dataState.data != null) {
+        mainCategories = dataState.data ?? [];
         safeEmit(MainCategoriesSuccess(dataState.data!));
       } else if (dataState is DataFailed) {
         final errorMessage = getErrorMessage(dataState.error!);
@@ -26,6 +28,11 @@ class MainCategoriesCubit extends Cubit<MainCategoriesState> {
     } catch (e) {
       print('error: ${e}');
     }
+  }
+
+  void changeSelectedIndex(int indx) {
+    selectedIndex = indx;
+    safeEmit(ChangeSelectedIndexState(selectedIndex));
   }
 
   void safeEmit(MainCategoriesState state) {

@@ -15,7 +15,7 @@ class CategorySection extends StatefulWidget {
 }
 
 class _CategorySectionState extends State<CategorySection> {
-  int selectedIndex = 0;
+  //int selectedIndex = 0;
 
   @override
   void initState() {
@@ -25,15 +25,22 @@ class _CategorySectionState extends State<CategorySection> {
 
   @override
   Widget build(BuildContext context) {
+    final mainCategoryCubit = context.read<MainCategoriesCubit>();
     return BlocBuilder<MainCategoriesCubit, MainCategoriesState>(
       builder: (context, state) {
         if (state is MainCategoriesLoading) {
           return const Center(child: CircularProgressIndicator());
         } else if (state is MainCategoriesError) {
           return Center(child: Text(state.message));
-        } else if (state is MainCategoriesSuccess) {
-          final categories = state.mainCategories;
-
+        } else if (state is MainCategoriesSuccess ||
+            state is ChangeSelectedIndexState) {
+          final categories = mainCategoryCubit.mainCategories;
+          if (mainCategoryCubit.selectedIndex == 0) {
+            context
+                .read<RecommendedProductsCubit>()
+                .getRecommendedProductsByCategory(
+                    categoryId: categories.first.id!);
+          }
           return SizedBox(
             height: 80.h,
             child: SingleChildScrollView(
@@ -42,15 +49,15 @@ class _CategorySectionState extends State<CategorySection> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(categories.length, (index) {
                   final category = categories[index];
-                  final isSelected = index == selectedIndex;
+                  final isSelected = index == mainCategoryCubit.selectedIndex;
                   return GestureDetector(
                     onTap: () {
-                      setState(() {
-                        selectedIndex = index;
-                        context
-        .read<RecommendedProductsCubit>()
-        .getRecommendedProductsByCategory(categoryId: categories[index].id!);
-                      });
+                      mainCategoryCubit.changeSelectedIndex(index);
+
+                      context
+                          .read<RecommendedProductsCubit>()
+                          .getRecommendedProductsByCategory(
+                              categoryId: categories[index].id!);
                     },
                     child: Column(
                       children: [

@@ -21,5 +21,9 @@ abstract class ProductApiService {
 
   @GET('/categories/{categoryId}/products')
   Future<HttpResponse<List<RecommendedProductsModel>>>
-      getRecommendedProductsByCategory(@Path('categoryId') int categoryId);
+      getRecommendedProductsByCategory(
+    @Path('categoryId') int categoryId,
+    @Query('limit') int limit,
+    @Query('offset') int offset,
+  );
 }
