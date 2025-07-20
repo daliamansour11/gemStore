@@ -15,12 +15,20 @@ class CategorySection extends StatefulWidget {
 }
 
 class _CategorySectionState extends State<CategorySection> {
-  //int selectedIndex = 0;
-
   @override
   void initState() {
     super.initState();
-    context.read<MainCategoriesCubit>().fetchMainCategories();
+    final mainCategoryCubit = context.read<MainCategoriesCubit>();
+    mainCategoryCubit.fetchMainCategories().then((_) {
+      final categories = mainCategoryCubit.mainCategories;
+      if (categories.isNotEmpty) {
+        context
+            .read<RecommendedProductsCubit>()
+            .getRecommendedProductsByCategory(
+              categoryId: categories.first.id!,
+            );
+      }
+    });
   }
 
   @override
@@ -35,12 +43,7 @@ class _CategorySectionState extends State<CategorySection> {
         } else if (state is MainCategoriesSuccess ||
             state is ChangeSelectedIndexState) {
           final categories = mainCategoryCubit.mainCategories;
-          if (mainCategoryCubit.selectedIndex == 0) {
-            context
-                .read<RecommendedProductsCubit>()
-                .getRecommendedProductsByCategory(
-                    categoryId: categories.first.id!);
-          }
+
           return SizedBox(
             height: 80.h,
             child: SingleChildScrollView(
@@ -57,7 +60,7 @@ class _CategorySectionState extends State<CategorySection> {
                       context
                           .read<RecommendedProductsCubit>()
                           .getRecommendedProductsByCategory(
-                              categoryId: categories[index].id!);
+                              categoryId: category.id!);
                     },
                     child: Column(
                       children: [
