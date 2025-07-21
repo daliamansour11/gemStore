@@ -34,6 +34,7 @@ class RecommendedProductsCubit extends Cubit<RecommendedProductsState> {
     try {
       if (_debounce?.isActive ?? false) _debounce!.cancel();
       _debounce = Timer(const Duration(milliseconds: 500), () async {
+
         final dataState = await _getRecommendedProductsUsecase(
           params: RecommendedParams(
               categoryId: categoryId, limit: limit, offset: offset),
@@ -55,6 +56,7 @@ class RecommendedProductsCubit extends Cubit<RecommendedProductsState> {
           if (!isClosed) emit(RecommendedProductsError(errorMessage));
         }
       });
+      
     } catch (e) {
       if (!isClosed) emit(RecommendedProductsError('Unexpected Error'));
     }

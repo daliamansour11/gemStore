@@ -37,7 +37,7 @@ class FeaturedProductsCubit extends Cubit<FeaturedProductsState> {
 
       if (dataState is DataSuccess<List<FeaturedProductsEntity>>) {
         final newItems = dataState.data ?? [];
-        print("fetched1111 ${newItems.length}");
+        print('fetched1111 ${newItems.length}');
 
         if (newItems.length < limit) {
           hasMore = false;
@@ -47,7 +47,7 @@ class FeaturedProductsCubit extends Cubit<FeaturedProductsState> {
         offset += limit;
 
        products= mergeSort(List.from(products));
-       print("fetched ${products.length}");
+       print('fetched ${products.length}');
         // products =merge(products, newItems);
         if (!isClosed) emit(FeaturedProductsLoaded(List.from(products)));
 
