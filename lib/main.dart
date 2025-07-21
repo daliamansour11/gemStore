@@ -8,7 +8,8 @@ import 'package:get_it/get_it.dart';
 import 'config/theme/theme_data.dart';
 import 'configration.dart';
 import 'core/services/remote_config_service.dart';
-import 'feature/Setting/presentation/pages/UpdateScreen.dart';
+import 'feature/Auth/domain/usecases/login_usecase.dart';
+import 'feature/Auth/presentation/cubit/api_cubit_cubit.dart';
 import 'feature/Splash/presentation/pages/welcome_screen.dart';
 import 'feature/home/presentation/Cubit/featured_products_cubit.dart';
 import 'feature/home/presentation/Cubit/recommended_products_cubit.dart';
@@ -40,41 +41,41 @@ class MyApp extends StatelessWidget {
     //       );
     //     }
 
-        return ScreenUtilInit(
-          designSize: const Size(375, 812),
-          minTextAdapt: true,
-
-          splitScreenMode: true,
-          builder: (_, child) {
-            return MultiBlocProvider(
-              providers: [
-                BlocProvider(
-                  create: (context) =>
-                      GetIt.I<FeaturedProductsCubit>(), // Provide the AppCubit
-                ),
-                BlocProvider(
-                  create: (context) => GetIt.I<MainCategoriesCubit>(),
-                ),
-                 BlocProvider(
-                  create: (context) =>GetIt.I<RecommendedProductsCubit>(),
-                ),
-              ],
-              child: MaterialApp(
-                navigatorObservers: [
-                  FirebaseAnalyticsObserver(analytics: analytics),
-                ],
-                useInheritedMediaQuery: true,
-                locale: DevicePreview.locale(context),
-                builder: DevicePreview.appBuilder,
-                title: 'Gem Store',
-                debugShowCheckedModeBanner: false,
-                theme: appTheme(),
-                home: const WelcomeScreen(),
-              ),
-            );
-          },
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) =>
+                  GetIt.I<FeaturedProductsCubit>(), // Provide the AppCubit
+            ),
+            BlocProvider(
+              create: (context) => GetIt.I<MainCategoriesCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => GetIt.I<RecommendedProductsCubit>(),
+            ),
+            BlocProvider<AuthCubit>(create: (_) => GetIt.I<AuthCubit>()),
+          ],
+          child: MaterialApp(
+            navigatorObservers: [
+              FirebaseAnalyticsObserver(analytics: analytics),
+            ],
+            useInheritedMediaQuery: true,
+            locale: DevicePreview.locale(context),
+            builder: DevicePreview.appBuilder,
+            title: 'Gem Store',
+            debugShowCheckedModeBanner: false,
+            theme: appTheme(),
+            home: const WelcomeScreen(),
+          ),
         );
-      /*},
+      },
+    );
+    /*},
     );*/
   }
 
