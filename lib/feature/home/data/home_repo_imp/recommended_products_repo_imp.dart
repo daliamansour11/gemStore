@@ -17,10 +17,10 @@ class RecommendedProductsRepoImp
 
   @override
   Future<DataState<List<RecommendedProductsEntity>>>
-      getRecommendedProductsByCategory(int categoryId) async {
+      getRecommendedProductsByCategory(int categoryId,int limit,int offset) async {
     try {
       final httpResponse =
-          await productApiService.getRecommendedProductsByCategory(categoryId);
+          await productApiService.getRecommendedProductsByCategory(categoryId,limit,offset);
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         print("respons recommneded${httpResponse.data}");
         return DataSuccess(httpResponse.data);

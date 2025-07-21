@@ -5,27 +5,17 @@ import '../../../../core/resources/colors_manger.dart';
 import '../../../../core/resources/strings_manger.dart';
 import '../Cubit/recommended_products_cubit.dart';
 import '../Cubit/recommended_products_state.dart';
+import '../cubit/main_Categories_cubit.dart';
 import 'build_shimmer_loading.dart';
 import 'recommended_product_card.dart';
 
-class RecommendedProducts extends StatefulWidget {
+class RecommendedProducts extends StatelessWidget {
   const RecommendedProducts({super.key});
 
   @override
-  State<RecommendedProducts> createState() => _RecommendedProductsState();
-}
-
-class _RecommendedProductsState extends State<RecommendedProducts> {
-  @override
-  void initState() {
-    super.initState();
-    context
-        .read<RecommendedProductsCubit>()
-        .getRecommendedProductsByCategory(categoryId: 30);
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final cubit = context.read<RecommendedProductsCubit>();
+    final mainCategoryCubit = context.read<MainCategoriesCubit>();
     return LayoutBuilder(
       builder: (context, constraints) {
         return Column(
@@ -70,14 +60,28 @@ class _RecommendedProductsState extends State<RecommendedProducts> {
 
                   if (state is RecommendedProductsLoaded) {
                     final products = state.products;
-                    return ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: products.length,
-                      itemBuilder: (context, index) {
-                        return RecommendedProductCard(
-                          product: products[index],
-                        );
+                    return NotificationListener<ScrollNotification>(
+                      onNotification: (ScrollNotification scrollInfo) {
+                        if (scrollInfo.metrics.pixels ==
+                            scrollInfo.metrics.maxScrollExtent) {
+                          cubit.getRecommendedProductsByCategory(
+                              categoryId: mainCategoryCubit
+                                  .mainCategories[
+                                      mainCategoryCubit.selectedIndex]
+                                  .id!,
+                              isLoadMore: true);
+                        }
+                        return true;
                       },
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: products.length,
+                        itemBuilder: (context, index) {
+                          return RecommendedProductCard(
+                            product: products[index],
+                          );
+                        },
+                      ),
                     );
                   }
                   return const SizedBox();

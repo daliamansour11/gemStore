@@ -82,6 +82,7 @@ dependencies:
   either_dart: ^1.0.0
   cubit_generator:
   readmore: ^3.0.0
+  
 
 
 dev_dependencies:

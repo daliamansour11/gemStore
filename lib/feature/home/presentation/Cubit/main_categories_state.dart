@@ -15,3 +15,9 @@ class MainCategoriesError extends MainCategoriesState {
   final String message;
   MainCategoriesError(this.message);
 }
+
+class ChangeSelectedIndexState extends MainCategoriesState {
+  final int selectedIndex;
+
+  ChangeSelectedIndexState(this.selectedIndex);
+}
